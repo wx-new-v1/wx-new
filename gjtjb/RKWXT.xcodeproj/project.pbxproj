@@ -71,6 +71,22 @@
 		12228A761AB1C0F200CF0800 /* RegistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A751AB1C0F200CF0800 /* RegistModel.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
+		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
+		122AB82F1C3E384C00AC9DF5 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8211C3E384C00AC9DF5 /* MJRefreshBaseView.m */; };
+		122AB8301C3E384C00AC9DF5 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8231C3E384C00AC9DF5 /* MJRefreshConst.m */; };
+		122AB8311C3E384C00AC9DF5 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8251C3E384C00AC9DF5 /* MJRefreshFooterView.m */; };
+		122AB8321C3E384C00AC9DF5 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8271C3E384C00AC9DF5 /* MJRefreshHeaderView.m */; };
+		122AB8331C3E384C00AC9DF5 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8291C3E384C00AC9DF5 /* UIScrollView+MJExtension.m */; };
+		122AB8341C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB82B1C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m */; };
+		122AB8351C3E384C00AC9DF5 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB82D1C3E384C00AC9DF5 /* UIView+MJExtension.m */; };
+		122AB83A1C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8391C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		122AB83E1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB83D1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m */; };
+		122AB8451C3E509600AC9DF5 /* HomeLimitBuyTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8441C3E509600AC9DF5 /* HomeLimitBuyTitleCell.m */; };
+		122AB8481C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8471C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m */; };
+		122AB84B1C3E592000AC9DF5 /* HomeLimitBuyInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB84A1C3E592000AC9DF5 /* HomeLimitBuyInfoView.m */; };
+		122AB84F1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB84E1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m */; };
+		122AB8521C3E5C9000AC9DF5 /* HomeRecommendInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8511C3E5C9000AC9DF5 /* HomeRecommendInfoView.m */; };
+		122AB8561C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8551C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m */; };
 		1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */; };
 		1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */; };
 		1241E5321AE9D89B00811D3F /* CallBackBgImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */; };
@@ -775,6 +791,38 @@
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
 		122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSTScrollBrowser.m; sourceTree = "<group>"; };
+		122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		122AB81F1C3E384C00AC9DF5 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		122AB8201C3E384C00AC9DF5 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		122AB8211C3E384C00AC9DF5 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		122AB8221C3E384C00AC9DF5 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		122AB8231C3E384C00AC9DF5 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		122AB8241C3E384C00AC9DF5 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		122AB8251C3E384C00AC9DF5 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		122AB8261C3E384C00AC9DF5 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		122AB8271C3E384C00AC9DF5 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		122AB8281C3E384C00AC9DF5 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		122AB8291C3E384C00AC9DF5 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		122AB82A1C3E384C00AC9DF5 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		122AB82B1C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		122AB82C1C3E384C00AC9DF5 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		122AB82D1C3E384C00AC9DF5 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		122AB8381C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeTopGoodCell.h; sourceTree = "<group>"; };
+		122AB8391C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeTopGoodCell.m; sourceTree = "<group>"; };
+		122AB83C1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeBaseFunctionCell.h; sourceTree = "<group>"; };
+		122AB83D1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeBaseFunctionCell.m; sourceTree = "<group>"; };
+		122AB8431C3E509600AC9DF5 /* HomeLimitBuyTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLimitBuyTitleCell.h; sourceTree = "<group>"; };
+		122AB8441C3E509600AC9DF5 /* HomeLimitBuyTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLimitBuyTitleCell.m; sourceTree = "<group>"; };
+		122AB8461C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLimitBuyInfoCell.h; sourceTree = "<group>"; };
+		122AB8471C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLimitBuyInfoCell.m; sourceTree = "<group>"; };
+		122AB8491C3E592000AC9DF5 /* HomeLimitBuyInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLimitBuyInfoView.h; sourceTree = "<group>"; };
+		122AB84A1C3E592000AC9DF5 /* HomeLimitBuyInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLimitBuyInfoView.m; sourceTree = "<group>"; };
+		122AB84D1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommendInfoCell.h; sourceTree = "<group>"; };
+		122AB84E1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommendInfoCell.m; sourceTree = "<group>"; };
+		122AB8501C3E5C9000AC9DF5 /* HomeRecommendInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommendInfoView.h; sourceTree = "<group>"; };
+		122AB8511C3E5C9000AC9DF5 /* HomeRecommendInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommendInfoView.m; sourceTree = "<group>"; };
+		122AB8541C3E5F0C00AC9DF5 /* HomeGuessInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeGuessInfoCell.h; sourceTree = "<group>"; };
+		122AB8551C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeGuessInfoCell.m; sourceTree = "<group>"; };
 		1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBackBtn@2x.png"; sourceTree = "<group>"; };
 		1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBtnImg@2x.png"; sourceTree = "<group>"; };
 		1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CallBackBgImg.jpg; sourceTree = "<group>"; };
@@ -1993,6 +2041,115 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		122AB81D1C3E384C00AC9DF5 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */,
+				122AB81F1C3E384C00AC9DF5 /* MJRefresh.h */,
+				122AB8201C3E384C00AC9DF5 /* MJRefreshBaseView.h */,
+				122AB8211C3E384C00AC9DF5 /* MJRefreshBaseView.m */,
+				122AB8221C3E384C00AC9DF5 /* MJRefreshConst.h */,
+				122AB8231C3E384C00AC9DF5 /* MJRefreshConst.m */,
+				122AB8241C3E384C00AC9DF5 /* MJRefreshFooterView.h */,
+				122AB8251C3E384C00AC9DF5 /* MJRefreshFooterView.m */,
+				122AB8261C3E384C00AC9DF5 /* MJRefreshHeaderView.h */,
+				122AB8271C3E384C00AC9DF5 /* MJRefreshHeaderView.m */,
+				122AB8281C3E384C00AC9DF5 /* UIScrollView+MJExtension.h */,
+				122AB8291C3E384C00AC9DF5 /* UIScrollView+MJExtension.m */,
+				122AB82A1C3E384C00AC9DF5 /* UIScrollView+MJRefresh.h */,
+				122AB82B1C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m */,
+				122AB82C1C3E384C00AC9DF5 /* UIView+MJExtension.h */,
+				122AB82D1C3E384C00AC9DF5 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		122AB8361C3E3DED00AC9DF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				122AB8531C3E5EF500AC9DF5 /* Guess */,
+				122AB84C1C3E5C4600AC9DF5 /* Recommend */,
+				122AB83F1C3E4E9700AC9DF5 /* MallLimitBuy */,
+				122AB83B1C3E489700AC9DF5 /* BaseFunction */,
+				122AB8371C3E3E0400AC9DF5 /* MallTopImg */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		122AB8371C3E3E0400AC9DF5 /* MallTopImg */ = {
+			isa = PBXGroup;
+			children = (
+				122AB8381C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.h */,
+				122AB8391C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m */,
+			);
+			path = MallTopImg;
+			sourceTree = "<group>";
+		};
+		122AB83B1C3E489700AC9DF5 /* BaseFunction */ = {
+			isa = PBXGroup;
+			children = (
+				122AB83C1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.h */,
+				122AB83D1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m */,
+			);
+			path = BaseFunction;
+			sourceTree = "<group>";
+		};
+		122AB83F1C3E4E9700AC9DF5 /* MallLimitBuy */ = {
+			isa = PBXGroup;
+			children = (
+				122AB8431C3E509600AC9DF5 /* HomeLimitBuyTitleCell.h */,
+				122AB8441C3E509600AC9DF5 /* HomeLimitBuyTitleCell.m */,
+				122AB8461C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.h */,
+				122AB8471C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m */,
+				122AB8491C3E592000AC9DF5 /* HomeLimitBuyInfoView.h */,
+				122AB84A1C3E592000AC9DF5 /* HomeLimitBuyInfoView.m */,
+			);
+			path = MallLimitBuy;
+			sourceTree = "<group>";
+		};
+		122AB84C1C3E5C4600AC9DF5 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				122AB84D1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.h */,
+				122AB84E1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m */,
+				122AB8501C3E5C9000AC9DF5 /* HomeRecommendInfoView.h */,
+				122AB8511C3E5C9000AC9DF5 /* HomeRecommendInfoView.m */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		122AB8531C3E5EF500AC9DF5 /* Guess */ = {
+			isa = PBXGroup;
+			children = (
+				122AB8541C3E5F0C00AC9DF5 /* HomeGuessInfoCell.h */,
+				122AB8551C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m */,
+			);
+			path = Guess;
+			sourceTree = "<group>";
+		};
+		122AB8571C3E659A00AC9DF5 /* WXGoodsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				122AB8581C3E65B700AC9DF5 /* Model */,
+				122AB8591C3E65B700AC9DF5 /* View */,
+			);
+			path = WXGoodsInfo;
+			sourceTree = "<group>";
+		};
+		122AB8581C3E65B700AC9DF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		122AB8591C3E65B700AC9DF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1241E50A1AE9D89B00811D3F /* CallBack */ = {
 			isa = PBXGroup;
 			children = (
@@ -2243,9 +2400,11 @@
 		126CA3D81AB278EB00E08A0B /* WXTMall */ = {
 			isa = PBXGroup;
 			children = (
+				122AB81D1C3E384C00AC9DF5 /* MJRefresh */,
 				775AB9DD1ABFEF74003A339D /* WXTMallViewController.h */,
 				128B59901B53D6C4006D790B /* WXTMallViewController.m */,
 				128221571B18467A004613BB /* NewHomePageCommonDef.h */,
+				122AB8361C3E3DED00AC9DF5 /* View */,
 				128221561B18467A004613BB /* Model */,
 			);
 			path = WXTMall;
@@ -3005,6 +3164,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
+				122AB8571C3E659A00AC9DF5 /* WXGoodsInfo */,
 				12963B371B663DBB007418DE /* GuideView */,
 				128241341B60C4E3001EE0BD /* ShareInterface */,
 				12F180AC1B45121E00B9A80D /* JPushMessage */,
@@ -4089,6 +4249,7 @@
 				128585101B3AA7E5005E240E /* MakeOrderUserPhoneImg@2x.png in Resources */,
 				12F2D8061B1F01E900C8017F /* failedImage@2x.png in Resources */,
 				12A850EF1B880CD200276D2A /* SharkImg@2x.png in Resources */,
+				122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */,
 				1263EFEB1ACD44A30014C347 /* Icon-72.png in Resources */,
 				129674361AB6EAED00597B17 /* ContactInfoBack@2x.png in Resources */,
 				12F3CC7C1B1DE82C00E64DE4 /* PersonalInfoHeadImg.jpg in Resources */,
@@ -4321,6 +4482,7 @@
 				DDB58F4B1AD3C6A2006248E9 /* WXContactOptEntity.m in Sources */,
 				775843271AB95A300039B129 /* WXUINavigationController+SubVCPosition.m in Sources */,
 				775842ED1AB95A300039B129 /* CSTWXNavigationView.m in Sources */,
+				122AB83E1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m in Sources */,
 				1277D0131AC5327A0008D9B6 /* ResetPwdModel.m in Sources */,
 				DD988A5D1B1D408500B3790B /* EScrollerView.m in Sources */,
 				775842F01AB95A300039B129 /* WXUITextViewCell.m in Sources */,
@@ -4359,6 +4521,7 @@
 				120D015E1BBB91B5005CAA6C /* base64.m in Sources */,
 				775843281AB95A300039B129 /* WXUINavigationController.m in Sources */,
 				12F180BF1B45219300B9A80D /* JPushMessageModel.m in Sources */,
+				122AB84B1C3E592000AC9DF5 /* HomeLimitBuyInfoView.m in Sources */,
 				1273291E1B5CFFEE002AD4AE /* PersonalInfoEntity.m in Sources */,
 				12F963371B3D4BDF00FF6A3E /* SBJsonStreamWriterState.m in Sources */,
 				128221CC1B184CF4004613BB /* URLNetOperation.m in Sources */,
@@ -4368,6 +4531,7 @@
 				775843161AB95A300039B129 /* WXUIBaseButton.m in Sources */,
 				12F9632F1B3D4BDF00FF6A3E /* NSObject+SBJson.m in Sources */,
 				128766EE1B50BD4D00A79320 /* AboutShopEntity.m in Sources */,
+				122AB84F1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m in Sources */,
 				128221911B1847E7004613BB /* URLNetNotificationOBJ.m in Sources */,
 				77DB94271AAFEEBC0021A816 /* UserAgent.m in Sources */,
 				12F3CC911B1E026C00E64DE4 /* PersonalCallCell.m in Sources */,
@@ -4397,6 +4561,7 @@
 				DDB58F461AD3C6A2006248E9 /* ContactDetailCell.m in Sources */,
 				128672161B6A1857006391B2 /* WechatPayModel.m in Sources */,
 				775C58381ABA5F31005B6B40 /* KFLoger.m in Sources */,
+				122AB8341C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m in Sources */,
 				12F963311B3D4BDF00FF6A3E /* SBJsonStreamParser.m in Sources */,
 				7758430E1AB95A300039B129 /* WXError.m in Sources */,
 				776CFFA81AB1257B000A1D84 /* ARLabel.m in Sources */,
@@ -4451,6 +4616,7 @@
 				775842B11AB95A300039B129 /* WXColorConfig.m in Sources */,
 				DDB58F4D1AD3C6A2006248E9 /* BaseCallHistoryCell.m in Sources */,
 				775842D61AB95A300039B129 /* NSString+HTML.m in Sources */,
+				122AB8451C3E509600AC9DF5 /* HomeLimitBuyTitleCell.m in Sources */,
 				DDB58F4A1AD3C6A2006248E9 /* WXContacterModel.m in Sources */,
 				775842B01AB95A300039B129 /* CustomMadeOBJ.m in Sources */,
 				126CA3F51AB2B74800E08A0B /* WXTUITabBarController.m in Sources */,
@@ -4461,6 +4627,7 @@
 				120EC7831BB8F31800538637 /* rscode.c in Sources */,
 				120B75491B1C0F2100B8746C /* BaseInfoHeadCell.m in Sources */,
 				12BD30FF1B3E9ADF00170316 /* NewWXTLiDB.m in Sources */,
+				122AB8481C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m in Sources */,
 				775842F11AB95A300039B129 /* WXDropListItem.m in Sources */,
 				775C58D61ABA7D27005B6B40 /* BaseModel.m in Sources */,
 				7758432C1AB95A300039B129 /* WXUISearchBar.m in Sources */,
@@ -4500,6 +4667,7 @@
 				DDB58F471AD3C6A2006248E9 /* ContactsCallViewController.m in Sources */,
 				120A2BF11AB135DE006A28B1 /* UserBalanceVC.m in Sources */,
 				775C58361ABA5F31005B6B40 /* ChineseToPinyin.m in Sources */,
+				122AB8521C3E5C9000AC9DF5 /* HomeRecommendInfoView.m in Sources */,
 				775C583D1ABA5F31005B6B40 /* PinyinFormatter.m in Sources */,
 				120D01641BBB91B5005CAA6C /* RSADataSigner.m in Sources */,
 				775842B21AB95A300039B129 /* URLFeedData.m in Sources */,
@@ -4519,6 +4687,7 @@
 				7758435C1AB95FAC0039B129 /* WXService.m in Sources */,
 				DDB58F4E1AD3C6A2006248E9 /* CallHistoryCell.m in Sources */,
 				1284CC851B54ADB900D98F79 /* PaySucceedModel.m in Sources */,
+				122AB8301C3E384C00AC9DF5 /* MJRefreshConst.m in Sources */,
 				1218042F1ACB899B009DB7E7 /* DBImageViewCache.m in Sources */,
 				775842FC1AB95A300039B129 /* WXImageClipVC.m in Sources */,
 				77DB93EF1AAFE70D0021A816 /* PhoneData.m in Sources */,
@@ -4537,8 +4706,10 @@
 				12B1F6961B789138009FBA6D /* RechargeListVC.m in Sources */,
 				12989F8D1B900F0100D0AA9F /* FTPManager.m in Sources */,
 				775842D91AB95A300039B129 /* UIColor+WX.m in Sources */,
+				122AB8561C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m in Sources */,
 				77DB943B1AAFF3830021A816 /* UIView+Sizing.m in Sources */,
 				775843141AB95A300039B129 /* WXButton.m in Sources */,
+				122AB8321C3E384C00AC9DF5 /* MJRefreshHeaderView.m in Sources */,
 				775843001AB95A300039B129 /* PictureBrowseView.m in Sources */,
 				77DB94201AAFED400021A816 /* UIViewController+Helper.m in Sources */,
 				128221C31B184C3B004613BB /* ASIAuthenticationDialog.m in Sources */,
@@ -4553,6 +4724,7 @@
 				12F9162D1B19B0AA00C94717 /* BaseInfoVC.m in Sources */,
 				12F380351B3BEF6F00E9690C /* UserAddressModel.m in Sources */,
 				120B754E1B1C19EA00B8746C /* PersonSexVC.m in Sources */,
+				122AB83A1C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m in Sources */,
 				7758430D1AB95A300039B129 /* WXCheckMenu.m in Sources */,
 				775843361AB95A300039B129 /* WXUITextView.m in Sources */,
 				128221C91B184C3B004613BB /* ASINetworkQueue.m in Sources */,
@@ -4563,6 +4735,7 @@
 				12F180C01B45219300B9A80D /* JPushMsgEntity.m in Sources */,
 				775C58CF1ABA7B75005B6B40 /* ContacterEntity.m in Sources */,
 				126CA4121AB2FC9400E08A0B /* GainModel.m in Sources */,
+				122AB8331C3E384C00AC9DF5 /* UIScrollView+MJExtension.m in Sources */,
 				775842FF1AB95A300039B129 /* LoadingEntity.m in Sources */,
 				775C58411ABA5F31005B6B40 /* PinYinSearchOBJ.m in Sources */,
 				120B75541B1C3B7100B8746C /* PersonNicknameVC.m in Sources */,
@@ -4586,6 +4759,7 @@
 				12F2CCE61B4CCDF50085F78F /* ResetNewPwdModel.m in Sources */,
 				775843371AB95A300039B129 /* WXUIView.m in Sources */,
 				1273291B1B5CF73C002AD4AE /* PersonalInfoModel.m in Sources */,
+				122AB8311C3E384C00AC9DF5 /* MJRefreshFooterView.m in Sources */,
 				775843581AB95FAC0039B129 /* ServiceMonitor.m in Sources */,
 				12A050C61B316B7E008CC38F /* WXTMallListWebVC.m in Sources */,
 				775843171AB95A300039B129 /* LoadLabel.m in Sources */,
@@ -4601,6 +4775,7 @@
 				775842DE1AB95A300039B129 /* UIImage+iPhone5.m in Sources */,
 				775843351AB95A300039B129 /* WXUITextField.m in Sources */,
 				775842D51AB95A300039B129 /* NSString+Encrypt.m in Sources */,
+				122AB8351C3E384C00AC9DF5 /* UIView+MJExtension.m in Sources */,
 				775842BA1AB95A300039B129 /* WXUserDefault.m in Sources */,
 				775842D81AB95A300039B129 /* NSString+Size.m in Sources */,
 				775C583B1ABA5F31005B6B40 /* NSString+PinYin4Cocoa.m in Sources */,
@@ -4653,6 +4828,7 @@
 				1220140A1BA00C360080B994 /* UserHeaderModel.m in Sources */,
 				128766FF1B51012700A79320 /* AboutShopInfoCell.m in Sources */,
 				12A0F5EF1B95BC1100CFF8E5 /* NetworkManager.m in Sources */,
+				122AB82F1C3E384C00AC9DF5 /* MJRefreshBaseView.m in Sources */,
 				775AB9E21ABFFD81003A339D /* WXTWebViewController.m in Sources */,
 				7758431E1AB95A300039B129 /* WXUIActivityIndicatorView.m in Sources */,
 				128221C51B184C3B004613BB /* ASIDataDecompressor.m in Sources */,
