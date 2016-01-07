@@ -1,0 +1,89 @@
+//
+//  GoodsEvaluateCell.m
+//  RKWXT
+//
+//  Created by SHB on 16/1/7.
+//  Copyright © 2016年 roderick. All rights reserved.
+//
+
+#import "GoodsEvaluateCell.h"
+#import "WXRemotionImgBtn.h"
+//#import "LMGoodsInfoEntity.h"
+
+@interface GoodsEvaluateCell(){
+    WXRemotionImgBtn *imgView;
+    WXUILabel *nameLabel;
+    WXUILabel *timeLabel;
+    WXUILabel *InfoLabel;
+}
+@end
+
+@implementation GoodsEvaluateCell
+
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if(self){
+        CGFloat xOffset = 9;
+        CGFloat yOffset = 7;
+        CGFloat imgWidth = 40;
+        CGFloat imgHeight = imgWidth;
+        imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(xOffset, yOffset, imgWidth, imgHeight)];
+        [imgView setBorderRadian:imgWidth/2 width:0.5 color:[UIColor clearColor]];
+        [imgView setUserInteractionEnabled:NO];
+        [self.contentView addSubview:imgView];
+        
+        xOffset += imgWidth+4;
+        yOffset += 4;
+        CGFloat labelWidth = 150;
+        CGFloat labelHeight = 18;
+        nameLabel = [[WXUILabel alloc] init];
+        nameLabel.frame = CGRectMake(xOffset, yOffset, labelWidth, labelHeight);
+        [nameLabel setTextAlignment:NSTextAlignmentLeft];
+        [nameLabel setFont:WXFont(10.0)];
+        [nameLabel setTextColor:WXColorWithInteger(0x000000)];
+        [nameLabel setBackgroundColor:[UIColor clearColor]];
+        [self.contentView addSubview:nameLabel];
+        
+        yOffset += labelHeight;
+        timeLabel = [[WXUILabel alloc] init];
+        timeLabel.frame = CGRectMake(xOffset, yOffset, labelWidth, labelHeight);
+        [timeLabel setBackgroundColor:[UIColor clearColor]];
+        [timeLabel setTextAlignment:NSTextAlignmentLeft];
+        [timeLabel setTextColor:WXColorWithInteger(0xb2b2b2)];
+        [timeLabel setFont:WXFont(12.0)];
+        [self.contentView addSubview:timeLabel];
+        
+        yOffset = imgHeight+2*10;
+        InfoLabel = [[WXUILabel alloc] init];
+        InfoLabel.frame = CGRectMake(7, yOffset, IPHONE_SCREEN_WIDTH-2*7, 10);
+        [InfoLabel setBackgroundColor:[UIColor clearColor]];
+        [InfoLabel setTextAlignment:NSTextAlignmentLeft];
+        [InfoLabel setTextColor:WXColorWithInteger(0x000000)];
+        [InfoLabel setFont:WXFont(12.0)];
+        [InfoLabel setNumberOfLines:0];
+        [self.contentView addSubview:InfoLabel];
+    }
+    return self;
+}
+
+-(void)load{
+//    LMGoodsInfoEntity *entity = self.cellInfo;
+//    [imgView setCpxViewInfo:entity.userHeadImg];
+//    [imgView load];
+//    [nameLabel setText:entity.nickName];
+//    [timeLabel setText:[UtilTool getDateTimeFor:entity.addTime type:2]];
+//    [InfoLabel setText:entity.content];
+//    
+//    CGRect rect = InfoLabel.frame;
+//    rect.size.height = [entity.content stringHeight:WXFont(12.0) width:IPHONE_SCREEN_WIDTH-2*7];
+//    [InfoLabel setFrame:rect];
+}
+
++(CGFloat)cellHeightOfInfo:(id)cellInfo{
+    CGFloat height = 0;
+//    LMGoodsInfoEntity *entity = cellInfo;
+//    CGFloat height = [entity.content stringHeight:WXFont(12.0) width:IPHONE_SCREEN_WIDTH-2*7];
+    return height+60;
+}
+
+@end
