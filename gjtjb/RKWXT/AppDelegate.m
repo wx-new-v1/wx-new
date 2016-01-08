@@ -29,6 +29,8 @@
 #import "ShareSucceedModel.h"
 #import <AlipaySDK/AlipaySDK.h>
 
+#import "AllAreaDataModel.h"
+
 @interface AppDelegate (){
     CTCallCenter *_callCenter;
     BOOL hasDeal;
@@ -70,6 +72,7 @@
         
         [[NewWXTLiDB sharedWXLibDB] loadData];
         [self checkVersion];
+        [self checkAreaVersion];
         //自动登录
         WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
 //        LoginModel *_loginModel = [[LoginModel alloc] init];
@@ -114,6 +117,11 @@
     WXTVersion *version = [WXTVersion sharedVersion];
     [version setCheckType:Version_CheckType_System];
     [version checkVersion];
+}
+
+-(void)checkAreaVersion{
+    AllAreaDataModel *model = [AllAreaDataModel shareAllAreaData];
+    [model checkAllAreaVersion];
 }
 
 #pragma mark 极光推送功能

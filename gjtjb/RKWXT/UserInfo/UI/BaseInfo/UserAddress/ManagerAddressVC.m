@@ -7,11 +7,12 @@
 //
 
 #import "ManagerAddressVC.h"
-#import "AddressEntity.h"
-#import "AddressEditVC.h"
 #import "AddressBaseInfoCell.h"
 #import "AddressManagerCell.h"
-#import "UserAddressModel.h"
+#import "NewUserAddressModel.h"
+#import "EditUserAreaVC.h"
+#import "LocalAreaModel.h"
+#import "AreaEntity.h"
 
 enum{
     Address_BaseInfo = 0,
@@ -30,13 +31,10 @@ enum{
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    BOOL reload = [[UserAddressModel shareUserAddress] shouldDataReload];
-    if(reload){
-        [[UserAddressModel shareUserAddress] loadUserAddress];
+    if(_addListArr){
+        [NewUserAddressModel shareUserAddress].address_type = UserAddress_Type_Search;
+        [[NewUserAddressModel shareUserAddress] loadUserAddress];
         [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
-    }else{
-        _addListArr = [UserAddressModel shareUserAddress].userAddressArr;
-        [_tableView reloadData];
     }
 }
 
@@ -47,11 +45,15 @@ enum{
     CGSize size = self.bounds.size;
     _tableView = [[UITableView alloc] init];
     _tableView.frame = CGRectMake(0, 0, size.width, size.height);
+    [_tableView setBackgroundColor:WXColorWithInteger(0xefeff4)];
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
     [self addSubview:_tableView];
     [_tableView setTableFooterView:[self tableViewForFootView]];
     [self addnotification];
+    
+    _addListArr = [NewUserAddressModel shareUserAddress].userAddressArr;
+    [[LocalAreaModel shareLocalArea] loadLocalAreaData];
 }
 
 -(void)addnotification{
@@ -97,7 +99,9 @@ enum{
     CGFloat height = 0.0;
     switch (indexPath.row) {
         case Address_BaseInfo:
-            height = [AddressBaseInfoCell cellHeightOfInfo:_addListArr[indexPath.row]];
+            if([_addListArr count] > 0){
+                height = [AddressBaseInfoCell cellHeightOfInfo:_addListArr[indexPath.section]];
+            }
             break;
         case Address_Manager:
             height = AddressManagerCellHeight;
@@ -158,22 +162,27 @@ enum{
 }
 
 -(void)createNewAddress{
-    AddressEditVC *addeditVC = [[AddressEditVC alloc] init];
-    addeditVC.address_type = Address_Type_Insert;
-    [self.wxNavigationController pushViewController:addeditVC completion:^{
-    }];
+    //    AddressEditVC *addeditVC = [[AddressEditVC alloc] init];
+    //    addeditVC.address_type = Address_Type_Insert;
+    //    [self.wxNavigationController pushViewController:addeditVC completion:^{
+    //    }];
+    
+    //    NewAddressEditVC *addVC = [[NewAddressEditVC alloc] init];
+    EditUserAreaVC *addVC = [[EditUserAreaVC alloc] init];
+    addVC.address_type = UserArea_Type_Insert;
+    [self.wxNavigationController pushViewController:addVC];
 }
 
--(void)editAddressInfo:(AddressEntity *)entity{
-    AddressEditVC *addeditVC = [[AddressEditVC alloc] init];
-    addeditVC.address_type = Address_Type_Modify;
+-(void)editAddressInfo:(AreaEntity *)entity{
+    EditUserAreaVC *addeditVC = [[EditUserAreaVC alloc] init];
+    addeditVC.address_type = UserArea_Type_Modify;
     addeditVC.entity = entity;
     [self.wxNavigationController pushViewController:addeditVC completion:^{
     }];
 }
 
 #pragma mark addressManagerDelegate
--(void)setAddressNormal:(AddressEntity *)entity{
+-(void)setAddressNormal:(AreaEntity *)entity{
     if(!entity){
         return;
     }
@@ -181,18 +190,19 @@ enum{
         return;
     }
     NSInteger oldID = 0;
-    for(AddressEntity *entity in _addListArr){
+    for(AreaEntity *entity in _addListArr){
         if(entity.normalID == 1){
             oldID = entity.address_id;
         }
     }
-    [[UserAddressModel shareUserAddress] setNormalAddressWithOldAddID:oldID withNewAddID:entity.address_id];
+    [NewUserAddressModel shareUserAddress].address_type = UserAddress_Type_Normal;
+    [[NewUserAddressModel shareUserAddress] setNormalAddressWithOldAddID:oldID withNewAddID:entity.address_id];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
 -(void)setAddNormalSucceed{
     [self unShowWaitView];
-    _addListArr = [UserAddressModel shareUserAddress].userAddressArr;
+    _addListArr = [NewUserAddressModel shareUserAddress].userAddressArr;
     [_tableView reloadData];
 }
 
@@ -208,7 +218,7 @@ enum{
 #pragma mark load
 -(void)loadAddressDataSucceed{
     [self unShowWaitView];
-    _addListArr = [UserAddressModel shareUserAddress].userAddressArr;
+    _addListArr = [NewUserAddressModel shareUserAddress].userAddressArr;
     [_tableView reloadData];
 }
 
@@ -222,18 +232,19 @@ enum{
 }
 
 #pragma mark del
--(void)delAddress:(AddressEntity *)entity{
-    if(entity.normalID == entity.address_id){
+-(void)delAddress:(AreaEntity *)entity{
+    if(entity.normalID == 1){
         [UtilTool showAlertView:@"请先更改默认地址后再删除!"];
         return;
     }
-    [[UserAddressModel shareUserAddress] deleteUserAddressWithAddressID:entity.address_id];
+    [NewUserAddressModel shareUserAddress].address_type = UserAddress_Type_Delete;
+    [[NewUserAddressModel shareUserAddress] deleteUserAddressWithAddressID:entity.address_id];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
 -(void)delAddressDataSucceed{
     [self unShowWaitView];
-    _addListArr = [UserAddressModel shareUserAddress].userAddressArr;
+    _addListArr = [NewUserAddressModel shareUserAddress].userAddressArr;
     [_tableView reloadData];
 }
 

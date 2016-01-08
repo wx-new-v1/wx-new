@@ -40,6 +40,7 @@
 #define ClickedKeyboardBtn @"ClickedKeyboardBtn"
 
 #define SearchContactResult @"SearchContactResult"
+#define ServiceAreaPlist @"ServiceArea.plist"
 
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
