@@ -64,7 +64,6 @@
 		1218042E1ACB899B009DB7E7 /* DBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 121804291ACB899B009DB7E7 /* DBImageView.m */; };
 		1218042F1ACB899B009DB7E7 /* DBImageViewCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218042B1ACB899B009DB7E7 /* DBImageViewCache.m */; };
 		121804321ACB90C7009DB7E7 /* FindCommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 121804311ACB90C7009DB7E7 /* FindCommonVC.m */; };
-		121804361ACB99AB009DB7E7 /* WXTFindCommmonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121804351ACB99AB009DB7E7 /* WXTFindCommmonCell.m */; };
 		1220140A1BA00C360080B994 /* UserHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122014091BA00C360080B994 /* UserHeaderModel.m */; };
 		12228A6C1AB1B1D000CF0800 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A6B1AB1B1D000CF0800 /* LoginModel.m */; };
 		12228A731AB1BABA00CF0800 /* RegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A721AB1BABA00CF0800 /* RegistVC.m */; };
@@ -132,6 +131,7 @@
 		122D63BD1C3F4AF60086AAB8 /* HomePageShareImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63B91C3F4AF60086AAB8 /* HomePageShareImg@2x.png */; };
 		122D63BE1C3F4AF60086AAB8 /* HomePageSharkImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63BA1C3F4AF60086AAB8 /* HomePageSharkImg@2x.png */; };
 		122D63BF1C3F4AF60086AAB8 /* HomePageSignImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63BB1C3F4AF60086AAB8 /* HomePageSignImg@2x.png */; };
+		122D63C21C3F567D0086AAB8 /* WXTFindCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D63C11C3F567D0086AAB8 /* WXTFindCommonCell.m */; };
 		1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */; };
 		1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */; };
 		1241E5321AE9D89B00811D3F /* CallBackBgImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */; };
@@ -819,8 +819,6 @@
 		1218042B1ACB899B009DB7E7 /* DBImageViewCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBImageViewCache.m; sourceTree = "<group>"; };
 		121804301ACB90C7009DB7E7 /* FindCommonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCommonVC.h; sourceTree = "<group>"; };
 		121804311ACB90C7009DB7E7 /* FindCommonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCommonVC.m; sourceTree = "<group>"; };
-		121804341ACB99AB009DB7E7 /* WXTFindCommmonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTFindCommmonCell.h; sourceTree = "<group>"; };
-		121804351ACB99AB009DB7E7 /* WXTFindCommmonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTFindCommmonCell.m; sourceTree = "<group>"; };
 		122014081BA00C360080B994 /* UserHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHeaderModel.h; sourceTree = "<group>"; };
 		122014091BA00C360080B994 /* UserHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHeaderModel.m; sourceTree = "<group>"; };
 		12228A6A1AB1B1D000CF0800 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
@@ -948,6 +946,8 @@
 		122D63B91C3F4AF60086AAB8 /* HomePageShareImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HomePageShareImg@2x.png"; sourceTree = "<group>"; };
 		122D63BA1C3F4AF60086AAB8 /* HomePageSharkImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HomePageSharkImg@2x.png"; sourceTree = "<group>"; };
 		122D63BB1C3F4AF60086AAB8 /* HomePageSignImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HomePageSignImg@2x.png"; sourceTree = "<group>"; };
+		122D63C01C3F567D0086AAB8 /* WXTFindCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTFindCommonCell.h; sourceTree = "<group>"; };
+		122D63C11C3F567D0086AAB8 /* WXTFindCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTFindCommonCell.m; sourceTree = "<group>"; };
 		1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBackBtn@2x.png"; sourceTree = "<group>"; };
 		1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBtnImg@2x.png"; sourceTree = "<group>"; };
 		1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CallBackBgImg.jpg; sourceTree = "<group>"; };
@@ -2142,8 +2142,8 @@
 		121804331ACB997C009DB7E7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				121804341ACB99AB009DB7E7 /* WXTFindCommmonCell.h */,
-				121804351ACB99AB009DB7E7 /* WXTFindCommmonCell.m */,
+				122D63C01C3F567D0086AAB8 /* WXTFindCommonCell.h */,
+				122D63C11C3F567D0086AAB8 /* WXTFindCommonCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -4860,6 +4860,7 @@
 				125A76AD1B5673E100959AD8 /* JPushMessageInfoVC.m in Sources */,
 				775843301AB95A300039B129 /* WXUITabBarItem.m in Sources */,
 				12228A731AB1BABA00CF0800 /* RegistVC.m in Sources */,
+				122D63C21C3F567D0086AAB8 /* WXTFindCommonCell.m in Sources */,
 				775842FB1AB95A300039B129 /* UIImage+KIAdditions.m in Sources */,
 				120D015E1BBB91B5005CAA6C /* base64.m in Sources */,
 				775843281AB95A300039B129 /* WXUINavigationController.m in Sources */,
@@ -4948,7 +4949,6 @@
 				775842DC1AB95A300039B129 /* UIImage+Extend.m in Sources */,
 				1243CCBC1AE7D89A003E0943 /* YRSideViewController.m in Sources */,
 				DDB58F481AD3C6A2006248E9 /* ContactBaseEntity+Detail.m in Sources */,
-				121804361ACB99AB009DB7E7 /* WXTFindCommmonCell.m in Sources */,
 				775C58BB1ABA7B75005B6B40 /* CallRecord.m in Sources */,
 				775843061AB95A300039B129 /* TxtparseOBJ.m in Sources */,
 				12F180C31B4521B400B9A80D /* JPushMessageCenterVC.m in Sources */,

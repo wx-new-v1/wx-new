@@ -174,14 +174,11 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat yOffset  = scrollView.contentOffset.y;
-    CGFloat xOffset = 0;
     if (yOffset < 0) {
-        CGRect f = bgImageView.frame;
-        f.origin.y = yOffset;
-        f.size.height =  -yOffset+UserBgImageViewHeight;
-        f.origin.x = xOffset;
-        f.size.width = 320 + fabsf(xOffset)*2;
-        bgImageView.frame = f;
+        CGRect rect = bgImageView.frame;
+        rect.origin.y = yOffset;
+        rect.size.height = -yOffset+UserBgImageViewHeight;
+        bgImageView.frame = rect;
     }
 }
 

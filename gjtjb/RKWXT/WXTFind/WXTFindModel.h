@@ -8,22 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum{
-    Find_Type_Normal = 0,
-    Find_Type_ShowWeb,
-    Find_Type_ShowItems,
-}Find_Type;
-
-@protocol wxtFindDelegate;
+@protocol wxtFindModelDelegate;
 @interface WXTFindModel : NSObject
 @property (nonatomic,strong) NSArray *findDataArr;
-@property (nonatomic,assign) id<wxtFindDelegate>findDelegate;
-@property (nonatomic,assign) Find_Type find_type;
-@property (nonatomic,strong) NSString *webUrl;
+@property (nonatomic,assign) id<wxtFindModelDelegate>findDelegate;
+
 -(void)loadFindData;
 @end
 
-@protocol wxtFindDelegate <NSObject>
+@protocol wxtFindModelDelegate <NSObject>
 -(void)initFinddataSucceed;
 -(void)initFinddataFailed:(NSString*)errorMsg;
 
