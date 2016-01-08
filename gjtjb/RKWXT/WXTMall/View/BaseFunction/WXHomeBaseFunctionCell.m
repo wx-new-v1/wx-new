@@ -9,6 +9,8 @@
 #import "WXHomeBaseFunctionCell.h"
 #import "NewHomePageCommonDef.h"
 
+#define ImgBtnHeight (T_HomePageBaseFunctionHeight-8)
+
 @interface WXHomeBaseFunctionCell(){
     WXUIButton *bgImgBtn;
 }
@@ -20,19 +22,19 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         NSArray *textArr = @[@"免费抽奖",@"签到有奖",@"商家红包",@"邀请有奖",@"我信游戏",@"我的身边",@"我的提成",@"商家联盟"];
-        NSArray *imgArr = @[@"HomePageShark.png",@"HomePageSign.png",@"HomePageWallet.png",@"HomePageOrderList.png",@"HomePageRecharge.png",@"HomePageBalance.png",@"HomePageCut.png",@"HomePageUnion.png"];
+        NSArray *imgArr = @[@"HomePageSharkImg.png",@"HomePageSignImg.png",@"HomePageWallet.png",@"HomePageShareImg.png",@"HomePageGame.png",@"HomePageSide.png",@"HomePageCutImg.png",@"HomePageUnion.png"];
         NSInteger count = 0;
         for(NSInteger k = 0; k < 2; k++){
             for(NSInteger j = 0; j < 4; j++){
                 WXUIButton *commonBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
                 [commonBtn setBackgroundColor:[UIColor whiteColor]];
-                commonBtn.frame = CGRectMake(j*(Size.width/4), k==1?T_HomePageBaseFunctionHeight/2:0, Size.width/4, T_HomePageBaseFunctionHeight/2);
+                commonBtn.frame = CGRectMake(j*(Size.width/4), k==1?ImgBtnHeight/2:0, Size.width/4, ImgBtnHeight/2);
                 [commonBtn setBorderRadian:0 width:1 color:[UIColor clearColor]];
                 commonBtn.tag = ++count;
                 [commonBtn setImage:[UIImage imageNamed:imgArr[j+(k==1?4:0)]] forState:UIControlStateNormal];
                 [commonBtn setTitle:textArr[j+(k==1?4:0)] forState:UIControlStateNormal];
-                [commonBtn setTitleColor:WXColorWithInteger(0x646464) forState:UIControlStateNormal];
-                [commonBtn.titleLabel setFont:WXFont(12.0)];
+                [commonBtn setTitleColor:WXColorWithInteger(0x414141) forState:UIControlStateNormal];
+                [commonBtn.titleLabel setFont:WXFont(11.0)];
                 [commonBtn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
                 [self.contentView addSubview:commonBtn];
                 
@@ -44,12 +46,17 @@
                 CGPoint startTitleLabelCenter = commonBtn.titleLabel.center;
                 CGFloat imageEdgeInsetsLeft = endImageViewCenter.x - startImageViewCenter.x;
                 CGFloat imageEdgeInsetsRight = -imageEdgeInsetsLeft;
-                commonBtn.imageEdgeInsets = UIEdgeInsetsMake(5, imageEdgeInsetsLeft, T_HomePageBaseFunctionHeight/2, imageEdgeInsetsRight);
+                commonBtn.imageEdgeInsets = UIEdgeInsetsMake(0, imageEdgeInsetsLeft, 12, imageEdgeInsetsRight);
                 CGFloat titleEdgeInsetsLeft = endTitleLabelCenter.x - startTitleLabelCenter.x;
                 CGFloat titleEdgeInsetsRight = -titleEdgeInsetsLeft;
-                commonBtn.titleEdgeInsets = UIEdgeInsetsMake(T_HomePageBaseFunctionHeight/2-5, titleEdgeInsetsLeft, 0, titleEdgeInsetsRight);
+                commonBtn.titleEdgeInsets = UIEdgeInsetsMake(ImgBtnHeight/2-12, titleEdgeInsetsLeft, 0, titleEdgeInsetsRight);
             }
         }
+        
+        WXUILabel *lineLabel = [[WXUILabel alloc] init];
+        lineLabel.frame = CGRectMake(0, T_HomePageBaseFunctionHeight-0.1, Size.width, 0.1);
+        [lineLabel setBackgroundColor:WXColorWithInteger(0x999999)];
+        [self.contentView addSubview:lineLabel];
     }
     return self;
 }

@@ -23,7 +23,7 @@
 
 #define BigTextColor   (0x282828)
 #define SmallTextColor (0xa5a3a3)
-#define HomePageBGColor (0xf8f8f8)
+#define HomePageBGColor (0xffffff)
 
 #define LimitBuyShow    (3)
 #define RecommendShow   (3)

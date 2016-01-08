@@ -7,7 +7,7 @@
 //
 
 #import "NewGoodsInfoWebViewViewController.h"
-#import "NewGoodsInfoVC.h"
+//#import "NewGoodsInfoVC.h"
 
 #define MallCatagaryListUrl @"wx_html/index.php/Public/"
 
@@ -51,13 +51,13 @@ typedef enum{
 -(void)loadRootUrl:(WXT_UrlFeed_Type)urlFeedType paramDictionary:(NSDictionary*)paramDictionary{
     WXTURLFeedOBJ *feedOBJ = [WXTURLFeedOBJ sharedURLFeedOBJ];
     NSString *typeStr = nil;
-    if(urlFeedType == WXT_UrlFeed_Type_NewMall_CatagaryList){
-        typeStr = @"sort_list";
-    }
-    if(urlFeedType == WXT_UrlFeed_Type_NewMall_ImgAndText){
-        typeStr = @"good_info_test";
-    }
-    NSString *urlString = [NSString stringWithFormat:@"%@%@%@",WXTWebBaseUrl,MallCatagaryListUrl,typeStr];
+//    if(urlFeedType == WXT_UrlFeed_Type_NewMall_CatagaryList){
+//        typeStr = @"sort_list";
+//    }
+//    if(urlFeedType == WXT_UrlFeed_Type_NewMall_ImgAndText){
+//        typeStr = @"good_info_test";
+//    }
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@",WXTShareBaseUrl,MallCatagaryListUrl,typeStr];
     NSString *boay = nil;
     if(paramDictionary){
         boay = [feedOBJ urlRequestParamFrom:paramDictionary];

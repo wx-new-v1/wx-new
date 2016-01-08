@@ -27,24 +27,29 @@
 
 enum{
     PersonalInfo_Order = 0,
-//    PersonalInfo_Money,
     PersonalInfo_SharkOrder,
     PersonalInfo_Call,
-//    PersonalInfo_Extend,
     PersonalInfo_CutAndShare,
     PersonalInfo_System,
     
     PersonalInfo_Invalid
 };
 
-//PersonalInfo_Order
+//订单
 enum{
     Order_listAll = 0,
     Order_Category,
     
     Order_Invalid
 };
-
+//抽奖
+enum{
+    Shark_OrderList = 0,
+    Shark_Collection,
+    
+    Shark_Invalid,
+};
+//钱包
 enum{
     Money_listAll = 0,
     Money_Category,
@@ -59,20 +64,16 @@ enum{
     Call_Invalid
 };
 
+//系统
 enum{
-    Extend_listAll = 0,
-    Extend_Share,
-    
-    Extend_Invalid
-};
-
-enum{
-    System_Setting = 0,
-    System_About,
+    System_About = 0,
+    System_Question,
+    System_Setting,
     
     System_Invalid
 };
 
+//提成
 enum{
     User_Cut = 0,
     User_Share,
