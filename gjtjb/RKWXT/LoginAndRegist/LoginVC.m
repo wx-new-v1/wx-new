@@ -16,7 +16,7 @@
 #import "WXTDatabase.h"
 #import "WXTUITabbarVC.h"
 #import "NewWXTLiDB.h"
-#import "ForgetPwdVC.h"
+#import "NewForgetPwdVC.h"
 #import "APService.h"
 #import "AllAreaDataModel.h"
 
@@ -78,10 +78,10 @@
     [_iconShell setClipsToBounds:YES];
     [self addSubview:_iconShell];
     
-    CGFloat bgImgWidth = 220;
-    CGFloat bgImgHeight = 120;
+    CGFloat bgImgWidth = 180;
+    CGFloat bgImgHeight = 140;
     UIImage *bigImg = [UIImage imageNamed:@"LoginUpBgImg.png"];
-    UIImageView *loginBigImgView = [[UIImageView alloc] initWithFrame:CGRectMake(IPHONE_SCREEN_WIDTH-bgImgWidth, 70, bgImgWidth, bgImgHeight)];
+    UIImageView *loginBigImgView = [[UIImageView alloc] initWithFrame:CGRectMake(IPHONE_SCREEN_WIDTH-210, 70, bgImgWidth, bgImgHeight)];
     [loginBigImgView setImage:bigImg];
     [_iconShell addSubview:loginBigImgView];
     
@@ -274,10 +274,10 @@
 
 #pragma mark
 -(void)fetchPassWord{
-    if(![self checkUserValide]){
-        return;
-    }
-    ForgetPwdVC *forgetPwd = [[ForgetPwdVC alloc] init];
+//    if(![self checkUserValide]){
+//        return;
+//    }
+    NewForgetPwdVC *forgetPwd = [[NewForgetPwdVC alloc] init];
     forgetPwd.userPhone = _userTextField.text;
     [self.wxNavigationController pushViewController:forgetPwd];
 }

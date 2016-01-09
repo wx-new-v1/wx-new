@@ -161,6 +161,8 @@
 		122D64261C3F99C80086AAB8 /* MakeOrderUserMsgTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D64181C3F99C80086AAB8 /* MakeOrderUserMsgTextFieldCell.m */; };
 		122D64291C3F9AEB0086AAB8 /* GoodsInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122D64281C3F9AEB0086AAB8 /* GoodsInfoEntity.m */; };
 		122EFB8E1C40A59C00CE0EA0 /* WXUserQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFB8D1C40A59C00CE0EA0 /* WXUserQuestionVC.m */; };
+		122EFB911C40B76200CE0EA0 /* NewForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFB901C40B76200CE0EA0 /* NewForgetPwdVC.m */; };
+		122EFB941C40BC3D00CE0EA0 /* NewResetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFB931C40BC3D00CE0EA0 /* NewResetPwdVC.m */; };
 		1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */; };
 		1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */; };
 		1241E5321AE9D89B00811D3F /* CallBackBgImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */; };
@@ -1036,6 +1038,10 @@
 		122D64281C3F9AEB0086AAB8 /* GoodsInfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoEntity.m; sourceTree = "<group>"; };
 		122EFB8C1C40A59C00CE0EA0 /* WXUserQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUserQuestionVC.h; sourceTree = "<group>"; };
 		122EFB8D1C40A59C00CE0EA0 /* WXUserQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXUserQuestionVC.m; sourceTree = "<group>"; };
+		122EFB8F1C40B76200CE0EA0 /* NewForgetPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewForgetPwdVC.h; sourceTree = "<group>"; };
+		122EFB901C40B76200CE0EA0 /* NewForgetPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewForgetPwdVC.m; sourceTree = "<group>"; };
+		122EFB921C40BC3D00CE0EA0 /* NewResetPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewResetPwdVC.h; sourceTree = "<group>"; };
+		122EFB931C40BC3D00CE0EA0 /* NewResetPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewResetPwdVC.m; sourceTree = "<group>"; };
 		1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBackBtn@2x.png"; sourceTree = "<group>"; };
 		1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBtnImg@2x.png"; sourceTree = "<group>"; };
 		1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CallBackBgImg.jpg; sourceTree = "<group>"; };
@@ -3432,6 +3438,10 @@
 		12F2CCDB1B4CB8EF0085F78F /* ForgetPwdVC */ = {
 			isa = PBXGroup;
 			children = (
+				122EFB8F1C40B76200CE0EA0 /* NewForgetPwdVC.h */,
+				122EFB901C40B76200CE0EA0 /* NewForgetPwdVC.m */,
+				122EFB921C40BC3D00CE0EA0 /* NewResetPwdVC.h */,
+				122EFB931C40BC3D00CE0EA0 /* NewResetPwdVC.m */,
 				12F2CCDE1B4CB9570085F78F /* ForgetPwdVC.h */,
 				12F2CCDF1B4CB9570085F78F /* ForgetPwdVC.m */,
 				12F2CCDC1B4CB91D0085F78F /* Model */,
@@ -5321,6 +5331,7 @@
 				775842F51AB95A300039B129 /* MessageInterceptor.m in Sources */,
 				775843341AB95A300039B129 /* WXUITableViewController.m in Sources */,
 				12F3CC881B1DF77500E64DE4 /* PersonalInfoOrderListCell.m in Sources */,
+				122EFB911C40B76200CE0EA0 /* NewForgetPwdVC.m in Sources */,
 				120A2BEA1AB135DD006A28B1 /* RechargeCell.m in Sources */,
 				12F9163B1B19B90B00C94717 /* BaseInfoCommonCell.m in Sources */,
 				120EC7801BB8F31800538637 /* qrencode.c in Sources */,
@@ -5488,6 +5499,7 @@
 				775842BF1AB95A300039B129 /* WXTapGuideView.m in Sources */,
 				775C58CD1ABA7B75005B6B40 /* AddressBook.m in Sources */,
 				12D0C8801AB6C0E60039A197 /* VersionEntity.m in Sources */,
+				122EFB941C40BC3D00CE0EA0 /* NewResetPwdVC.m in Sources */,
 				120D01621BBB91B5005CAA6C /* NSDataEx.m in Sources */,
 				775843C41AB971CF0039B129 /* WXTUITableViewCell.m in Sources */,
 				12A0B43C1B8DBB47005682EA /* FTPHelper.m in Sources */,
