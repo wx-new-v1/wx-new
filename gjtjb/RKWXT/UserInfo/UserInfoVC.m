@@ -437,6 +437,9 @@
         case PersonalInfo_Order:
         {
             if(row == Order_listAll){
+                WXHomeOrderListVC *homeOrderListVC = [[WXHomeOrderListVC alloc] init];
+                homeOrderListVC.selectedNum = 0;
+                [self.wxNavigationController pushViewController:homeOrderListVC];
             }
         }
             break;

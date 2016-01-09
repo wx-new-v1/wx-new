@@ -114,6 +114,9 @@
         case WXT_UrlFeed_Type_New_UpdapaOrderID:
             url = @"";
             break;
+        case WXT_UrlFeed_Type_Home_LMorderList:
+            url = @"/get_sellerunion_order_info.php";
+            break;
         default:
             break;
     }

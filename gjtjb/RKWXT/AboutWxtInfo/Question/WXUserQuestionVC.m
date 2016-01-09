@@ -12,6 +12,7 @@
 
 @interface WXUserQuestionVC()<WXUITextViewDelegate>{
     WXUIView *baseView;
+    WXUITextField *userPhoneTextfield;
 }
 @end
 
@@ -20,9 +21,10 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setCSTTitle:@"意见反馈"];
-    [self setBackgroundColor:[UIColor grayColor]];
+    [self setBackgroundColor:WXColorWithInteger(0xf0f0f0)];
     
     [self createUpBaseView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyBoardDur:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 -(void)createUpBaseView{
@@ -45,6 +47,7 @@
     webBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
     [webBtn setTitle:@"http://www.67call.com" forState:UIControlStateNormal];
     [webBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [webBtn.titleLabel setFont:WXFont(12.0)];
     [webBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [webBtn addTarget:self action:@selector(webBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:webBtn];
@@ -63,6 +66,7 @@
     phoneBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
     [phoneBtn setTitle:@"0755-61665888" forState:UIControlStateNormal];
     [phoneBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [phoneBtn.titleLabel setFont:WXFont(12.0)];
     [phoneBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [phoneBtn addTarget:self action:@selector(phoneBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:phoneBtn];
@@ -81,6 +85,7 @@
     lineBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
     [lineBtn setTitle:@"0755-82599860" forState:UIControlStateNormal];
     [lineBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [lineBtn.titleLabel setFont:WXFont(12.0)];
     [lineBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [lineBtn addTarget:self action:@selector(lineBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:lineBtn];
@@ -93,7 +98,7 @@
     CGFloat BaseViewHeight = 200;
     baseView = [[WXUIView alloc] init];
     baseView.frame = CGRectMake(0, yOffset, Size.width, BaseViewHeight);
-    [baseView setBackgroundColor:[UIColor grayColor]];
+    [baseView setBackgroundColor:WXColorWithInteger(0xf0f0f0)];
     [self addSubview:baseView];
     
     CGFloat xOffset = 17;
@@ -102,24 +107,26 @@
     _textView.frame = CGRectMake(xOffset, 0, Size.width-2*xOffset, textViewHeight);
     [_textView setBackgroundColor:WXColorWithInteger(0xffffff)];
     [_textView setPlaceholder:@"请输入您的问题和建议 (必填*)"];
-    [_textView setPlaceholderColor:WXColorWithInteger(0xb8b8b8)];
+    [_textView setPlaceholderColor:WXColorWithInteger(0xbababa)];
+    [_textView setTextColor:WXColorWithInteger(0xbababa)];
     [_textView setTextAlignment:NSTextAlignmentLeft];
-    [_textView setFont:WXFont(14.0)];
+    [_textView setFont:WXFont(11.0)];
     [_textView setWxDelegate:self];
     [baseView addSubview:_textView];
     
-    yOffset += textViewHeight+10;
-    WXUITextField *userPhoneTextfield = [[WXUITextField alloc] init];
-    userPhoneTextfield.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, BaseViewHeight-yOffset);
+    userPhoneTextfield = [[WXUITextField alloc] init];
+    userPhoneTextfield.frame = CGRectMake(xOffset, textViewHeight+10, Size.width-2*xOffset, BaseViewHeight-textViewHeight-10);
     [userPhoneTextfield setBackgroundColor:WXColorWithInteger(0xffffff)];
-    [userPhoneTextfield setPlaceholder:@"请留下您的手机号，方便我们和您沟通联系.(必填*)"];
+    [userPhoneTextfield setPlaceHolder:@" 请留下您的手机号，方便我们和您沟通联系.(必填*)" color:WXColorWithInteger(0xbababa)];
+    [userPhoneTextfield setTextColor:WXColorWithInteger(0xbababa)];
     [userPhoneTextfield setReturnKeyType:UIReturnKeyDone];
+    [userPhoneTextfield setFont:WXFont(11.0)];
     [userPhoneTextfield setKeyboardType:UIKeyboardTypeASCIICapable];
     [userPhoneTextfield addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [userPhoneTextfield addTarget:self action:@selector(textFieldStartInput) forControlEvents:UIControlEventEditingDidBegin];
     [baseView addSubview:userPhoneTextfield];
     
-    yOffset += (BaseViewHeight-yOffset);
+    yOffset += BaseViewHeight;
     [self createSubmitBtn:yOffset];
 }
 
@@ -155,9 +162,9 @@
     [nameLabel setFont:WXFont(14.0)];
     [self addSubview:nameLabel];
     
-    yOffset += nameHeght+5;
+    yOffset += nameHeght+3;
     WXUILabel *desLabel = [[WXUILabel alloc] init];
-    desLabel.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, 2*nameHeght);
+    desLabel.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, 40);
     [desLabel setBackgroundColor:[UIColor clearColor]];
     [desLabel setText:@"我们将在收到您的意见反馈后1-3个工作日内与您取得联系，请保持您的手机通讯畅通。"];
     [desLabel setTextAlignment:NSTextAlignmentLeft];
@@ -188,37 +195,40 @@
 
 #pragma mark textField
 -(void)wxTextViewDidBeginEditing:(WXUITextView *)textView{
-    [UIView animateWithDuration:0.8 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         CGRect rect = baseView.frame;
-        rect.origin.y -= 80;
+        rect.origin.y = 10;
         baseView.frame = rect;
     }];
 }
 
 -(void)wxTextViewDidEndEditing:(WXUITextView *)textView{
-    [UIView animateWithDuration:0.8 animations:^{
-        CGRect rect = baseView.frame;
-        rect.origin.y += 80;
-        baseView.frame = rect;
-    }];
 }
 
 -(void)textFieldStartInput{
-    [UIView animateWithDuration:0.8 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         CGRect rect = baseView.frame;
-        rect.origin.y -= 80;
+        rect.origin.y = 10;
         baseView.frame = rect;
     }];
 }
 
 -(void)textFieldDone:(WXUITextField*)textField{
-    [textField resignFirstResponder];
+}
+
+- (void)hideKeyBoardDur:(CGFloat)dur{
+    [userPhoneTextfield resignFirstResponder];
     
-    [UIView animateWithDuration:0.8 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         CGRect rect = baseView.frame;
-        rect.origin.y += 80;
+        rect.origin.y = 72;
         baseView.frame = rect;
     }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
