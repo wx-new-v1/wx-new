@@ -24,6 +24,7 @@
 #import "WXTResetPwdVC.h"
 #import "NewSystemSettingVC.h"
 #import "BaseInfoVC.h"
+#import "WXUserQuestionVC.h"
 
 enum{
     PersonalInfo_Order = 0,

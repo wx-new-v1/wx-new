@@ -471,6 +471,10 @@
                 NewSystemSettingVC *systemSetting = [[NewSystemSettingVC alloc] init];
                 [self.wxNavigationController pushViewController:systemSetting];
             }
+            if(row == System_Question){
+                WXUserQuestionVC *questionVC = [[WXUserQuestionVC alloc] init];
+                [self.wxNavigationController pushViewController:questionVC];
+            }
             if(row == System_About){
                 AboutWxtInfoVC *aboutVC = [[AboutWxtInfoVC alloc] init];
                 [self.wxNavigationController pushViewController:aboutVC];
