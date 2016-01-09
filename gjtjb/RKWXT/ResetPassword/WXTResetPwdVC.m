@@ -189,7 +189,7 @@
     completeBtn.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, btnHeight);
     [completeBtn setBorderRadian:10.0 width:1.0 color:[UIColor clearColor]];
     [completeBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
-    [completeBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [completeBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [completeBtn.titleLabel setFont:WXFont(18.0)];
     [completeBtn setTitle:@"确定提交" forState:UIControlStateNormal];
     [completeBtn addTarget:self action:@selector(complieteResetPwd) forControlEvents:UIControlEventTouchUpInside];

@@ -39,7 +39,7 @@
         [_money setBackgroundColor:[UIColor clearColor]];
         [_money setTextAlignment:NSTextAlignmentLeft];
         [_money setFont:WXFont(15.0)];
-        [_money setTextColor:WXColorWithInteger(0xdd2726)];
+        [_money setTextColor:WXColorWithInteger(AllBaseColor)];
         [self.contentView addSubview:_money];
         
         yOffset += upHeight+8;

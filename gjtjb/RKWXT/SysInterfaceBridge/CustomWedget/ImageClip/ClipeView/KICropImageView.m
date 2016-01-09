@@ -187,7 +187,7 @@
     CGContextSetRGBFillColor(ctx, 1, 1, 1, .6);
     CGContextFillRect(ctx, self.bounds);
     
-    CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
+    CGContextSetStrokeColorWithColor(ctx, WXColorWithInteger(AllBaseColor).CGColor);
     CGContextStrokeRectWithWidth(ctx, _cropRect, kMaskViewBorderWidth);
     
     CGContextClearRect(ctx, _cropRect);

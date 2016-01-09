@@ -23,6 +23,7 @@
 #define WXTShareBaseUrl @"http://wx3.67call.com/"  //分享的基地址
 
 #define KTabBarHeight (45.0)
+#define AllBaseColor (0xf74f35)
 
 #define ShowKeyBoard @"ShowKeyBoard"
 #define DownKeyBoard @"DownKeyBoard"

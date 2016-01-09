@@ -43,7 +43,7 @@
         shopPrice.frame = CGRectMake(IPHONE_SCREEN_WIDTH/2-20-priceLabelWidth, yOffset, priceLabelWidth, priceLabelHeight);
         [shopPrice setBackgroundColor:[UIColor clearColor]];
         [shopPrice setTextAlignment:NSTextAlignmentRight];
-        [shopPrice setTextColor:WXColorWithInteger(0xdd2726)];
+        [shopPrice setTextColor:WXColorWithInteger(AllBaseColor)];
         [shopPrice setFont:WXFont(17.0)];
         [self.contentView addSubview:shopPrice];
         

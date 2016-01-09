@@ -34,7 +34,7 @@
         _money.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-labelWidth, (OrderPayMoneyCellHeight-labelHeight)/2, labelWidth, labelHeight);
         [_money setBackgroundColor:[UIColor clearColor]];
         [_money setTextAlignment:NSTextAlignmentRight];
-        [_money setTextColor:WXColorWithInteger(0xdd2726)];
+        [_money setTextColor:WXColorWithInteger(AllBaseColor)];
         [_money setFont:WXFont(15.0)];
         [self.contentView addSubview:_money];
     }

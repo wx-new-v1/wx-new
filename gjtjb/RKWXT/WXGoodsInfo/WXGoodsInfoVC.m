@@ -121,7 +121,7 @@
     [buyBtn setBackgroundColor:[UIColor clearColor]];
     [buyBtn setTag:1];
     [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
-    [buyBtn setTitleColor:WXColorWithInteger(0xdd2726) forState:UIControlStateNormal];
+    [buyBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
     [buyBtn addTarget:self action:@selector(buyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:buyBtn];
     
@@ -130,7 +130,7 @@
     [addBtn setTag:2];
     [addBtn setBackgroundColor:[UIColor clearColor]];
     [addBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
-    [addBtn setTitleColor:WXColorWithInteger(0xdd2726) forState:UIControlStateNormal];
+    [addBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(buyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:addBtn];
     
@@ -141,7 +141,7 @@
 -(void)crateTopNavigationView{
     WXUIView *topView = [[WXUIView alloc] init];
     topView.frame = CGRectMake(0, 0, Size.width, TopNavigationViewHeight);
-    [topView setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [topView setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [self.view addSubview:topView];
     
     CGFloat xGap = 10;
@@ -179,10 +179,10 @@
     WXUIButton *moreEvaluteBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     moreEvaluteBtn.frame = CGRectMake((Size.width-btnWidth)/2, (height-btnHeight)/2, btnWidth, btnHeight);
     [moreEvaluteBtn setBackgroundColor:[UIColor clearColor]];
-    [moreEvaluteBtn setBorderRadian:1.0 width:1.0 color:WXColorWithInteger(0xdd2726)];
+    [moreEvaluteBtn setBorderRadian:1.0 width:1.0 color:WXColorWithInteger(AllBaseColor)];
     [moreEvaluteBtn setTitle:@"查看更多评价" forState:UIControlStateNormal];
     [moreEvaluteBtn.titleLabel setFont:WXFont(15.0)];
-    [moreEvaluteBtn setTitleColor:WXColorWithInteger(0xdd2726) forState:UIControlStateNormal];
+    [moreEvaluteBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
     [moreEvaluteBtn addTarget:self action:@selector(searchMoreEvaluateData) forControlEvents:UIControlEventTouchUpInside];
     [footView addSubview:moreEvaluteBtn];
     

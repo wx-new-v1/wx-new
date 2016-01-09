@@ -129,8 +129,8 @@ enum{
     [_submitBtn setTitle:@"立即注册" forState:UIControlStateNormal];
     [_submitBtn.titleLabel setFont:WXTFont(titleSize)];
     [_submitBtn setBackgroundImageOfColor:[UIColor clearColor] controlState:UIControlStateNormal];
-    [_submitBtn setTitleColor:WXColorWithInteger(0xdd2726) forState:UIControlStateNormal];
-    [_submitBtn setBorderRadian:radian width:0.5 color:WXColorWithInteger(0xdd2726)];
+    [_submitBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
+    [_submitBtn setBorderRadian:radian width:0.5 color:WXColorWithInteger(AllBaseColor)];
     [_submitBtn addTarget:self action:@selector(regist) forControlEvents:UIControlEventTouchUpInside];
     [_optShell addSubview:_submitBtn];
 }
@@ -152,7 +152,7 @@ enum{
     [_userTextField addTarget:self action:@selector(showKeyBoard)  forControlEvents:UIControlEventEditingDidBegin];
     [_userTextField setBorderRadian:5.0 width:1.0 color:[UIColor clearColor]];
     [_userTextField setTextColor:WXColorWithInteger(0xda7c7b)];
-    [_userTextField setTintColor:WXColorWithInteger(0xdd2726)];
+    [_userTextField setTintColor:WXColorWithInteger(AllBaseColor)];
     [_userTextField setPlaceHolder:@"请输入你的手机号" color:WXColorWithInteger(0xda7c7b)];
     [_userTextField setLeftViewMode:UITextFieldViewModeAlways];
     [_userTextField setFont:WXTFont(fontSize)];
@@ -166,22 +166,22 @@ enum{
     CGFloat lineHeight = 10;
     UILabel *leftLine = [[UILabel alloc] init];
     leftLine.frame = CGRectMake(xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine];
     
     UILabel *downLine = [[UILabel alloc] init];
     downLine.frame = CGRectMake(xGap1, yOffset, Size.width-2*xGap1, 0.5);
-    [downLine setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [downLine setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:downLine];
     
     UILabel *leftLine1 = [[UILabel alloc] init];
     leftLine1.frame = CGRectMake(xGap1+50, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine1 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine1 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine1];
     
     UILabel *rightLine = [[UILabel alloc] init];
     rightLine.frame = CGRectMake(Size.width-xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [rightLine setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [rightLine setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:rightLine];
     
     yOffset += 10;
@@ -191,7 +191,7 @@ enum{
     [_fetchPwd addTarget:self action:@selector(showKeyBoard)  forControlEvents:UIControlEventEditingDidBegin];
     [_fetchPwd setBorderRadian:5.0 width:1.0 color:[UIColor clearColor]];
     [_fetchPwd setTextColor:WXColorWithInteger(0xda7c7b)];
-    [_fetchPwd setTintColor:WXColorWithInteger(0xdd2726)];
+    [_fetchPwd setTintColor:WXColorWithInteger(AllBaseColor)];
     [_fetchPwd setLeftViewMode:UITextFieldViewModeAlways];
     [_fetchPwd setKeyboardType:UIKeyboardTypePhonePad];
     [_fetchPwd setPlaceHolder:@"请输入验证码" color:WXColorWithInteger(0xda7c7b)];
@@ -203,7 +203,7 @@ enum{
     
     _gainBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     _gainBtn.frame = CGRectMake(Size.width-xGap1-90+8, yOffset+4, 82, 28);
-    [_gainBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(0xdd2726)];
+    [_gainBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(AllBaseColor)];
     [_gainBtn.titleLabel setFont:WXTFont(14.0)];
     [_gainBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [_gainBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -215,22 +215,22 @@ enum{
     yOffset += height+5;
     UILabel *leftLine2 = [[UILabel alloc] init];
     leftLine2.frame = CGRectMake(xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine2 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine2 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine2];
     
     UILabel *downLine1 = [[UILabel alloc] init];
     downLine1.frame = CGRectMake(xGap1, yOffset, Size.width-2*xGap1-90, 0.5);
-    [downLine1 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [downLine1 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:downLine1];
     
     UILabel *leftLine3 = [[UILabel alloc] init];
     leftLine3.frame = CGRectMake(xGap1+50, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine3 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine3 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine3];
     
     UILabel *rightLine1 = [[UILabel alloc] init];
     rightLine1.frame = CGRectMake(Size.width-xGap1-90, yOffset-lineHeight, 0.5, lineHeight);
-    [rightLine1 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [rightLine1 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:rightLine1];
     
     yOffset += 10;
@@ -240,7 +240,7 @@ enum{
     [_pwdTextfield addTarget:self action:@selector(showKeyBoard)  forControlEvents:UIControlEventEditingDidBegin];
     [_pwdTextfield setBorderRadian:5.0 width:1.0 color:[UIColor clearColor]];
     [_pwdTextfield setTextColor:WXColorWithInteger(0xda7c7b)];
-    [_pwdTextfield setTintColor:WXColorWithInteger(0xdd2726)];
+    [_pwdTextfield setTintColor:WXColorWithInteger(AllBaseColor)];
     [_pwdTextfield setLeftViewMode:UITextFieldViewModeAlways];
     [_pwdTextfield setKeyboardType:UIKeyboardTypeASCIICapable];
     [_pwdTextfield setSecureTextEntry:YES];
@@ -254,22 +254,22 @@ enum{
     yOffset += height+5;
     UILabel *leftLine0 = [[UILabel alloc] init];
     leftLine0.frame = CGRectMake(xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine0 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine0 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine0];
     
     UILabel *downLine0 = [[UILabel alloc] init];
     downLine0.frame = CGRectMake(xGap1, yOffset, Size.width-2*xGap1, 0.5);
-    [downLine0 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [downLine0 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:downLine0];
     
     UILabel *leftLine9 = [[UILabel alloc] init];
     leftLine9.frame = CGRectMake(xGap1+50, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine9 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine9 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine9];
     
     UILabel *rightLine0 = [[UILabel alloc] init];
     rightLine0.frame = CGRectMake(Size.width-xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [rightLine0 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [rightLine0 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:rightLine0];
     
     yOffset += 10;
@@ -279,7 +279,7 @@ enum{
     [_otherPhone addTarget:self action:@selector(showKeyBoard)  forControlEvents:UIControlEventEditingDidBegin];
     [_otherPhone setBorderRadian:5.0 width:1.0 color:[UIColor clearColor]];
     [_otherPhone setTextColor:WXColorWithInteger(0xda7c7b)];
-    [_otherPhone setTintColor:WXColorWithInteger(0xdd2726)];
+    [_otherPhone setTintColor:WXColorWithInteger(AllBaseColor)];
     [_otherPhone setLeftViewMode:UITextFieldViewModeAlways];
     [_otherPhone setKeyboardType:UIKeyboardTypePhonePad];
     [_otherPhone setPlaceHolder:@"输入推荐人手机号(选填)" color:WXColorWithInteger(0xda7c7b)];
@@ -292,22 +292,22 @@ enum{
     yOffset += height+5;
     UILabel *leftLine4 = [[UILabel alloc] init];
     leftLine4.frame = CGRectMake(xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine4 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine4 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine4];
     
     UILabel *downLine3 = [[UILabel alloc] init];
     downLine3.frame = CGRectMake(xGap1, yOffset, Size.width-2*xGap1, 0.5);
-    [downLine3 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [downLine3 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:downLine3];
     
     UILabel *leftLine5 = [[UILabel alloc] init];
     leftLine5.frame = CGRectMake(xGap1+50, yOffset-lineHeight, 0.5, lineHeight);
-    [leftLine5 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [leftLine5 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:leftLine5];
     
     UILabel *rightLine3 = [[UILabel alloc] init];
     rightLine3.frame = CGRectMake(Size.width-xGap1, yOffset-lineHeight, 0.5, lineHeight);
-    [rightLine3 setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [rightLine3 setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_optShell addSubview:rightLine3];
 }
 

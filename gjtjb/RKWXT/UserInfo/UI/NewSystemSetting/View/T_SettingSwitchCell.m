@@ -23,7 +23,7 @@
         _switch = [[WXUISwitch alloc] init];
         _switch.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-width, (44-height)/2-10, width, height);
         [_switch addTarget:self action:@selector(keyPadTone:) forControlEvents:UIControlEventValueChanged];
-        [_switch setOnTintColor:WXColorWithInteger(0xdd2726)];
+        [_switch setOnTintColor:WXColorWithInteger(AllBaseColor)];
         [self.contentView addSubview:_switch];
     }
     return self;

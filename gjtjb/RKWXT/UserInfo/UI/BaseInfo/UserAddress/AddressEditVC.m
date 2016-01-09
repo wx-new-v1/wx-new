@@ -99,8 +99,8 @@
     CGFloat btnHeight = 44;
     WXTUIButton *completeBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     completeBtn.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width-2*xOffset, btnHeight);
-    [completeBtn setBorderRadian:10.0 width:0.1 color:WXColorWithInteger(0xdd2726)];
-    [completeBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [completeBtn setBorderRadian:10.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
+    [completeBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [completeBtn setTitle:@"完 成" forState:UIControlStateNormal];
     [completeBtn addTarget:self action:@selector(complieteAddressEdit) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:completeBtn];

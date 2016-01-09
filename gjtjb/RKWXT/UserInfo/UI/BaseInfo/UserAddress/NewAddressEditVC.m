@@ -94,7 +94,7 @@ enum{
     
     WXUIButton *submitBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     submitBtn.frame = CGRectMake(0, 0, Size.width, btnHeight);
-    [submitBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [submitBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [submitBtn setTitle:@"保存" forState:UIControlStateNormal];
     [submitBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [submitBtn.titleLabel setFont:WXFont(18.0)];

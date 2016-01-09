@@ -173,8 +173,8 @@
     textWidth += 10;
     _hangupBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     _hangupBtn.frame = CGRectMake((Size.width-textWidth)/2, yOffset, textWidth, 2*textHeight);
-    [_hangupBtn setBorderRadian:10.0 width:0.5 color:[UIColor redColor]];
-    [_hangupBtn setBackgroundColor:[UIColor redColor]];
+    [_hangupBtn setBorderRadian:10.0 width:0.5 color:WXColorWithInteger(AllBaseColor)];
+    [_hangupBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [_hangupBtn setEnabled:NO];
     [_hangupBtn setImage:[UIImage imageNamed:@"HangupCall.png"] forState:UIControlStateNormal];
     [_hangupBtn addTarget:self action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];

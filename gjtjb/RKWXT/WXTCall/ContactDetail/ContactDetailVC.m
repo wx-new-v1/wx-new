@@ -103,8 +103,8 @@
     CGFloat btnHeight = 30;
     WXTUIButton *invateBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     invateBtn.frame = CGRectMake((Size.width-btnWidth)/2, yOffset, btnWidth, btnHeight);
-    [invateBtn setBorderRadian:10.0 width:0.5 color:WXColorWithInteger(0xdd2726)];
-    [invateBtn setBackgroundImageOfColor:WXColorWithInteger(0xdd2726) controlState:UIControlStateNormal];
+    [invateBtn setBorderRadian:10.0 width:0.5 color:WXColorWithInteger(AllBaseColor)];
+    [invateBtn setBackgroundImageOfColor:WXColorWithInteger(AllBaseColor) controlState:UIControlStateNormal];
     [invateBtn setBackgroundImageOfColor:WXColorWithInteger(0x96e1fd) controlState:UIControlStateSelected];
     NSString *str = [NSString stringWithFormat:@"邀请Ta加入%@",kMerchantName];
     [invateBtn setTitle:str forState:UIControlStateNormal];

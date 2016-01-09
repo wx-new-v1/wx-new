@@ -42,7 +42,7 @@
         [_money setBackgroundColor:[UIColor clearColor]];
         [_money setTextAlignment:NSTextAlignmentRight];
         [_money setFont:WXFont(12.0)];
-        [_money setTextColor:WXColorWithInteger(0xdd2726)];
+        [_money setTextColor:WXColorWithInteger(AllBaseColor)];
         [self.contentView addSubview:_money];
         
         yOffset += height+8;
@@ -60,7 +60,7 @@
         [_bonus setBackgroundColor:[UIColor clearColor]];
         [_bonus setTextAlignment:NSTextAlignmentRight];
         [_bonus setFont:WXFont(11.0)];
-        [_bonus setTextColor:WXColorWithInteger(0xdd2726)];
+        [_bonus setTextColor:WXColorWithInteger(AllBaseColor)];
         [self.contentView addSubview:_bonus];
         
         yOffset += height+8;
@@ -78,7 +78,7 @@
         [_carriage setBackgroundColor:[UIColor clearColor]];
         [_carriage setTextAlignment:NSTextAlignmentRight];
         [_carriage setFont:WXFont(11.0)];
-        [_carriage setTextColor:WXColorWithInteger(0xdd2726)];
+        [_carriage setTextColor:WXColorWithInteger(AllBaseColor)];
         [self.contentView addSubview:_carriage];
         
         yOffset += height+8;
@@ -96,7 +96,7 @@
         [_balanceLabel setBackgroundColor:[UIColor clearColor]];
         [_balanceLabel setTextAlignment:NSTextAlignmentRight];
         [_balanceLabel setFont:WXFont(11.0)];
-        [_balanceLabel setTextColor:WXColorWithInteger(0xdd2726)];
+        [_balanceLabel setTextColor:WXColorWithInteger(AllBaseColor)];
 //        [self.contentView addSubview:_balanceLabel];
     }
     return self;

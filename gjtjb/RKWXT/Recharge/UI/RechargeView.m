@@ -42,7 +42,7 @@
         testActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         testActivityIndicator.center = CGPointMake(IPHONE_SCREEN_WIDTH/2-100/2, 150);
         testActivityIndicator.frame = CGRectMake(IPHONE_SCREEN_WIDTH/2-100/2, 150, 100, 100);
-        testActivityIndicator.color = [UIColor redColor];
+        testActivityIndicator.color = WXColorWithInteger(AllBaseColor);
         [testActivityIndicator setHidesWhenStopped:YES];
         [self addSubview:testActivityIndicator];
     }
@@ -117,7 +117,7 @@
     UIButton *okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     okBtn.frame = CGRectMake(13, yOffset+21, Size.width-2*13, EveryCellHeight);
     [okBtn setBorderRadian:6.0 width:1.0 color:[UIColor clearColor]];
-    [okBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [okBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [okBtn setTitle:@"确定" forState:UIControlStateNormal];
     [okBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [okBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateSelected];

@@ -76,8 +76,8 @@ enum{
     CGFloat xOffset = 30;
     WXUIButton *createBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     createBtn.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width-2*xOffset, 40);
-    [createBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(0xdd2726)];
-    [createBtn setBackgroundColor:[UIColor redColor]];
+    [createBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
+    [createBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [createBtn setTitle:@"+ 新建收货地址" forState:UIControlStateNormal];
     [createBtn addTarget:self action:@selector(createNewAddress) forControlEvents:UIControlEventTouchUpInside];
     [footView addSubview:createBtn];

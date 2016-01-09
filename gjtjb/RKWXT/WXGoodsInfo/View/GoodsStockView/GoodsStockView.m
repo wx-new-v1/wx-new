@@ -85,7 +85,7 @@
     buyBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     buyBtn.frame = CGRectMake(xOffset, (DownViewHeight-btnHeight)/2, ViewWidth-2*xOffset, btnHeight);
     [buyBtn setBorderRadian:4.0 width:1.0 color:[UIColor clearColor]];
-    [buyBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [buyBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
     [buyBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [buyBtn addTarget:self action:@selector(buyBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -158,7 +158,7 @@
     pricelaebl.frame = CGRectMake(IPHONE_SCREEN_WIDTH/2+(IPHONE_SCREEN_WIDTH/2-labelWidth)/2, yOffset, labelWidth, labelHeight);
     [pricelaebl setBackgroundColor:[UIColor clearColor]];
     [pricelaebl setTextAlignment:NSTextAlignmentCenter];
-    [pricelaebl setTextColor:WXColorWithInteger(0xdd2726)];
+    [pricelaebl setTextColor:WXColorWithInteger(AllBaseColor)];
     [pricelaebl setFont:WXFont(12.0)];
     [footView addSubview:pricelaebl];
     

@@ -46,7 +46,7 @@
         _newPriceLabel.frame = CGRectMake(xOffset, yOffset, imgWidth, nameLabelHeight);
         [_newPriceLabel setBackgroundColor:[UIColor clearColor]];
         [_newPriceLabel setTextAlignment:NSTextAlignmentCenter];
-        [_newPriceLabel setTextColor:WXColorWithInteger(0xdd2726)];
+        [_newPriceLabel setTextColor:WXColorWithInteger(AllBaseColor)];
         [_newPriceLabel setFont:[UIFont systemFontOfSize:10.0]];
         [bgBtn addSubview:_newPriceLabel];
         

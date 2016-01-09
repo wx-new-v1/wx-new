@@ -36,7 +36,7 @@
 //    LMGoodsInfoEntity *entity = self.cellInfo;
 //    [stockBtn setTitle:entity.stockName forState:UIControlStateNormal];
 //    if(entity.selected){
-//        [stockBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+//        [stockBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
 //    }else{
 //        [stockBtn setBackgroundColor:WXColorWithInteger(0x9b9b9b)];
 //    }
