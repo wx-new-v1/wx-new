@@ -55,9 +55,13 @@ enum{
 #import "HomeRecommendInfoCell.h"
 #import "HomeGuessInfoCell.h"
 
+#import "WXWeiXinOBJ.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+
 #import "JPushMessageCenterVC.h"
 #import "UserBonusVC.h"
 #import "SignViewController.h"
+#import "LuckyShakeVC.h"
 
 #pragma mark 导航跳转
 enum{
