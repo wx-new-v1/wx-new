@@ -42,6 +42,9 @@ typedef enum {
     WXT_UrlFeed_Type_New_LoadUserHeader,
     WXT_UrlFeed_Type_New_UpdapaOrderID,
     
+    //红包
+    WXT_UrlFeed_Type_New_UserBonus,
+    WXT_UrlFeed_Type_New_GainBonus,
     //订单
     WXT_UrlFeed_Type_Home_LMorderList,
     

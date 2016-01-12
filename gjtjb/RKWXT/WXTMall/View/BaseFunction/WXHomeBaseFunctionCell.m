@@ -93,8 +93,8 @@
         default:
             break;
     }
-    if(_delegate && [_delegate respondsToSelector:@selector(wxHomeBaseFunctionBtnClickedAtIndex:)]){
-        [_delegate wxHomeBaseFunctionBtnClickedAtIndex:t_baseFunction];
+    if(_delegate && [_delegate respondsToSelector:@selector(wxHomeBaseFunctionBtnClickedAtIndex:with:)]){
+        [_delegate wxHomeBaseFunctionBtnClickedAtIndex:t_baseFunction with:self];
     }
 }
 

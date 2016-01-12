@@ -9,7 +9,7 @@
 #import "WXTMallViewController.h"
 #import "NewHomePageCommonDef.h"
 
-@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyInfoCellDelegate,HomeRecommendInfoCellDelegate>{
+@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyInfoCellDelegate,HomeRecommendInfoCellDelegate,ShareBrowserViewDelegate>{
     UITableView *_tableView;
     WXSysMsgUnreadV * _unreadView;
 }
@@ -293,8 +293,34 @@
 }
 
 #pragma mark baseFunction
--(void)wxHomeBaseFunctionBtnClickedAtIndex:(T_BaseFunction)index{
-    
+-(void)wxHomeBaseFunctionBtnClickedAtIndex:(T_BaseFunction)index with:(UIView *)view{
+    if(index >= T_BaseFunction_Invalid){
+        return;
+    }
+    switch (index) {
+        case T_BaseFunction_Invate:
+        {
+            ShareBrowserView *pictureBrowse = [[ShareBrowserView alloc] init];
+            pictureBrowse.delegate = self;
+            [pictureBrowse showShareThumbView:view toDestview:self.view withImage:[UIImage imageNamed:@"TwoDimension.png"]];
+        }
+            break;
+        case T_BaseFunction_Wallet:
+        {
+            UserBonusVC *bonusVC = [[UserBonusVC alloc] init];
+            bonusVC.selectedNum = 0;
+            [self.wxNavigationController pushViewController:bonusVC];
+        }
+            break;
+        case T_BaseFunction_Sign:
+        {
+            SignViewController *signVC = [[SignViewController alloc] init];
+            [self.wxNavigationController pushViewController:signVC];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark limitbuy

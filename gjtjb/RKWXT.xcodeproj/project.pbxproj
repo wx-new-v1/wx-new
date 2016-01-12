@@ -182,6 +182,13 @@
 		122EFBDF1C4103E000CE0EA0 /* AllOrderListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFBDE1C4103E000CE0EA0 /* AllOrderListEntity.m */; };
 		122EFBE21C41072600CE0EA0 /* AllOrderListMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFBE11C41072600CE0EA0 /* AllOrderListMoneyCell.m */; };
 		122EFBE51C4108FC00CE0EA0 /* AllOrderListHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EFBE41C4108FC00CE0EA0 /* AllOrderListHandleCell.m */; };
+		123666CE1C449760000FAF70 /* UserBonusEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666BD1C449760000FAF70 /* UserBonusEntity.m */; };
+		123666CF1C449760000FAF70 /* UserBonusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666BF1C449760000FAF70 /* UserBonusModel.m */; };
+		123666D01C449760000FAF70 /* BonusOverdueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666C21C449760000FAF70 /* BonusOverdueVC.m */; };
+		123666D11C449760000FAF70 /* OverdueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666C51C449760000FAF70 /* OverdueCell.m */; };
+		123666D21C449760000FAF70 /* UserBonusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666C71C449760000FAF70 /* UserBonusVC.m */; };
+		123666D31C449760000FAF70 /* BonusWaitReceiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666CA1C449760000FAF70 /* BonusWaitReceiveVC.m */; };
+		123666D41C449760000FAF70 /* WaitReceiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123666CD1C449760000FAF70 /* WaitReceiveCell.m */; };
 		1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */; };
 		1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */; };
 		1241E5321AE9D89B00811D3F /* CallBackBgImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */; };
@@ -1102,6 +1109,20 @@
 		122EFBE11C41072600CE0EA0 /* AllOrderListMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOrderListMoneyCell.m; sourceTree = "<group>"; };
 		122EFBE31C4108FC00CE0EA0 /* AllOrderListHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllOrderListHandleCell.h; sourceTree = "<group>"; };
 		122EFBE41C4108FC00CE0EA0 /* AllOrderListHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOrderListHandleCell.m; sourceTree = "<group>"; };
+		123666BC1C449760000FAF70 /* UserBonusEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBonusEntity.h; sourceTree = "<group>"; };
+		123666BD1C449760000FAF70 /* UserBonusEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBonusEntity.m; sourceTree = "<group>"; };
+		123666BE1C449760000FAF70 /* UserBonusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBonusModel.h; sourceTree = "<group>"; };
+		123666BF1C449760000FAF70 /* UserBonusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBonusModel.m; sourceTree = "<group>"; };
+		123666C11C449760000FAF70 /* BonusOverdueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusOverdueVC.h; sourceTree = "<group>"; };
+		123666C21C449760000FAF70 /* BonusOverdueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusOverdueVC.m; sourceTree = "<group>"; };
+		123666C41C449760000FAF70 /* OverdueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverdueCell.h; sourceTree = "<group>"; };
+		123666C51C449760000FAF70 /* OverdueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverdueCell.m; sourceTree = "<group>"; };
+		123666C61C449760000FAF70 /* UserBonusVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBonusVC.h; sourceTree = "<group>"; };
+		123666C71C449760000FAF70 /* UserBonusVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBonusVC.m; sourceTree = "<group>"; };
+		123666C91C449760000FAF70 /* BonusWaitReceiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusWaitReceiveVC.h; sourceTree = "<group>"; };
+		123666CA1C449760000FAF70 /* BonusWaitReceiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusWaitReceiveVC.m; sourceTree = "<group>"; };
+		123666CC1C449760000FAF70 /* WaitReceiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitReceiveCell.h; sourceTree = "<group>"; };
+		123666CD1C449760000FAF70 /* WaitReceiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitReceiveCell.m; sourceTree = "<group>"; };
 		1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBackBtn@2x.png"; sourceTree = "<group>"; };
 		1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBtnImg@2x.png"; sourceTree = "<group>"; };
 		1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CallBackBgImg.jpg; sourceTree = "<group>"; };
@@ -3026,6 +3047,67 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		123666BA1C449760000FAF70 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				123666BB1C449760000FAF70 /* Model */,
+				123666C01C449760000FAF70 /* Overdue */,
+				123666C61C449760000FAF70 /* UserBonusVC.h */,
+				123666C71C449760000FAF70 /* UserBonusVC.m */,
+				123666C81C449760000FAF70 /* Wait */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		123666BB1C449760000FAF70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				123666BC1C449760000FAF70 /* UserBonusEntity.h */,
+				123666BD1C449760000FAF70 /* UserBonusEntity.m */,
+				123666BE1C449760000FAF70 /* UserBonusModel.h */,
+				123666BF1C449760000FAF70 /* UserBonusModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		123666C01C449760000FAF70 /* Overdue */ = {
+			isa = PBXGroup;
+			children = (
+				123666C11C449760000FAF70 /* BonusOverdueVC.h */,
+				123666C21C449760000FAF70 /* BonusOverdueVC.m */,
+				123666C31C449760000FAF70 /* View */,
+			);
+			path = Overdue;
+			sourceTree = "<group>";
+		};
+		123666C31C449760000FAF70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				123666C41C449760000FAF70 /* OverdueCell.h */,
+				123666C51C449760000FAF70 /* OverdueCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		123666C81C449760000FAF70 /* Wait */ = {
+			isa = PBXGroup;
+			children = (
+				123666C91C449760000FAF70 /* BonusWaitReceiveVC.h */,
+				123666CA1C449760000FAF70 /* BonusWaitReceiveVC.m */,
+				123666CB1C449760000FAF70 /* View */,
+			);
+			path = Wait;
+			sourceTree = "<group>";
+		};
+		123666CB1C449760000FAF70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				123666CC1C449760000FAF70 /* WaitReceiveCell.h */,
+				123666CD1C449760000FAF70 /* WaitReceiveCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1241E50A1AE9D89B00811D3F /* CallBack */ = {
 			isa = PBXGroup;
 			children = (
@@ -4069,6 +4151,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
+				123666BA1C449760000FAF70 /* Bonus */,
 				122EFB951C40F2CF00CE0EA0 /* OrderList */,
 				122D63EB1C3F99040086AAB8 /* MakeOrder */,
 				122D63C31C3F8DC00086AAB8 /* CitySelect */,
@@ -5428,6 +5511,7 @@
 				122AB8BC1C3E6D5500AC9DF5 /* SDImageCache.m in Sources */,
 				775843121AB95A300039B129 /* WXPopAlertView.m in Sources */,
 				128221C81B184C3B004613BB /* ASIInputStream.m in Sources */,
+				123666D21C449760000FAF70 /* UserBonusVC.m in Sources */,
 				775842EA1AB95A300039B129 /* ZoneCodeEntity.m in Sources */,
 				775843131AB95A300039B129 /* WXSingleSelectVC.m in Sources */,
 				12F422861B1D5CC500643DD7 /* AddressEntity.m in Sources */,
@@ -5460,6 +5544,7 @@
 				122D63CE1C3F92350086AAB8 /* NewAddressEditVC.m in Sources */,
 				122EFBC91C40FDAC00CE0EA0 /* WaitPayOrderVC.m in Sources */,
 				12F9632F1B3D4BDF00FF6A3E /* NSObject+SBJson.m in Sources */,
+				123666D11C449760000FAF70 /* OverdueCell.m in Sources */,
 				128766EE1B50BD4D00A79320 /* AboutShopEntity.m in Sources */,
 				122AB84F1C3E5C6D00AC9DF5 /* HomeRecommendInfoCell.m in Sources */,
 				128221911B1847E7004613BB /* URLNetNotificationOBJ.m in Sources */,
@@ -5468,6 +5553,7 @@
 				775842BD1AB95A300039B129 /* WXGuidMaskView.m in Sources */,
 				7758432B1AB95A300039B129 /* WXUIScrollView.m in Sources */,
 				12F4228C1B1D61E100643DD7 /* AddressBaseInfoCell.m in Sources */,
+				123666CE1C449760000FAF70 /* UserBonusEntity.m in Sources */,
 				120A2BEB1AB135DD006A28B1 /* RechargeView.m in Sources */,
 				775842B91AB95A300039B129 /* WXUserOBJ.m in Sources */,
 				775843231AB95A300039B129 /* WXUIButton.m in Sources */,
@@ -5661,6 +5747,7 @@
 				1284CC851B54ADB900D98F79 /* PaySucceedModel.m in Sources */,
 				122AB8301C3E384C00AC9DF5 /* MJRefreshConst.m in Sources */,
 				1218042F1ACB899B009DB7E7 /* DBImageViewCache.m in Sources */,
+				123666D01C449760000FAF70 /* BonusOverdueVC.m in Sources */,
 				775842FC1AB95A300039B129 /* WXImageClipVC.m in Sources */,
 				77DB93EF1AAFE70D0021A816 /* PhoneData.m in Sources */,
 				775842DA1AB95A300039B129 /* UIDevice+screenType.m in Sources */,
@@ -5673,6 +5760,7 @@
 				12B1F6901B788961009FBA6D /* RechargeTypeVC.m in Sources */,
 				12CFE6511AC1A210009C710B /* CallHistoryEntity.m in Sources */,
 				775842EE1AB95A300039B129 /* WXDetailTextCell.m in Sources */,
+				123666D41C449760000FAF70 /* WaitReceiveCell.m in Sources */,
 				7758432A1AB95A300039B129 /* WXUIPageControl.m in Sources */,
 				77DB94241AAFEE1F0021A816 /* MZLoadingCircle.m in Sources */,
 				775C58371ABA5F31005B6B40 /* ContactUitl.m in Sources */,
@@ -5739,6 +5827,7 @@
 				122D641E1C3F99C80086AAB8 /* MakeOrderShopCell.m in Sources */,
 				12F1D64F1B2692DA003924DF /* RFSegmentView.m in Sources */,
 				120EC7871BB8F33C00538637 /* QRCodeGenerator.m in Sources */,
+				123666CF1C449760000FAF70 /* UserBonusModel.m in Sources */,
 				12F2CCE61B4CCDF50085F78F /* ResetNewPwdModel.m in Sources */,
 				122AB89F1C3E6D0D00AC9DF5 /* RoundImageView.m in Sources */,
 				775843371AB95A300039B129 /* WXUIView.m in Sources */,
@@ -5773,6 +5862,7 @@
 				12228A761AB1C0F200CF0800 /* RegistModel.m in Sources */,
 				12F422921B1D830400643DD7 /* AddressEditVC.m in Sources */,
 				120A2C081AB142D4006A28B1 /* LoginVC.m in Sources */,
+				123666D31C449760000FAF70 /* BonusWaitReceiveVC.m in Sources */,
 				775842E41AB95A300039B129 /* WXMiltiViewCell.m in Sources */,
 				775843C01AB971CF0039B129 /* UIFont+WXT.m in Sources */,
 				1282413E1B60C605001EE0BD /* WXWeiXinOBJ.m in Sources */,

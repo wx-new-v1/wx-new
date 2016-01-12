@@ -117,6 +117,12 @@
         case WXT_UrlFeed_Type_Home_LMorderList:
             url = @"/get_sellerunion_order_info.php";
             break;
+        case WXT_UrlFeed_Type_New_UserBonus:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_GainBonus:
+            url = @"";
+            break;
         default:
             break;
     }

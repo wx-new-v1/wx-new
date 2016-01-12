@@ -46,6 +46,7 @@ enum{
 #import "WXTMallListWebVC.h"
 #import "WXSysMsgUnreadV.h"
 #import "MJRefresh.h"
+#import "ShareBrowserView.h"
 
 #import "WXHomeTopGoodCell.h"
 #import "WXHomeBaseFunctionCell.h"
@@ -55,6 +56,8 @@ enum{
 #import "HomeGuessInfoCell.h"
 
 #import "JPushMessageCenterVC.h"
+#import "UserBonusVC.h"
+#import "SignViewController.h"
 
 #pragma mark 导航跳转
 enum{

@@ -89,15 +89,6 @@
     CGFloat xOffset = 12.0;
     CGFloat btnWidth = 51;
     CGFloat btnHeight = 23;
-    WXUIButton *registBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-    registBtn.frame = CGRectMake(Size.width-xOffset-btnWidth, yOffset, btnWidth, btnHeight);
-    [registBtn setBackgroundColor:[UIColor clearColor]];
-    [registBtn setBorderRadian:1.0 width:1.0 color:[UIColor whiteColor]];
-    [registBtn setTitle:@"注册" forState:UIControlStateNormal];
-    [registBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
-    [registBtn.titleLabel setFont:WXFont(12.0)];
-    [registBtn addTarget:self action:@selector(toRegister) forControlEvents:UIControlEventTouchUpInside];
-    [_iconShell addSubview:registBtn];
     
     _optShell = [[UIView alloc] initWithFrame:CGRectMake(0, kLoginBigImgViewheight, Size.width, Size.height - kLoginBigImgViewheight-kLoginDownViewHeight+25)];
     [_optShell setBackgroundColor:WXColorWithInteger(0xf74f35)];
@@ -141,6 +132,15 @@
     [_fetchPwdBtn setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
     [_fetchPwdBtn addTarget:self action:@selector(fetchPassWord) forControlEvents:UIControlEventTouchUpInside];
     [_optShell addSubview:_fetchPwdBtn];
+    
+    WXUIButton *registBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
+    registBtn.frame = CGRectMake(xgap, yOffset, fetchPwdBtnWidth, 30);
+    [registBtn.titleLabel setFont:WXFont(15.0)];
+    [registBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+    [registBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
+    [registBtn setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+    [registBtn addTarget:self action:@selector(toRegister) forControlEvents:UIControlEventTouchUpInside];
+    [_optShell addSubview:registBtn];
 }
 
 - (void)createUserAndPwdTable:(CGRect)rect{

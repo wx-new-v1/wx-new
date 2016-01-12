@@ -13,7 +13,7 @@
 #define kMaskShellDefaultAlpha (0.6)
 
 #define shareViewWidth (240)
-#define shareViewHeight (360)
+#define shareViewHeight (300)
 
 static NSString *shareImgArr[]={
     @"ShareQqImg.png",
@@ -75,37 +75,11 @@ static NSString *shareNameArr[]={
     [self addSubview:_shareView];
     
     
-    CGFloat textlabelWidth = 140;
-    CGFloat textLabelHeight = 22;
-    UILabel *textLabel = [[UILabel alloc] init];
-    textLabel.frame = CGRectMake((shareViewWidth-textlabelWidth)/2, 15, textlabelWidth, textLabelHeight);
-    [textLabel setBackgroundColor:[UIColor clearColor]];
-    [textLabel setText:@"推荐应用给好友"];
-    [textLabel setFont:WXFont(16.0)];
-    [textLabel setTextAlignment:NSTextAlignmentCenter];
-    [textLabel setTextColor:WXColorWithInteger(0xd9d9d9)];
-    [_shareView addSubview:textLabel];
-    
-    CGFloat yOffset = textLabelHeight+15+5;
-    UILabel *linelabel = [[UILabel alloc] init];
-    linelabel.frame = CGRectMake(0, yOffset, shareViewWidth, 0.5);
-    [linelabel setBackgroundColor:WXColorWithInteger(0xdedede)];
-    [_shareView addSubview:linelabel];
-    
+    CGFloat yOffset = 15;
     _imageView = [[UIImageView alloc] init];
     [_shareView addSubview:_imageView];
     
     yOffset += 15+200;
-    UILabel *textLabel1 = [[UILabel alloc] init];
-    textLabel1.frame = CGRectMake((shareViewWidth-textlabelWidth)/2, yOffset, textlabelWidth, textLabelHeight);
-    [textLabel1 setBackgroundColor:[UIColor clearColor]];
-    [textLabel1 setText:kMerchantName];
-    [textLabel1 setFont:WXFont(16.0)];
-    [textLabel1 setTextAlignment:NSTextAlignmentCenter];
-    [textLabel1 setTextColor:WXColorWithInteger(0x000000)];
-    [_shareView addSubview:textLabel1];
-    
-    yOffset += textLabelHeight+12;
     [self createMoreShareBtn:yOffset];
     
     _duration = kAnimateDefaultDuration;
@@ -180,7 +154,7 @@ static NSString *shareNameArr[]={
 //    CGSize size = CGSizeMake(_imageViewDestRect.size.width, _imageViewDestRect.size.height);
     CGFloat imgWidth = 200;
     CGFloat imgHeight = imgWidth;
-    [_imageView setFrame:CGRectMake((shareViewWidth-imgWidth)/2, 50, imgWidth, imgHeight)];
+    [_imageView setFrame:CGRectMake((shareViewWidth-imgWidth)/2, 18, imgWidth, imgHeight)];
     [self.thumbView setAlpha:0.0];
     [self setAlpha:1.0];
 }

@@ -9,7 +9,7 @@
 #import "WXUITableViewCell.h"
 
 typedef enum{
-    T_BaseFunction_Init = -1,
+    T_BaseFunction_Init = 0,
     T_BaseFunction_Shark,
     T_BaseFunction_Sign,
     T_BaseFunction_Wallet,
@@ -29,6 +29,6 @@ typedef enum{
 @end
 
 @protocol WXHomeBaseFunctionCellBtnClicked <NSObject>
--(void)wxHomeBaseFunctionBtnClickedAtIndex:(T_BaseFunction)index;
+-(void)wxHomeBaseFunctionBtnClickedAtIndex:(T_BaseFunction)index with:(UIView*)view;
 
 @end

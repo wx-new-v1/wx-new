@@ -114,7 +114,7 @@ enum{
     checkBtn.frame = CGRectMake(30, yOffset, btnWidth, btnHeight);
 //    [checkBtn setBackgroundImageOfColor:[UIColor clearColor] controlState:UIControlStateNormal];
 //    [checkBtn setBackgroundImageOfColor:WXColorWithInteger(0x0c8bdf) controlState:UIControlStateSelected];
-    [checkBtn setBackgroundColor:WXColorWithInteger(0xdc2826)];
+    [checkBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [checkBtn setBorderRadian:6.0 width:0.5 color:WXColorWithInteger(0x969696)];
     [checkBtn setTitle:@"检测版本" forState:UIControlStateNormal];
     [checkBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
