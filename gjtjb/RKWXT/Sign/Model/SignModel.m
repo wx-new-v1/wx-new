@@ -43,8 +43,9 @@
 
 -(void)signGainMoney{
     [_signArr removeAllObjects];
-    WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.sellerID, @"seller_user_id", @"iOS", @"pid", userDefault.user, @"phone", userDefault.wxtID, @"woxin_id", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)kMerchantID], @"sid", nil];
+    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", userObj.sellerID, @"sid", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", userObj.sellerID, @"sid", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_Sign httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData){
         __block SignModel *blockSelf = self;
         if (retData.code != 0){
@@ -52,7 +53,7 @@
                 [_delegate signFailed:retData.errorDesc];
             }
         }else{
-            [blockSelf parseClassifyData:retData.data];
+            [blockSelf parseClassifyData:[retData.data objectForKey:@"data"]];
             if (_delegate && [_delegate respondsToSelector:@selector(signSucceed)]){
                 [_delegate signSucceed];
             }

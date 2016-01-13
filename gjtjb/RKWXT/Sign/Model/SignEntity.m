@@ -19,7 +19,7 @@
 
 -(id)initWithDic:(NSDictionary*)dic{
     if(self = [super init]){
-        CGFloat money = [[dic objectForKey:@"data"] floatValue];
+        CGFloat money = [[dic objectForKey:@"telephone_fare"] floatValue];
         [self setMoney:money];
     }
     return self;

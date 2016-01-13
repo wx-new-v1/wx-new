@@ -84,7 +84,7 @@
             url = @"/app_cb.php";
             break;
         case WXT_UrlFeed_Type_New_Sign:
-            url = @"/app_sign_in.php";
+            url = @"/sign_in.php";
             break;
         case WXT_UrlFeed_Type_New_PersonalInfo:
             url = @"/get_user_info.php";
