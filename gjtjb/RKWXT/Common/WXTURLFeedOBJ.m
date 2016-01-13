@@ -21,8 +21,7 @@
 
 - (NSString*)rootURL:(WXT_UrlFeed_Type)type{
     NSString *url = nil;
-    NSString *rootURL = [NSString stringWithFormat:@"https://api.67call.com/agent/call_api.php"];
-    NSString *newRootUrl = [NSString stringWithFormat:@"%@wx3api",WXTBaseUrl];   //商城模块
+    NSString *newRootUrl = [NSString stringWithFormat:@"%@wx10api",WXTBaseUrl];   //商城模块
     switch (type) {
         case WXT_UrlFeed_Type_LoadBalance:
             url = @"";
@@ -34,7 +33,7 @@
             url = @"";
             break;
         case WXT_UrlFeed_Type_Login:
-            url = @"/app_login.php";
+            url = @"/login.php";
             break;
         case WXT_UrlFeed_Type_Regist:
             url = @"/app_register.php";
@@ -55,7 +54,7 @@
             url = @"";
             break;
         case WXT_UrlFeed_Type_ResetPwd:
-            url = @"/app_modify_pwd.php";
+            url = @"/modify_pwd.php";
             break;
         case WXT_UrlFeed_Type_NewMall_UserAddress:
             url = @"/get_user_address.php";
@@ -67,7 +66,7 @@
             url = @"/get_rcode.php";
             break;
         case WXT_UrlFeed_Type_New_ResetNewPwd:
-            url = @"/app_reset_pwd.php";
+            url = @"/reset_pwd.php";
             break;
         case WXT_UrlFeed_Type_New_AboutShop:
             url = @"/get_seller_detail.php";
@@ -126,7 +125,7 @@
         default:
             break;
     }
-    NSString *compURL = [NSString stringWithFormat:@"%@%@",rootURL,url];
+    NSString *compURL = nil;
     if(![url isEqualToString:@""]){
         return [NSString stringWithFormat:@"%@%@",newRootUrl,url];
     }

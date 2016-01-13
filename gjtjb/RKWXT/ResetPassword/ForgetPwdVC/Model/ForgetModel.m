@@ -13,8 +13,8 @@
 @implementation ForgetModel
 
 -(void)forgetPwdWithUserPhone:(NSString *)phone{
-    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", phone, @"phone", userObj.sellerID, @"seller_user_id", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)2], @"type", [NSNumber numberWithInteger:kMerchantID], @"sid", nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:phone, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:2], @"type", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:phone, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:2], @"type", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_Code httpMethod:WXT_HttpMethod_Post timeoutIntervcal:40 feed:dic completion:^(URLFeedData *retData){
         if (retData.code != 0){
             if (_delegate && [_delegate respondsToSelector:@selector(forgetPwdFailed:)]){
@@ -22,7 +22,7 @@
             }
         }else{
             WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-            [userObj setSmsID:[[retData.data objectForKey:@"data"] integerValue]];
+            [userObj setSmsID:[[[retData.data objectForKey:@"data"] objectForKey:@"rand_id"] integerValue]];
             if (_delegate && [_delegate respondsToSelector:@selector(forgetPwdSucceed)]){
                 [_delegate forgetPwdSucceed];
             }

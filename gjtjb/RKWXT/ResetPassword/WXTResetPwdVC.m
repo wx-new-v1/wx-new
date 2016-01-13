@@ -32,7 +32,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self setCSTTitle:@"重置密码"];
+    [self setCSTTitle:@"修改密码"];
 //    self.backgroundColor = WXColorWithInteger(0xefeff4);
     [self setBackgroundColor:[UIColor whiteColor]];
     

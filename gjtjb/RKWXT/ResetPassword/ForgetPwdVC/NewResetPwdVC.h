@@ -9,5 +9,7 @@
 #import "WXUIViewController.h"
 
 @interface NewResetPwdVC : WXUIViewController
+@property (nonatomic,strong) NSString *phone;
+@property (nonatomic,assign) NSInteger code;
 
 @end

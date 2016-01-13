@@ -577,4 +577,21 @@
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
++(NSString*)allPostStringMd5:(NSDictionary *)dic{
+    NSMutableString *mutString = [NSMutableString string];
+    NSArray *keys = [dic allKeys];
+    NSArray *sortedArray = [keys sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [obj1 compare:obj2 options:NSNumericSearch];
+    }];
+    for (NSString *key in sortedArray){
+        id value = [dic objectForKey:key];
+        if ([sortedArray indexOfObject:key] != 0){
+            [mutString appendString:@"&"];
+        }
+        [mutString appendFormat:@"%@=%@",key,value];
+    }
+    [mutString appendFormat:@"&key=DUBlexfdmlllmuypoooxa89209PPOG!!"];
+    return mutString;
+}
+
 @end

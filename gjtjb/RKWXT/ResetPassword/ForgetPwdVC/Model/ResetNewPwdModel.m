@@ -13,8 +13,10 @@
 @implementation ResetNewPwdModel
 
 -(void)resetNewPwdWithUserPhone:(NSString *)phone withCode:(NSInteger)code withNewPwd:(NSString *)newPwd{
+    NSString *pwdString = [UtilTool md5:newPwd];
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.sellerID, @"seller_user_id", @"iOS", @"pid", phone, @"phone", [NSNumber numberWithInteger:kMerchantID], @"sid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [UtilTool currentVersion], @"ver", [UtilTool newStringWithAddSomeStr:5 withOldStr:newPwd], @"newpwd", [NSNumber numberWithInt:(int)code], @"rcode", [NSNumber numberWithInteger:userObj.smsID], @"rand_id", nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:phone, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", pwdString, @"pwd", [NSNumber numberWithInt:userObj.smsID], @"rand_id", [NSNumber numberWithInteger:code], @"rcode", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:phone, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", pwdString, @"pwd", [NSNumber numberWithInt:userObj.smsID], @"rand_id", [NSNumber numberWithInteger:code], @"rcode", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_ResetNewPwd httpMethod:WXT_HttpMethod_Post timeoutIntervcal:40 feed:dic completion:^(URLFeedData *retData){
         if (retData.code != 0){
             if (_delegate && [_delegate respondsToSelector:@selector(resetNewPwdFailed:)]){

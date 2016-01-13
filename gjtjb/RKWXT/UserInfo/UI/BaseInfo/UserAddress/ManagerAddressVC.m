@@ -49,8 +49,9 @@ enum{
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
     [self addSubview:_tableView];
-    [_tableView setTableFooterView:[self tableViewForFootView]];
+    [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self addnotification];
+    [self createRightView];
     
     _addListArr = [NewUserAddressModel shareUserAddress].userAddressArr;
     [[LocalAreaModel shareLocalArea] loadLocalAreaData];
@@ -70,21 +71,14 @@ enum{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
--(UIView*)tableViewForFootView{
-    UIView *footView = [[UIView alloc] init];
-    CGFloat yOffset = 30;
-    CGFloat xOffset = 30;
+-(void)createRightView{
     WXUIButton *createBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-    createBtn.frame = CGRectMake(xOffset, yOffset, self.bounds.size.width-2*xOffset, 40);
+    createBtn.frame = CGRectMake(0, 0, 30, 30);
     [createBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
     [createBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
-    [createBtn setTitle:@"+ 新建收货地址" forState:UIControlStateNormal];
+    [createBtn setTitle:@"+" forState:UIControlStateNormal];
     [createBtn addTarget:self action:@selector(createNewAddress) forControlEvents:UIControlEventTouchUpInside];
-    [footView addSubview:createBtn];
-    
-    yOffset += 40;
-    footView.frame = CGRectMake(0, 0, self.bounds.size.width, yOffset);
-    return footView;
+    [self setRightNavigationItem:createBtn];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

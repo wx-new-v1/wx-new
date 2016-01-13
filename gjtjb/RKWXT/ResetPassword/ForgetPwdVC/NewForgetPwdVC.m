@@ -8,21 +8,33 @@
 
 #import "NewForgetPwdVC.h"
 #import "NewResetPwdVC.h"
+#import "ForgetModel.h"
 
 #define Size self.bounds.size
 #define kFetchPasswordDur (60)
 
-@interface NewForgetPwdVC(){
+@interface NewForgetPwdVC()<ForgetResetPwdDelegate>{
     WXUIButton *_gainBtn;
     WXUITextField *userPhoneTextfield;
     WXUITextField *pwdTextField;
     
     NSTimer *_fetchPWDTimer;
     NSInteger _fetchPasswordTime;
+    
+    ForgetModel *_model;
 }
 @end
 
 @implementation NewForgetPwdVC
+
+-(id)init{
+    self = [super init];
+    if(self){
+        _model = [[ForgetModel alloc] init];
+        [_model setDelegate:self];
+    }
+    return self;
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -104,7 +116,7 @@
         return;
     }
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
-//    [_model forgetPwdWithUserPhone:_userTextField.text];
+    [_model forgetPwdWithUserPhone:userPhoneTextfield.text];
     [self startFetchPwdTiming];
     [_gainBtn setEnabled:NO];
     [self textFieldResighFirstResponder];
@@ -165,7 +177,13 @@
 
 #pragma mark userPhone
 -(void)submitUserPhone{
+    if([userPhoneTextfield.text isEqualToString:@""] || [pwdTextField.text isEqualToString:@""]){
+        [UtilTool showAlertView:@"请填写注册的手机号和接收到的验证码"];
+        return;
+    }
     NewResetPwdVC *newVC = [[NewResetPwdVC alloc] init];
+    newVC.phone = userPhoneTextfield.text;
+    newVC.code = [pwdTextField.text integerValue];
     [self.wxNavigationController pushViewController:newVC];
 }
 

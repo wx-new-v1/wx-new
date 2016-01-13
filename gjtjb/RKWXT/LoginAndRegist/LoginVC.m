@@ -140,7 +140,7 @@
     [registBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [registBtn setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
     [registBtn addTarget:self action:@selector(toRegister) forControlEvents:UIControlEventTouchUpInside];
-    [_optShell addSubview:registBtn];
+//    [_optShell addSubview:registBtn];
 }
 
 - (void)createUserAndPwdTable:(CGRect)rect{

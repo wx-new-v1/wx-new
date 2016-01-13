@@ -116,4 +116,6 @@ typedef enum{
 //当前版本号
 +(NSString*)currentVersion;
 
++(NSString*)allPostStringMd5:(NSDictionary *)dic;
+
 @end
