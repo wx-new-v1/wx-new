@@ -97,7 +97,7 @@
     WXUIViewController *vc = sender;
     FindCommonVC *webVC = [[FindCommonVC alloc] init];
     webVC.webURl = webUrl;
-    webVC.titleName = title;
+    webVC.name = title;
     [vc.wxNavigationController pushViewController:webVC];
 }
 

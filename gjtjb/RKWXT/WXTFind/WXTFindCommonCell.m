@@ -50,7 +50,7 @@
             commonBtn.frame = CGRectMake(j*(btnWidth+1), i*(btnHeight+1), btnWidth, btnHeight);
             [commonBtn setBackgroundColor:[UIColor whiteColor]];
 //            [commonBtn setBackgroundImageOfColor:WXColorWithInteger(0xbababa) controlState:UIControlStateHighlighted];
-            commonBtn.tag = count;
+            commonBtn.tag = entity.classifyID;
             [commonBtn addTarget:self action:@selector(commonBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.contentView addSubview:commonBtn];
             [listArr addObject:entity];
@@ -101,7 +101,9 @@
 
 -(void)commonBtnClicked:(id)sender{
     WXUIButton *btn = sender;
-    NSLog(@"btn.tag = %ld",(long)btn.tag);
+    if(_delegate && [_delegate respondsToSelector:@selector(clickClassifyBtnAtIndex:)]){
+        [_delegate clickClassifyBtnAtIndex:btn.tag];
+    }
 }
 
 @end

@@ -7,10 +7,10 @@
 
 
 #import "WXTFindVC.h"
-#import "FindCommonVC.h"
 #import "WXHomeTopGoodCell.h"
 #import "WXTFindCommonCell.h"
 #import "WXTFindModel.h"
+#import "FindEntity.h"
 
 #define Size self.bounds.size
 
@@ -46,7 +46,7 @@
     [self addSubview:_tableView];
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
-    [_comModel loadFindData];
+    [_comModel loadFindData:FindData_Type_Load];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
@@ -91,6 +91,7 @@
     if([commonImgArr count] > 0){
         [cell setCellInfo:commonImgArr];
     }
+    [cell setDelegate:self];
     [cell load];
     return cell;
 }
@@ -124,6 +125,22 @@
         errorMsg = @"加载数据失败";
     }
     [UtilTool showAlertView:errorMsg];
+}
+
+-(void)clickClassifyBtnAtIndex:(NSInteger)index{
+    FindEntity *entity = nil;
+    for(FindEntity *ent in commonImgArr){
+        if(index == ent.classifyID){
+            entity = ent;
+            break;
+        }
+    }
+    [_comModel upLoadUserClickFindData:entity.classifyID];
+    [[CoordinateController sharedCoordinateController] toWebVC:self url:entity.webUrl title:entity.name animated:YES];
+}
+
+-(void)clickTopGoodAtIndex:(NSInteger)index{
+    
 }
 
 @end

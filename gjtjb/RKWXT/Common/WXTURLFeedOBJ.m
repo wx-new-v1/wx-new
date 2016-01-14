@@ -90,7 +90,7 @@
             url = @"/get_user_info.php";
             break;
         case WXT_UrlFeed_Type_New_Recharge:
-            url = @"/app_recharge.php";
+            url = @"/recharge.php";
             break;
         case WXT_UrlFeed_Type_New_Wechat:
             url = @"/get_prepay_id.php";
@@ -112,6 +112,9 @@
             break;
         case WXT_UrlFeed_Type_New_UpdapaOrderID:
             url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_FindData:
+            url = @"/discover.php";
             break;
         case WXT_UrlFeed_Type_Home_LMorderList:
             url = @"/get_sellerunion_order_info.php";

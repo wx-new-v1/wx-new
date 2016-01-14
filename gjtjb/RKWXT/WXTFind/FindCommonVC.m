@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self setCSTTitle:_titleName];
+    [self setCSTTitle:_name];
     self.backgroundColor = WXColorWithInteger(0xefeff4);
     
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, Size.width, Size.height)];

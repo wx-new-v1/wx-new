@@ -13,6 +13,8 @@
 @property (nonatomic,strong) NSString *icon_url;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *desc;
+@property (nonatomic,assign) NSInteger classifyID;
+@property (nonatomic,assign) NSInteger sortID;
 
 +(FindEntity*)initFindEntityWith:(NSDictionary*)dic;
 

@@ -8,6 +8,6 @@
 
 @interface FindCommonVC : WXUIViewController
 @property (nonatomic,strong) NSString *webURl;
-@property (nonatomic,strong) NSString *titleName;
+@property (nonatomic,strong) NSString *name;
 
 @end

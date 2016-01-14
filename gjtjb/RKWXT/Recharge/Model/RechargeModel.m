@@ -12,9 +12,10 @@
 
 @implementation RechargeModel
 
--(void)rechargeWithCardNum:(NSString *)num andPwd:(NSString *)pwd{
+-(void)rechargeWithCardNum:(NSString *)num andPwd:(NSString *)pwd phone:(NSString *)rechargePhone{
     WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.sellerID, @"seller_user_id", @"iOS", @"pid", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)kMerchantID], @"sid", [NSNumber numberWithInteger:[UtilTool timeChange]], @"ts", userDefault.user, @"phone", [NSNumber numberWithInt:1], @"type", num, @"card_id", pwd, @"card_pwd", nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userDefault.wxtID, @"woxin_id", num, @"card_id", pwd, @"card_pwd", rechargePhone, @"recharge_phone", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userDefault.wxtID, @"woxin_id", num, @"card_id", pwd, @"card_pwd", rechargePhone, @"recharge_phone", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_Recharge httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData){
         if (retData.code != 0){
             if (_delegate && [_delegate respondsToSelector:@selector(rechargeFailed:)]){

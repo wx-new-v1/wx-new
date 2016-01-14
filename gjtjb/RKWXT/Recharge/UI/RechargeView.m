@@ -139,8 +139,9 @@
 }
 
 -(void)submit{
-    if(_rechargeUserphoneStr.length != 11){
-        [UtilTool showAlertView:@"您要充值的手机号格式错误"];
+    NSString *phoneStr = [UtilTool callPhoneNumberRemovePreWith:_rechargeUserphoneStr];
+    if(![UtilTool determineNumberTrue:phoneStr]){
+        [UtilTool showAlertView:@"请输入正确的手机号码"];
         return;
     }
     if(_numTextfield.text.length < 1 || _pwdTextfield.text.length < 1){
@@ -151,7 +152,7 @@
     [testActivityIndicator startAnimating];
     NSString *numberStr = _numTextfield.text;
     NSString *pwdStr = _pwdTextfield.text;
-    [_model rechargeWithCardNum:numberStr andPwd:pwdStr];
+    [_model rechargeWithCardNum:numberStr andPwd:pwdStr phone:_rechargeUserphoneStr];
 }
 
 -(void)rechargeSucceed{
@@ -161,7 +162,7 @@
     [UtilTool showAlertView:@"充值成功"];
 }
 
--(void)rechargeFailed:(NSString *)errorMsg{
+-(void)rechargeFailed:(NSString*)errorMsg{
     [testActivityIndicator stopAnimating];
     if(!errorMsg){
         [UtilTool showAlertView:@"充值失败"];

@@ -79,7 +79,7 @@ enum{
     [_textField setBackgroundColor:[UIColor clearColor]];
     [_textField setText:userDefault.user];
     [_textField setFont:WXTFont(16.0)];
-    [_textField setEnabled:NO];
+//    [_textField setEnabled:NO];
     [_textField setTextColor:WXColorWithInteger(0xc8c8c8)];
     [_textField addTarget:self action:@selector(textFieldDone:)  forControlEvents:UIControlEventEditingDidEndOnExit];
     [_textField addTarget:self action:@selector(textFieldChange) forControlEvents:UIControlEventEditingChanged];
@@ -98,7 +98,7 @@ enum{
     textLabel.frame = CGRectMake(10, yOffset, Size.width-20, 25);
     [textLabel setBackgroundColor:WXColorWithInteger(0xe8e8e8)];
     [textLabel setFont:WXTFont(12.0)];
-    [textLabel setText:@" 请确认要充值的手机号码是否正确"];
+    [textLabel setText:@" 请确认您要充值的手机号码"];
     [textLabel setTextAlignment:NSTextAlignmentLeft];
     [textLabel setTextColor:WXColorWithInteger(0xaf8638)];
     [headView addSubview:textLabel];

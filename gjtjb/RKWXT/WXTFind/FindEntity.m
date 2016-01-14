@@ -23,11 +23,17 @@
         NSString *url = [dic objectForKey:@"url"];
         [self setWebUrl:url];
         
-        NSString *iconURL = [dic objectForKey:@"icon_url"];
+        NSString *iconURL = [dic objectForKey:@"ico"];
         [self setIcon_url:iconURL];
         
         NSString *name = [dic objectForKey:@"name"];
         [self setName:name];
+        
+        NSInteger findID = [[dic objectForKey:@"discover_id"] integerValue];
+        [self setClassifyID:findID];
+        
+        NSInteger sortID = [[dic objectForKey:@"sort_order"] integerValue];
+        [self setSortID:sortID];
     }
     return self;
 }
