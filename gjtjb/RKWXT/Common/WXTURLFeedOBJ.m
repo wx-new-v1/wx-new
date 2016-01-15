@@ -75,19 +75,19 @@
             url = @"/app_version.php";
             break;
         case WXT_UrlFeed_Type_New_Balance:
-            url = @"/app_balance.php";
+            url = @"/telephone_fare.php";
             break;
         case WXT_UrlFeed_Type_New_JPushMessageInfo:
             url = @"/get_message_detail.php";
             break;
         case WXT_UrlFeed_Type_New_Call:
-            url = @"/app_cb.php";
+            url = @"/callback.php";
             break;
         case WXT_UrlFeed_Type_New_Sign:
             url = @"/sign_in.php";
             break;
         case WXT_UrlFeed_Type_New_PersonalInfo:
-            url = @"/get_user_info.php";
+            url = @"/userinfo.php";
             break;
         case WXT_UrlFeed_Type_New_Recharge:
             url = @"/recharge.php";

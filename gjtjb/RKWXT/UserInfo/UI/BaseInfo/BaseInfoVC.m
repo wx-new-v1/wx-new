@@ -14,44 +14,25 @@
 #import "UserHeaderImgModel.h"
 #import "WXService.h"
 
-#import "NetworkManager.h"
-#include <CFNetwork/CFNetwork.h>
 #import "UserHeaderModel.h"
-#import "WXRemotionImgBtn.h"
-
-#define FtpUrl @"ftp://wx3.67call.com"
-#define UserName @"picuser"
-#define UserPwd @"KoYYooop7728###"
-
-enum {
-    kSendBufferSize = 32768
-};
+#import "UpdataPicture.h"
 
 #define Size self.bounds.size
 
-@interface BaseInfoVC ()<UITableViewDataSource,UITableViewDelegate,PersonaSexSelectDelegate,PersonDatePickerDelegate,PersonNickNameDelegate,PersonalInfoModelDelegate,WXImageClipOBJDelegate,NSStreamDelegate>{
+@interface BaseInfoVC ()<UITableViewDataSource,UITableViewDelegate,PersonaSexSelectDelegate,PersonDatePickerDelegate,PersonNickNameDelegate,PersonalInfoModelDelegate,WXImageClipOBJDelegate>{
     UITableView *_tableView;
     PersonalInfoModel *_model;
     WXImageClipOBJ *_imageClipOBJ;
     
     UIImage *headerImg;
+    UpdataPicture *updataPicture;
 }
 @property (nonatomic,assign) NSInteger bSex; //1男 2女
 @property (nonatomic,strong) NSString *nickNameStr;
 @property (nonatomic,strong) NSString *dateStr;
-
-@property (nonatomic, assign, readonly ) BOOL              isSending;
-@property (nonatomic, strong, readwrite) NSOutputStream *  networkStream;
-@property (nonatomic, strong, readwrite) NSInputStream *   fileStream;
-@property (nonatomic, assign, readonly ) uint8_t *         buffer;
-@property (nonatomic, assign, readwrite) size_t            bufferOffset;
-@property (nonatomic, assign, readwrite) size_t            bufferLimit;
 @end
 
 @implementation BaseInfoVC
-{
-    uint8_t                     _buffer[kSendBufferSize];
-}
 
 static NSString *_nameListArray[BaseInfo_Invalid]={
     @"头像",
@@ -82,11 +63,7 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [_imageClipOBJ setClipImageType:E_ImageType_Personal_Img];
     [_imageClipOBJ setParentVC:self];
     
-//    NSString *iconPath = [NSString stringWithFormat:@"%@",[[UserHeaderImgModel shareUserHeaderImgModel] userIconPath]];
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    if([fileManager fileExistsAtPath:iconPath]){
-//        headerImg = [UIImage imageWithContentsOfFile:iconPath];
-//    }
+    updataPicture = [[UpdataPicture alloc] init];
 }
 
 -(WXUIView*)tableForFootView{
@@ -96,8 +73,8 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     CGFloat btnHeight = 40;
     WXUIButton *submitBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     submitBtn.frame = CGRectMake(30, yOffset, IPHONE_SCREEN_WIDTH-2*30, btnHeight);
-    [submitBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
-    [submitBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
+    [submitBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
+    [submitBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(0xdd2726)];
     [submitBtn setTitle:@"保存信息" forState:UIControlStateNormal];
     [submitBtn setTitle:@"保存信息" forState:UIControlStateSelected];
     [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -178,7 +155,7 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
             str = _nickNameStr;
             break;
         case BaseInfo_Usersex:
-            str = (_bSex==1?@"男":(_bSex==2?@"女":(_bSex==3?@"保密":@"未知")));
+            str = (_bSex==1?@"男":(_bSex==2?@"女":@""));
             break;
         case BaseInfo_Userdate:
             str = _dateStr;
@@ -218,7 +195,6 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
             }else{
                 cell = [self tableViewForCommonCellAtRow:row];
             }
-//            cell = [self tableViewForCommonCellAtRow:row];
             break;
         case T_Base_ManagerInfo:
             cell = [self tableViewForManagerCellAtRow:row];
@@ -289,8 +265,19 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     if(!self.nickNameStr){
         self.nickNameStr = @"";
     }
+    if(!self.dateStr){
+        self.dateStr = 0;
+    }
+    NSString *birthday = 0;
+    if(self.dateStr.length > 0){
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+        NSDate *date = [dateFormatter dateFromString:self.dateStr];
+        birthday = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    }
     [_model setType:PersonalInfo_Type_Updata];
-    [_model updataUserInfoWith:self.bSex withNickName:self.nickNameStr withBirthday:self.dateStr];
+    [_model updataUserInfoWith:self.bSex withNickName:self.nickNameStr withBirthday:birthday];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
@@ -299,9 +286,7 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [UtilTool showAlertView:@"上传成功"];
     
     WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    if(self.nickNameStr){
-        [userDefault setNickname:self.nickNameStr];
-    }
+    [userDefault setNickname:self.nickNameStr];
 }
 
 -(void)updataPersonalInfoFailed:(NSString *)errorMsg{
@@ -363,10 +348,6 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark 头像
 -(void)changeheadImg:(id)sender{
     [_imageClipOBJ beginChooseAndClipeImage];
@@ -380,7 +361,7 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [[NSNotificationCenter defaultCenter] postNotificationName:D_Notification_Name_UploadUserIcon object:nil];
     NSIndexPath *indexpath = [NSIndexPath indexPathForRow:BaseInfo_Userhead inSection:T_Base_UserInfo];
     [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationFade];
-    [self sendDocumentToFTPService];
+    [updataPicture sendDocumentToFTPService];
 }
 
 -(NSData *)dataWithImage:(UIImage *)image{
@@ -397,114 +378,8 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [UtilTool showAlertView:nil message:@"图片裁剪失败" delegate:nil tag:0 cancelButtonTitle:@"确定" otherButtonTitles:nil];
 }
 
-#pragma mark 上传头像
-- (uint8_t *)buffer{
-    return self->_buffer;
-}
-
-- (BOOL)isSending{
-    return (self.networkStream != nil);
-}
-
-- (void)startSend:(NSString *)filePath{
-    BOOL                    success;
-    NSURL *                 url;
-    url = [[NetworkManager sharedInstance] smartURLForString:FtpUrl];
-    success = (url != nil);
-    if (success) {
-        url = CFBridgingRelease(
-                                CFURLCreateCopyAppendingPathComponent(NULL, (__bridge CFURLRef) url, (__bridge CFStringRef) [filePath lastPathComponent], false)
-                                );
-        success = (url != nil);
-    }
-    
-    if (!success){
-    } else {
-        self.fileStream = [NSInputStream inputStreamWithFileAtPath:filePath];
-        assert(self.fileStream != nil);
-        [self.fileStream open];
-        self.networkStream = CFBridgingRelease(
-                                               CFWriteStreamCreateWithFTPURL(NULL, (__bridge CFURLRef) url)
-                                               );
-        success = [self.networkStream setProperty:UserName forKey:(id)kCFStreamPropertyFTPUserName];
-        success = [self.networkStream setProperty:UserPwd forKey:(id)kCFStreamPropertyFTPPassword];
-        self.networkStream.delegate = self;
-        [self.networkStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [self.networkStream open];
-    }
-}
-
-- (void)stopSendWithStatus:(NSString *)statusString{
-    if (self.networkStream != nil) {
-        [self.networkStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        self.networkStream.delegate = nil;
-        [self.networkStream close];
-        self.networkStream = nil;
-    }
-    if (self.fileStream != nil) {
-        [self.fileStream close];
-        self.fileStream = nil;
-    }
-    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    [[UserHeaderModel shareUserHeaderModel] updateUserHeaderSucceed:[NSString stringWithFormat:@"%@userIcon.png",userObj.wxtID]];
-    [UtilTool showAlertView:@"上传头像成功"];
-}
-
-- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
-    assert(aStream == self.networkStream);
-    switch (eventCode) {
-        case NSStreamEventOpenCompleted: {
-            NSLog(@"Opened connection");
-        } break;
-        case NSStreamEventHasBytesAvailable: {
-        } break;
-        case NSStreamEventHasSpaceAvailable: {
-            NSLog(@"Sending");
-            
-            if (self.bufferOffset == self.bufferLimit) {
-                NSInteger   bytesRead;
-                bytesRead = [self.fileStream read:self.buffer maxLength:kSendBufferSize];
-                
-                if (bytesRead == -1) {
-                    [UtilTool showAlertView:@"上传头像失败"];
-                } else if (bytesRead == 0) {
-                    [self stopSendWithStatus:nil];
-                } else {
-                    self.bufferOffset = 0;
-                    self.bufferLimit  = bytesRead;
-                }
-            }
-            
-            if (self.bufferOffset != self.bufferLimit) {
-                NSInteger   bytesWritten;
-                bytesWritten = [self.networkStream write:&self.buffer[self.bufferOffset] maxLength:self.bufferLimit - self.bufferOffset];
-                assert(bytesWritten != 0);
-                if (bytesWritten == -1) {
-                    [UtilTool showAlertView:@"上传头像失败"];
-                } else {
-                    self.bufferOffset += bytesWritten;
-                }
-            }
-        } break;
-        case NSStreamEventErrorOccurred: {
-            [UtilTool showAlertView:@"上传头像失败"];
-        } break;
-        case NSStreamEventEndEncountered: {
-            // ignore
-        } break;
-        default: {
-            assert(NO);
-        } break;
-    }
-}
-
-#pragma mark * Actions
--(void)sendDocumentToFTPService{
-    if (!self.isSending ) {
-        NSString * filePath;
-        filePath = [NSString stringWithFormat:@"%@",[[UserHeaderImgModel shareUserHeaderImgModel] userIconPath]];
-        [self startSend:filePath];
-    }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

@@ -10,7 +10,6 @@
 #import "UIView+Render.h"
 #import "BalanceEntity.h"
 #import "BalanceModel.h"
-#import "RechargeVC.h"
 
 #define Size self.view.bounds.size
 #define EveryCellHeight (36)
@@ -161,8 +160,6 @@ enum{
 }
 
 -(void)gotoRecharge{
-//    RechargeVC *rechargeVC = [[RechargeVC alloc] init];
-//    [self.wxNavigationController pushViewController:rechargeVC];
     [[CoordinateController sharedCoordinateController] toRechargeVC:self animated:YES];
 }
 
@@ -175,11 +172,11 @@ enum{
     
         if(entity.type == UserBalance_Type_Normal){
             [_status setText:@"普通用户"];
-//            [_date setText:@"永久有效"];
-            [_date setText:[NSString stringWithFormat:@"%@",[UtilTool getDateTimeFor:entity.normalDate type:2]]];
+            [_date setText:@"永久有效"];
+//            [_date setText:[NSString stringWithFormat:@"%@",[UtilTool getDateTimeFor:entity.normalDate type:2]]];
         }else{
             [_status setText:@"VIP用户"];
-            NSString *dateStr = [UtilTool getDateTimeFor:[entity.date integerValue] type:2];
+            NSString *dateStr = [UtilTool getDateTimeFor:entity.normalDate type:2];
             [_date setText:dateStr];
         }
     }

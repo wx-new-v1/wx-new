@@ -9,8 +9,8 @@
 #import "T_HPSubBaseModel.h"
 
 typedef enum{
-    PersonalInfo_Type_Updata = 1,
-    PersonalInfo_Type_Load,
+    PersonalInfo_Type_Load = 1,
+    PersonalInfo_Type_Updata,
 }PersonalInfo_Type;
 
 @protocol PersonalInfoModelDelegate;

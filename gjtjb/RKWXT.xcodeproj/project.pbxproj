@@ -120,6 +120,7 @@
 		122AB8CD1C3E6E9B00AC9DF5 /* MerchantImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8CC1C3E6E9B00AC9DF5 /* MerchantImageCell.m */; };
 		122AB8D01C3E6F2C00AC9DF5 /* NewGoodsInfoWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8CF1C3E6F2C00AC9DF5 /* NewGoodsInfoWebViewViewController.m */; };
 		122AB8D31C3E6F8C00AC9DF5 /* GoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122AB8D21C3E6F8C00AC9DF5 /* GoodsInfoModel.m */; };
+		122C1E0B1C4750BD009B2AE3 /* UpdataPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C1E0A1C4750BD009B2AE3 /* UpdataPicture.m */; };
 		122D63AD1C3F465A0086AAB8 /* MyCollectionImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63AA1C3F465A0086AAB8 /* MyCollectionImg@2x.png */; };
 		122D63AE1C3F465A0086AAB8 /* MyCutImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63AB1C3F465A0086AAB8 /* MyCutImg@2x.png */; };
 		122D63AF1C3F465A0086AAB8 /* MyQuestionImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 122D63AC1C3F465A0086AAB8 /* MyQuestionImg@2x.png */; };
@@ -1036,6 +1037,8 @@
 		122AB8CF1C3E6F2C00AC9DF5 /* NewGoodsInfoWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoodsInfoWebViewViewController.m; sourceTree = "<group>"; };
 		122AB8D11C3E6F8C00AC9DF5 /* GoodsInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfoModel.h; sourceTree = "<group>"; };
 		122AB8D21C3E6F8C00AC9DF5 /* GoodsInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoModel.m; sourceTree = "<group>"; };
+		122C1E091C4750BD009B2AE3 /* UpdataPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdataPicture.h; sourceTree = "<group>"; };
+		122C1E0A1C4750BD009B2AE3 /* UpdataPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdataPicture.m; sourceTree = "<group>"; };
 		122D63AA1C3F465A0086AAB8 /* MyCollectionImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MyCollectionImg@2x.png"; sourceTree = "<group>"; };
 		122D63AB1C3F465A0086AAB8 /* MyCutImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MyCutImg@2x.png"; sourceTree = "<group>"; };
 		122D63AC1C3F465A0086AAB8 /* MyQuestionImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MyQuestionImg@2x.png"; sourceTree = "<group>"; };
@@ -3892,6 +3895,8 @@
 				122014091BA00C360080B994 /* UserHeaderModel.m */,
 				1282EF811B5E33B5004D2019 /* UserHeaderImgModel.h */,
 				1282EF821B5E33B5004D2019 /* UserHeaderImgModel.m */,
+				122C1E091C4750BD009B2AE3 /* UpdataPicture.h */,
+				122C1E0A1C4750BD009B2AE3 /* UpdataPicture.m */,
 			);
 			path = UserHeader;
 			sourceTree = "<group>";
@@ -6290,6 +6295,7 @@
 				12D0C8761AB6AA8C0039A197 /* WXTVersion.m in Sources */,
 				775842D11AB95A300039B129 /* GTMBase64.m in Sources */,
 				122EFBB01C40F34400CE0EA0 /* DLTabedSlideView.m in Sources */,
+				122C1E0B1C4750BD009B2AE3 /* UpdataPicture.m in Sources */,
 				122AB8731C3E6B9E00AC9DF5 /* GoodsEvaluateCell.m in Sources */,
 				122AB8C91C3E6E3000AC9DF5 /* CDSideBarController.m in Sources */,
 				775842F91AB95A300039B129 /* PSCollectionViewCell.m in Sources */,

@@ -28,19 +28,8 @@
 
 -(void)updataUserInfoWith:(NSInteger)sex withNickName:(NSString *)nickName withBirthday:(NSString *)birStr{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         userObj.sellerID, @"seller_user_id",
-                         @"iOS", @"pid",
-                         userObj.wxtID, @"woxin_id",
-                         userObj.user, @"phone",
-                         [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd], @"pwd",
-                         [NSNumber numberWithInt:_type], @"type",
-                         [UtilTool currentVersion], @"ver",
-                         [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts",
-                         [NSNumber numberWithInteger:sex], @"sex",
-                         birStr, @"birthday",
-                         nickName, @"nickname",
-                         nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:_type], @"type", [NSNumber numberWithInteger:sex], @"sex", birStr, @"birthday", nickName, @"nickname", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:_type], @"type", [NSNumber numberWithInteger:sex], @"sex", birStr, @"birthday", nickName, @"nickname", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_PersonalInfo httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
         if (retData.code != 0){
             if(_delegate && [_delegate respondsToSelector:@selector(updataPersonalInfoFailed:)]){
@@ -68,16 +57,8 @@
 
 -(void)loadUserInfo{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         userObj.sellerID, @"seller_user_id",
-                         @"iOS", @"pid",
-                         userObj.wxtID, @"woxin_id",
-                         userObj.user, @"phone",
-                         [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd], @"pwd",
-                         [NSNumber numberWithInt:_type], @"type",
-                         [UtilTool currentVersion], @"ver",
-                         [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts",
-                         nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:_type], @"type", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:_type], @"type", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     __block PersonalInfoModel *blockSelf = self;
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_PersonalInfo httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
         if (retData.code != 0){

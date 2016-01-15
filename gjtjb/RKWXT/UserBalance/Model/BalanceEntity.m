@@ -22,13 +22,13 @@
         NSString *date = [dic objectForKey:@"combo"];
         [self setDate:date];
         
-        CGFloat balance = [[dic objectForKey:@"balance"] floatValue];
+        CGFloat balance = [[dic objectForKey:@"telephone_fare"] floatValue];
         [self setMoney:balance];
         
         NSInteger state = [[dic objectForKey:@"is_combo"] integerValue];
         [self setType:state];
         
-        NSInteger normalDate = [[dic objectForKey:@"telephone_fare_expiry"] integerValue];
+        NSInteger normalDate = [[dic objectForKey:@"fexpiry"] integerValue];
         [self setNormalDate:normalDate];
     }
     return self;

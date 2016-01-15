@@ -19,6 +19,7 @@ typedef enum{
 @property (nonatomic,assign) id<MakeCallDelegate>callDelegate;
 @property (nonatomic,assign) CallStatus_Type callstatus_type;
 @property (nonatomic,strong) NSString *callID;
+@property (nonatomic,strong) NSString *swCallID;
 -(void)makeCallPhone:(NSString *)phoneStr;
 @end
 

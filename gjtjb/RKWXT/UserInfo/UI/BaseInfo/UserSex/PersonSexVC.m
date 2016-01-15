@@ -12,7 +12,6 @@ enum{
     Personal_Sex_None = 0,
     Personal_Sex_Boy,
     Personal_Sex_Girl,
-    Personal_Sex_Secret,
     
     Personal_Sex_Invalid,
 };
@@ -55,9 +54,6 @@ enum{
             break;
         case Personal_Sex_Girl:
             cell.textLabel.text = @"女";
-            break;
-        case Personal_Sex_Secret:
-            cell.textLabel.text = @"保密";
             break;
         default:
             break;
