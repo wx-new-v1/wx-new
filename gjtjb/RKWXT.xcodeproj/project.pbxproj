@@ -75,6 +75,7 @@
 		122841FE1C48E05C00D76A6B /* HomePageRecEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841FD1C48E05C00D76A6B /* HomePageRecEntity.m */; };
 		122842021C48EE8100D76A6B /* HomePageSurpEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842011C48EE8100D76A6B /* HomePageSurpEntity.m */; };
 		122842051C48EF3500D76A6B /* HomePageSurpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842041C48EF3500D76A6B /* HomePageSurpModel.m */; };
+		122842091C490F6300D76A6B /* GoodsOtherSellerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842081C490F6300D76A6B /* GoodsOtherSellerCell.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
 		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
@@ -950,6 +951,8 @@
 		122842011C48EE8100D76A6B /* HomePageSurpEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSurpEntity.m; sourceTree = "<group>"; };
 		122842031C48EF3500D76A6B /* HomePageSurpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSurpModel.h; sourceTree = "<group>"; };
 		122842041C48EF3500D76A6B /* HomePageSurpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSurpModel.m; sourceTree = "<group>"; };
+		122842071C490F6300D76A6B /* GoodsOtherSellerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsOtherSellerCell.h; sourceTree = "<group>"; };
+		122842081C490F6300D76A6B /* GoodsOtherSellerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsOtherSellerCell.m; sourceTree = "<group>"; };
 		122875E91C3CBB580058C86D /* T_Sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T_Sqlite.h; sourceTree = "<group>"; };
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
@@ -2520,6 +2523,15 @@
 			path = Guess;
 			sourceTree = "<group>";
 		};
+		122842061C490F5300D76A6B /* GoodsInfoOtherShop */ = {
+			isa = PBXGroup;
+			children = (
+				122842071C490F6300D76A6B /* GoodsOtherSellerCell.h */,
+				122842081C490F6300D76A6B /* GoodsOtherSellerCell.m */,
+			);
+			path = GoodsInfoOtherShop;
+			sourceTree = "<group>";
+		};
 		122AB81D1C3E384C00AC9DF5 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -2634,6 +2646,7 @@
 		122AB8591C3E65B700AC9DF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				122842061C490F5300D76A6B /* GoodsInfoOtherShop */,
 				122AB8CA1C3E6E9200AC9DF5 /* GoodsInfoTop */,
 				122AB8741C3E6C6500AC9DF5 /* BigImgZoom */,
 				122AB8701C3E6B9100AC9DF5 /* GoodsEvaluate */,
@@ -5995,6 +6008,7 @@
 				775842BD1AB95A300039B129 /* WXGuidMaskView.m in Sources */,
 				7758432B1AB95A300039B129 /* WXUIScrollView.m in Sources */,
 				12F4228C1B1D61E100643DD7 /* AddressBaseInfoCell.m in Sources */,
+				122842091C490F6300D76A6B /* GoodsOtherSellerCell.m in Sources */,
 				123666CE1C449760000FAF70 /* UserBonusEntity.m in Sources */,
 				1236673C1C44AA04000FAF70 /* LuckyGoodsMakeOrderCell.m in Sources */,
 				120A2BEB1AB135DD006A28B1 /* RechargeView.m in Sources */,

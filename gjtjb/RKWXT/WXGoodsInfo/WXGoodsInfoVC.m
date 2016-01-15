@@ -200,14 +200,15 @@
         case GoodsInfo_Section_TopImg:
         case GoodsInfo_Section_GoodsDesc:
         case GoodsInfo_Section_SellerInfo:
+        case GoodsInfo_Section_OtherShop:
             row = 1;
             break;
         case GoodsInfo_Section_GoodsInfo:
 //            row = [_model.attrArr count];
             break;
-        case GoodsInfo_Section_Evaluate:
+//        case GoodsInfo_Section_Evaluate:
 //            row = [_model.evaluteArr count];
-            break;
+//            break;
         default:
             break;
     }
@@ -224,12 +225,12 @@
         case GoodsInfo_Section_GoodsDesc:
         {
             height = GoodsInfoDesCellHeight;
-//            if([_model.goodsInfoArr count] > 0){
-//                LMGoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
-//                if(entity.postage == LMGoods_Postage_None || userCut){
-//                    height += 40;
-//                }
-//            }
+            if([_model.goodsInfoArr count] > 0){
+                GoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
+                if(entity.postage == Goods_Postage_None || userCut){
+                    height += 40;
+                }
+            }
         }
             break;
         case GoodsInfo_Section_GoodsInfo:
@@ -238,13 +239,17 @@
         case GoodsInfo_Section_SellerInfo:
             height = GoodsSellerInfoCellHeight;
             break;
-        case GoodsInfo_Section_Evaluate:
-        {
-//            if([_model.evaluteArr count] > 0){
-//                height = [LMGoodsEvaluteCell cellHeightOfInfo:[_model.evaluteArr objectAtIndex:0]];
-//            }
-        }
+        case GoodsInfo_Section_OtherShop:
+            height = GoodsSellerInfoCellHeight;
             break;
+//        case GoodsInfo_Section_Evaluate:
+//        {
+////            if([_model.evaluteArr count] > 0){
+////                height = [LMGoodsEvaluteCell cellHeightOfInfo:[_model.evaluteArr objectAtIndex:0]];
+////            }
+//            height = 0;
+//        }
+//            break;
         default:
             break;
     }
@@ -258,7 +263,8 @@
             height = GoodsInfoTitleHeaderViewHeight;
             break;
         case GoodsInfo_Section_SellerInfo:
-        case GoodsInfo_Section_Evaluate:
+        case GoodsInfo_Section_OtherShop:
+//        case GoodsInfo_Section_Evaluate:
             height = GoodsOtherHeaderViewHeight;
             break;
         default:
@@ -279,10 +285,14 @@
             title = @"商家信息";
             height = GoodsOtherHeaderViewHeight;
             break;
-        case GoodsInfo_Section_Evaluate:
-            title = @"评论";
+        case GoodsInfo_Section_OtherShop:
+            title = @"推荐店铺";
             height = GoodsOtherHeaderViewHeight;
             break;
+//        case GoodsInfo_Section_Evaluate:
+//            title = @"评论";
+//            height = GoodsOtherHeaderViewHeight;
+//            break;
         default:
             break;
     }
@@ -330,16 +340,16 @@
         cell = [[MerchantImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     NSMutableArray *merchantImgViewArray = [[NSMutableArray alloc] init];
-//    LMGoodsInfoEntity *entity = nil;
+    GoodsInfoEntity *entity = nil;
     if([_model.goodsInfoArr count] > 0){
-//        entity = [_model.goodsInfoArr objectAtIndex:0];
+        entity = [_model.goodsInfoArr objectAtIndex:0];
     }
-//    for(int i = 0; i< [entity.goodsImgArr count]; i++){
-//        WXRemotionImgBtn *imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(0, 0, IPHONE_SCREEN_WIDTH, IPHONE_SCREEN_WIDTH)];
-//        [imgView setExclusiveTouch:NO];
-//        [imgView setCpxViewInfo:[entity.goodsImgArr objectAtIndex:i]];
-//        [merchantImgViewArray addObject:imgView];
-//    }
+    for(int i = 0; i< [entity.goodsImgArr count]; i++){
+        WXRemotionImgBtn *imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(0, 0, IPHONE_SCREEN_WIDTH, IPHONE_SCREEN_WIDTH)];
+        [imgView setExclusiveTouch:NO];
+        [imgView setCpxViewInfo:[entity.goodsImgArr objectAtIndex:i]];
+        [merchantImgViewArray addObject:imgView];
+    }
     cell = [[MerchantImageCell alloc] initWithReuseIdentifier:identifier imageArray:merchantImgViewArray];
     [cell setDelegate:self];
     [cell load];
@@ -347,14 +357,14 @@
 }
 
 -(void)clickTopGoodAtIndex:(NSInteger)index{
-//    LMGoodsInfoEntity *entity = nil;
+    GoodsInfoEntity *entity = nil;
     if([_model.goodsInfoArr count] > 0){
-//        entity = [_model.goodsInfoArr objectAtIndex:0];
+        entity = [_model.goodsInfoArr objectAtIndex:0];
     }
     
     NewImageZoomView *img = [[NewImageZoomView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height )imgViewSize:CGSizeZero];
     [self.view addSubview:img];
-//    [img updateImageDate:entity.goodsImgArr selectIndex:index];
+    [img updateImageDate:entity.goodsImgArr selectIndex:index];
 }
 
 //商品介绍
@@ -382,9 +392,9 @@
         cell = [[GoodsIBasenfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    if([_model.attrArr count] > 0){
-//        [cell setCellInfo:[_model.attrArr objectAtIndex:row]];
-//    }
+    if([_model.attrArr count] > 0){
+        [cell setCellInfo:[_model.attrArr objectAtIndex:row]];
+    }
     [cell load];
     return cell;
 }
@@ -396,9 +406,23 @@
     if(!cell){
         cell = [[GoodsSellerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-//    if([_model.sellerArr count] > 0){
-//        [cell setCellInfo:[_model.sellerArr objectAtIndex:0]];
-//    }
+    if([_model.sellerArr count] > 0){
+        [cell setCellInfo:[_model.sellerArr objectAtIndex:0]];
+    }
+    [cell load];
+    return cell;
+}
+
+//其他商家推荐
+-(WXUITableViewCell*)goodsOtherSellerCell:(NSInteger)row{
+    static NSString *identifier = @"otherSellerCell";
+    GoodsOtherSellerCell *cell = [_tableView dequeueReusableCellWithIdentifier:identifier];
+    if(!cell){
+        cell = [[GoodsOtherSellerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    if([_model.otherShopArr count] > 0){
+        [cell setCellInfo:[_model.otherShopArr objectAtIndex:row]];
+    }
     [cell load];
     return cell;
 }
@@ -435,9 +459,12 @@
         case GoodsInfo_Section_SellerInfo:
             cell = [self goodsSellerCell];
             break;
-        case GoodsInfo_Section_Evaluate:
-            cell = [self goodsEvaluteCell:row];
+        case GoodsInfo_Section_OtherShop:
+            cell = [self goodsOtherSellerCell:row];
             break;
+//        case GoodsInfo_Section_Evaluate:
+//            cell = [self goodsEvaluteCell:row];
+//            break;
         default:
             break;
     }
@@ -455,24 +482,24 @@
 }
 
 #pragma mark dataDelegate
--(void)loadGoodsInfoSucceed{
+-(void)loadGoodsInfoDataSucceed{
     [self unShowWaitView];
-//    if([_model.evaluteArr count] == 0){
-//        [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-//    }else{
-//        [_tableView setTableFooterView:[self tableFooterView]];
-//    }
-//    
-//    if([_model.stockArr count] > 0){
-//        for(LMGoodsInfoEntity *entity in _model.stockArr){
-//            if(entity.userCut > 0){
-//                userCut = YES;
-//            }
-//        }
-//    }
+    if([_model.evaluteArr count] == 0){
+        [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    }else{
+        [_tableView setTableFooterView:[self tableFooterView]];
+    }
+    
+    if([_model.stockArr count] > 0){
+        for(GoodsInfoEntity *entity in _model.stockArr){
+            if(entity.userCut > 0){
+                userCut = YES;
+            }
+        }
+    }
 //    if([_model.goodsInfoArr count] > 0){
-//        for(LMGoodsInfoEntity *entity in _model.goodsInfoArr){
-//            collection_type = entity.collectionType;
+//        for(GoodsInfoEntity *entity in _model.goodsInfoArr){
+////            collection_type = entity.collectionType;
 //            if(entity.collectionType == LMGoods_Collection_None){
 //                [collectionBtn setImage:[UIImage imageNamed:@"T_Attention.png"] forState:UIControlStateNormal];
 //            }else{
@@ -483,7 +510,7 @@
     [_tableView reloadData];
 }
 
--(void)loadGoodsInfoFailed:(NSString *)errorMsg{
+-(void)loadGoodsInfoDataFailed:(NSString *)errorMsg{
     [self unShowWaitView];
     if(!errorMsg){
         errorMsg = @"获取数据失败";

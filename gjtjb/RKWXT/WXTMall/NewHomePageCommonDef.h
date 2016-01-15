@@ -64,6 +64,7 @@ enum{
 #import "LuckyShakeVC.h"
 
 #import "NewHomePageModel.h"
+#import "HomePageSurpEntity.h"
 
 #pragma mark 导航跳转
 enum{

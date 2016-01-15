@@ -14,6 +14,7 @@
 #import "JPushMessageCenterVC.h"
 #import "JPushMessageInfoVC.h"
 #import "FindCommonVC.h"
+#import "WXGoodsInfoVC.h"
 @implementation CoordinateController
 
 + (CoordinateController*)sharedCoordinateController{
@@ -54,6 +55,10 @@
 }
 
 -(void)toGoodsInfoVC:(id)sender goodsID:(NSInteger)goodsID animated:(BOOL)animated{
+    WXUIViewController *vc = sender;
+    WXGoodsInfoVC *goodsInfoVC = [[WXGoodsInfoVC alloc] init];
+    goodsInfoVC.goodsId = goodsID;
+    [vc.wxNavigationController pushViewController:goodsInfoVC];
 }
 
 -(void)toUserBonusVC:(id)sender animated:(BOOL)animated{

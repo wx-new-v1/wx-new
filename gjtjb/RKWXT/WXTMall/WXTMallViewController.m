@@ -48,7 +48,6 @@
     [_tableView setDataSource:self];
     [_tableView setBackgroundColor:[UIColor whiteColor]];
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [_tableView setAllowsSelection:NO];
     [self addSubview:_tableView];
     [self setupRefresh];
     [self createTopBtn];
@@ -302,6 +301,16 @@
             break;
     }
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSInteger row = indexPath.row;
+    NSInteger section = indexPath.section;
+    if(section == T_HomePage_GuessInfo){
+        HomePageSurpEntity *entity = [_model.surprise.data objectAtIndex:row];
+        [[CoordinateController sharedCoordinateController] toGoodsInfoVC:self goodsID:entity.goods_id animated:YES];
+    }
 }
 
 #pragma mark 导航

@@ -7,7 +7,7 @@
 //
 
 #import "GoodsInfoDesCell.h"
-//#import "LMGoodsInfoEntity.h"
+#import "GoodsInfoEntity.h"
 
 @interface GoodsInfoDesCell(){
     WXUILabel *desLabel;
@@ -92,33 +92,33 @@
 }
 
 -(void)load{
-//    LMGoodsInfoEntity *entity = self.cellInfo;
-//    [desLabel setText:entity.goodsName];
-//    
-//    NSString *marketPriceString = [NSString stringWithFormat:@"￥%.2f",entity.marketPrice];  //￥金额符号
-//    [shopPrice setText:[NSString stringWithFormat:@"￥%.2f",entity.shopPrice]];
-//    [marketPrice setText:marketPriceString];
-//    
-//    CGRect rect = lineLabel.frame;
-//    rect.size.width = [NSString widthForString:marketPriceString fontSize:14.0 andHeight:20];
-//    [lineLabel setFrame:rect];
-//    
-//    if(_userCut){
-//        [usercutBtn setHidden:NO];
-//    }
-//    if(entity.postage == LMGoods_Postage_None && _userCut){
-//        [carriageBtn setHidden:NO];
-//    }
-//    if(entity.postage == LMGoods_Postage_None && !_userCut){
-//        [carriageBtn setHidden:NO];
-//        CGRect rect = carriageBtn.frame;
-//        rect.origin.x = 12;
-//        [carriageBtn setFrame:rect];
-//    }
-//    if(entity.postage == LMGoods_Postage_Have && !_userCut){
-//        [carriageBtn setHidden:YES];
-//        [usercutBtn setHidden:YES];
-//    }
+    GoodsInfoEntity *entity = self.cellInfo;
+    [desLabel setText:entity.goodsName];
+    
+    NSString *marketPriceString = [NSString stringWithFormat:@"￥%.2f",entity.marketPrice];  //￥金额符号
+    [shopPrice setText:[NSString stringWithFormat:@"￥%.2f",entity.shopPrice]];
+    [marketPrice setText:marketPriceString];
+    
+    CGRect rect = lineLabel.frame;
+    rect.size.width = [NSString widthForString:marketPriceString fontSize:14.0 andHeight:20];
+    [lineLabel setFrame:rect];
+    
+    if(_userCut){
+        [usercutBtn setHidden:NO];
+    }
+    if(entity.postage == Goods_Postage_None && _userCut){
+        [carriageBtn setHidden:NO];
+    }
+    if(entity.postage == Goods_Postage_None && !_userCut){
+        [carriageBtn setHidden:NO];
+        CGRect rect = carriageBtn.frame;
+        rect.origin.x = 12;
+        [carriageBtn setFrame:rect];
+    }
+    if(entity.postage == Goods_Postage_Have && !_userCut){
+        [carriageBtn setHidden:YES];
+        [usercutBtn setHidden:YES];
+    }
 }
 
 -(void)userCutBtnClicked{

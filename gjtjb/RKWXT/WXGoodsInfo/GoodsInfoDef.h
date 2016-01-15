@@ -23,7 +23,8 @@ enum{
     GoodsInfo_Section_GoodsDesc,
     GoodsInfo_Section_GoodsInfo,
     GoodsInfo_Section_SellerInfo,
-    GoodsInfo_Section_Evaluate,
+    GoodsInfo_Section_OtherShop,
+//    GoodsInfo_Section_Evaluate,
     
     GoodsInfo_Section_Invalid,
 };
@@ -32,6 +33,7 @@ enum{
 #import "GoodsInfoDesCell.h"
 #import "GoodsIBasenfoCell.h"
 #import "GoodsSellerCell.h"
+#import "GoodsOtherSellerCell.h"
 #import "GoodsEvaluateCell.h"
 
 #import "GoodsStockView.h"
@@ -44,6 +46,7 @@ enum{
 #import "CDSideBarController.h"
 
 #import "GoodsInfoModel.h"
+#import "GoodsInfoEntity.h"
 
 enum{
     Share_Qq,

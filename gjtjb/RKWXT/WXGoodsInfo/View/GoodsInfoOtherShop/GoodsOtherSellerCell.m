@@ -1,22 +1,23 @@
 //
-//  GoodsSellerCell.m
+//  GoodsOtherSellerCell.m
 //  RKWXT
 //
-//  Created by SHB on 16/1/7.
+//  Created by SHB on 16/1/15.
 //  Copyright © 2016年 roderick. All rights reserved.
 //
 
-#import "GoodsSellerCell.h"
+#import "GoodsOtherSellerCell.h"
 #import "GoodsInfoEntity.h"
 
-@interface GoodsSellerCell(){
+@interface GoodsOtherSellerCell(){
     WXUILabel *sellerNameLabel;
     WXUILabel *sellerDesLabel;
+    WXUIImageView *imgView;
     WXUILabel *distanceLabel;
 }
 @end
 
-@implementation GoodsSellerCell
+@implementation GoodsOtherSellerCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -44,14 +45,14 @@
         [self.contentView addSubview:sellerDesLabel];
         
         CGFloat imgWidth = 15;
-        CGFloat imgHeight = imgWidth;
-        WXUIImageView *imgView = [[WXUIImageView alloc] init];
+        CGFloat imgHeight = imgWidth+4;
+        imgView = [[WXUIImageView alloc] init];
         imgView.frame = CGRectMake(IPHONE_SCREEN_WIDTH-rightViewWidth, yOffset, imgWidth, imgHeight);
         [imgView setImage:[UIImage imageNamed:@"LMGoodsInfoLocationImg.png"]];
-        //        [self.contentView addSubview:imgView];
+        [self.contentView addSubview:imgView];
         
         distanceLabel = [[WXUILabel alloc] init];
-        distanceLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH-rightViewWidth+imgWidth, yOffset, rightViewWidth-imgWidth, namelabelHeight);
+        distanceLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH-rightViewWidth+imgWidth+4, yOffset, rightViewWidth-imgWidth-4, namelabelHeight);
         [distanceLabel setBackgroundColor:[UIColor clearColor]];
         [distanceLabel setTextAlignment:NSTextAlignmentLeft];
         [distanceLabel setTextColor:WXColorWithInteger(0x9b9b9b)];
@@ -63,8 +64,15 @@
 
 -(void)load{
     GoodsInfoEntity *entity = self.cellInfo;
-    [sellerNameLabel setText:entity.sellerName];
-    [sellerDesLabel setText:entity.sellerAddress];
+    [sellerNameLabel setText:entity.shopName];
+    [sellerDesLabel setText:entity.shopAddress];
+//    CGFloat distance = entity.shopDistance;
+//    if(entity.shopDistance > 1000){
+//        distance = entity.shopDistance/1000;
+//        [distanceLabel setText:[NSString stringWithFormat:@"%.2fkm",distance]];
+//    }else{
+//        [distanceLabel setText:[NSString stringWithFormat:@"%.2fm",distance]];
+//    }
 }
 
 @end
