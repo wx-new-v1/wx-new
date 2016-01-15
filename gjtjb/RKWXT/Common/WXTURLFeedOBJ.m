@@ -51,7 +51,7 @@
             url = @"";
             break;
         case WXT_UrlFeed_Type_HungUp:
-            url = @"";
+            url = @"/hangup.php";
             break;
         case WXT_UrlFeed_Type_ResetPwd:
             url = @"/modify_pwd.php";
@@ -72,7 +72,7 @@
             url = @"/get_seller_detail.php";
             break;
         case WXT_UrlFeed_Type_New_Version:
-            url = @"/app_version.php";
+            url = @"/version.php";
             break;
         case WXT_UrlFeed_Type_New_Balance:
             url = @"/telephone_fare.php";

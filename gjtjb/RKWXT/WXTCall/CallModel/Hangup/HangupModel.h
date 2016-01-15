@@ -11,7 +11,7 @@
 @protocol HangupDelegate;
 @interface HangupModel : NSObject
 @property (nonatomic,assign) id<HangupDelegate>hangupDelegate;
--(void)hangupWithCallID:(NSString *)callID;
+-(void)hangupWithCallID:(NSString *)swCallID;
 @end
 
 @protocol HangupDelegate <NSObject>

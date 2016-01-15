@@ -38,7 +38,8 @@
 -(void)checkVersion:(NSString*)currentVersion{
     [_updateArr removeAllObjects];
     WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.sellerID, @"seller_user_id", @"iOS", @"pid", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)kMerchantID], @"sid", userDefault.user, @"phone", nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userDefault.wxtID, @"woxin_id", currentVersion, @"ver", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userDefault.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userDefault.wxtID, @"woxin_id", currentVersion, @"ver", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_Version httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData){
         NSDictionary *dic = retData.data;
         __block VersionModel *blockSelf = self;

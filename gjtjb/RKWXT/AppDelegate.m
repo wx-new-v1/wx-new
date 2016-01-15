@@ -72,7 +72,7 @@
         
         [[NewWXTLiDB sharedWXLibDB] loadData];
         [self checkVersion];
-        [self checkAreaVersion];
+//        [self checkAreaVersion];
         //自动登录
         WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
 //        LoginModel *_loginModel = [[LoginModel alloc] init];

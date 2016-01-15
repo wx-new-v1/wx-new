@@ -264,20 +264,19 @@
 
 #pragma mark hangupDelegate
 -(void)hangup{
-//    if(!_model.callID){
-//        return;
-//    }
-//    _hangupModel = [[HangupModel alloc] init];
-//    [_hangupModel setHangupDelegate:self];
-//    [_hangupModel hangupWithCallID:_model.callID];
-    
-    [self back];
+    if(!_model.swCallID){
+        return;
+    }
+    _hangupModel = [[HangupModel alloc] init];
+    [_hangupModel setHangupDelegate:self];
+    [_hangupModel hangupWithCallID:_model.swCallID];
 }
 
 -(void)hangupFailed:(NSString *)failedMsg{
 }
 
 -(void)hangupSucceed{
+    [self back];
 }
 
 -(void)removeNotification{

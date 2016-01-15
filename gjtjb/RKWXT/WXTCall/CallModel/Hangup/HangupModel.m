@@ -19,11 +19,13 @@
     return self;
 }
 
--(void)hangupWithCallID:(NSString *)callID{
-    if(!callID){
+-(void)hangupWithCallID:(NSString *)swCallID{
+    if(!swCallID){
         return;
     }
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"hangup", @"cmd", callID, @"call_id", nil];
+    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", swCallID, @"sw_call_id", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", swCallID, @"sw_call_id", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_HungUp httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData){
         if (retData.code != 0){
             if (_hangupDelegate && [_hangupDelegate respondsToSelector:@selector(hangupFailed:)]){
