@@ -78,7 +78,6 @@
 //        LoginModel *_loginModel = [[LoginModel alloc] init];
 //        [_loginModel loginWithUser:userDefault.user andPwd:userDefault.pwd];
         
-        [userDefault SetUserLoginFirst:YES];
         [APService setTags:[NSSet setWithObject:[NSString stringWithFormat:@"%@",userDefault.user]] alias:nil callbackSelector:nil object:nil];
     }else{
         WXUIViewController *vc = [[LoginVC alloc] init];
@@ -92,10 +91,6 @@
 -(BOOL)checkUserInfo{
     WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
     if(!userDefault.user || !userDefault.pwd || !userDefault.wxtID){
-        return NO;
-    }
-    if(!userDefault.userFirstLogin){
-        [userDefault removeAllUserInfo];
         return NO;
     }
     return YES;

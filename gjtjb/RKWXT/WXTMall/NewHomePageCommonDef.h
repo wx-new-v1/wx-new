@@ -63,6 +63,8 @@ enum{
 #import "SignViewController.h"
 #import "LuckyShakeVC.h"
 
+#import "NewHomePageModel.h"
+
 #pragma mark 导航跳转
 enum{
     HomePageJump_Type_GoodsInfo = 1,    //商品详情

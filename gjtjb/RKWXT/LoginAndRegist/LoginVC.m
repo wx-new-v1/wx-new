@@ -321,7 +321,6 @@
     [self unShowWaitView];
     
     WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    [userDefault SetUserLoginFirst:YES];
     WXTUITabbarVC *tabbar = [[WXTUITabbarVC alloc] init];
     WXUINavigationController *nav = [[WXUINavigationController alloc] initWithRootViewController:tabbar];
     [self presentViewController:nav animated:YES completion:^{

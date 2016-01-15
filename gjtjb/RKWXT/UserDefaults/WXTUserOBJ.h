@@ -19,9 +19,11 @@
 -(void)setToken:(NSString*)token;  //设置令牌
 -(void)setSmsID:(int)smsID;        //验证码ID
 -(void)setNickname:(NSString*)nickname; //昵称
--(void)SetUserLoginFirst:(BOOL)first; //升级新商家临时记录
-
+//商家信息
 -(void)setSellerID:(NSString*)sellerID; //商家ID
+-(void)setSellerName:(NSString*)sellerName;//商家name
+-(void)setShopID:(NSString*)shopID; //店铺ID
+-(void)setShopName:(NSString*)shopName; //店铺name
 
 -(NSString*)wxtID;
 -(NSString*)user;
@@ -29,8 +31,11 @@
 -(NSString*)token;
 -(int)smsID;
 -(NSString*)nickname;
+//商家信息
 -(NSString*)sellerID;
--(BOOL)userFirstLogin;
+-(NSString*)sellerName;
+-(NSString*)shopID;
+-(NSString*)shopName;
 
 -(void)removeAllUserInfo;
 

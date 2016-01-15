@@ -68,6 +68,13 @@
 		12228A6C1AB1B1D000CF0800 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A6B1AB1B1D000CF0800 /* LoginModel.m */; };
 		12228A731AB1BABA00CF0800 /* RegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A721AB1BABA00CF0800 /* RegistVC.m */; };
 		12228A761AB1C0F200CF0800 /* RegistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12228A751AB1C0F200CF0800 /* RegistModel.m */; };
+		122841F11C48D35800D76A6B /* HomePageTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841F01C48D35800D76A6B /* HomePageTop.m */; };
+		122841F41C48D37200D76A6B /* HomePageTopEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841F31C48D37200D76A6B /* HomePageTopEntity.m */; };
+		122841F71C48D58E00D76A6B /* NewHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841F61C48D58E00D76A6B /* NewHomePageModel.m */; };
+		122841FB1C48E04900D76A6B /* HomePageRecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841FA1C48E04900D76A6B /* HomePageRecModel.m */; };
+		122841FE1C48E05C00D76A6B /* HomePageRecEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122841FD1C48E05C00D76A6B /* HomePageRecEntity.m */; };
+		122842021C48EE8100D76A6B /* HomePageSurpEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842011C48EE8100D76A6B /* HomePageSurpEntity.m */; };
+		122842051C48EF3500D76A6B /* HomePageSurpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842041C48EF3500D76A6B /* HomePageSurpModel.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
 		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
@@ -929,6 +936,20 @@
 		12228A721AB1BABA00CF0800 /* RegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistVC.m; sourceTree = "<group>"; };
 		12228A741AB1C0F200CF0800 /* RegistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistModel.h; sourceTree = "<group>"; };
 		12228A751AB1C0F200CF0800 /* RegistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistModel.m; sourceTree = "<group>"; };
+		122841EF1C48D35800D76A6B /* HomePageTop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTop.h; sourceTree = "<group>"; };
+		122841F01C48D35800D76A6B /* HomePageTop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTop.m; sourceTree = "<group>"; };
+		122841F21C48D37200D76A6B /* HomePageTopEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTopEntity.h; sourceTree = "<group>"; };
+		122841F31C48D37200D76A6B /* HomePageTopEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTopEntity.m; sourceTree = "<group>"; };
+		122841F51C48D58E00D76A6B /* NewHomePageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomePageModel.h; sourceTree = "<group>"; };
+		122841F61C48D58E00D76A6B /* NewHomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomePageModel.m; sourceTree = "<group>"; };
+		122841F91C48E04900D76A6B /* HomePageRecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageRecModel.h; sourceTree = "<group>"; };
+		122841FA1C48E04900D76A6B /* HomePageRecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageRecModel.m; sourceTree = "<group>"; };
+		122841FC1C48E05C00D76A6B /* HomePageRecEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageRecEntity.h; sourceTree = "<group>"; };
+		122841FD1C48E05C00D76A6B /* HomePageRecEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageRecEntity.m; sourceTree = "<group>"; };
+		122842001C48EE8100D76A6B /* HomePageSurpEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSurpEntity.h; sourceTree = "<group>"; };
+		122842011C48EE8100D76A6B /* HomePageSurpEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSurpEntity.m; sourceTree = "<group>"; };
+		122842031C48EF3500D76A6B /* HomePageSurpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageSurpModel.h; sourceTree = "<group>"; };
+		122842041C48EF3500D76A6B /* HomePageSurpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSurpModel.m; sourceTree = "<group>"; };
 		122875E91C3CBB580058C86D /* T_Sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T_Sqlite.h; sourceTree = "<group>"; };
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
@@ -2466,6 +2487,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		122841EE1C48D33F00D76A6B /* TopNavImg */ = {
+			isa = PBXGroup;
+			children = (
+				122841EF1C48D35800D76A6B /* HomePageTop.h */,
+				122841F01C48D35800D76A6B /* HomePageTop.m */,
+				122841F21C48D37200D76A6B /* HomePageTopEntity.h */,
+				122841F31C48D37200D76A6B /* HomePageTopEntity.m */,
+			);
+			path = TopNavImg;
+			sourceTree = "<group>";
+		};
+		122841F81C48DFEF00D76A6B /* Recommond */ = {
+			isa = PBXGroup;
+			children = (
+				122841F91C48E04900D76A6B /* HomePageRecModel.h */,
+				122841FA1C48E04900D76A6B /* HomePageRecModel.m */,
+				122841FC1C48E05C00D76A6B /* HomePageRecEntity.h */,
+				122841FD1C48E05C00D76A6B /* HomePageRecEntity.m */,
+			);
+			path = Recommond;
+			sourceTree = "<group>";
+		};
+		122841FF1C48EDC600D76A6B /* Guess */ = {
+			isa = PBXGroup;
+			children = (
+				122842001C48EE8100D76A6B /* HomePageSurpEntity.h */,
+				122842011C48EE8100D76A6B /* HomePageSurpEntity.m */,
+				122842031C48EF3500D76A6B /* HomePageSurpModel.h */,
+				122842041C48EF3500D76A6B /* HomePageSurpModel.m */,
+			);
+			path = Guess;
+			sourceTree = "<group>";
+		};
 		122AB81D1C3E384C00AC9DF5 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -3813,6 +3867,11 @@
 				128221E91B18716E004613BB /* T_HPSubBaseModel.m */,
 				128221EA1B18716E004613BB /* URLBaseModel.h */,
 				128221EB1B18716E004613BB /* URLBaseModel.m */,
+				122841F51C48D58E00D76A6B /* NewHomePageModel.h */,
+				122841F61C48D58E00D76A6B /* NewHomePageModel.m */,
+				122841FF1C48EDC600D76A6B /* Guess */,
+				122841F81C48DFEF00D76A6B /* Recommond */,
+				122841EE1C48D33F00D76A6B /* TopNavImg */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5932,6 +5991,7 @@
 				123667511C44AA04000FAF70 /* LuckyShakeVC.m in Sources */,
 				77DB94271AAFEEBC0021A816 /* UserAgent.m in Sources */,
 				12F3CC911B1E026C00E64DE4 /* PersonalCallCell.m in Sources */,
+				122841FB1C48E04900D76A6B /* HomePageRecModel.m in Sources */,
 				775842BD1AB95A300039B129 /* WXGuidMaskView.m in Sources */,
 				7758432B1AB95A300039B129 /* WXUIScrollView.m in Sources */,
 				12F4228C1B1D61E100643DD7 /* AddressBaseInfoCell.m in Sources */,
@@ -6106,9 +6166,11 @@
 				77DB93F01AAFE70D0021A816 /* RecentData.m in Sources */,
 				126CA3D21AB2744600E08A0B /* WXTUserDefault.m in Sources */,
 				120D01741BBB9465005CAA6C /* APAuthV2Info.m in Sources */,
+				122841F11C48D35800D76A6B /* HomePageTop.m in Sources */,
 				775842C01AB95A300039B129 /* WXGuideMaskControl.m in Sources */,
 				1277D00E1AC50E4F0008D9B6 /* WXTResetPwdVC.m in Sources */,
 				7758432F1AB95A300039B129 /* WXUITabBar.m in Sources */,
+				122841F71C48D58E00D76A6B /* NewHomePageModel.m in Sources */,
 				1236673D1C44AA04000FAF70 /* LuckyGoodsMakeOrderDateCell.m in Sources */,
 				775843241AB95A300039B129 /* WXUIImagePickerController.m in Sources */,
 				775842D31AB95A300039B129 /* NSDate+Compare.m in Sources */,
@@ -6143,6 +6205,7 @@
 				122AB8D01C3E6F2C00AC9DF5 /* NewGoodsInfoWebViewViewController.m in Sources */,
 				122D63DB1C3F93760086AAB8 /* NewAddressTextfieldCell.m in Sources */,
 				122AB8BF1C3E6D5500AC9DF5 /* UIButton+WebCache.m in Sources */,
+				122841FE1C48E05C00D76A6B /* HomePageRecEntity.m in Sources */,
 				123667561C44AA04000FAF70 /* WinningView.m in Sources */,
 				122AB8631C3E684400AC9DF5 /* GoodsStockNameCell.m in Sources */,
 				DDB58F4E1AD3C6A2006248E9 /* CallHistoryCell.m in Sources */,
@@ -6227,6 +6290,7 @@
 				128083DA1B62147E00260B9F /* ShareBrowserView.m in Sources */,
 				775C58D01ABA7B75005B6B40 /* WXContacterEntity+Detail.m in Sources */,
 				123667411C44AA04000FAF70 /* LuckyGoodsInfoModel.m in Sources */,
+				122841F41C48D37200D76A6B /* HomePageTopEntity.m in Sources */,
 				122D63E71C3F95F30086AAB8 /* NewUserAddressPhoneCell.m in Sources */,
 				126CA3CE1AB2709D00E08A0B /* WXTUserOBJ.m in Sources */,
 				122AB89B1C3E6D0D00AC9DF5 /* GoodsInfoImageZoomView.m in Sources */,
@@ -6262,6 +6326,7 @@
 				122EFBD91C41034300CE0EA0 /* AllOrderListGoodsCell.m in Sources */,
 				122AB8CD1C3E6E9B00AC9DF5 /* MerchantImageCell.m in Sources */,
 				122D64261C3F99C80086AAB8 /* MakeOrderUserMsgTextFieldCell.m in Sources */,
+				122842051C48EF3500D76A6B /* HomePageSurpModel.m in Sources */,
 				775842D81AB95A300039B129 /* NSString+Size.m in Sources */,
 				775C583B1ABA5F31005B6B40 /* NSString+PinYin4Cocoa.m in Sources */,
 				1236674B1C44AA04000FAF70 /* LuckyOrderListModel.m in Sources */,
@@ -6273,6 +6338,7 @@
 				12F422921B1D830400643DD7 /* AddressEditVC.m in Sources */,
 				120A2C081AB142D4006A28B1 /* LoginVC.m in Sources */,
 				123666D31C449760000FAF70 /* BonusWaitReceiveVC.m in Sources */,
+				122842021C48EE8100D76A6B /* HomePageSurpEntity.m in Sources */,
 				775842E41AB95A300039B129 /* WXMiltiViewCell.m in Sources */,
 				775843C01AB971CF0039B129 /* UIFont+WXT.m in Sources */,
 				1282413E1B60C605001EE0BD /* WXWeiXinOBJ.m in Sources */,

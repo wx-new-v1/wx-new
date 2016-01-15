@@ -9,17 +9,38 @@
 #import "WXTMallViewController.h"
 #import "NewHomePageCommonDef.h"
 
-@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyInfoCellDelegate,HomeRecommendInfoCellDelegate,ShareBrowserViewDelegate>{
+@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyInfoCellDelegate,HomeRecommendInfoCellDelegate,ShareBrowserViewDelegate,HomePageTopDelegate,HomePageRecDelegate,HomePageSurpDelegate>{
     UITableView *_tableView;
     WXSysMsgUnreadV * _unreadView;
+    NewHomePageModel *_model;
 }
 @end
 
 @implementation WXTMallViewController
 
+-(void)dealloc{
+    RELEASE_SAFELY(_tableView);
+    RELEASE_SAFELY(_model);
+    [_model setDelegate:nil];
+    [super dealloc];
+}
+
+-(id)init{
+    self = [super init];
+    if(self){
+        _model = [[NewHomePageModel alloc] init];
+        [_model setDelegate:self];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setCSTTitle:kMerchantName];
+    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
+    if(userObj.sellerName){
+        [self setCSTTitle:userObj.sellerName];
+    }
     
     _tableView = [[UITableView alloc] init];
     _tableView.frame = CGRectMake(0, 0, Size.width, Size.height);
@@ -31,6 +52,8 @@
     [self addSubview:_tableView];
     [self setupRefresh];
     [self createTopBtn];
+    
+    [_model loadData];
 }
 
 -(void)createTopBtn{
@@ -79,10 +102,10 @@
             row = 0;
             break;
         case T_HomePage_RecomendInfo:
-            row = 0;
+            row = [_model.recommend.data count]/3+([_model.recommend.data count]%3>0?1:0);
             break;
         case T_HomePage_GuessInfo:
-            row = 0;
+            row = [_model.surprise.data count]/2+([_model.surprise.data count]%2>0?1:0);
             break;
         default:
             break;
@@ -129,7 +152,7 @@
         cell = [[[WXHomeTopGoodCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
     }
     [cell setDelegate:self];
-//    [cell setCellInfo:_model.top.data];
+    [cell setCellInfo:_model.top.data];
     [cell load];
     return cell;
 }
@@ -168,12 +191,12 @@
     [cell setBackgroundColor:WXColorWithInteger(HomePageBGColor)];
     NSMutableArray *rowArray = [NSMutableArray array];
     NSInteger max = (row+1)*LimitBuyShow;
-    NSInteger count = [nil count];
+    NSInteger count = [_model.surprise.data count];
     if(max > count){
         max = count;
     }
     for(NSInteger i = row*LimitBuyShow; i < max; i++){
-        [rowArray addObject:[nil objectAtIndex:i]];
+        [rowArray addObject:[_model.surprise.data objectAtIndex:i]];
     }
     [cell setDelegate:self];
     [cell loadCpxViewInfos:rowArray];
@@ -205,12 +228,12 @@
     [cell setBackgroundColor:WXColorWithInteger(HomePageBGColor)];
     NSMutableArray *rowArray = [NSMutableArray array];
     NSInteger max = (row+1)*RecommendShow;
-    NSInteger count = [nil count];
+    NSInteger count = [_model.recommend.data count];
     if(max > count){
         max = count;
     }
     for(NSInteger i = row*RecommendShow; i < max; i++){
-        [rowArray addObject:[nil objectAtIndex:i]];
+        [rowArray addObject:[_model.recommend.data objectAtIndex:i]];
     }
     [cell setDelegate:self];
     [cell loadCpxViewInfos:rowArray];
@@ -238,6 +261,9 @@
     HomeGuessInfoCell *cell = [_tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
         cell = [[[HomeGuessInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
+    }
+    if([_model.surprise.data count] > 0){
+        [cell setCellInfo:[_model.surprise.data objectAtIndex:row]];
     }
     [cell load];
     return cell;
@@ -364,15 +390,35 @@
     return imgUrlStr;
 }
 
+#pragma mark HomePageTopDelegate
+-(void)homePageTopLoadedSucceed{
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_TopImg] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void)homePageTopLoadedFailed:(NSString *)error{}
+
 #pragma mark limitbuy
 -(void)homeLimitBuyCellbtnClicked:(id)sender{
 
 }
 
 #pragma mark recommend
+-(void)homePageRecLoadedSucceed{
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_RecomendInfo] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void)homePageRecLoadedFailed:(NSString *)errorMsg{}
+
 -(void)homeRecommendCellbtnClicked:(id)sender{
     
 }
+
+#pragma mark surprice
+-(void)homePageSurpLoadedSucceed{
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_GuessInfo] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void)homePageSurpLoadedFailed:(NSString *)errorMsg{}
 
 #pragma mark refresh
 -(void)headerRefreshing{

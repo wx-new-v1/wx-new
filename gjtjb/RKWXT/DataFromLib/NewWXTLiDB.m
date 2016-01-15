@@ -24,7 +24,7 @@
 -(void)loadData{
     [NewUserAddressModel shareUserAddress].address_type = UserAddress_Type_Search;
     [[NewUserAddressModel shareUserAddress] loadUserAddress];
-    [[UserHeaderModel shareUserHeaderModel] loadUserHeaderImageWith];
+//    [[UserHeaderModel shareUserHeaderModel] loadUserHeaderImageWith];
 }
 
 @end

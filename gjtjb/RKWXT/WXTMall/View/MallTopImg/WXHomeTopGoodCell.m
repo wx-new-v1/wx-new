@@ -10,6 +10,7 @@
 #import "WXRemotionImgBtn.h"
 #import "CSTScrollBrowser.h"
 #import "NewHomePageCommonDef.h"
+#import "HomePageTopEntity.h"
 
 #define kTimerInterval (5.0)
 @interface WXHomeTopGoodCell()<UIScrollViewDelegate,WXRemotionImgBtnDelegate>{
@@ -66,13 +67,13 @@
     [self toInit];
     CGRect rect = [self bounds];
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-//    for(HomePageTopEntity *topADVEntity in goodEntityArray){
-//        WXRemotionImgBtn *imgView = [[[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(0, 0, IPHONE_SCREEN_WIDTH, rect.size.width/3-yGap)] autorelease];
-//        [imgView setCpxViewInfo:topADVEntity.topImg];
-//        [imgView load];
-//        [imgView setDelegate:self];
-//        [_merchantImgViewArray addObject:imgView];
-//    }
+    for(HomePageTopEntity *topADVEntity in goodEntityArray){
+        WXRemotionImgBtn *imgView = [[[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(0, 0, IPHONE_SCREEN_WIDTH, rect.size.width/3)] autorelease];
+        [imgView setCpxViewInfo:topADVEntity.topImg];
+        [imgView load];
+        [imgView setDelegate:self];
+        [_merchantImgViewArray addObject:imgView];
+    }
     [pool drain];
     
     [_browser setSubScrollViews:_merchantImgViewArray];

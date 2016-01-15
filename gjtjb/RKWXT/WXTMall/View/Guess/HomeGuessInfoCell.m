@@ -9,6 +9,7 @@
 #import "HomeGuessInfoCell.h"
 #import "NewHomePageCommonDef.h"
 #import "WXRemotionImgBtn.h"
+#import "HomePageSurpEntity.h"
 
 @interface HomeGuessInfoCell(){
     WXRemotionImgBtn *imgView;
@@ -54,7 +55,11 @@
 }
 
 -(void)load{
-    
+    HomePageSurpEntity *entity = self.cellInfo;
+    [imgView setCpxViewInfo:entity.home_img];
+    [imgView load];
+    [nameLabel setText:entity.goods_name];
+    [priceLabel setText:[NSString stringWithFormat:@"%.2f",entity.shop_price]];
 }
 
 @end

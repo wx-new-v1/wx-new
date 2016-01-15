@@ -51,9 +51,19 @@
     [userDefault setObject:sellerID forKey:WXT_Userdefault_SellerID];
 }
 
--(void)SetUserLoginFirst:(BOOL)first{
+-(void)setSellerName:(NSString *)sellerName{
     WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
-    [userDefault setBool:first forKey:WXT_Userdefault_FirstLogin];
+    [userDefault setObject:sellerName forKey:WXT_Userdefault_SellerName];
+}
+
+-(void)setShopID:(NSString*)ShopID{
+    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
+    [userDefault setObject:ShopID forKey:WXT_Userdefault_ShopID];
+}
+
+-(void)setShopName:(NSString *)shopName{
+    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
+    [userDefault setObject:shopName forKey:WXT_Userdefault_ShopName];
 }
 
 -(void)setPwd:(NSString *)pwd{
@@ -110,18 +120,24 @@
     return (int)[userDefault integerValueForKey:WXT_Userdefault_SmsID];
 }
 
--(BOOL)userFirstLogin{
-    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
-    return [userDefault boolValueForKey:WXT_Userdefault_FirstLogin];
-}
-
 -(NSString*)sellerID{
     WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
-    NSString *str = [userDefault textValueForKey:WXT_Userdefault_SellerID];
-    if(!str){
-        str = @"1";
-    }
-    return str;
+    return [userDefault textValueForKey:WXT_Userdefault_SellerID];
+}
+
+-(NSString*)sellerName{
+    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
+    return [userDefault textValueForKey:WXT_Userdefault_SellerName];
+}
+
+-(NSString*)shopID{
+    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
+    return [userDefault textValueForKey:WXT_Userdefault_ShopID];
+}
+
+-(NSString*)shopName{
+    WXTUserDefault *userDefault = [WXTUserDefault sharedWXUserDefault];
+    return [userDefault textValueForKey:WXT_Userdefault_ShopName];
 }
 
 - (void)removeAllUserInfo{
@@ -133,6 +149,8 @@
     [userDefault removeObjectForKey:WXT_Userdefault_SmsID];
     [userDefault removeObjectForKey:WXT_Userdefault_Nickname];
     [userDefault removeObjectForKey:WXT_Userdefault_SellerID];
+    [userDefault removeObjectForKey:WXT_Userdefault_ShopID];
+    [userDefault removeObjectForKey:WXT_Userdefault_ShopName];
 }
 
 @end

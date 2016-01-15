@@ -28,6 +28,9 @@
             [userDefault setPwd:pwdStr];
             [userDefault setWxtID:[[dic objectForKey:@"data"] objectForKey:@"woxin_id"]];
             [userDefault setSellerID:[[dic objectForKey:@"data"] objectForKey:@"seller_id"]]; //用户所属商家id
+            [userDefault setSellerName:[[dic objectForKey:@"data"] objectForKey:@"seller_name"]]; //用户所属商家
+            [userDefault setShopID:[[dic objectForKey:@"data"] objectForKey:@"shop_id"]]; //用户所在店铺id
+            [userDefault setShopName:[[dic objectForKey:@"data"] objectForKey:@"shop_name"]]; //用户所在店铺
             if (_delegate && [_delegate respondsToSelector:@selector(loginSucceed)]){
                 [_delegate loginSucceed];
             }

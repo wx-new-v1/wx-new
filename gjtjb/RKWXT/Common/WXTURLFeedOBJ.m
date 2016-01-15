@@ -104,6 +104,9 @@
         case WXT_UrlFeed_Type_New_SharedSucceed:
             url = @"/get_share_award.php";
             break;
+        case WXT_UrlFeed_Type_New_UserLoginShopInfo:
+            url = @"/get_shoplist.php";
+            break;
         case WXT_UrlFeed_Type_New_UpdateUserHeader:
             url = @"/app_upload_userpic.php";
             break;
@@ -124,6 +127,15 @@
             break;
         case WXT_UrlFeed_Type_New_GainBonus:
             url = @"";
+            break;
+        case WXT_UrlFeed_Type_NewMall_TopImg:
+            url = @"/top_images.php";
+            break;
+        case WXT_UrlFeed_Type_NewMall_Recommond:
+            url = @"/home_recommend.php";
+            break;
+        case WXT_UrlFeed_Type_NewMall_Surprise:
+            url = @"/home_youlike.php";
             break;
         default:
             break;

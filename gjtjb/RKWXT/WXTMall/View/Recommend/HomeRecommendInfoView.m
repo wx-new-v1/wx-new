@@ -10,6 +10,7 @@
 #import "NewHomePageCommonDef.h"
 #import "WXRemotionImgBtn.h"
 #import "HomeRecommendInfoCell.h"
+#import "HomePageRecEntity.h"
 
 @interface HomeRecommendInfoView(){
     WXRemotionImgBtn *_imgView;
@@ -93,12 +94,12 @@
 }
 
 -(void)load{
-//    TimeShopData *entity = self.cpxViewInfo;
-//    [_imgView setCpxViewInfo:entity.goods_home_img];
-//    [_imgView load];
-//    [_newPriceLabel setText:[NSString stringWithFormat:@"抢购价:￥%.2f",[entity.scare_buying_price floatValue]]];
-//    [_oldPriceLabel setText:[NSString stringWithFormat:@"原价:￥%.2f",[entity.goods_price floatValue]]];
-//    [_nameLabel setText:entity.goods_name];
+    HomePageRecEntity *entity = self.cpxViewInfo;
+    [_imgView setCpxViewInfo:entity.home_img];
+    [_imgView load];
+    [_newPriceLabel setText:[NSString stringWithFormat:@"￥%.2f",entity.shopPrice]];
+    [_oldPriceLabel setText:[NSString stringWithFormat:@"原价:￥%.2f",entity.marketPrice]];
+    [_nameLabel setText:entity.goods_name];
 }
 
 @end
