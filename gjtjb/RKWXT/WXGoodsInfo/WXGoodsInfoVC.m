@@ -328,7 +328,7 @@
     
     CGSize size = self.bounds.size;
     self.scrollView.contentSize = CGSizeMake(size.width, size.height);
-//    self.subViewController = [[NewGoodsInfoWebViewViewController alloc] initWithFeedType:WXT_UrlFeed_Type_NewMall_ImgAndText paramDictionary:dic];
+    self.subViewController = [[NewGoodsInfoWebViewViewController alloc] initWithFeedType:WXT_UrlFeed_Type_NewMall_ImgAndText paramDictionary:dic];
     self.subViewController.mainViewController = self;
 }
 
@@ -473,12 +473,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if(section == GoodsInfo_Section_SellerInfo){
+//    NSInteger section = indexPath.section;
+//    NSInteger row = indexPath.row;
+//    if(section == GoodsInfo_Section_SellerInfo){
 //        LMGoodsInfoEntity *entity = [_model.sellerArr objectAtIndex:row];
 //        [[CoordinateController sharedCoordinateController] toLMSellerInfopVC:self sellerID:entity.sellerID animated:YES];
-    }
+//    }
 }
 
 #pragma mark dataDelegate
@@ -543,7 +543,7 @@
     }else{
         [goodsView setGoodsViewType:GoodsStockView_Type_ShoppingCart];
     }
-//    [goodsView loadGoodsStockInfo:_model.stockArr];
+    [goodsView loadGoodsStockInfo:_model.stockArr];
     [self.view addSubview:goodsView];
 }
 
@@ -556,26 +556,26 @@
 
 //购买
 -(void)userBuyBtnClicked{
-//    LMMakeOrderVC *makeOrderVC = [[LMMakeOrderVC alloc] init];
-//    makeOrderVC.goodsArr = [self makeOrderInfoArr];
-//    [self.wxNavigationController pushViewController:makeOrderVC];
+    MakeOrderVC *makeOrderVC = [[MakeOrderVC alloc] init];
+    makeOrderVC.goodsList = [self makeOrderInfoArr];
+    [self.wxNavigationController pushViewController:makeOrderVC];
 }
 
 -(NSArray*)makeOrderInfoArr{
     NSMutableArray *goodsInfoArr = [[NSMutableArray alloc] init];
-//    LMGoodsInfoEntity *entity = nil;
-//    if([_model.goodsInfoArr count] > 0){
-//        entity = [_model.goodsInfoArr objectAtIndex:0];
-//    }
-//    if(!entity){
-//        return nil;
-//    }
-//    entity.goodsID = _goodsId;
-//    entity.stockID = goodsView.stockID;
-//    entity.stockName = goodsView.stockName;
-//    entity.stockPrice = goodsView.stockPrice;
-//    entity.stockNum = goodsView.buyNum;
-//    [goodsInfoArr addObject:entity];
+    GoodsInfoEntity *entity = nil;
+    if([_model.goodsInfoArr count] > 0){
+        entity = [_model.goodsInfoArr objectAtIndex:0];
+    }
+    if(!entity){
+        return nil;
+    }
+    entity.goodsID = _goodsId;
+    entity.stockID = goodsView.stockID;
+    entity.stockName = goodsView.stockName;
+    entity.stockPrice = goodsView.stockPrice;
+    entity.stockNum = goodsView.buyNum;
+    [goodsInfoArr addObject:entity];
     
     return goodsInfoArr;
 }

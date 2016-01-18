@@ -54,9 +54,9 @@ typedef enum{
 //    if(urlFeedType == WXT_UrlFeed_Type_NewMall_CatagaryList){
 //        typeStr = @"sort_list";
 //    }
-//    if(urlFeedType == WXT_UrlFeed_Type_NewMall_ImgAndText){
-//        typeStr = @"good_info_test";
-//    }
+    if(urlFeedType == WXT_UrlFeed_Type_NewMall_ImgAndText){
+        typeStr = @"good_info_test";
+    }
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@",WXTShareBaseUrl,MallCatagaryListUrl,typeStr];
     NSString *boay = nil;
     if(paramDictionary){

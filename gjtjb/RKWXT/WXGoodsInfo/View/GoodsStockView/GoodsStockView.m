@@ -7,7 +7,7 @@
 //
 
 #import "GoodsStockView.h"
-//#import "LMGoodsInfoEntity.h"
+#import "GoodsInfoEntity.h"
 #import "GoodsStockNameCell.h"
 
 #define kAnimateDefaultDuration (0.3)
@@ -265,34 +265,34 @@
     NSInteger count = 0;
     NSInteger stockNumber = 0;
     CGFloat stockPrice = 0;
-//    for(LMGoodsInfoEntity *entity in listArr){
-//        if(!entity.selected){
-//            count ++;
-//        }else{
-//            stockNumber = entity.stockNum;
-//            stockPrice = entity.stockPrice;
-//            
-//            //外部变量
-//            _stockID = entity.stockID;
-//            _stockName = entity.stockName;
-//            _buyNum = 1;
-//            _stockPrice = entity.stockPrice;
-//        }
-//    }
-//    if(count == [listArr count]){
-//        for(LMGoodsInfoEntity *entity in listArr){
-//            entity.selected = YES;
-//            stockNumber = entity.stockNum;
-//            stockPrice = entity.stockPrice;
-//            
-//            //外部变量
-//            _stockID = entity.stockID;
-//            _stockName = entity.stockName;
-//            _buyNum = 1;
-//            _stockPrice = entity.stockPrice;
-//            break;
-//        }
-//    }
+    for(GoodsInfoEntity *entity in listArr){
+        if(!entity.selected){
+            count ++;
+        }else{
+            stockNumber = entity.stockNum;
+            stockPrice = entity.stockPrice;
+            
+            //外部变量
+            _stockID = entity.stockID;
+            _stockName = entity.stockName;
+            _buyNum = 1;
+            _stockPrice = entity.stockPrice;
+        }
+    }
+    if(count == [listArr count]){
+        for(GoodsInfoEntity *entity in listArr){
+            entity.selected = YES;
+            stockNumber = entity.stockNum;
+            stockPrice = entity.stockPrice;
+            
+            //外部变量
+            _stockID = entity.stockID;
+            _stockName = entity.stockName;
+            _buyNum = 1;
+            _stockPrice = entity.stockPrice;
+            break;
+        }
+    }
     
     [stockNumLabel setText:[NSString stringWithFormat:@"%ld",(long)stockNumber]];
     [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",stockPrice]];
@@ -336,19 +336,19 @@
 #pragma mark changeBuyNumber
 -(void)plusBtnClick{
     CGFloat money = 0;
-//    for(LMGoodsInfoEntity *entity in listArr){
-//        if(entity.selected){
-//            money = entity.stockPrice;
-//            
-//            //外部变量
-//            _stockID = entity.stockID;
-//            _stockName = entity.stockName;
-//            if(buyNumber >= entity.stockNum){
-//                [UtilTool showAlertView:[NSString stringWithFormat:@"库存已不足%ld件",(long)buyNumber+1]];
-//                return;
-//            }
-//        }
-//    }
+    for(GoodsInfoEntity *entity in listArr){
+        if(entity.selected){
+            money = entity.stockPrice;
+            
+            //外部变量
+            _stockID = entity.stockID;
+            _stockName = entity.stockName;
+            if(buyNumber >= entity.stockNum){
+                [UtilTool showAlertView:[NSString stringWithFormat:@"库存已不足%ld件",(long)buyNumber+1]];
+                return;
+            }
+        }
+    }
     buyNumber ++;
     [buyNumLabel setText:[NSString stringWithFormat:@"%ld",(long)buyNumber]];
     [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",buyNumber*money]];
@@ -359,15 +359,15 @@
 
 -(void)minusBtnClicked{
     CGFloat money = 0;
-//    for(LMGoodsInfoEntity *entity in listArr){
-//        if(entity.selected){
-//            money = entity.stockPrice;
-//            
-//            //外部变量
-//            _stockID = entity.stockID;
-//            _stockName = entity.stockName;
-//        }
-//    }
+    for(GoodsInfoEntity *entity in listArr){
+        if(entity.selected){
+            money = entity.stockPrice;
+            
+            //外部变量
+            _stockID = entity.stockID;
+            _stockName = entity.stockName;
+        }
+    }
     if(buyNumber <= 1){
         return;
     }
@@ -379,24 +379,24 @@
     _buyNum = buyNumber;
 }
 
--(void)lmGoodsStockNameBtnClicked:(id)sender{
-//    LMGoodsInfoEntity *entity = sender;
-//    for(LMGoodsInfoEntity *ent in listArr){
-//        if(ent.selected){
-//            if(ent.stockID == entity.stockID){
-//                return;
-//            }else{
-//                entity.selected = YES;
-//                ent.selected = NO;
-//                break;
-//            }
-//        }
-//    }
-//    buyNumber = 1;
-//    [_tableView reloadData];
-//    [stockNumLabel setText:[NSString stringWithFormat:@"%ld",(long)entity.stockNum]];
-//    [buyNumLabel setText:[NSString stringWithFormat:@"%ld",(long)buyNumber]];
-//    [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",entity.stockPrice]];
+-(void)goodsStockNameBtnClicked:(id)sender{
+    GoodsInfoEntity *entity = sender;
+    for(GoodsInfoEntity *ent in listArr){
+        if(ent.selected){
+            if(ent.stockID == entity.stockID){
+                return;
+            }else{
+                entity.selected = YES;
+                ent.selected = NO;
+                break;
+            }
+        }
+    }
+    buyNumber = 1;
+    [_tableView reloadData];
+    [stockNumLabel setText:[NSString stringWithFormat:@"%ld",(long)entity.stockNum]];
+    [buyNumLabel setText:[NSString stringWithFormat:@"%ld",(long)buyNumber]];
+    [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",entity.stockPrice]];
 }
 
 //立即购买或加入购物车

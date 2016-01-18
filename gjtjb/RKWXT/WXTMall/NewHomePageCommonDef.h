@@ -51,7 +51,7 @@ enum{
 #import "WXHomeTopGoodCell.h"
 #import "WXHomeBaseFunctionCell.h"
 #import "HomeLimitBuyTitleCell.h"
-#import "HomeLimitBuyInfoCell.h"
+#import "HomeLimitBuyCell.h"
 #import "HomeRecommendInfoCell.h"
 #import "HomeGuessInfoCell.h"
 

@@ -140,6 +140,9 @@
         case WXT_UrlFeed_Type_Home_GoodsInfo:
             url = @"/single_goods_info.php";
             break;
+        case WXT_UrlFeed_Type_NewMall_ImgAndText:
+            url = @"";
+            break;
         default:
             break;
     }

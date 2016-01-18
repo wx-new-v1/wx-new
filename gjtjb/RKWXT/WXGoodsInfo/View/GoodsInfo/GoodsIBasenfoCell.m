@@ -7,7 +7,7 @@
 //
 
 #import "GoodsIBasenfoCell.h"
-//#import "LMGoodsInfoEntity.h"
+#import "GoodsInfoEntity.h"
 
 @interface GoodsIBasenfoCell(){
     WXUILabel *nameLabel;
@@ -48,9 +48,9 @@
 }
 
 -(void)load{
-//    LMGoodsInfoEntity *entity = self.cellInfo;
-//    [nameLabel setText:entity.attrName];
-//    [desLabel setText:entity.attrValue];
+    GoodsInfoEntity *entity = self.cellInfo;
+    [nameLabel setText:entity.attrName];
+    [desLabel setText:entity.attrValue];
 }
 
 @end

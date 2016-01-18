@@ -7,7 +7,7 @@
 //
 
 #import "GoodsStockNameCell.h"
-//#import "LMGoodsInfoEntity.h"
+#import "GoodsInfoEntity.h"
 
 @interface GoodsStockNameCell(){
     WXUIButton *stockBtn;
@@ -33,19 +33,19 @@
 }
 
 -(void)load{
-//    LMGoodsInfoEntity *entity = self.cellInfo;
-//    [stockBtn setTitle:entity.stockName forState:UIControlStateNormal];
-//    if(entity.selected){
-//        [stockBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
-//    }else{
-//        [stockBtn setBackgroundColor:WXColorWithInteger(0x9b9b9b)];
-//    }
+    GoodsInfoEntity *entity = self.cellInfo;
+    [stockBtn setTitle:entity.stockName forState:UIControlStateNormal];
+    if(entity.selected){
+        [stockBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
+    }else{
+        [stockBtn setBackgroundColor:WXColorWithInteger(0x9b9b9b)];
+    }
 }
 
 -(void)stockBtnClicked{
-//    LMGoodsInfoEntity *entity = self.cellInfo;
+    GoodsInfoEntity *entity = self.cellInfo;
     if(_delegate && [_delegate respondsToSelector:@selector(goodsStockNameBtnClicked:)]){
-//        [_delegate goodsStockNameBtnClicked:entity];
+        [_delegate goodsStockNameBtnClicked:entity];
     }
 }
 

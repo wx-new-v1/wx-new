@@ -48,6 +48,8 @@ enum{
 #import "GoodsInfoModel.h"
 #import "GoodsInfoEntity.h"
 
+#import "MakeOrderVC.h"
+
 enum{
     Share_Qq,
     Share_Qzone,

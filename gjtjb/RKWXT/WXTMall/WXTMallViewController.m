@@ -9,7 +9,7 @@
 #import "WXTMallViewController.h"
 #import "NewHomePageCommonDef.h"
 
-@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyInfoCellDelegate,HomeRecommendInfoCellDelegate,ShareBrowserViewDelegate,HomePageTopDelegate,HomePageRecDelegate,HomePageSurpDelegate>{
+@interface WXTMallViewController ()<UITableViewDelegate,UITableViewDataSource,WXSysMsgUnreadVDelegate,WXHomeTopGoodCellDelegate,WXHomeBaseFunctionCellBtnClicked,HomeLimitBuyCellDelegate,HomeRecommendInfoCellDelegate,ShareBrowserViewDelegate,HomePageTopDelegate,HomePageRecDelegate,HomePageSurpDelegate>{
     UITableView *_tableView;
     WXSysMsgUnreadV * _unreadView;
     NewHomePageModel *_model;
@@ -177,15 +177,16 @@
     if(!cell){
         cell = [[[HomeLimitBuyTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
     }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell load];
     return cell;
 }
 
 -(WXUITableViewCell*)tableViewForLimitBuy:(NSInteger)row{
     static NSString *identifier = @"limitBuyCell";
-    HomeLimitBuyInfoCell *cell = [_tableView dequeueReusableCellWithIdentifier:identifier];
+    HomeLimitBuyCell *cell = [_tableView dequeueReusableCellWithIdentifier:identifier];
     if(!cell){
-        cell = [[HomeLimitBuyInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[HomeLimitBuyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [cell setBackgroundColor:WXColorWithInteger(HomePageBGColor)];
     NSMutableArray *rowArray = [NSMutableArray array];
@@ -197,8 +198,8 @@
     for(NSInteger i = row*LimitBuyShow; i < max; i++){
         [rowArray addObject:[_model.surprise.data objectAtIndex:i]];
     }
+    [cell setCellInfo:rowArray];
     [cell setDelegate:self];
-    [cell loadCpxViewInfos:rowArray];
     [cell load];
     return cell;
 }
@@ -407,7 +408,7 @@
 -(void)homePageTopLoadedFailed:(NSString *)error{}
 
 #pragma mark limitbuy
--(void)homeLimitBuyCellbtnClicked:(id)sender{
+-(void)clickClassifyBtnAtIndex:(NSInteger)index{
 
 }
 
