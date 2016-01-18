@@ -73,8 +73,8 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     CGFloat btnHeight = 40;
     WXUIButton *submitBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     submitBtn.frame = CGRectMake(30, yOffset, IPHONE_SCREEN_WIDTH-2*30, btnHeight);
-    [submitBtn setBackgroundColor:WXColorWithInteger(0xdd2726)];
-    [submitBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(0xdd2726)];
+    [submitBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
+    [submitBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
     [submitBtn setTitle:@"保存信息" forState:UIControlStateNormal];
     [submitBtn setTitle:@"保存信息" forState:UIControlStateSelected];
     [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

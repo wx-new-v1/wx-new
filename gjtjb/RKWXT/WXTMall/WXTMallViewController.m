@@ -71,7 +71,7 @@
 //集成刷新控件
 -(void)setupRefresh{
     [_tableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
-    [_tableView addFooterWithTarget:self action:@selector(footerRefreshing)];
+//    [_tableView addFooterWithTarget:self action:@selector(footerRefreshing)];
     
     //设置文字
     _tableView.headerPullToRefreshText = @"下拉刷新";
@@ -402,10 +402,13 @@
 
 #pragma mark HomePageTopDelegate
 -(void)homePageTopLoadedSucceed{
+    [_tableView headerEndRefreshing];
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_TopImg] withRowAnimation:UITableViewRowAnimationFade];
 }
 
--(void)homePageTopLoadedFailed:(NSString *)error{}
+-(void)homePageTopLoadedFailed:(NSString *)error{
+    [_tableView headerEndRefreshing];
+}
 
 #pragma mark limitbuy
 -(void)clickClassifyBtnAtIndex:(NSInteger)index{
@@ -417,7 +420,8 @@
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_RecomendInfo] withRowAnimation:UITableViewRowAnimationFade];
 }
 
--(void)homePageRecLoadedFailed:(NSString *)errorMsg{}
+-(void)homePageRecLoadedFailed:(NSString *)errorMsg{
+}
 
 -(void)homeRecommendCellbtnClicked:(id)sender{
     
@@ -428,15 +432,12 @@
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:T_HomePage_GuessInfo] withRowAnimation:UITableViewRowAnimationFade];
 }
 
--(void)homePageSurpLoadedFailed:(NSString *)errorMsg{}
+-(void)homePageSurpLoadedFailed:(NSString *)errorMsg{
+}
 
 #pragma mark refresh
 -(void)headerRefreshing{
-    
-}
-
--(void)footerRefreshing{
-    
+    [_model loadData];
 }
 
 @end

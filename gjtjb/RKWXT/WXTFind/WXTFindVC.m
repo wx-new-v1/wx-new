@@ -11,13 +11,15 @@
 #import "WXTFindCommonCell.h"
 #import "WXTFindModel.h"
 #import "FindEntity.h"
+#import "HomePageTop.h"
 
 #define Size self.bounds.size
 
-@interface WXTFindVC()<UITableViewDataSource,UITableViewDelegate,WXHomeTopGoodCellDelegate,WXTFindCommonCellCellDelegate,wxtFindModelDelegate>{
+@interface WXTFindVC()<UITableViewDataSource,UITableViewDelegate,WXHomeTopGoodCellDelegate,WXTFindCommonCellCellDelegate,wxtFindModelDelegate,HomePageTopDelegate>{
     UITableView *_tableView;
     WXTFindModel *_comModel;
     NSArray *commonImgArr;
+    HomePageTop *_model;
 }
 @end
 
@@ -28,6 +30,9 @@
     if(self){
         _comModel = [[WXTFindModel alloc] init];
         [_comModel setFindDelegate:self];
+        
+        _model = [[HomePageTop alloc] init];
+        [_model setDelegate:self];
     }
     return self;
 }
@@ -47,6 +52,7 @@
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
     [_comModel loadFindData:FindData_Type_Load];
+    [_model loadDataFromWeb];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
@@ -76,7 +82,7 @@
         cell = [[WXHomeTopGoodCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [cell setDelegate:self];
-    //    [cell setCellInfo:_model.top.data];
+    [cell setCellInfo:_model.data];
     [cell load];
     return cell;
 }
@@ -137,6 +143,16 @@
     }
     [_comModel upLoadUserClickFindData:entity.classifyID];
     [[CoordinateController sharedCoordinateController] toWebVC:self url:entity.webUrl title:entity.name animated:YES];
+}
+
+#pragma mark topImg
+-(void)homePageTopLoadedSucceed{
+    [self unShowWaitView];
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void)homePageTopLoadedFailed:(NSString *)error{
+    [self unShowWaitView];
 }
 
 -(void)clickTopGoodAtIndex:(NSInteger)index{

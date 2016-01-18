@@ -81,12 +81,12 @@
 
 -(void)load{
     GoodsInfoEntity *entity = self.cellInfo;
-//    [_imgView setCpxViewInfo:entity.smallImg];
-//    [_imgView load];
-//    [_nameLabel setText:entity.intro];
-//    [_numLabel setText:[NSString stringWithFormat:@"X%ld",(long)entity.buyNumber]];
-//    [_stockName setText:entity.stockName];
-//    [_priceLabel setText:[NSString stringWithFormat:@"￥%.2f",entity.stockPrice]];
+    [_imgView setCpxViewInfo:entity.goodsImg];
+    [_imgView load];
+    [_nameLabel setText:entity.goodsName];
+    [_numLabel setText:[NSString stringWithFormat:@"X%ld",(long)entity.stockNum]];
+    [_stockName setText:entity.stockName];
+    [_priceLabel setText:[NSString stringWithFormat:@"￥%.2f",entity.stockPrice]];
 }
 
 -(void)setFrame:(CGRect)frame{
