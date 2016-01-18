@@ -12,15 +12,16 @@
 @implementation LoadAreaModel
 
 -(void)loadAllAreaData{
-//    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:(int)kMerchantID], @"sid", [NSNumber numberWithInt:(int)kSubShopID], @"shop_id", @"all", @"parent_id", nil];
-//    __block LoadAreaModel *blockSelf = self;
-//    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_LoadAreaData httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
-//        if(retData.code != 0){
-//        }else{
-//            [blockSelf writeAllAreaDataToPlist:[retData.data objectForKey:@"data"]];
-//        }
-//    }];
+    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", @"all", @"parent_id", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", @"all", @"parent_id", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
+    __block LoadAreaModel *blockSelf = self;
+    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_LoadAreaData httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
+        if(retData.code != 0){
+        }else{
+            [blockSelf writeAllAreaDataToPlist:[retData.data objectForKey:@"data"]];
+        }
+    }];
 }
 
 -(void)writeAllAreaDataToPlist:(id)data{

@@ -143,6 +143,15 @@
         case WXT_UrlFeed_Type_NewMall_ImgAndText:
             url = @"";
             break;
+        case WXT_UrlFeed_Type_New_CheckAreaVersion:
+            url = @"/get_area_version.php";
+            break;
+        case WXT_UrlFeed_Type_New_LoadAreaData:
+            url = @"/area.php";
+            break;
+        case WXT_UrlFeed_Type_NewMall_NewUserAddress:
+            url = @"/user_address.php";
+            break;
         default:
             break;
     }

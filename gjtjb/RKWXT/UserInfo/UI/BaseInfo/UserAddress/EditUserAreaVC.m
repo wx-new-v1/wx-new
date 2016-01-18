@@ -65,7 +65,7 @@ enum{
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
     [self createSelectAreaPickerView];
-    [self addSubview:[self staticFootView]];
+    [self rightCompleteBtn];
     
     self.cityList = [[LocalAreaModel shareLocalArea] searchCityArrayWithProvinceID:[LocalAreaModel shareLocalArea].areaEntity.areaID];
     if([self.cityList count] > 0){
@@ -110,16 +110,15 @@ enum{
     [self.view addSubview:picker];
 }
 
--(UIView*)staticFootView{
-    CGFloat btnHeight = 43;
+-(void)rightCompleteBtn{
     WXUIButton *submitBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-    submitBtn.frame = CGRectMake(0, Size.height-btnHeight, Size.width, btnHeight);
+    submitBtn.frame = CGRectMake(0, 0, 40, 30);
     [submitBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [submitBtn setTitle:@"保存" forState:UIControlStateNormal];
     [submitBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
-    [submitBtn.titleLabel setFont:WXFont(18.0)];
+    [submitBtn.titleLabel setFont:WXFont(13.0)];
     [submitBtn addTarget:self action:@selector(submitUserInfoData) forControlEvents:UIControlEventTouchUpInside];
-    return submitBtn;
+    [self setRightNavigationItem:submitBtn];
 }
 
 //改变cell分割线置顶

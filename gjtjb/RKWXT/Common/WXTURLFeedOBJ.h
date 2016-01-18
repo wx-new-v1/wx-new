@@ -57,6 +57,10 @@ typedef enum {
     //商品详情
     WXT_UrlFeed_Type_Home_GoodsInfo,
     WXT_UrlFeed_Type_NewMall_ImgAndText,
+    //收货地址
+    WXT_UrlFeed_Type_New_CheckAreaVersion,
+    WXT_UrlFeed_Type_New_LoadAreaData,
+    WXT_UrlFeed_Type_NewMall_NewUserAddress,
     
     WXT_UrlFeed_Type_Invalid,
 }WXT_UrlFeed_Type;

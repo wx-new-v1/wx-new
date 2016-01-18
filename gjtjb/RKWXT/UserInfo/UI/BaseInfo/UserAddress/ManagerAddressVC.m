@@ -156,12 +156,6 @@ enum{
 }
 
 -(void)createNewAddress{
-    //    AddressEditVC *addeditVC = [[AddressEditVC alloc] init];
-    //    addeditVC.address_type = Address_Type_Insert;
-    //    [self.wxNavigationController pushViewController:addeditVC completion:^{
-    //    }];
-    
-    //    NewAddressEditVC *addVC = [[NewAddressEditVC alloc] init];
     EditUserAreaVC *addVC = [[EditUserAreaVC alloc] init];
     addVC.address_type = UserArea_Type_Insert;
     [self.wxNavigationController pushViewController:addVC];
