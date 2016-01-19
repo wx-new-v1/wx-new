@@ -14,8 +14,7 @@
 @property (nonatomic,assign) id<MakeOrderDelegate>delegate;
 @property (nonatomic,strong) NSString *orderID;
 
--(void)submitOneOrderWithAllMoney:(CGFloat)allMoney withTotalMoney:(CGFloat)totalMoney withRedPacket:(NSInteger)packet withRemark:(NSString*)remark withProID:(NSInteger)proID withCarriage:(CGFloat)postage withGoodsList:(NSArray*)goodsList;
--(void)submitLimitOrderWithAllMoney:(CGFloat)allMoney withTotalMoney:(CGFloat)totalMoney withRedPacket:(NSInteger)packet withRemark:(NSString*)remark withProID:(NSInteger)proID withCarriage:(CGFloat)postage withGoodsList:(NSArray*)goodsList;
+-(void)submitOrderDataWithTotalMoney:(CGFloat)totalMoney factPay:(CGFloat)fectPay redPac:(CGFloat)redPacket carriage:(CGFloat)carriage remark:(NSString*)remark goodsInfo:(NSString*)goodsInfo;
 @end
 
 @protocol MakeOrderDelegate <NSObject>

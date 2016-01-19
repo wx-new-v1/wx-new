@@ -17,6 +17,7 @@
 #import "WXGoodsInfoVC.h"
 #import "ShoppingCartVC.h"
 #import "MakeOrderVC.h"
+#import "WXHomeOrderListVC.h"
 @implementation CoordinateController
 
 + (CoordinateController*)sharedCoordinateController{
@@ -51,6 +52,10 @@
 }
 
 -(void)toOrderList:(id)sender selectedShow:(NSInteger)number animated:(BOOL)animated{
+    WXUIViewController *vc = sender;
+    WXHomeOrderListVC *orderListVC = [[WXHomeOrderListVC alloc] init];
+    orderListVC.selectedNum = number;
+    [vc.wxNavigationController pushViewController:orderListVC];
 }
 
 -(void)toLuckyOrderList:(id)sender animated:(BOOL)animated{

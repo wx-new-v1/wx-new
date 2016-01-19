@@ -478,12 +478,18 @@
 #pragma mark submit
 -(void)submitOrder{
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    [_model submitOrderDataWithTotalMoney:[self allGoodsOldMoney] factPay:[self allGoodsTotalMoney] redPac:(userBonus?_bonus:0) carriage:carriageModel.carriageMoney remark:(self.userMessage.length==0?@"无":self.userMessage) goodsInfo:[self makeOrderGoodsInfo]];
+}
+
+-(NSString*)makeOrderGoodsInfo{
+    NSString *goodsInfo = [[NSString alloc] init];
     for(GoodsInfoEntity *entity in _goodsList){
-        NSDictionary *dic = [self goodsDicWithEntity:entity];
-        [arr addObject:dic];
+        if(goodsInfo.length > 0){
+            goodsInfo = [goodsInfo stringByAppendingString:@"^"];
+        }
+        goodsInfo = [goodsInfo stringByAppendingString:[NSString stringWithFormat:@"%ld:%ld",(long)entity.stockID,(long)entity.buyNumber]];
     }
-    [_model submitOneOrderWithAllMoney:[self allGoodsOldMoney] withTotalMoney:[self allGoodsTotalMoney] withRedPacket:(userBonus?_bonus:0) withRemark:(self.userMessage.length==0?@"无":self.userMessage) withProID:[self parseUserAddressProvinceID] withCarriage:carriageModel.carriageMoney withGoodsList:arr];
+    return goodsInfo;
 }
 
 -(NSDictionary*)goodsDicWithEntity:(GoodsInfoEntity*)entity{
@@ -536,7 +542,7 @@
 -(CGFloat)allGoodsOldMoney{
     CGFloat price = 0.0;
     for(GoodsInfoEntity *entity in _goodsList){
-        price += entity.stockPrice;
+        price += entity.stockPrice*entity.buyNumber;
     }
     allGoodsMoney = price;
     

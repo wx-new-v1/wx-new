@@ -50,6 +50,7 @@ typedef enum {
     WXT_UrlFeed_Type_New_GainBonus,
     //订单
     WXT_UrlFeed_Type_Home_LMorderList,
+    WXT_UrlFeed_Type_New_MakeOrder,
     //首页,
     WXT_UrlFeed_Type_NewMall_TopImg,
     WXT_UrlFeed_Type_NewMall_Recommond,

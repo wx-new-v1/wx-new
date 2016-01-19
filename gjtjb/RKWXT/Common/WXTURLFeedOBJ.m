@@ -161,6 +161,9 @@
         case WXT_UrlFeed_Type_New_SearchCarriageMoney:
             url = @"/postage.php";
             break;
+        case WXT_UrlFeed_Type_New_MakeOrder:
+            url = @"/insert_order.php";
+            break;
         default:
             break;
     }

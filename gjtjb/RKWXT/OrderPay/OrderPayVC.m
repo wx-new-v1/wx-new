@@ -240,7 +240,7 @@ enum{
 //去商城订单列表
 -(void)toOrderList{
     WXUINavigationController *navigationController = [CoordinateController sharedNavigationController];
-    UIViewController *orderVC = [navigationController lastViewControllerOfClass:NSClassFromString(@"HomeOrderVC")];
+    UIViewController *orderVC = [navigationController lastViewControllerOfClass:NSClassFromString(@"WXHomeOrderListVC")];
     if(orderVC){
         [navigationController popToViewController:orderVC animated:YES Completion:^{
         }];
@@ -255,7 +255,7 @@ enum{
     NSString *newStr = nil;
     switch (_orderpay_type) {
         case OrderPay_Type_Order:
-            newStr = [NSString stringWithFormat:@"S%@",_orderID];
+            newStr = [NSString stringWithFormat:@"N%@",_orderID];
             break;
         case OrderPay_Type_Recharge:
             newStr = [NSString stringWithFormat:@"R%@",_orderID];

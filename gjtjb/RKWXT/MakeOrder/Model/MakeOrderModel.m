@@ -39,7 +39,7 @@
     return self.status == E_ModelDataStatus_Init || self.status == E_ModelDataStatus_LoadFailed;
 }
 
--(void)submitOneOrderWithAllMoney:(CGFloat)allMoney withTotalMoney:(CGFloat)totalMoney withRedPacket:(NSInteger)packet withRemark:(NSString *)remark withProID:(NSInteger)proID withCarriage:(CGFloat)postage withGoodsList:(NSArray *)goodsList{
+-(void)submitOrderDataWithTotalMoney:(CGFloat)totalMoney factPay:(CGFloat)fectPay redPac:(CGFloat)redPacket carriage:(CGFloat)carriage remark:(NSString *)remark goodsInfo:(NSString *)goodsInfo{
     [self setStatus:E_ModelDataStatus_Loading];
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
     AreaEntity *entity = [self addressEntity];
@@ -50,92 +50,54 @@
         return;
     }
     NSString *address = [NSString stringWithFormat:@"%@%@%@%@",entity.proName,entity.cityName,entity.disName,entity.address];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:    //dictionaryWithObjectsAndKeys此方法遇nil认为结束，慎用
-                         userObj.sellerID, @"seller_user_id",
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:
                          @"iOS", @"pid",
-                         userObj.user, @"phone",
-                         [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd], @"pwd",
                          [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts",
-                         [UtilTool currentVersion], @"ver",
-                         [NSNumber numberWithInt:(int)kSubShopID], @"shop_id",
                          userObj.wxtID, @"woxin_id",
+                         userObj.user, @"phone",
+                         [NSNumber numberWithInt:entity.proID], @"provincial_id",
                          entity.userName, @"consignee",
                          entity.userPhone, @"telephone",
                          address, @"address",
-                         [NSNumber numberWithInt:(int)kMerchantID], @"sid",
-                         [NSNumber numberWithFloat:allMoney], @"order_total_money",
-                         [NSNumber numberWithFloat:totalMoney], @"total_fee",
-                         [NSNumber numberWithInt:(int)packet], @"red_packet",
-                         [NSNumber numberWithFloat:postage], @"postage",
-                         [NSNumber numberWithInt:(int)proID], @"provincial_id",
-                         goodsList, @"goods",
+                         [NSNumber numberWithFloat:totalMoney], @"order_total_money",
+                         [NSNumber numberWithFloat:fectPay], @"total_fee",
+                         [NSNumber numberWithFloat:redPacket], @"red_packet",
+                         [NSNumber numberWithFloat:carriage], @"postage",
                          remark, @"remark",
+                         goodsInfo, @"goods_info",
                          nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             @"iOS", @"pid",
+                             [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts",
+                             userObj.wxtID, @"woxin_id",
+                             userObj.user, @"phone",
+                             [NSNumber numberWithInt:entity.proID], @"provincial_id",
+                             entity.userName, @"consignee",
+                             entity.userPhone, @"telephone",
+                             address, @"address",
+                             [NSNumber numberWithFloat:totalMoney], @"order_total_money",
+                             [NSNumber numberWithFloat:fectPay], @"total_fee",
+                             [NSNumber numberWithFloat:redPacket], @"red_packet",
+                             [NSNumber numberWithFloat:carriage], @"postage",
+                             remark, @"remark",
+                             goodsInfo, @"goods_info",
+                             [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign",
+                             nil];
     __block MakeOrderModel *blockSelf = nil;
-//    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_NewMakeOrder httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
-//        if (retData.code != 0){
-//            [blockSelf setStatus:E_ModelDataStatus_LoadFailed];
-//            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderFailed:)]){
-//                [_delegate makeOrderFailed:retData.errorDesc];
-//            }
-//        }else{
-//            [blockSelf setStatus:E_ModelDataStatus_LoadSucceed];
-//            _orderID = [[retData.data objectForKey:@"data"] objectForKey:@"order_id"];
-//            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderSucceed)]){
-//                [_delegate makeOrderSucceed];
-//            }
-//        }
-//    }];
-}
-
-//限时购
--(void)submitLimitOrderWithAllMoney:(CGFloat)allMoney withTotalMoney:(CGFloat)totalMoney withRedPacket:(NSInteger)packet withRemark:(NSString*)remark withProID:(NSInteger)proID withCarriage:(CGFloat)postage withGoodsList:(NSArray*)goodsList{
-    [self setStatus:E_ModelDataStatus_Loading];
-    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    AreaEntity *entity = [self addressEntity];
-    if(!entity){
-        if (_delegate && [_delegate respondsToSelector:@selector(makeOrderFailed:)]){
-            [_delegate makeOrderFailed:@"请设置收货信息"];
+    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_MakeOrder httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
+        if (retData.code != 0){
+            [blockSelf setStatus:E_ModelDataStatus_LoadFailed];
+            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderFailed:)]){
+                [_delegate makeOrderFailed:retData.errorDesc];
+            }
+        }else{
+            [blockSelf setStatus:E_ModelDataStatus_LoadSucceed];
+            _orderID = [[retData.data objectForKey:@"data"] objectForKey:@"order_id"];
+            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderSucceed)]){
+                [_delegate makeOrderSucceed];
+            }
         }
-        return;
-    }
-    NSString *address = [NSString stringWithFormat:@"%@%@%@%@",entity.proName,entity.cityName,entity.disName,entity.address];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:    //dictionaryWithObjectsAndKeys此方法遇nil认为结束，慎用
-                         userObj.sellerID, @"seller_user_id",
-                         @"iOS", @"pid",
-                         userObj.user, @"phone",
-                         [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd], @"pwd",
-                         [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts",
-                         [UtilTool currentVersion], @"ver",
-                         [NSNumber numberWithInt:(int)kSubShopID], @"shop_id",
-                         userObj.wxtID, @"woxin_id",
-                         entity.userName, @"consignee",
-                         entity.userPhone, @"telephone",
-                         address, @"address",
-                         [NSNumber numberWithInt:(int)kMerchantID], @"sid",
-                         [NSNumber numberWithFloat:allMoney], @"order_total_money",
-                         [NSNumber numberWithFloat:totalMoney], @"total_fee",
-                         [NSNumber numberWithInt:(int)packet], @"red_packet",
-                         [NSNumber numberWithFloat:postage], @"postage",
-                         [NSNumber numberWithInt:(int)proID], @"provincial_id",
-                         goodsList, @"goods",
-                         remark, @"remark",
-                         nil];
-    __block MakeOrderModel *blockSelf = nil;
-//    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_LimitBuyMakeOrder httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
-//        if (retData.code != 0){
-//            [blockSelf setStatus:E_ModelDataStatus_LoadFailed];
-//            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderFailed:)]){
-//                [_delegate makeOrderFailed:retData.errorDesc];
-//            }
-//        }else{
-//            [blockSelf setStatus:E_ModelDataStatus_LoadSucceed];
-//            _orderID = [[retData.data objectForKey:@"data"] objectForKey:@"order_id"];
-//            if (_delegate && [_delegate respondsToSelector:@selector(makeOrderSucceed)]){
-//                [_delegate makeOrderSucceed];
-//            }
-//        }
-//    }];
+    }];
 }
 
 //暂时不用
