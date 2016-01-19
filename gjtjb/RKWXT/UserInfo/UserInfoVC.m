@@ -552,6 +552,7 @@
 
 //订单delegate
 -(void)personalInfoToShoppingCart{
+    [[CoordinateController sharedCoordinateController] toShoppingCartVC:self animated:YES];
 }
 
 -(void)personalInfoToWaitPayOrderList{

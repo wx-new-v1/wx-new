@@ -63,7 +63,6 @@
     [self setCSTTitle:@"订单确认"];
     [self setBackgroundColor:[UIColor whiteColor]];
     userBonus = NO;
-    //    userbalance = NO;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Size.width, Size.height-DownViewHeight) style:UITableViewStyleGrouped];
     [_tableView setDelegate:self];
@@ -84,11 +83,10 @@
         if(goodsInfo.length > 0){
             goodsInfo = [goodsInfo stringByAppendingString:@"^"];
         }
-//        goodsInfo = [goodsInfo stringByAppendingString:[NSString stringWithFormat:@"%ld:%ld",(long)entity.goods_id,(long)entity.buyNumber]];
-        
-//        if(entity.postage == Goods_Postage_Have){
-//            is_postage = NO;  //不包邮
-//        }
+        goodsInfo = [goodsInfo stringByAppendingString:[NSString stringWithFormat:@"%ld:%ld",(long)entity.goodsID,(long)entity.buyNumber]];
+        if(entity.postage == Goods_Postage_Have){
+            is_postage = NO;  //不包邮
+        }
     }
     if(!is_postage){
         [carriageModel searchCarriageMoneyWithProvinceID:provinceID goodsInfo:goodsInfo];
@@ -242,6 +240,8 @@
         cell = [[MakeOrderShopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     [cell setDefaultAccessoryView:E_CellDefaultAccessoryViewType_HasNext];
+    GoodsInfoEntity *entity = [_goodsList objectAtIndex:0];
+    [cell setCellInfo:entity.homeImg];
     [cell load];
     return cell;
 }
@@ -537,7 +537,7 @@
 -(CGFloat)allGoodsOldMoney{
     CGFloat price = 0.0;
     for(GoodsInfoEntity *entity in _goodsList){
-//        price += entity.buyNumber*entity.stockPrice;
+        price += entity.stockPrice;
     }
     allGoodsMoney = price;
     

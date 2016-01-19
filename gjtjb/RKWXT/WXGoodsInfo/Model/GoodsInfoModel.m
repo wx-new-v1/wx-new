@@ -56,6 +56,7 @@
     GoodsInfoEntity *goodsInfoEntity = [GoodsInfoEntity initGoodsInfoEntity:[dic objectForKey:@"goods"]];
     goodsInfoEntity.homeImg = [NSString stringWithFormat:@"%@%@",AllImgPrefixUrlString,goodsInfoEntity.homeImg];
     goodsInfoEntity.goodsImgArr = [self goodsInfoTopImgArrWithImgString:goodsInfoEntity.goodsImg];
+    goodsInfoEntity.goodsImg = [NSString stringWithFormat:@"%@%@",AllImgPrefixUrlString,goodsInfoEntity.goodsImg];
     [_goodsInfoArr addObject:goodsInfoEntity];
     
     //商家信息

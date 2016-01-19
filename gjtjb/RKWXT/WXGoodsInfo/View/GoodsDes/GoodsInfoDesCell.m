@@ -73,7 +73,7 @@
         [usercutBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
         [usercutBtn setHidden:YES];
         [usercutBtn addTarget:self action:@selector(userCutBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:usercutBtn];
+//        [self.contentView addSubview:usercutBtn];
         
         xOffset += btnWidth+10;
         carriageBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];

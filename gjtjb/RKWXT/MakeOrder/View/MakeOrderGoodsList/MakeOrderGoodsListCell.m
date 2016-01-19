@@ -84,7 +84,7 @@
     [_imgView setCpxViewInfo:entity.goodsImg];
     [_imgView load];
     [_nameLabel setText:entity.goodsName];
-    [_numLabel setText:[NSString stringWithFormat:@"X%ld",(long)entity.stockNum]];
+    [_numLabel setText:[NSString stringWithFormat:@"X%ld",(long)entity.buyNumber]];
     [_stockName setText:entity.stockName];
     [_priceLabel setText:[NSString stringWithFormat:@"￥%.2f",entity.stockPrice]];
 }

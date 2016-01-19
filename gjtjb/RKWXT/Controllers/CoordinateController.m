@@ -15,6 +15,8 @@
 #import "JPushMessageInfoVC.h"
 #import "FindCommonVC.h"
 #import "WXGoodsInfoVC.h"
+#import "ShoppingCartVC.h"
+#import "MakeOrderVC.h"
 @implementation CoordinateController
 
 + (CoordinateController*)sharedCoordinateController{
@@ -65,6 +67,10 @@
 }
 
 -(void)toMakeOrderVC:(id)sender orderInfo:(id)orderInfo animated:(BOOL)animated{
+    WXUIViewController *vc = sender;
+    MakeOrderVC *makeOrderVC = [[MakeOrderVC alloc] init];
+    makeOrderVC.goodsList = orderInfo;
+    [vc.wxNavigationController pushViewController:makeOrderVC];
 }
 
 -(void)toOrderPayVC:(id)sender orderInfo:(id)orderInfo animated:(BOOL)animated{
@@ -89,6 +95,12 @@
     WXUIViewController *vc = sender;
     JPushMessageCenterVC *centerVC = [[JPushMessageCenterVC alloc] init];
     [vc.wxNavigationController pushViewController:centerVC];
+}
+
+-(void)toShoppingCartVC:(id)sender animated:(BOOL)animated{
+    WXUIViewController *vc = sender;
+    ShoppingCartVC *shoppingCartVC = [[ShoppingCartVC alloc] init];
+    [vc.wxNavigationController pushViewController:shoppingCartVC];
 }
 
 -(void)toJPushMessageInfoVC:(id)sender messageID:(NSInteger)messageID animated:(BOOL)animated{

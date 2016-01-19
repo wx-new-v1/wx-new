@@ -54,6 +54,7 @@ typedef enum {
 -(void)toOrderInfoVC:(id)sender orderEntity:(id)orderEntity animated:(BOOL)animated;//查看订单详情
 -(void)toAboutShopVC:(id)sender animated:(BOOL)animated; //商家信息
 -(void)toJPushCenterVC:(id)sender animated:(BOOL)animated; //消息中心
+-(void)toShoppingCartVC:(id)sender animated:(BOOL)animated; //购物车
 -(void)toJPushMessageInfoVC:(id)sender messageID:(NSInteger)messageID animated:(BOOL)animated; //消息详情
 -(void)toWebVC:(id)sender url:(NSString*)webUrl title:(NSString*)title animated:(BOOL)animated; //跳转到网页
 @end

@@ -9,7 +9,7 @@
 #import "NewGoodsInfoWebViewViewController.h"
 //#import "NewGoodsInfoVC.h"
 
-#define MallCatagaryListUrl @"wx_html/index.php/Public/"
+#define MallCatagaryListUrl @"wx_union/index.php/Public/"
 
 typedef enum{
     Web_Goto_Type_GoodsInfo = 1, //商品详情
@@ -42,7 +42,7 @@ typedef enum{
     [super viewDidLoad];
     
     self.scrollView.contentSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height+5);
-    _webView = [[WXUIWebView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height-100)];
+    _webView = [[WXUIWebView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
     [_webView setDelegate:self];
     [self.scrollView addSubview:_webView];
     [self loadRootUrl:_urlFeedType paramDictionary:_paramDictionary];
@@ -55,7 +55,7 @@ typedef enum{
 //        typeStr = @"sort_list";
 //    }
     if(urlFeedType == WXT_UrlFeed_Type_NewMall_ImgAndText){
-        typeStr = @"good_info_test";
+        typeStr = @"good_info?";
     }
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@",WXTShareBaseUrl,MallCatagaryListUrl,typeStr];
     NSString *boay = nil;

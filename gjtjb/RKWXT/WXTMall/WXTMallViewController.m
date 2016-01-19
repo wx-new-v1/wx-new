@@ -343,9 +343,9 @@
             break;
         case T_BaseFunction_Wallet:
         {
-            UserBonusVC *bonusVC = [[UserBonusVC alloc] init];
-            bonusVC.selectedNum = 0;
-            [self.wxNavigationController pushViewController:bonusVC];
+//            UserBonusVC *bonusVC = [[UserBonusVC alloc] init];
+//            bonusVC.selectedNum = 0;
+//            [self.wxNavigationController pushViewController:bonusVC];
         }
             break;
         case T_BaseFunction_Sign:
@@ -356,8 +356,8 @@
             break;
         case T_BaseFunction_Shark:
         {
-            LuckyShakeVC *sharkVC = [[LuckyShakeVC alloc] init];
-            [self.wxNavigationController pushViewController:sharkVC];
+//            LuckyShakeVC *sharkVC = [[LuckyShakeVC alloc] init];
+//            [self.wxNavigationController pushViewController:sharkVC];
         }
             break;
         default:

@@ -152,6 +152,12 @@
         case WXT_UrlFeed_Type_NewMall_NewUserAddress:
             url = @"/user_address.php";
             break;
+        case WXT_UrlFeed_Type_NewMall_ShoppingCart:
+            url = @"/shopping_cart.php";
+            break;
+        case WXT_UrlFeed_Type_New_SearchCarriageMoney:
+            url = @"/postage.php";
+            break;
         default:
             break;
     }

@@ -353,7 +353,7 @@
     [buyNumLabel setText:[NSString stringWithFormat:@"%ld",(long)buyNumber]];
     [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",buyNumber*money]];
     
-    _stockPrice = buyNumber*money;
+    _stockPrice = money;
     _buyNum = buyNumber;
 }
 
@@ -375,7 +375,7 @@
     [buyNumLabel setText:[NSString stringWithFormat:@"%ld",(long)buyNumber]];
     [pricelaebl setText:[NSString stringWithFormat:@"￥%.2f",buyNumber*money]];
     
-    _stockPrice = buyNumber*money;
+    _stockPrice = money;
     _buyNum = buyNumber;
 }
 

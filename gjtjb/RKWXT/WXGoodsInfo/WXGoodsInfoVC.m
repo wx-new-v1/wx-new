@@ -9,7 +9,7 @@
 #import "WXGoodsInfoVC.h"
 #import "GoodsInfoDef.h"
 
-@interface WXGoodsInfoVC ()<UITableViewDataSource,UITableViewDelegate,MerchantImageCellDelegate,GoodsInfoModelDelegate,GoodsInfoDesCellDelegate,CDSideBarControllerDelegate/*,LMShoppingCartModelDelegate*/>{
+@interface WXGoodsInfoVC ()<UITableViewDataSource,UITableViewDelegate,MerchantImageCellDelegate,GoodsInfoModelDelegate,GoodsInfoDesCellDelegate,CDSideBarControllerDelegate>{
     UITableView *_tableView;
     GoodsInfoModel *_model;
     BOOL userCut;
@@ -20,8 +20,6 @@
     WXUIButton *collectionBtn;
     
     GoodsStockView *goodsView; //库存页面
-    
-//    LMShoppingCartModel *cartModel;
 }
 
 @end
@@ -42,7 +40,7 @@
     collectionBtn.frame = CGRectMake(self.bounds.size.width-35-45, TopNavigationViewHeight-35, 25, 25);
     [collectionBtn setImage:[UIImage imageNamed:@"T_Attention.png"] forState:UIControlStateNormal];
     [collectionBtn addTarget:self action:@selector(userCollectionBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:collectionBtn];
+//    [self.view addSubview:collectionBtn];
 }
 
 -(id)init{
@@ -52,9 +50,6 @@
         [_model setDelegate:self];
         
 //        _collectionModel = [[LMDataCollectionModel alloc] init];
-//        
-//        cartModel = [[LMShoppingCartModel alloc] init];
-//        [cartModel setDelegate:self];
     }
     return self;
 }
@@ -83,6 +78,8 @@
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(userBuyBtnClicked) name:K_Notification_Name_UserBuyGoods object:nil];
     [notificationCenter addObserver:self selector:@selector(userAddShoppingCartBtnClicked) name:K_Notification_Name_UserAddShoppingCart object:nil];
+    [notificationCenter addObserver:self selector:@selector(addShoppingCartSucceed) name:D_Notification_AddGoodsShoppingCart_Succeed object:nil];
+    [notificationCenter addObserver:self selector:@selector(addShoppingCartFailed:) name:D_Notification_AddGoodsShoppingCart_Failed object:nil];
 //    [notificationCenter addObserver:self selector:@selector(goodsCollectionSucceed) name:K_Notification_Name_GoodsAddCollectionSucceed object:nil];
 //    [notificationCenter addObserver:self selector:@selector(goodsCancelCollectionSucceed) name:K_Notification_Name_GoodsCancelCollectionSucceed object:nil];
 }
@@ -324,7 +321,7 @@
 -(void)initWebView{
     //初始化图文详情页面，方便上拉加载数据
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_goodsId], @"goods_id",[NSNumber numberWithInteger:kMerchantID], @"sid", userObj.user, @"phone", [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd], @"pwd", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:_goodsId], @"goods_id", userObj.user, @"phone", userObj.wxtID, @"woxin_id", nil];
     
     CGSize size = self.bounds.size;
     self.scrollView.contentSize = CGSizeMake(size.width, size.height);
@@ -556,9 +553,7 @@
 
 //购买
 -(void)userBuyBtnClicked{
-    MakeOrderVC *makeOrderVC = [[MakeOrderVC alloc] init];
-    makeOrderVC.goodsList = [self makeOrderInfoArr];
-    [self.wxNavigationController pushViewController:makeOrderVC];
+    [[CoordinateController sharedCoordinateController] toMakeOrderVC:self orderInfo:[self makeOrderInfoArr] animated:YES];
 }
 
 -(NSArray*)makeOrderInfoArr{
@@ -574,7 +569,7 @@
     entity.stockID = goodsView.stockID;
     entity.stockName = goodsView.stockName;
     entity.stockPrice = goodsView.stockPrice;
-    entity.stockNum = goodsView.buyNum;
+    entity.buyNumber = goodsView.buyNum;      //下单商品个数
     [goodsInfoArr addObject:entity];
     
     return goodsInfoArr;
@@ -582,31 +577,32 @@
 
 //加入购物车
 -(void)userAddShoppingCartBtnClicked{
-//    LMGoodsInfoEntity *entity = nil;
-//    if([_model.goodsInfoArr count] > 0){
-//        entity = [_model.goodsInfoArr objectAtIndex:0];
-//    }
-//    [cartModel addLMShoppingCartType:LMSHoppingCart_Type_Add goodsID:_goodsId stockID:goodsView.stockID stockName:goodsView.stockName goodsName:entity.goodsName goodsImg:[self remoHomeImgPre:entity.homeImg] goodsPrice:goodsView.stockPrice/goodsView.buyNum goodsNum:goodsView.buyNum shopID:entity.goodshop_id];
-//    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+    GoodsInfoEntity *entity = nil;
+    if([_model.goodsInfoArr count] > 0){
+        entity = [_model.goodsInfoArr objectAtIndex:0];
+    }
+    [[ShoppingCartModel shareShoppingCartModel] insertOneGoodsToShoppingCart:goodsView.stockID num:goodsView.buyNum];
+    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+}
+
+-(void)addShoppingCartSucceed{
+    [self unShowWaitView];
+    [UtilTool showTipView:@"加入购物车成功"];
+}
+
+-(void)addShoppingCartFailed:(NSNotification*)notification{
+    [self unShowWaitView];
+    NSString *errorMsg = notification.object;
+    if(!errorMsg){
+        errorMsg = @"未能加入购物车";
+    }
+    [UtilTool showTipView:errorMsg];
 }
 
 -(NSString*)remoHomeImgPre:(NSString*)homeImg{
     NSInteger length = AllImgPrefixUrlString.length;
     NSString *img = [homeImg substringWithRange:NSMakeRange(length, homeImg.length-length)];
     return img;
-}
-
--(void)addLMShoppingCartSucceed{
-    [self unShowWaitView];
-    [UtilTool showTipView:@"加入购物车成功"];
-}
-
--(void)addLMShoppingCartFailed:(NSString *)errorMsg{
-    [self unShowWaitView];
-    if(!errorMsg){
-        errorMsg = @"未能加入购物车";
-    }
-    [UtilTool showTipView:errorMsg];
 }
 
 #pragma mark desCellDelegate
@@ -648,12 +644,12 @@
 -(void)menuButtonClicked:(int)index{
     UIImage *image = [UIImage imageNamed:@"Icon-72.png"];
     if([_model.goodsInfoArr count] > 0){
-//        LMGoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
-//        NSURL *url = [NSURL URLWithString:entity.goodsImg];
-//        NSData *data = [NSData dataWithContentsOfURL:url];
-//        if(data){
-//            image = [UIImage imageWithData:data];
-//        }
+        GoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
+        NSURL *url = [NSURL URLWithString:entity.goodsImg];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        if(data){
+            image = [UIImage imageWithData:data];
+        }
     }
     if(index == Share_Friends){
         [[WXWeiXinOBJ sharedWeiXinOBJ] sendMode:E_WeiXin_Mode_Friend title:[self sharedGoodsInfoTitle] description:[self sharedGoodsInfoDescription] linkURL:[self sharedGoodsInfoUrlString] thumbImage:image];

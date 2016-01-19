@@ -68,6 +68,7 @@ typedef enum{
 
 //临时属性
 @property (nonatomic,assign) BOOL selected;
+@property (nonatomic,assign) NSInteger buyNumber;
 
 +(GoodsInfoEntity*)initGoodsInfoEntity:(NSDictionary*)dic;  //商品详情
 +(GoodsInfoEntity*)initSellerInfoEntity:(NSDictionary*)dic;  //所属商家

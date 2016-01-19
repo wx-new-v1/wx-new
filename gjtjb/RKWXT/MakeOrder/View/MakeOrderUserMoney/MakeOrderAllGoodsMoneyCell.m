@@ -70,14 +70,14 @@
 -(void)load{
     CGFloat price = 0.0;
     NSArray *listArr = self.cellInfo;
-//    for(GoodsInfoEntity *entity in listArr){
-//        price += entity.buyNumber*entity.stockPrice;
-//    }
-//    NSString *moneyStr = [NSString stringWithFormat:@"￥%.2f",price-_bonusMoney+_carriageMoney];
-//    [_money setText:moneyStr];
-//    
-//    NSInteger time = [UtilTool timeChange];
-//    [_dateLabel setText:[UtilTool getDateTimeFor:time type:1]];
+    for(GoodsInfoEntity *entity in listArr){
+        price += entity.buyNumber*entity.stockPrice;
+    }
+    NSString *moneyStr = [NSString stringWithFormat:@"￥%.2f",price-_bonusMoney+_carriageMoney];
+    [_money setText:moneyStr];
+    
+    NSInteger time = [UtilTool timeChange];
+    [_dateLabel setText:[UtilTool getDateTimeFor:time type:1]];
 }
 
 @end

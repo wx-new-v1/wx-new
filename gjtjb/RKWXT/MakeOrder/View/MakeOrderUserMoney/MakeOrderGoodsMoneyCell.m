@@ -105,17 +105,17 @@
 -(void)load{
     CGFloat price = 0.0;
     NSArray *listArr = self.cellInfo;
-//    for(GoodsInfoEntity *entity in listArr){
-//        price += entity.buyNumber*entity.stockPrice;
-//    }
-//    NSString *str = [NSString stringWithFormat:@"￥%.2f",price];
-//    [_money setText:str];
-//    
-//    NSString *bonusStr = [NSString stringWithFormat:@"-%ld",(long)_bonusMoney];
-//    [_bonus setText:bonusStr];
-//    
-//    NSString *carriageStr = [NSString stringWithFormat:@"+%.2f",_carriageMoney];
-//    [_carriage setText:carriageStr];
+    for(GoodsInfoEntity *entity in listArr){
+        price += entity.buyNumber*entity.stockPrice;
+    }
+    NSString *str = [NSString stringWithFormat:@"￥%.2f",price];
+    [_money setText:str];
+    
+    NSString *bonusStr = [NSString stringWithFormat:@"-%ld",(long)_bonusMoney];
+    [_bonus setText:bonusStr];
+    
+    NSString *carriageStr = [NSString stringWithFormat:@"+%.2f",_carriageMoney];
+    [_carriage setText:carriageStr];
     
 //    NSString *balanceStr = [NSString stringWithFormat:@"-%ld",(long)_balance];
 //    [_balanceLabel setText:balanceStr];

@@ -361,7 +361,7 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
     [[NSNotificationCenter defaultCenter] postNotificationName:D_Notification_Name_UploadUserIcon object:nil];
     NSIndexPath *indexpath = [NSIndexPath indexPathForRow:BaseInfo_Userhead inSection:T_Base_UserInfo];
     [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexpath] withRowAnimation:UITableViewRowAnimationFade];
-    [updataPicture sendDocumentToFTPService];
+//    [updataPicture sendDocumentToFTPService];
 }
 
 -(NSData *)dataWithImage:(UIImage *)image{

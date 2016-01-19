@@ -22,6 +22,7 @@
 #import "BaseInfoVC.h"
 #import "WXUserQuestionVC.h"
 #import "WXHomeOrderListVC.h"
+#import "ShoppingCartVC.h"
 
 enum{
     PersonalInfo_Order = 0,
