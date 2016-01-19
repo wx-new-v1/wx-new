@@ -487,16 +487,15 @@
 }
 
 -(NSDictionary*)goodsDicWithEntity:(GoodsInfoEntity*)entity{
-//    NSString *goodsID = [NSString stringWithFormat:@"%ld",(long)entity.goods_id];
-//    NSString *stockID = [NSString stringWithFormat:@"%ld",(long)entity.stockID];
-//    NSString *stockName = [NSString stringWithFormat:@"%@",entity.stockName];
-//    NSString *price = [NSString stringWithFormat:@"%f",entity.stockPrice];
-//    NSString *number = [NSString stringWithFormat:@"%ld",(long)entity.buyNumber];
-//    NSInteger length = AllImgPrefixUrlString.length;
-//    NSString *smallImgStr = [entity.smallImg substringFromIndex:length];
-//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:goodsID ,@"goods_id", entity.intro, @"goods_name", smallImgStr, @"goods_img", stockID, @"goods_stock_id", stockName, @"goods_stock_name", price, @"sales_price", number, @"sales_number", nil];
-//    return dic;
-    return nil;
+    NSString *goodsID = [NSString stringWithFormat:@"%ld",(long)entity.goodsID];
+    NSString *stockID = [NSString stringWithFormat:@"%ld",(long)entity.stockID];
+    NSString *stockName = [NSString stringWithFormat:@"%@",entity.stockName];
+    NSString *price = [NSString stringWithFormat:@"%f",entity.stockPrice];
+    NSString *number = [NSString stringWithFormat:@"%ld",(long)entity.buyNumber];
+    NSInteger length = AllImgPrefixUrlString.length;
+    NSString *smallImgStr = [entity.goodsImg substringFromIndex:length];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:goodsID ,@"goods_id", entity.goodsName, @"goods_name", smallImgStr, @"goods_img", stockID, @"goods_stock_id", stockName, @"goods_stock_name", price, @"sales_price", number, @"sales_number", nil];
+    return dic;
 }
 
 //限时购

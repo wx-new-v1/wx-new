@@ -339,6 +339,15 @@
 		1246078D1C4DD680001C703D /* ShoppingCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1246078C1C4DD680001C703D /* ShoppingCartModel.m */; };
 		124607901C4DD6B0001C703D /* ShoppingCartEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1246078F1C4DD6B0001C703D /* ShoppingCartEntity.m */; };
 		124607941C4DD7CE001C703D /* ShoppingCartInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607931C4DD7CE001C703D /* ShoppingCartInfoCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		124607B81C4E2BFF001C703D /* GoodsClassifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607B71C4E2BFF001C703D /* GoodsClassifyVC.m */; };
+		124607BF1C4E2C71001C703D /* ClassifyLeftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607BE1C4E2C71001C703D /* ClassifyLeftListView.m */; };
+		124607C21C4E2C85001C703D /* ClassifyLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607C11C4E2C85001C703D /* ClassifyLeftTableViewCell.m */; };
+		124607C51C4E2CB8001C703D /* ClassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607C41C4E2CB8001C703D /* ClassifyModel.m */; };
+		124607C81C4E2CCA001C703D /* CLassifyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607C71C4E2CCA001C703D /* CLassifyEntity.m */; };
+		124607CC1C4E2D87001C703D /* ClassifyRightListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607CB1C4E2D87001C703D /* ClassifyRightListView.m */; };
+		124607D51C4E2DC1001C703D /* ClassifyDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607CF1C4E2DC1001C703D /* ClassifyDownCell.m */; };
+		124607D61C4E2DC1001C703D /* ClassifyRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607D11C4E2DC1001C703D /* ClassifyRightCell.m */; };
+		124607D71C4E2DC1001C703D /* ClassifyRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124607D41C4E2DC1001C703D /* ClassifyRightView.m */; };
 		124C10611C4CB45600740561 /* HomeLimitBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 124C10601C4CB45600740561 /* HomeLimitBuyCell.m */; };
 		124C10631C4CD69B00740561 /* SharedImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 124C10621C4CD69B00740561 /* SharedImg@2x.png */; };
 		125A76AD1B5673E100959AD8 /* JPushMessageInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 125A76AC1B5673E100959AD8 /* JPushMessageInfoVC.m */; };
@@ -1385,6 +1394,25 @@
 		124607911C4DD76E001C703D /* ShoppingCartDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingCartDef.h; sourceTree = "<group>"; };
 		124607921C4DD7CE001C703D /* ShoppingCartInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartInfoCell.h; sourceTree = "<group>"; };
 		124607931C4DD7CE001C703D /* ShoppingCartInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartInfoCell.m; sourceTree = "<group>"; };
+		124607B61C4E2BFF001C703D /* GoodsClassifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsClassifyVC.h; sourceTree = "<group>"; };
+		124607B71C4E2BFF001C703D /* GoodsClassifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsClassifyVC.m; sourceTree = "<group>"; };
+		124607BD1C4E2C71001C703D /* ClassifyLeftListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyLeftListView.h; sourceTree = "<group>"; };
+		124607BE1C4E2C71001C703D /* ClassifyLeftListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyLeftListView.m; sourceTree = "<group>"; };
+		124607C01C4E2C85001C703D /* ClassifyLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyLeftTableViewCell.h; sourceTree = "<group>"; };
+		124607C11C4E2C85001C703D /* ClassifyLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyLeftTableViewCell.m; sourceTree = "<group>"; };
+		124607C31C4E2CB8001C703D /* ClassifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyModel.h; sourceTree = "<group>"; };
+		124607C41C4E2CB8001C703D /* ClassifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyModel.m; sourceTree = "<group>"; };
+		124607C61C4E2CCA001C703D /* CLassifyEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLassifyEntity.h; sourceTree = "<group>"; };
+		124607C71C4E2CCA001C703D /* CLassifyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLassifyEntity.m; sourceTree = "<group>"; };
+		124607CA1C4E2D87001C703D /* ClassifyRightListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyRightListView.h; sourceTree = "<group>"; };
+		124607CB1C4E2D87001C703D /* ClassifyRightListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyRightListView.m; sourceTree = "<group>"; };
+		124607CE1C4E2DC1001C703D /* ClassifyDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyDownCell.h; sourceTree = "<group>"; };
+		124607CF1C4E2DC1001C703D /* ClassifyDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyDownCell.m; sourceTree = "<group>"; };
+		124607D01C4E2DC1001C703D /* ClassifyRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyRightCell.h; sourceTree = "<group>"; };
+		124607D11C4E2DC1001C703D /* ClassifyRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyRightCell.m; sourceTree = "<group>"; };
+		124607D21C4E2DC1001C703D /* ClassifyRightDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyRightDef.h; sourceTree = "<group>"; };
+		124607D31C4E2DC1001C703D /* ClassifyRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyRightView.h; sourceTree = "<group>"; };
+		124607D41C4E2DC1001C703D /* ClassifyRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyRightView.m; sourceTree = "<group>"; };
 		124C105F1C4CB45600740561 /* HomeLimitBuyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeLimitBuyCell.h; sourceTree = "<group>"; };
 		124C10601C4CB45600740561 /* HomeLimitBuyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeLimitBuyCell.m; sourceTree = "<group>"; };
 		124C10621C4CD69B00740561 /* SharedImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SharedImg@2x.png"; sourceTree = "<group>"; };
@@ -3764,6 +3792,72 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		124607B31C4E2BA7001C703D /* GoodsClassify */ = {
+			isa = PBXGroup;
+			children = (
+				124607B61C4E2BFF001C703D /* GoodsClassifyVC.h */,
+				124607B71C4E2BFF001C703D /* GoodsClassifyVC.m */,
+				124607B41C4E2BB9001C703D /* Model */,
+				124607B51C4E2BB9001C703D /* View */,
+			);
+			path = GoodsClassify;
+			sourceTree = "<group>";
+		};
+		124607B41C4E2BB9001C703D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				124607C31C4E2CB8001C703D /* ClassifyModel.h */,
+				124607C41C4E2CB8001C703D /* ClassifyModel.m */,
+				124607C61C4E2CCA001C703D /* CLassifyEntity.h */,
+				124607C71C4E2CCA001C703D /* CLassifyEntity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		124607B51C4E2BB9001C703D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				124607C91C4E2D76001C703D /* rightView */,
+				124607BC1C4E2C71001C703D /* leftView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		124607BC1C4E2C71001C703D /* leftView */ = {
+			isa = PBXGroup;
+			children = (
+				124607BD1C4E2C71001C703D /* ClassifyLeftListView.h */,
+				124607BE1C4E2C71001C703D /* ClassifyLeftListView.m */,
+				124607C01C4E2C85001C703D /* ClassifyLeftTableViewCell.h */,
+				124607C11C4E2C85001C703D /* ClassifyLeftTableViewCell.m */,
+			);
+			path = leftView;
+			sourceTree = "<group>";
+		};
+		124607C91C4E2D76001C703D /* rightView */ = {
+			isa = PBXGroup;
+			children = (
+				124607CA1C4E2D87001C703D /* ClassifyRightListView.h */,
+				124607CB1C4E2D87001C703D /* ClassifyRightListView.m */,
+				124607CD1C4E2DB4001C703D /* View */,
+			);
+			path = rightView;
+			sourceTree = "<group>";
+		};
+		124607CD1C4E2DB4001C703D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				124607CE1C4E2DC1001C703D /* ClassifyDownCell.h */,
+				124607CF1C4E2DC1001C703D /* ClassifyDownCell.m */,
+				124607D01C4E2DC1001C703D /* ClassifyRightCell.h */,
+				124607D11C4E2DC1001C703D /* ClassifyRightCell.m */,
+				124607D21C4E2DC1001C703D /* ClassifyRightDef.h */,
+				124607D31C4E2DC1001C703D /* ClassifyRightView.h */,
+				124607D41C4E2DC1001C703D /* ClassifyRightView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1261F0101AE6591400693710 /* CallModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -4646,6 +4740,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
+				124607B31C4E2BA7001C703D /* GoodsClassify */,
 				124607851C4DD5A9001C703D /* ShoppingCart */,
 				123666D51C44AA04000FAF70 /* LuckyDraw */,
 				123666BA1C449760000FAF70 /* Bonus */,
@@ -5995,6 +6090,7 @@
 				124607941C4DD7CE001C703D /* ShoppingCartInfoCell.m in Sources */,
 				775842F01AB95A300039B129 /* WXUITextViewCell.m in Sources */,
 				7758432E1AB95A300039B129 /* WXUISwitch.m in Sources */,
+				124607C81C4E2CCA001C703D /* CLassifyEntity.m in Sources */,
 				7758435D1AB95FAC0039B129 /* WXServiceParse.m in Sources */,
 				775842E81AB95A300039B129 /* TelNOOBJ.m in Sources */,
 				120A2BEC1AB135DD006A28B1 /* SignViewController.m in Sources */,
@@ -6011,6 +6107,7 @@
 				7758431D1AB95A300039B129 /* WXUIActionSheet.m in Sources */,
 				128B456F1B6B24F100591137 /* WechatEntity.m in Sources */,
 				122AB89A1C3E6D0D00AC9DF5 /* DDProgressView.m in Sources */,
+				124607D51C4E2DC1001C703D /* ClassifyDownCell.m in Sources */,
 				DDEA9EE01B1BFD5D00530C1C /* WXSysMsgUnreadV.m in Sources */,
 				1218042D1ACB899B009DB7E7 /* DBImageRequest.m in Sources */,
 				775842D71AB95A300039B129 /* NSString+RC4.m in Sources */,
@@ -6044,6 +6141,7 @@
 				128221CC1B184CF4004613BB /* URLNetOperation.m in Sources */,
 				122EFBAE1C40F34400CE0EA0 /* DLFixedTabbarView.m in Sources */,
 				775843391AB95A300039B129 /* WXUIWebView.m in Sources */,
+				124607CC1C4E2D87001C703D /* ClassifyRightListView.m in Sources */,
 				128241461B60D062001EE0BD /* DownSheet.m in Sources */,
 				122EFBAD1C40F34400CE0EA0 /* DLSlideView.m in Sources */,
 				123667571C44AA04000FAF70 /* WinningViewAnimationDrop.m in Sources */,
@@ -6082,6 +6180,7 @@
 				122EFBB41C40F37900CE0EA0 /* WXHomeOrderListVC.m in Sources */,
 				7758433A1AB95A300039B129 /* WXUIWindow.m in Sources */,
 				122D641C1C3F99C80086AAB8 /* MakeOrderGoodsListCell.m in Sources */,
+				124607C51C4E2CB8001C703D /* ClassifyModel.m in Sources */,
 				120D01651BBB91B5005CAA6C /* RSADataVerifier.m in Sources */,
 				7758435B1AB95FAC0039B129 /* WXService+UserInfo.m in Sources */,
 				775C58CE1ABA7B75005B6B40 /* ContacterEntity+Detail.m in Sources */,
@@ -6194,6 +6293,7 @@
 				122AB8481C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m in Sources */,
 				775842F11AB95A300039B129 /* WXDropListItem.m in Sources */,
 				775C58D61ABA7D27005B6B40 /* BaseModel.m in Sources */,
+				124607BF1C4E2C71001C703D /* ClassifyLeftListView.m in Sources */,
 				122AB8BD1C3E6D5500AC9DF5 /* ClubNoImgPlaceholderView.m in Sources */,
 				122AB8851C3E6CA600AC9DF5 /* NLMainViewController.m in Sources */,
 				7758432C1AB95A300039B129 /* WXUISearchBar.m in Sources */,
@@ -6248,6 +6348,7 @@
 				775842D31AB95A300039B129 /* NSDate+Compare.m in Sources */,
 				DDB58F471AD3C6A2006248E9 /* ContactsCallViewController.m in Sources */,
 				122D64251C3F99C80086AAB8 /* MakeOrderGoodsMoneyCell.m in Sources */,
+				124607B81C4E2BFF001C703D /* GoodsClassifyVC.m in Sources */,
 				120A2BF11AB135DE006A28B1 /* UserBalanceVC.m in Sources */,
 				775C58361ABA5F31005B6B40 /* ChineseToPinyin.m in Sources */,
 				122AB8521C3E5C9000AC9DF5 /* HomeRecommendInfoView.m in Sources */,
@@ -6256,6 +6357,7 @@
 				775842B21AB95A300039B129 /* URLFeedData.m in Sources */,
 				12F9633A1B3D4BDF00FF6A3E /* SBJsonWriter.m in Sources */,
 				120A2BF01AB135DE006A28B1 /* BalanceModel.m in Sources */,
+				124607D71C4E2DC1001C703D /* ClassifyRightView.m in Sources */,
 				1246078A1C4DD62F001C703D /* ShoppingCartVC.m in Sources */,
 				12F2CCE01B4CB9570085F78F /* ForgetPwdVC.m in Sources */,
 				12F2CCE31B4CCA850085F78F /* ForgetModel.m in Sources */,
@@ -6381,6 +6483,7 @@
 				775843581AB95FAC0039B129 /* ServiceMonitor.m in Sources */,
 				12A050C61B316B7E008CC38F /* WXTMallListWebVC.m in Sources */,
 				775843171AB95A300039B129 /* LoadLabel.m in Sources */,
+				124607D61C4E2DC1001C703D /* ClassifyRightCell.m in Sources */,
 				120EC77F1BB8F31800538637 /* mask.c in Sources */,
 				2563B48B1AAAFF6B00C04227 /* HttpNetUtils.m in Sources */,
 				775843381AB95A300039B129 /* WXUIViewController.m in Sources */,
@@ -6401,6 +6504,7 @@
 				122AB8CD1C3E6E9B00AC9DF5 /* MerchantImageCell.m in Sources */,
 				122D64261C3F99C80086AAB8 /* MakeOrderUserMsgTextFieldCell.m in Sources */,
 				122842051C48EF3500D76A6B /* HomePageSurpModel.m in Sources */,
+				124607C21C4E2C85001C703D /* ClassifyLeftTableViewCell.m in Sources */,
 				775842D81AB95A300039B129 /* NSString+Size.m in Sources */,
 				775C583B1ABA5F31005B6B40 /* NSString+PinYin4Cocoa.m in Sources */,
 				1236674B1C44AA04000FAF70 /* LuckyOrderListModel.m in Sources */,
