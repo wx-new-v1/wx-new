@@ -81,6 +81,10 @@
 		1228584B1C4F83290089A369 /* WaitPayOrderGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228584A1C4F83290089A369 /* WaitPayOrderGoodsCell.m */; };
 		1228584E1C4F83950089A369 /* WaitPayOrderMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228584D1C4F83950089A369 /* WaitPayOrderMoneyCell.m */; };
 		122858511C4F83D60089A369 /* WaitPayOrderHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858501C4F83D60089A369 /* WaitPayOrderHandleCell.m */; };
+		122858541C4F889D0089A369 /* WaitSendOrderStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858531C4F889D0089A369 /* WaitSendOrderStateCell.m */; };
+		122858571C4F89160089A369 /* WaitSendOrderGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858561C4F89160089A369 /* WaitSendOrderGoodsCell.m */; };
+		1228585A1C4F89560089A369 /* WaitSendOrderMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858591C4F89560089A369 /* WaitSendOrderMoneyCell.m */; };
+		1228585D1C4F89A80089A369 /* WaitSendOrderHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228585C1C4F89A80089A369 /* WaitSendOrderHandleCell.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
 		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
@@ -983,6 +987,14 @@
 		1228584D1C4F83950089A369 /* WaitPayOrderMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderMoneyCell.m; sourceTree = "<group>"; };
 		1228584F1C4F83D60089A369 /* WaitPayOrderHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitPayOrderHandleCell.h; sourceTree = "<group>"; };
 		122858501C4F83D60089A369 /* WaitPayOrderHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderHandleCell.m; sourceTree = "<group>"; };
+		122858521C4F889D0089A369 /* WaitSendOrderStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSendOrderStateCell.h; sourceTree = "<group>"; };
+		122858531C4F889D0089A369 /* WaitSendOrderStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderStateCell.m; sourceTree = "<group>"; };
+		122858551C4F89160089A369 /* WaitSendOrderGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSendOrderGoodsCell.h; sourceTree = "<group>"; };
+		122858561C4F89160089A369 /* WaitSendOrderGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderGoodsCell.m; sourceTree = "<group>"; };
+		122858581C4F89560089A369 /* WaitSendOrderMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSendOrderMoneyCell.h; sourceTree = "<group>"; };
+		122858591C4F89560089A369 /* WaitSendOrderMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderMoneyCell.m; sourceTree = "<group>"; };
+		1228585B1C4F89A80089A369 /* WaitSendOrderHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSendOrderHandleCell.h; sourceTree = "<group>"; };
+		1228585C1C4F89A80089A369 /* WaitSendOrderHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderHandleCell.m; sourceTree = "<group>"; };
 		122875E91C3CBB580058C86D /* T_Sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T_Sqlite.h; sourceTree = "<group>"; };
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
@@ -3228,6 +3240,14 @@
 				122EFBD21C40FE0300CE0EA0 /* WaitSendOrderVC.m */,
 				122EFBCF1C40FDF600CE0EA0 /* Model */,
 				122EFBD01C40FDF600CE0EA0 /* View */,
+				122858521C4F889D0089A369 /* WaitSendOrderStateCell.h */,
+				122858531C4F889D0089A369 /* WaitSendOrderStateCell.m */,
+				122858551C4F89160089A369 /* WaitSendOrderGoodsCell.h */,
+				122858561C4F89160089A369 /* WaitSendOrderGoodsCell.m */,
+				122858581C4F89560089A369 /* WaitSendOrderMoneyCell.h */,
+				122858591C4F89560089A369 /* WaitSendOrderMoneyCell.m */,
+				1228585B1C4F89A80089A369 /* WaitSendOrderHandleCell.h */,
+				1228585C1C4F89A80089A369 /* WaitSendOrderHandleCell.m */,
 			);
 			path = WaitSendOrder;
 			sourceTree = "<group>";
@@ -6227,6 +6247,7 @@
 				12F963341B3D4BDF00FF6A3E /* SBJsonStreamParserState.m in Sources */,
 				DDB58F461AD3C6A2006248E9 /* ContactDetailCell.m in Sources */,
 				128672161B6A1857006391B2 /* WechatPayModel.m in Sources */,
+				122858571C4F89160089A369 /* WaitSendOrderGoodsCell.m in Sources */,
 				775C58381ABA5F31005B6B40 /* KFLoger.m in Sources */,
 				122AB8341C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m in Sources */,
 				12F963311B3D4BDF00FF6A3E /* SBJsonStreamParser.m in Sources */,
@@ -6248,6 +6269,7 @@
 				128241471B60D062001EE0BD /* DownSheetCell.m in Sources */,
 				123667521C44AA04000FAF70 /* LuckySharkEntity.m in Sources */,
 				128221C61B184C3B004613BB /* ASIDownloadCache.m in Sources */,
+				122858541C4F889D0089A369 /* WaitSendOrderStateCell.m in Sources */,
 				12048C731B799D35000DF7F5 /* RechargeListModel.m in Sources */,
 				122D63F01C3F99250086AAB8 /* MakeOrderVC.m in Sources */,
 				DDEA9F111B1C3A1800530C1C /* StrechyParallaxScrollView.m in Sources */,
@@ -6521,6 +6543,7 @@
 				12A050C61B316B7E008CC38F /* WXTMallListWebVC.m in Sources */,
 				775843171AB95A300039B129 /* LoadLabel.m in Sources */,
 				124607D61C4E2DC1001C703D /* ClassifyRightCell.m in Sources */,
+				1228585A1C4F89560089A369 /* WaitSendOrderMoneyCell.m in Sources */,
 				120EC77F1BB8F31800538637 /* mask.c in Sources */,
 				2563B48B1AAAFF6B00C04227 /* HttpNetUtils.m in Sources */,
 				775843381AB95A300039B129 /* WXUIViewController.m in Sources */,
@@ -6544,6 +6567,7 @@
 				124607C21C4E2C85001C703D /* ClassifyLeftTableViewCell.m in Sources */,
 				775842D81AB95A300039B129 /* NSString+Size.m in Sources */,
 				775C583B1ABA5F31005B6B40 /* NSString+PinYin4Cocoa.m in Sources */,
+				1228585D1C4F89A80089A369 /* WaitSendOrderHandleCell.m in Sources */,
 				1236674B1C44AA04000FAF70 /* LuckyOrderListModel.m in Sources */,
 				120EC7811BB8F31800538637 /* qrinput.c in Sources */,
 				122AB8C21C3E6D5500AC9DF5 /* SDWebImageDecoder.m in Sources */,
