@@ -12,6 +12,7 @@
 #import "WXTUITextField.h"
 #import "ClassifyModel.h"
 #import "WXGoodsInfoVC.h"
+#import "ClassifyGoodsListVC.h"
 
 #define size self.bounds.size
 #define yGap (10)
@@ -124,14 +125,12 @@
         }
     }
     if(isGoods){
-        WXGoodsInfoVC *goodsInfoVC = [[WXGoodsInfoVC alloc] init];
-        goodsInfoVC.goodsId = [[catDic objectForKey:@"goods_id"] integerValue];
-        [self.wxNavigationController pushViewController:goodsInfoVC];
+        [[CoordinateController sharedCoordinateController] toGoodsInfoVC:self goodsID:[[catDic objectForKey:@"goods_id"] integerValue] animated:YES];
     }else{
-//        ClassifyGoodsListVC *listVC = [[ClassifyGoodsListVC alloc] init];
-//        listVC.cat_id = [[catDic objectForKey:@"cat_id"] integerValue];
-//        listVC.titleName = [catDic objectForKey:@"cat_name"];
-//        [self.wxNavigationController pushViewController:listVC];
+        ClassifyGoodsListVC *listVC = [[ClassifyGoodsListVC alloc] init];
+        listVC.cat_id = [[catDic objectForKey:@"cat_id"] integerValue];
+        listVC.titleName = [catDic objectForKey:@"cat_name"];
+        [self.wxNavigationController pushViewController:listVC];
     }
 }
 

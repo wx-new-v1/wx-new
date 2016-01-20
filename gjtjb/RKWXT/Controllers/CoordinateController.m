@@ -18,6 +18,7 @@
 #import "ShoppingCartVC.h"
 #import "MakeOrderVC.h"
 #import "WXHomeOrderListVC.h"
+#import "GoodsClassifyVC.h"
 @implementation CoordinateController
 
 + (CoordinateController*)sharedCoordinateController{
@@ -113,6 +114,13 @@
     JPushMessageInfoVC *infoVC = [[JPushMessageInfoVC alloc] init];
     infoVC.messageID = messageID;
     [vc.wxNavigationController pushViewController:infoVC];
+}
+
+-(void)toGoodsClassifyVC:(id)sender catID:(NSInteger)catID animated:(BOOL)animated{
+    WXUIViewController *vc = sender;
+    GoodsClassifyVC *classifyVC = [[GoodsClassifyVC alloc] init];
+    classifyVC.cat_id = catID;
+    [vc.wxNavigationController pushViewController:classifyVC];
 }
 
 -(void)toWebVC:(id)sender url:(NSString *)webUrl title:(NSString *)title animated:(BOOL)animated{

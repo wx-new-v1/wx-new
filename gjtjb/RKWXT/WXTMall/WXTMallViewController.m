@@ -320,7 +320,7 @@
 }
 
 -(void)homePageToCategaryView{
-    
+    [[CoordinateController sharedCoordinateController] toGoodsClassifyVC:self catID:0 animated:YES];
 }
 
 #pragma mark topimg

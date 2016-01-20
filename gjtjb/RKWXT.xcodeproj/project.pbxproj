@@ -85,6 +85,10 @@
 		122858571C4F89160089A369 /* WaitSendOrderGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858561C4F89160089A369 /* WaitSendOrderGoodsCell.m */; };
 		1228585A1C4F89560089A369 /* WaitSendOrderMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858591C4F89560089A369 /* WaitSendOrderMoneyCell.m */; };
 		1228585D1C4F89A80089A369 /* WaitSendOrderHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228585C1C4F89A80089A369 /* WaitSendOrderHandleCell.m */; };
+		122858631C4F9BB70089A369 /* ClassifyGoodsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858621C4F9BB70089A369 /* ClassifyGoodsListVC.m */; };
+		122858661C4F9BDA0089A369 /* ClassiftGoodsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858651C4F9BDA0089A369 /* ClassiftGoodsEntity.m */; };
+		122858691C4F9BED0089A369 /* ClassifyGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858681C4F9BED0089A369 /* ClassifyGoodsModel.m */; };
+		1228586C1C4F9C420089A369 /* ClassifyGoodsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228586B1C4F9C420089A369 /* ClassifyGoodsListCell.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
 		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
@@ -995,6 +999,14 @@
 		122858591C4F89560089A369 /* WaitSendOrderMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderMoneyCell.m; sourceTree = "<group>"; };
 		1228585B1C4F89A80089A369 /* WaitSendOrderHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitSendOrderHandleCell.h; sourceTree = "<group>"; };
 		1228585C1C4F89A80089A369 /* WaitSendOrderHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitSendOrderHandleCell.m; sourceTree = "<group>"; };
+		122858611C4F9BB70089A369 /* ClassifyGoodsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyGoodsListVC.h; sourceTree = "<group>"; };
+		122858621C4F9BB70089A369 /* ClassifyGoodsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyGoodsListVC.m; sourceTree = "<group>"; };
+		122858641C4F9BDA0089A369 /* ClassiftGoodsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassiftGoodsEntity.h; sourceTree = "<group>"; };
+		122858651C4F9BDA0089A369 /* ClassiftGoodsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassiftGoodsEntity.m; sourceTree = "<group>"; };
+		122858671C4F9BED0089A369 /* ClassifyGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyGoodsModel.h; sourceTree = "<group>"; };
+		122858681C4F9BED0089A369 /* ClassifyGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyGoodsModel.m; sourceTree = "<group>"; };
+		1228586A1C4F9C420089A369 /* ClassifyGoodsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyGoodsListCell.h; sourceTree = "<group>"; };
+		1228586B1C4F9C420089A369 /* ClassifyGoodsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyGoodsListCell.m; sourceTree = "<group>"; };
 		122875E91C3CBB580058C86D /* T_Sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T_Sqlite.h; sourceTree = "<group>"; };
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
@@ -2614,6 +2626,37 @@
 			path = DealOrder;
 			sourceTree = "<group>";
 		};
+		1228585E1C4F9B950089A369 /* GoodsList */ = {
+			isa = PBXGroup;
+			children = (
+				122858611C4F9BB70089A369 /* ClassifyGoodsListVC.h */,
+				122858621C4F9BB70089A369 /* ClassifyGoodsListVC.m */,
+				1228585F1C4F9BA50089A369 /* Model */,
+				122858601C4F9BA50089A369 /* View */,
+			);
+			path = GoodsList;
+			sourceTree = "<group>";
+		};
+		1228585F1C4F9BA50089A369 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				122858641C4F9BDA0089A369 /* ClassiftGoodsEntity.h */,
+				122858651C4F9BDA0089A369 /* ClassiftGoodsEntity.m */,
+				122858671C4F9BED0089A369 /* ClassifyGoodsModel.h */,
+				122858681C4F9BED0089A369 /* ClassifyGoodsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		122858601C4F9BA50089A369 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1228586A1C4F9C420089A369 /* ClassifyGoodsListCell.h */,
+				1228586B1C4F9C420089A369 /* ClassifyGoodsListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		122AB81D1C3E384C00AC9DF5 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -3850,6 +3893,7 @@
 			children = (
 				124607B61C4E2BFF001C703D /* GoodsClassifyVC.h */,
 				124607B71C4E2BFF001C703D /* GoodsClassifyVC.m */,
+				1228585E1C4F9B950089A369 /* GoodsList */,
 				124607B41C4E2BB9001C703D /* Model */,
 				124607B51C4E2BB9001C703D /* View */,
 			);
@@ -6156,6 +6200,7 @@
 				128767011B51012700A79320 /* ShopTwoDimensionCell.m in Sources */,
 				122EFBC41C40FD8400CE0EA0 /* OrderHasDoneVC.m in Sources */,
 				12963B3A1B663DBB007418DE /* WXTGuideVC.m in Sources */,
+				122858631C4F9BB70089A369 /* ClassifyGoodsListVC.m in Sources */,
 				12F180B91B45190800B9A80D /* Sql_JpushData.m in Sources */,
 				7758431D1AB95A300039B129 /* WXUIActionSheet.m in Sources */,
 				128B456F1B6B24F100591137 /* WechatEntity.m in Sources */,
@@ -6243,6 +6288,7 @@
 				128B59911B53D6C5006D790B /* WXTMallViewController.m in Sources */,
 				77DB942E1AAFF0BE0021A816 /* NSDictionary+Plist.m in Sources */,
 				DDB58F531AD3C6A2006248E9 /* SysContacterEntityEx.m in Sources */,
+				122858661C4F9BDA0089A369 /* ClassiftGoodsEntity.m in Sources */,
 				12B05DF21B8C3CC80083D648 /* ShareSucceedModel.m in Sources */,
 				12F963341B3D4BDF00FF6A3E /* SBJsonStreamParserState.m in Sources */,
 				DDB58F461AD3C6A2006248E9 /* ContactDetailCell.m in Sources */,
@@ -6345,6 +6391,7 @@
 				122AB8861C3E6CA600AC9DF5 /* NLPullDownRefreshView.m in Sources */,
 				12BD30FF1B3E9ADF00170316 /* NewWXTLiDB.m in Sources */,
 				122D641D1C3F99C80086AAB8 /* MakeOrderPayStatusCell.m in Sources */,
+				122858691C4F9BED0089A369 /* ClassifyGoodsModel.m in Sources */,
 				123667461C44AA04000FAF70 /* LuckyOrderNumberCell.m in Sources */,
 				122AB8481C3E57DF00AC9DF5 /* HomeLimitBuyInfoCell.m in Sources */,
 				775842F11AB95A300039B129 /* WXDropListItem.m in Sources */,
@@ -6382,6 +6429,7 @@
 				120A2C661AB1804E006A28B1 /* SignEntity.m in Sources */,
 				128221C41B184C3B004613BB /* ASIDataCompressor.m in Sources */,
 				775842F51AB95A300039B129 /* MessageInterceptor.m in Sources */,
+				1228586C1C4F9C420089A369 /* ClassifyGoodsListCell.m in Sources */,
 				775843341AB95A300039B129 /* WXUITableViewController.m in Sources */,
 				12F3CC881B1DF77500E64DE4 /* PersonalInfoOrderListCell.m in Sources */,
 				122EFB911C40B76200CE0EA0 /* NewForgetPwdVC.m in Sources */,

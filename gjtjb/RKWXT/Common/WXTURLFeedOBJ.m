@@ -138,7 +138,10 @@
             url = @"/home_youlike.php";
             break;
         case WXT_UrlFeed_Type_New_LoadClassifyData:
-            url = @"";
+            url = @"/top_category.php";
+            break;
+        case WXT_UrlFeed_Type_New_LoadClassifyGoodsList:
+            url = @"/category_goods.php";
             break;
         case WXT_UrlFeed_Type_Home_GoodsInfo:
             url = @"/single_goods_info.php";
