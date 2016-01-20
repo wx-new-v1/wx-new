@@ -114,7 +114,7 @@
             url = @"/get_user_pic.php";
             break;
         case WXT_UrlFeed_Type_New_UpdapaOrderID:
-            url = @"";
+            url = @"/get_pay_status.php";
             break;
         case WXT_UrlFeed_Type_New_FindData:
             url = @"/discover.php";
