@@ -76,6 +76,11 @@
 		122842021C48EE8100D76A6B /* HomePageSurpEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842011C48EE8100D76A6B /* HomePageSurpEntity.m */; };
 		122842051C48EF3500D76A6B /* HomePageSurpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842041C48EF3500D76A6B /* HomePageSurpModel.m */; };
 		122842091C490F6300D76A6B /* GoodsOtherSellerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122842081C490F6300D76A6B /* GoodsOtherSellerCell.m */; };
+		122858451C4F771C0089A369 /* DealOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858441C4F771C0089A369 /* DealOrderModel.m */; };
+		122858481C4F828B0089A369 /* WaitPayOrderStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858471C4F828B0089A369 /* WaitPayOrderStateCell.m */; };
+		1228584B1C4F83290089A369 /* WaitPayOrderGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228584A1C4F83290089A369 /* WaitPayOrderGoodsCell.m */; };
+		1228584E1C4F83950089A369 /* WaitPayOrderMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1228584D1C4F83950089A369 /* WaitPayOrderMoneyCell.m */; };
+		122858511C4F83D60089A369 /* WaitPayOrderHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122858501C4F83D60089A369 /* WaitPayOrderHandleCell.m */; };
 		122875EB1C3CBB580058C86D /* T_Sqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875EA1C3CBB580058C86D /* T_Sqlite.m */; };
 		122875EE1C3CC0D70058C86D /* CSTScrollBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 122875ED1C3CC0D70058C86D /* CSTScrollBrowser.m */; };
 		122AB82E1C3E384C00AC9DF5 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122AB81E1C3E384C00AC9DF5 /* MJRefresh.bundle */; };
@@ -968,6 +973,16 @@
 		122842041C48EF3500D76A6B /* HomePageSurpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageSurpModel.m; sourceTree = "<group>"; };
 		122842071C490F6300D76A6B /* GoodsOtherSellerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsOtherSellerCell.h; sourceTree = "<group>"; };
 		122842081C490F6300D76A6B /* GoodsOtherSellerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsOtherSellerCell.m; sourceTree = "<group>"; };
+		122858431C4F771C0089A369 /* DealOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealOrderModel.h; sourceTree = "<group>"; };
+		122858441C4F771C0089A369 /* DealOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealOrderModel.m; sourceTree = "<group>"; };
+		122858461C4F828B0089A369 /* WaitPayOrderStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitPayOrderStateCell.h; sourceTree = "<group>"; };
+		122858471C4F828B0089A369 /* WaitPayOrderStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderStateCell.m; sourceTree = "<group>"; };
+		122858491C4F83290089A369 /* WaitPayOrderGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitPayOrderGoodsCell.h; sourceTree = "<group>"; };
+		1228584A1C4F83290089A369 /* WaitPayOrderGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderGoodsCell.m; sourceTree = "<group>"; };
+		1228584C1C4F83950089A369 /* WaitPayOrderMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitPayOrderMoneyCell.h; sourceTree = "<group>"; };
+		1228584D1C4F83950089A369 /* WaitPayOrderMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderMoneyCell.m; sourceTree = "<group>"; };
+		1228584F1C4F83D60089A369 /* WaitPayOrderHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitPayOrderHandleCell.h; sourceTree = "<group>"; };
+		122858501C4F83D60089A369 /* WaitPayOrderHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitPayOrderHandleCell.m; sourceTree = "<group>"; };
 		122875E91C3CBB580058C86D /* T_Sqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T_Sqlite.h; sourceTree = "<group>"; };
 		122875EA1C3CBB580058C86D /* T_Sqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T_Sqlite.m; sourceTree = "<group>"; };
 		122875EC1C3CC0D70058C86D /* CSTScrollBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTScrollBrowser.h; sourceTree = "<group>"; };
@@ -2578,6 +2593,15 @@
 			path = GoodsInfoOtherShop;
 			sourceTree = "<group>";
 		};
+		122858421C4F77080089A369 /* DealOrder */ = {
+			isa = PBXGroup;
+			children = (
+				122858431C4F771C0089A369 /* DealOrderModel.h */,
+				122858441C4F771C0089A369 /* DealOrderModel.m */,
+			);
+			path = DealOrder;
+			sourceTree = "<group>";
+		};
 		122AB81D1C3E384C00AC9DF5 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -3215,6 +3239,7 @@
 				122EFBDB1C4103D200CE0EA0 /* AllOrderListModel.m */,
 				122EFBDD1C4103E000CE0EA0 /* AllOrderListEntity.h */,
 				122EFBDE1C4103E000CE0EA0 /* AllOrderListEntity.m */,
+				122858421C4F77080089A369 /* DealOrder */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3258,6 +3283,14 @@
 		122EFBC61C40FD9C00CE0EA0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				122858461C4F828B0089A369 /* WaitPayOrderStateCell.h */,
+				122858471C4F828B0089A369 /* WaitPayOrderStateCell.m */,
+				122858491C4F83290089A369 /* WaitPayOrderGoodsCell.h */,
+				1228584A1C4F83290089A369 /* WaitPayOrderGoodsCell.m */,
+				1228584C1C4F83950089A369 /* WaitPayOrderMoneyCell.h */,
+				1228584D1C4F83950089A369 /* WaitPayOrderMoneyCell.m */,
+				1228584F1C4F83D60089A369 /* WaitPayOrderHandleCell.h */,
+				122858501C4F83D60089A369 /* WaitPayOrderHandleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -6247,6 +6280,7 @@
 				775842DC1AB95A300039B129 /* UIImage+Extend.m in Sources */,
 				1243CCBC1AE7D89A003E0943 /* YRSideViewController.m in Sources */,
 				123667481C44AA04000FAF70 /* LuckyOrderUserInfoCell.m in Sources */,
+				122858451C4F771C0089A369 /* DealOrderModel.m in Sources */,
 				DDB58F481AD3C6A2006248E9 /* ContactBaseEntity+Detail.m in Sources */,
 				775C58BB1ABA7B75005B6B40 /* CallRecord.m in Sources */,
 				775843061AB95A300039B129 /* TxtparseOBJ.m in Sources */,
@@ -6343,6 +6377,7 @@
 				1277D00E1AC50E4F0008D9B6 /* WXTResetPwdVC.m in Sources */,
 				7758432F1AB95A300039B129 /* WXUITabBar.m in Sources */,
 				122841F71C48D58E00D76A6B /* NewHomePageModel.m in Sources */,
+				122858511C4F83D60089A369 /* WaitPayOrderHandleCell.m in Sources */,
 				1236673D1C44AA04000FAF70 /* LuckyGoodsMakeOrderDateCell.m in Sources */,
 				775843241AB95A300039B129 /* WXUIImagePickerController.m in Sources */,
 				775842D31AB95A300039B129 /* NSDate+Compare.m in Sources */,
@@ -6353,6 +6388,7 @@
 				775C58361ABA5F31005B6B40 /* ChineseToPinyin.m in Sources */,
 				122AB8521C3E5C9000AC9DF5 /* HomeRecommendInfoView.m in Sources */,
 				775C583D1ABA5F31005B6B40 /* PinyinFormatter.m in Sources */,
+				1228584B1C4F83290089A369 /* WaitPayOrderGoodsCell.m in Sources */,
 				120D01641BBB91B5005CAA6C /* RSADataSigner.m in Sources */,
 				775842B21AB95A300039B129 /* URLFeedData.m in Sources */,
 				12F9633A1B3D4BDF00FF6A3E /* SBJsonWriter.m in Sources */,
@@ -6413,6 +6449,7 @@
 				122AB8561C3E5F0C00AC9DF5 /* HomeGuessInfoCell.m in Sources */,
 				77DB943B1AAFF3830021A816 /* UIView+Sizing.m in Sources */,
 				775843141AB95A300039B129 /* WXButton.m in Sources */,
+				1228584E1C4F83950089A369 /* WaitPayOrderMoneyCell.m in Sources */,
 				122AB8321C3E384C00AC9DF5 /* MJRefreshHeaderView.m in Sources */,
 				775843001AB95A300039B129 /* PictureBrowseView.m in Sources */,
 				122AB8BE1C3E6D5500AC9DF5 /* MKAnnotationView+WebCache.m in Sources */,
@@ -6565,6 +6602,7 @@
 				12F422981B1D8A4000643DD7 /* InsertAddress.m in Sources */,
 				128221C71B184C3B004613BB /* ASIFormDataRequest.m in Sources */,
 				775842FA1AB95A300039B129 /* KICropImageView.m in Sources */,
+				122858481C4F828B0089A369 /* WaitPayOrderStateCell.m in Sources */,
 				775843031AB95A300039B129 /* BaseSearchLV.m in Sources */,
 				125A76B01B56747F00959AD8 /* JPushInfoModel.m in Sources */,
 				DDB58F4C1AD3C6A2006248E9 /* CallViewController.m in Sources */,

@@ -16,10 +16,11 @@
 
 #import "AllOrderListEntity.h"
 #import "AllOrderListModel.h"
+#import "DealOrderModel.h"
 
 #import "OrderListCommonDef.h"
 
-#define EveryTimeLoad (20)
+#define EveryTimeLoad (10)
 
 enum{
     Order_Show_State = 0,
@@ -72,10 +73,10 @@ enum{
 -(void)addOBS{
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(payOrderListSucceed) name:D_Notification_Name_AliPaySucceed object:nil];
-//    [notificationCenter addObserver:self selector:@selector(cancelLMOrderListSucceed:) name:K_Notification_UserOderList_CancelSucceed object:nil];
-//    [notificationCenter addObserver:self selector:@selector(cancelLMOrderListFailed:) name:K_Notification_UserOderList_CancelFailed object:nil];
-//    [notificationCenter addObserver:self selector:@selector(completeLMOrderListSucceed:) name:K_Notification_UserOderList_CompleteSucceed object:nil];
-//    [notificationCenter addObserver:self selector:@selector(completeLMOrderListFailed:) name:K_Notification_UserOderList_CompleteFailed object:nil];
+    [notificationCenter addObserver:self selector:@selector(cancelOrderListSucceed:) name:K_Notification_UserOderList_CancelSucceed object:nil];
+    [notificationCenter addObserver:self selector:@selector(cancelOrderListFailed:) name:K_Notification_UserOderList_CancelFailed object:nil];
+    [notificationCenter addObserver:self selector:@selector(completeOrderListSucceed:) name:K_Notification_UserOderList_CompleteSucceed object:nil];
+    [notificationCenter addObserver:self selector:@selector(completeOrderListFailed:) name:K_Notification_UserOderList_CompleteFailed object:nil];
 //    [notificationCenter addObserver:self selector:@selector(userEvaluateOrderSucceed:) name:K_Notification_Name_UserEvaluateOrderSucceed object:nil];
     [notificationCenter addObserver:self selector:@selector(applyRefundSucceed) name:K_Notification_Name_RefundSucceed object:nil];
 }
@@ -193,6 +194,7 @@ enum{
     if(!cell){
         cell = [[AllOrderListMoneyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identfier];
     }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if([orderListArr count] > 0){
         [cell setCellInfo:[orderListArr objectAtIndex:section]];
     }
@@ -297,23 +299,23 @@ enum{
 #pragma mark userhandle
 //取消订单
 -(void)userCancelOrder:(id)sender{
-//    AllOrderListEntity *entity = sender;
-//    [[OrderListModel shareOrderListModel] dealUserOrderListWithType:DealOrderList_Type_Cancel with:[NSString stringWithFormat:@"%ld",(long)entity.orderId]];
-//    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+    AllOrderListEntity *entity = sender;
+    [[DealOrderModel shareOrderDealModel] cancelUserOrder:entity.orderId];
+    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
 //确认收货
 -(void)userCompleteOrder:(id)sender{
-//    LMOrderListEntity *entity = sender;
-//    [[OrderListModel shareOrderListModel] dealUserOrderListWithType:DealOrderList_Type_Complete with:[NSString stringWithFormat:@"%ld",(long)entity.orderId]];
-//    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+    AllOrderListEntity *entity = sender;
+    [[DealOrderModel shareOrderDealModel] completeUserOrder:entity.orderId];
+    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
 }
 
 //去支付
 -(void)userPayOrder:(id)sender{
-//    LMOrderListEntity *entity = sender;
-//    [OrderListModel shareOrderListModel].orderID = [NSString stringWithFormat:@"%ld",(long)entity.orderId];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:K_Notification_Name_JumpToPay object:entity];
+    AllOrderListEntity *entity = sender;
+    [DealOrderModel shareOrderDealModel].orderID = [NSString stringWithFormat:@"%ld",(long)entity.orderId];
+    [[NSNotificationCenter defaultCenter] postNotificationName:K_Notification_Name_JumpToPay object:entity];
 }
 
 //去评价
@@ -324,7 +326,7 @@ enum{
 
 #pragma mark notification
 //取消订单成功
--(void)cancelLMOrderListSucceed:(NSNotification*)notification{
+-(void)cancelOrderListSucceed:(NSNotification*)notification{
     [self unShowWaitView];
     NSString *orderID = notification.object;
     for(AllOrderListEntity *entity in orderListArr){
@@ -338,7 +340,7 @@ enum{
     }
 }
 
--(void)cancelLMOrderListFailed:(NSNotification*)notification{
+-(void)cancelOrderListFailed:(NSNotification*)notification{
     [self unShowWaitView];
     NSString *message = notification.object;
     if(!message){
@@ -349,19 +351,19 @@ enum{
 
 //支付成功
 -(void)payOrderListSucceed{
-//    for(AllOrderListEntity *entity in orderListArr){
-//        if(entity.orderId == [[OrderListModel shareOrderListModel].orderID integerValue]){
-//            entity.payType = LMorder_PayType_HasPay;
-//            NSInteger index = [self indexPathOfOptCellWithOrder:entity];
-//            if (index>=0){
-//                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
-//            }
-//        }
-//    }
+    for(AllOrderListEntity *entity in orderListArr){
+        if(entity.orderId == [[DealOrderModel shareOrderDealModel].orderID integerValue]){
+            entity.payType = Order_PayType_HasPay;
+            NSInteger index = [self indexPathOfOptCellWithOrder:entity];
+            if (index>=0){
+                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
+            }
+        }
+    }
 }
 
 //确认收货成功
--(void)completeLMOrderListSucceed:(NSNotification*)notification{
+-(void)completeOrderListSucceed:(NSNotification*)notification{
     [self unShowWaitView];
     NSString *orderID = notification.object;
     for(AllOrderListEntity *entity in orderListArr){
@@ -375,7 +377,7 @@ enum{
     }
 }
 
--(void)completeLMOrderListFailed:(NSNotification*)notification{
+-(void)completeOrderListFailed:(NSNotification*)notification{
     [self unShowWaitView];
     NSString *message = notification.object;
     if(!message){
@@ -405,10 +407,10 @@ enum{
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CancelSucceed object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CancelFailed object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CompleteFailed object:nil];
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CompleteSucceed object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CancelSucceed object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CancelFailed object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CompleteFailed object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_UserOderList_CompleteSucceed object:nil];
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:K_Notification_Name_UserEvaluateOrderSucceed object:nil];
 }
 

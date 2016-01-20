@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum{
-    OrderList_Type_All = 0,
+    OrderList_Type_All = 1,
     OrderList_Type_WaitPay,
     OrderList_Type_WaitSend,
     OrderList_Type_WaitReceive,

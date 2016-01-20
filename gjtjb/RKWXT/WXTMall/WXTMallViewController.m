@@ -412,7 +412,8 @@
 
 #pragma mark limitbuy
 -(void)clickClassifyBtnAtIndex:(NSInteger)index{
-
+    GoodsClassifyVC *goodsClassifyVC = [[GoodsClassifyVC alloc] init];
+    [self.wxNavigationController pushViewController:goodsClassifyVC];
 }
 
 #pragma mark recommend

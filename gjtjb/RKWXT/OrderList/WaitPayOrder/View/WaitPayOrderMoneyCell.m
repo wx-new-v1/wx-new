@@ -1,22 +1,22 @@
 //
-//  AllOrderListMoneyCell.m
+//  WaitPayOrderMoneyCell.m
 //  RKWXT
 //
-//  Created by SHB on 16/1/9.
+//  Created by SHB on 16/1/20.
 //  Copyright © 2016年 roderick. All rights reserved.
 //
 
-#import "AllOrderListMoneyCell.h"
+#import "WaitPayOrderMoneyCell.h"
 #import "AllOrderListEntity.h"
 
-@interface AllOrderListMoneyCell(){
+@interface WaitPayOrderMoneyCell(){
     WXUILabel *numberLabel;
     WXUILabel *nameLabel;
     WXUILabel *priceLabel;
 }
 @end
 
-@implementation AllOrderListMoneyCell
+@implementation WaitPayOrderMoneyCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -25,7 +25,7 @@
         CGFloat numLabelWidth = 85;
         CGFloat numLabelHeight = 16;
         numberLabel = [[WXUILabel alloc] init];
-        numberLabel.frame = CGRectMake(xOffset, (AllOrderListMoneyCellHeight-numLabelHeight)/2, numLabelWidth, numLabelHeight);
+        numberLabel.frame = CGRectMake(xOffset, (WaitPayOrderMoneyCellHeight-numLabelHeight)/2, numLabelWidth, numLabelHeight);
         [numberLabel setBackgroundColor:[UIColor clearColor]];
         [numberLabel setTextAlignment:NSTextAlignmentLeft];
         [numberLabel setFont:WXFont(14.0)];
@@ -35,7 +35,7 @@
         CGFloat nameWidth = 55;
         CGFloat nameHeight = numLabelHeight;
         nameLabel = [[WXUILabel alloc] init];
-        nameLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH/2, (AllOrderListMoneyCellHeight-nameHeight)/2, nameWidth, nameHeight);
+        nameLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH/2, (WaitPayOrderMoneyCellHeight-nameHeight)/2, nameWidth, nameHeight);
         [nameLabel setBackgroundColor:[UIColor clearColor]];
         [nameLabel setTextAlignment:NSTextAlignmentRight];
         [nameLabel setTextColor:WXColorWithInteger(0xbababa)];
@@ -43,7 +43,7 @@
         [self.contentView addSubview:nameLabel];
         
         priceLabel = [[WXUILabel alloc] init];
-        priceLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-100, (AllOrderListMoneyCellHeight-nameHeight)/2, 100, nameHeight);
+        priceLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-100, (WaitPayOrderMoneyCellHeight-nameHeight)/2, 100, nameHeight);
         [priceLabel setBackgroundColor:[UIColor clearColor]];
         [priceLabel setTextAlignment:NSTextAlignmentCenter];
         [priceLabel setTextColor:WXColorWithInteger(0x000000)];

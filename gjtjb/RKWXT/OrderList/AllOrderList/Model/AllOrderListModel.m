@@ -27,14 +27,14 @@
     return self;
 }
 
--(void)parseLmOrderListData:(NSArray*)arr{
-    if(!arr){
+-(void)parseLmOrderListData:(NSDictionary*)allDic{
+    if(!allDic){
         return;
     }
     if(number == 0){
         [_orderList removeAllObjects];
     }
-    for(NSDictionary *dic in arr){
+    for(NSDictionary *dic in [allDic objectForKey:@"order"]){
         NSMutableArray *goodsArr = [[NSMutableArray alloc] init];
         for(NSDictionary *goodsDic in [dic objectForKey:@"order_goods"]){
             AllOrderListEntity *goodsEntity = [AllOrderListEntity initOrderGoodsListEntity:goodsDic];
@@ -43,6 +43,8 @@
         }
         AllOrderListEntity *entity = [AllOrderListEntity initOrderInfoEntity:[dic objectForKey:@"order_info"]];
         entity.goodsListArr = goodsArr;
+        entity.shopName = [[allDic objectForKey:@"shop"] objectForKey:@"shop_name"];
+        entity.shopPhone = [[allDic objectForKey:@"shop"] objectForKey:@"telephone"];
         [_orderList addObject:entity];
     }
 }
@@ -50,9 +52,10 @@
 -(void)loadOrderList:(NSInteger)startItem andLength:(NSInteger)length type:(OrderList_Type)orderType{
     number = startItem;
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", userObj.wxtID, @"woxin_id", [NSNumber numberWithInt:kSubShopID], @"shop_id", [UtilTool newStringWithAddSomeStr:5 withOldStr:userObj.pwd],@"pwd", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [UtilTool currentVersion], @"ver", [NSNumber numberWithInt:(int)startItem], @"start_item", [NSNumber numberWithInt:length], @"length", [NSNumber numberWithInt:orderType], @"type", nil];
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", userObj.user, @"phone", userObj.wxtID, @"woxin_id", userObj.shopID, @"shop_id", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)startItem], @"start_item", [NSNumber numberWithInt:length], @"length", [NSNumber numberWithInt:orderType], @"type", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", userObj.user, @"phone", userObj.wxtID, @"woxin_id", userObj.shopID, @"shop_id", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)startItem], @"start_item", [NSNumber numberWithInt:length], @"length", [NSNumber numberWithInt:orderType], @"type", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     __block AllOrderListModel *blockSelf = self;
-    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_Home_LMorderList httpMethod:WXT_HttpMethod_Post timeoutIntervcal:10 feed:dic completion:^(URLFeedData *retData) {
+    [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_Home_OrderList httpMethod:WXT_HttpMethod_Post timeoutIntervcal:10 feed:dic completion:^(URLFeedData *retData) {
         if (retData.code != 0){
             if (_delegate && [_delegate respondsToSelector:@selector(loadAllOrderlistFailed:)]){
                 [_delegate loadAllOrderlistFailed:retData.errorDesc];

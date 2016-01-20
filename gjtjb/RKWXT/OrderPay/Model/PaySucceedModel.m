@@ -26,6 +26,9 @@
     NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", userObj.wxtID, @"woxin_id", userObj.user, @"phone", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)type], @"type", orderID, @"order_id", nil];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"iOS", @"pid", userObj.wxtID, @"woxin_id", userObj.user, @"phone", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [NSNumber numberWithInt:(int)type], @"type", orderID, @"order_id", [UtilTool md5:[UtilTool allPostStringMd5:baseDic]], @"sign", nil];
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_UpdapaOrderID httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
+        if(retData.code == 0){
+            NSLog(@"通知支付状态:%@",[retData.data objectForKey:@"data"]);
+        }
     }];
 }
 

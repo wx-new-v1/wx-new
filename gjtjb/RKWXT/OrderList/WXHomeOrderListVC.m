@@ -10,6 +10,7 @@
 #import "DLTabedSlideView.h"
 #import "OrderListCommonDef.h"
 
+
 @interface WXHomeOrderListVC()<DLTabedSlideViewDelegate>{
     DLTabedSlideView *tabedSlideView;
     NSInteger showNumber;
@@ -53,6 +54,8 @@
 }
 
 -(void)addOBS{
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(jumpToPayVC:) name:K_Notification_Name_JumpToPay object:nil];
 }
 
 -(NSInteger)numberOfTabsInDLTabedSlideView:(DLTabedSlideView *)sender{
@@ -95,6 +98,16 @@
             break;
     }
     return nil;
+}
+
+#pragma mark pay
+-(void)jumpToPayVC:(NSNotification*)notification{
+    AllOrderListEntity *entity = notification.object;
+    OrderPayVC *payVC = [[OrderPayVC alloc] init];
+    payVC.orderpay_type = OrderPay_Type_Order;
+    payVC.payMoney = entity.orderMoney+entity.carriageMoney;
+    payVC.orderID = [NSString stringWithFormat:@"%ld",(long)entity.orderId];
+    [self.wxNavigationController pushViewController:payVC];
 }
 
 @end

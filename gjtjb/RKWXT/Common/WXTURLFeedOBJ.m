@@ -119,8 +119,8 @@
         case WXT_UrlFeed_Type_New_FindData:
             url = @"/discover.php";
             break;
-        case WXT_UrlFeed_Type_Home_LMorderList:
-            url = @"/get_sellerunion_order_info.php";
+        case WXT_UrlFeed_Type_Home_OrderList:
+            url = @"/order_list.php";
             break;
         case WXT_UrlFeed_Type_New_UserBonus:
             url = @"";
@@ -163,6 +163,12 @@
             break;
         case WXT_UrlFeed_Type_New_MakeOrder:
             url = @"/insert_order.php";
+            break;
+        case WXT_UrlFeed_Type_New_CancelOrder:
+            url = @"/cancel_order.php";
+            break;
+        case WXT_UrlFeed_Type_New_CompleteOrder:
+            url = @"/ack_receiving.php";
             break;
         default:
             break;

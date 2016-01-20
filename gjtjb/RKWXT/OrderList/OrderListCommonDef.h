@@ -31,4 +31,8 @@ enum{
 #import "WaitReceiveOrderVC.h"
 #import "OrderHasDoneVC.h"
 
+#import "AllOrderListEntity.h"
+
+#import "OrderPayVC.h"
+
 #endif /* OrderListCommonDef_h */

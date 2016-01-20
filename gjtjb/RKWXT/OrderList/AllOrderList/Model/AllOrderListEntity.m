@@ -41,8 +41,8 @@
         NSInteger sendType = [[dic objectForKey:@"is_shipments"] integerValue];
         [self setSendType:sendType];
         
-        NSInteger evaluate = [[dic objectForKey:@"is_evaluate"] integerValue];
-        [self setEvaluate:evaluate];
+//        NSInteger evaluate = [[dic objectForKey:@"is_evaluate"] integerValue];
+//        [self setEvaluate:evaluate];
         
         NSInteger orderID = [[dic objectForKey:@"order_id"] integerValue];
         [self setOrderId:orderID];
@@ -65,14 +65,14 @@
         NSString *sendname = [dic objectForKey:@"shipments_type"];
         [self setSendName:sendname];
         
-        NSInteger shopID = [[dic objectForKey:@"shop_id"] integerValue];
-        [self setShopID:shopID];
+//        NSInteger shopID = [[dic objectForKey:@"shop_id"] integerValue];
+//        [self setShopID:shopID];
         
-        NSString *shopName = [dic objectForKey:@"shop_name"];
-        [self setShopName:shopName];
+//        NSString *shopName = [dic objectForKey:@"shop_name"];
+//        [self setShopName:shopName];
         
-        NSString *shopPhone = [dic objectForKey:@"shop_telephone"];
-        [self setShopPhone:shopPhone];
+//        NSString *shopPhone = [dic objectForKey:@"shop_telephone"];
+//        [self setShopPhone:shopPhone];
         
         NSString *sendNum = [dic objectForKey:@"tracking_number"];
         [self setSendNumber:sendNum];
