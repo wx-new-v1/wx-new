@@ -345,7 +345,7 @@
         case User_Cut:
         {
             [cell.imageView setImage:[UIImage imageNamed:@"MyCutImg.png"]];
-            [cell.textLabel setText:@"我的提成"];
+            [cell.textLabel setText:@"我的奖励"];
             [cell.textLabel setFont:WXFont(15.0)];
             [cell.textLabel setTextColor:WXColorWithInteger(0x000000)];
         }

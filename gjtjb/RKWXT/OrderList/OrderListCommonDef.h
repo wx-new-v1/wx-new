@@ -9,7 +9,7 @@
 #ifndef OrderListCommonDef_h
 #define OrderListCommonDef_h
 
-#define K_Notification_Name_JumpToGoodsInfo    @"K_Notification_Name_JumpToGoodsInfo"
+#define K_Notification_Name_JumpToOrderInfo    @"K_Notification_Name_JumpToOrderInfo"
 #define K_Notification_Name_JumpToPay          @"K_Notification_Name_JumpToPay"
 #define K_Notification_Name_JumpToEvaluate     @"K_Notification_Name_JumpToEvaluate"
 #define K_Notification_Name_RefundSucceed      @"K_Notification_Name_RefundSucceed"
@@ -34,5 +34,6 @@ enum{
 #import "AllOrderListEntity.h"
 
 #import "OrderPayVC.h"
+#import "OrderInfoVC.h"
 
 #endif /* OrderListCommonDef_h */

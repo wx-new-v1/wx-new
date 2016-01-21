@@ -245,7 +245,8 @@ enum{
     if(row == Order_Show_State || row == [self numberOfRowInSection:section]-1 || row == [self numberOfRowInSection:section]-2){
         return;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:K_Notification_Name_JumpToGoodsInfo object:entity];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:K_Notification_Name_JumpToOrderInfo object:entity];
 }
 
 -(NSInteger)indexPathOfOptCellWithOrder:(AllOrderListEntity*)orderEntity{

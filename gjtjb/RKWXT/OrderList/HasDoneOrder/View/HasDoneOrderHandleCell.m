@@ -1,20 +1,20 @@
 //
-//  WaitSendOrderHandleCell.m
+//  HasDoneOrderHandleCell.m
 //  RKWXT
 //
-//  Created by SHB on 16/1/20.
+//  Created by SHB on 16/1/21.
 //  Copyright © 2016年 roderick. All rights reserved.
 //
 
-#import "WaitSendOrderHandleCell.h"
+#import "HasDoneOrderHandleCell.h"
 #import "AllOrderListEntity.h"
 
-@interface WaitSendOrderHandleCell(){
+@interface HasDoneOrderHandleCell(){
     WXUIButton *rightBtn;
 }
 @end
 
-@implementation WaitSendOrderHandleCell
+@implementation HasDoneOrderHandleCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -23,7 +23,7 @@
         CGFloat btnWidth = 56;
         CGFloat btnHeight = 24;
         rightBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-        rightBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-btnWidth, (WaitSendOrderHandleCellHeight-btnHeight)/2, btnWidth, btnHeight);
+        rightBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-btnWidth, (HasDoneOrderHandleCellHeight-btnHeight)/2, btnWidth, btnHeight);
         [rightBtn setHidden:YES];
         [rightBtn setBackgroundColor:WXColorWithInteger(0xff9c00)];
         [rightBtn setBorderRadian:3.0 width:1.0 color:[UIColor clearColor]];
@@ -40,17 +40,18 @@
 
 -(void)userHandleBtnState{
     AllOrderListEntity *entity = self.cellInfo;
-    if(entity.payType == Order_PayType_HasPay && entity.sendType == Order_SendType_WaitSend){
-        [rightBtn setTitle:@"退款" forState:UIControlStateNormal];
+    if(entity.orderState == Order_State_Complete && entity.evaluate == Order_Evaluate_None){
+        [rightBtn setTitle:@"评价" forState:UIControlStateNormal];
         [rightBtn setHidden:NO];
+        return;
     }
 }
 
 -(void)rightBtnClicked{
     AllOrderListEntity *entity = self.cellInfo;
-    if(entity.payType == Order_PayType_WaitPay && entity.orderState == Order_State_Normal){
-        if(_delegate && [_delegate respondsToSelector:@selector(userRefundOrder:)]){
-            [_delegate userRefundOrder:entity];
+    if(entity.orderState == Order_State_Complete && entity.evaluate == Order_Evaluate_None){
+        if(_delegate && [_delegate respondsToSelector:@selector(userEvaluateOrder:)]){
+            [_delegate userEvaluateOrder:entity];
         }
     }
 }

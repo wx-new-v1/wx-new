@@ -606,11 +606,11 @@
 }
 
 #pragma mark desCellDelegate
--(void)lmGoodsInfoDesCarriageBtnClicked{
+-(void)goodsInfoDesCarriageBtnClicked{
     [UtilTool showTipView:@"该商品免运费"];
 }
 
--(void)lmGoodsInfoDesCutBtnClicked{
+-(void)goodsInfoDesCutBtnClicked{
     [UtilTool showTipView:@"该商品有分成"];
 }
 

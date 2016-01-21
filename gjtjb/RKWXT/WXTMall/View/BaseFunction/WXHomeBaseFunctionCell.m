@@ -21,7 +21,7 @@
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
-        NSArray *textArr = @[@"免费抽奖",@"签到有奖",@"商家红包",@"邀请有奖",@"我信游戏",@"我的身边",@"我的提成",@"商家联盟"];
+        NSArray *textArr = @[@"免费抽奖",@"签到有奖",@"商家红包",@"邀请有奖",@"我信游戏",@"我的身边",@"我的奖励",@"商家联盟"];
         NSArray *imgArr = @[@"HomePageSharkImg.png",@"HomePageSignImg.png",@"HomePageWallet.png",@"HomePageShareImg.png",@"HomePageGame.png",@"HomePageSide.png",@"HomePageCutImg.png",@"HomePageUnion.png"];
         NSInteger count = 0;
         for(NSInteger k = 0; k < 2; k++){

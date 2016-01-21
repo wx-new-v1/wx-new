@@ -1,22 +1,22 @@
 //
-//  WaitSendOrderStateCell.m
+//  WaitReceiveOrderStateCell.m
 //  RKWXT
 //
-//  Created by SHB on 16/1/20.
+//  Created by SHB on 16/1/21.
 //  Copyright © 2016年 roderick. All rights reserved.
 //
 
-#import "WaitSendOrderStateCell.h"
+#import "WaitReceiveOrderStateCell.h"
 #import "AllOrderListEntity.h"
 
-@interface WaitSendOrderStateCell(){
+@interface WaitReceiveOrderStateCell(){
     WXUILabel *orderIDLabel;
     WXUILabel *orderTimeLabel;
     WXUILabel *orderStateLabel;
 }
 @end
 
-@implementation WaitSendOrderStateCell
+@implementation WaitReceiveOrderStateCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -25,7 +25,7 @@
         CGFloat labelWidth = 140;
         CGFloat labelHeight = 18;
         orderIDLabel = [[WXUILabel alloc] init];
-        orderIDLabel.frame = CGRectMake(xOffset, (WaitSendOrderStateCellHeight-labelHeight)/2, labelWidth, labelHeight);
+        orderIDLabel.frame = CGRectMake(xOffset, (WaitReceiveOrderStateCellHeight-labelHeight)/2, labelWidth, labelHeight);
         [orderIDLabel setBackgroundColor:[UIColor clearColor]];
         [orderIDLabel setTextAlignment:NSTextAlignmentLeft];
         [orderIDLabel setTextColor:WXColorWithInteger(0x000000)];
@@ -59,6 +59,7 @@
     [orderIDLabel setText:[NSString stringWithFormat:@"订单号: %ld",(long)entity.orderId]];
     [orderTimeLabel setText:[UtilTool getDateTimeFor:entity.addTime type:1]];
     
-    [orderStateLabel setText:@"待发货"];
+    [orderStateLabel setText:@"待收货"];
 }
+
 @end

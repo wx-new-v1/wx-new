@@ -56,6 +56,7 @@
 -(void)addOBS{
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(jumpToPayVC:) name:K_Notification_Name_JumpToPay object:nil];
+    [notificationCenter addObserver:self selector:@selector(jumpToOrderInfoVC:) name:K_Notification_Name_JumpToOrderInfo object:nil];
 }
 
 -(NSInteger)numberOfTabsInDLTabedSlideView:(DLTabedSlideView *)sender{
@@ -108,6 +109,19 @@
     payVC.payMoney = entity.orderMoney+entity.carriageMoney;
     payVC.orderID = [NSString stringWithFormat:@"%ld",(long)entity.orderId];
     [self.wxNavigationController pushViewController:payVC];
+}
+
+#pragma mark orderInfo
+-(void)jumpToOrderInfoVC:(NSNotification*)notification{
+    AllOrderListEntity *entity = notification.object;
+    OrderInfoVC *orderInfo = [[OrderInfoVC alloc] init];
+    orderInfo.orderEntity = entity;
+    [self.wxNavigationController pushViewController:orderInfo];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

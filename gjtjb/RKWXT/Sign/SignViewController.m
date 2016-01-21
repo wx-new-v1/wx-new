@@ -30,18 +30,12 @@
 
 @implementation SignViewController
 
--(id)init{
-    self = [super init];
-    if(self){
-        _model = [[SignModel alloc] init];
-        [_model setDelegate:self];
-    }
-    return self;
-}
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setCSTNavigationViewHidden:YES animated:NO];
+    
+    _model = [[SignModel alloc] init];
+    [_model setDelegate:self];
 }
 
 -(void)viewDidLoad{
@@ -221,6 +215,11 @@
 }
 
 -(void)tappedOnDate:(NSDate *)selectedDate{
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [_model setDelegate:nil];
 }
 
 @end

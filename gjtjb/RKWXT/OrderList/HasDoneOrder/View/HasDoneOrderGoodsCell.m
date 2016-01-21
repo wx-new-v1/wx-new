@@ -1,16 +1,16 @@
 //
-//  WaitSendOrderGoodsCell.m
+//  HasDoneOrderGoodsCell.m
 //  RKWXT
 //
-//  Created by SHB on 16/1/20.
+//  Created by SHB on 16/1/21.
 //  Copyright © 2016年 roderick. All rights reserved.
 //
 
-#import "WaitSendOrderGoodsCell.h"
+#import "HasDoneOrderGoodsCell.h"
 #import "WXRemotionImgBtn.h"
 #import "AllOrderListEntity.h"
 
-@interface WaitSendOrderGoodsCell(){
+@interface HasDoneOrderGoodsCell(){
     WXRemotionImgBtn *imgView;
     WXUILabel *nameLabel;
     WXUILabel *priceLabel;
@@ -18,7 +18,7 @@
 }
 @end
 
-@implementation WaitSendOrderGoodsCell
+@implementation HasDoneOrderGoodsCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -26,7 +26,7 @@
         CGFloat xOffset = 10;
         CGFloat imgWidth = 62;
         CGFloat imgHeight = imgWidth;
-        imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(xOffset, (WaitSendOrderGoodsCellHeight-imgHeight)/2, imgWidth, imgHeight)];
+        imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake(xOffset, (HasDoneOrderGoodsCellHeight-imgHeight)/2, imgWidth, imgHeight)];
         [imgView setUserInteractionEnabled:NO];
         [self.contentView addSubview:imgView];
         
