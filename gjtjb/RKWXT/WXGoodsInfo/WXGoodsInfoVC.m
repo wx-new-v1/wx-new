@@ -100,7 +100,7 @@
     WXUIButton *sellerBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     sellerBtn.frame = CGRectMake(xOffset, (DownViewHeight-btnHeight)/2, btnWidth, btnHeight);
     [sellerBtn setBackgroundColor:[UIColor clearColor]];
-    [sellerBtn setImage:[UIImage imageNamed:@"LMGoodsInfoShopImg.png"] forState:UIControlStateNormal];
+    [sellerBtn setImage:[UIImage imageNamed:@"GoodsInfoShopImg.png"] forState:UIControlStateNormal];
     [sellerBtn addTarget:self action:@selector(sellerBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:sellerBtn];
     
@@ -108,7 +108,7 @@
     WXUIButton *cartBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     cartBtn.frame = CGRectMake(xOffset, (DownViewHeight-btnHeight)/2, btnWidth, btnHeight);
     [cartBtn setBackgroundColor:[UIColor clearColor]];
-    [cartBtn setImage:[UIImage imageNamed:@"LMGoodsInfoCartImg.png"] forState:UIControlStateNormal];
+    [cartBtn setImage:[UIImage imageNamed:@"GoodsInfoCartImg.png"] forState:UIControlStateNormal];
     [cartBtn addTarget:self action:@selector(cartBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:cartBtn];
     
@@ -524,8 +524,8 @@
 }
 
 -(void)cartBtnClick{
-//    LMShoppingCartVC *shoppingVC = [[LMShoppingCartVC alloc] init];
-//    [self.wxNavigationController pushViewController:shoppingVC];
+    ShoppingCartVC *shoppingVC = [[ShoppingCartVC alloc] init];
+    [self.wxNavigationController pushViewController:shoppingVC];
 }
 
 -(void)buyBtnClick:(id)sender{
@@ -679,10 +679,10 @@
 
 -(NSString*)sharedGoodsInfoTitle{
     NSString *title = @"";
-//    if([_model.goodsInfoArr count] > 0){
-//        LMGoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
-//        title = entity.goodsName;
-//    }
+    if([_model.goodsInfoArr count] > 0){
+        GoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
+        title = entity.goodsName;
+    }
     return title;
 }
 
@@ -693,15 +693,14 @@
 }
 
 -(NSString*)sharedGoodsInfoUrlString{
-//    LMGoodsInfoEntity *entity = nil;
-//    if([_model.goodsInfoArr count] > 0){
-//        entity = [_model.goodsInfoArr objectAtIndex:0];
-//    }
-//    NSString *strB = [[self sharedGoodsInfoTitle] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-//    NSString *urlString = [NSString stringWithFormat:@"%@wx_html/index.php/Shop/index?shop_id=%d&sid=%d&go=su_good_detail&title=%@&goods_id=%ld&sshop_id=%ld&woxin_id=%@",WXTShareBaseUrl,kSubShopID,kMerchantID,strB,(long)_goodsId, (long)entity.goodshop_id, userDefault.wxtID];
-//    return urlString;
-    return @"";
+    GoodsInfoEntity *entity = nil;
+    if([_model.goodsInfoArr count] > 0){
+        entity = [_model.goodsInfoArr objectAtIndex:0];
+    }
+    NSString *strB = [[self sharedGoodsInfoTitle] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
+    NSString *urlString = [NSString stringWithFormat:@"%@wx_html/index.php/Shop/index?shop_id=%d&sid=%d&go=su_good_detail&title=%@&goods_id=%ld&sshop_id=%ld&woxin_id=%@",WXTShareBaseUrl,kSubShopID,kMerchantID,strB,(long)_goodsId, (long)entity.goodshop_id, userDefault.wxtID];
+    return urlString;
 }
 
 -(void)backToLastPage{

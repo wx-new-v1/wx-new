@@ -50,6 +50,7 @@ enum{
 #import "ShoppingCartModel.h"
 
 #import "MakeOrderVC.h"
+#import "ShoppingCartVC.h"
 
 enum{
     Share_Qq,

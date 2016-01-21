@@ -92,12 +92,12 @@
     switch (section) {
         case T_HomePage_TopImg:
         case T_HomePage_BaseFunction:
-        case T_HomePage_LimitBuyTitle:
         case T_HomePage_RecomendTitle:
         case T_HomePage_GuessTitle:
             row = 1;
             break;
         case T_HomePage_LimitBuyInfo:
+        case T_HomePage_LimitBuyTitle:
             row = 0;
             break;
         case T_HomePage_RecomendInfo:
@@ -316,7 +316,7 @@
 
 #pragma mark 导航
 - (void)toSysPushMsgView{
-    [[CoordinateController sharedCoordinateController] toJPushCenterVC:self animated:YES];
+//    [[CoordinateController sharedCoordinateController] toJPushCenterVC:self animated:YES];
 }
 
 -(void)homePageToCategaryView{

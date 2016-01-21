@@ -501,6 +501,8 @@
 		12CE12151C50B45A00FF85FA /* HasDoneOrderGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE12141C50B45A00FF85FA /* HasDoneOrderGoodsCell.m */; };
 		12CE12181C50B49000FF85FA /* HasDoneOrderMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE12171C50B49000FF85FA /* HasDoneOrderMoneyCell.m */; };
 		12CE121B1C50B4D800FF85FA /* HasDoneOrderHandleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE121A1C50B4D800FF85FA /* HasDoneOrderHandleCell.m */; };
+		12CE121E1C50C58500FF85FA /* GoodsInfoCartImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE121C1C50C58500FF85FA /* GoodsInfoCartImg@2x.png */; };
+		12CE121F1C50C58500FF85FA /* GoodsInfoShopImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE121D1C50C58500FF85FA /* GoodsInfoShopImg@2x.png */; };
 		12CFE64B1AC1A077009C710B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CFE64A1AC1A077009C710B /* libsqlite3.0.dylib */; };
 		12CFE6511AC1A210009C710B /* CallHistoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CFE6501AC1A210009C710B /* CallHistoryEntity.m */; };
 		12D0C8721AB685250039A197 /* AboutWxtInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D0C8711AB685250039A197 /* AboutWxtInfoVC.m */; };
@@ -1699,6 +1701,8 @@
 		12CE12171C50B49000FF85FA /* HasDoneOrderMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HasDoneOrderMoneyCell.m; sourceTree = "<group>"; };
 		12CE12191C50B4D800FF85FA /* HasDoneOrderHandleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HasDoneOrderHandleCell.h; sourceTree = "<group>"; };
 		12CE121A1C50B4D800FF85FA /* HasDoneOrderHandleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HasDoneOrderHandleCell.m; sourceTree = "<group>"; };
+		12CE121C1C50C58500FF85FA /* GoodsInfoCartImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsInfoCartImg@2x.png"; sourceTree = "<group>"; };
+		12CE121D1C50C58500FF85FA /* GoodsInfoShopImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsInfoShopImg@2x.png"; sourceTree = "<group>"; };
 		12CFE64A1AC1A077009C710B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		12CFE64F1AC1A210009C710B /* CallHistoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallHistoryEntity.h; sourceTree = "<group>"; };
 		12CFE6501AC1A210009C710B /* CallHistoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallHistoryEntity.m; sourceTree = "<group>"; };
@@ -4692,6 +4696,8 @@
 		12F46A2C1B20012000B8EC98 /* T_GoodsInfo */ = {
 			isa = PBXGroup;
 			children = (
+				12CE121C1C50C58500FF85FA /* GoodsInfoCartImg@2x.png */,
+				12CE121D1C50C58500FF85FA /* GoodsInfoShopImg@2x.png */,
 				124C10621C4CD69B00740561 /* SharedImg@2x.png */,
 				120B5D981B871991009564F5 /* GoodsInfoGaryBackImg@2x.png */,
 				128BB73E1B68A4BF004FCE66 /* T_ShareGoods@2x.png */,
@@ -6020,6 +6026,7 @@
 				124535121AE9D0BC004198C9 /* UserNormal@2x.png in Resources */,
 				1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */,
 				1241E5461AE9D89B00811D3F /* 4S@2x.png in Resources */,
+				12CE121E1C50C58500FF85FA /* GoodsInfoCartImg@2x.png in Resources */,
 				1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */,
 				124535521AE9D146004198C9 /* sign2@2x.png in Resources */,
 				1245355B1AE9D146004198C9 /* sign6@2x.png in Resources */,
@@ -6215,6 +6222,7 @@
 				1241E54A1AE9D89B00811D3F /* 6S@2x.png in Resources */,
 				12F3CC761B1DE82C00E64DE4 /* MyCallMoneyImg@2x.png in Resources */,
 				124535451AE9D146004198C9 /* sign18@2x.png in Resources */,
+				12CE121F1C50C58500FF85FA /* GoodsInfoShopImg@2x.png in Resources */,
 				122D63BD1C3F4AF60086AAB8 /* HomePageShareImg@2x.png in Resources */,
 				1241E55F1AE9D91400811D3F /* AboutUsLogo@2x.png in Resources */,
 				1241E5331AE9D89B00811D3F /* CallBackBgImg@2x.jpg in Resources */,

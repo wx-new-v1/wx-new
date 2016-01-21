@@ -15,6 +15,7 @@
 #import "WXContacterModel.h"
 #import "UIImage+Render.h"
 #import "RFSegmentView.h"
+#import "UserBalanceVC.h"
 
 #define Size self.view.bounds.size
 
@@ -78,6 +79,17 @@
         self.segmentControl.delegate = self;
         [self.view addSubview:self.segmentControl];
     }
+    
+    CGFloat btnWidth = 65;
+    CGFloat btnHieght = 30;
+    WXUIButton *rechargeBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
+    rechargeBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-btnWidth, IPHONE_STATUS_BAR_HEIGHT+15, btnWidth, btnHieght);
+    [rechargeBtn setBackgroundColor:[UIColor clearColor]];
+    [rechargeBtn setTitle:@"余额/充值" forState:UIControlStateNormal];
+    [rechargeBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
+    [rechargeBtn.titleLabel setFont:WXFont(11.0)];
+    [rechargeBtn addTarget:self action:@selector(gotoRechargeVC) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:rechargeBtn];
     
 //    NSArray *nameArr = @[@"通话",@"通讯录"];
 //    _segmentControl
@@ -150,6 +162,11 @@
     ContacterEntity *entity = sender;
     detailVC.model = entity;
     [self.wxNavigationController pushViewController:detailVC];
+}
+
+-(void)gotoRechargeVC{
+    UserBalanceVC *balanceVC = [[UserBalanceVC alloc] init];
+    [self.wxNavigationController pushViewController:balanceVC];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
