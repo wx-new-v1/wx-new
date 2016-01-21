@@ -58,10 +58,10 @@
     if(entity.orderState == Order_State_Complete){
         [leftBtn setHidden:YES];
         [rightBtn setHidden:YES];
-        if(entity.evaluate == Order_Evaluate_None){
-            [rightBtn setTitle:@"评价" forState:UIControlStateNormal];
-            [rightBtn setHidden:NO];
-        }
+//        if(entity.evaluate == Order_Evaluate_None){
+//            [rightBtn setTitle:@"评价" forState:UIControlStateNormal];
+//            [rightBtn setHidden:NO];
+//        }
         return;
     }
     if(entity.orderState == Order_State_None){

@@ -39,12 +39,12 @@
 }
 
 -(void)userHandleBtnState{
-    AllOrderListEntity *entity = self.cellInfo;
-    if(entity.orderState == Order_State_Complete && entity.evaluate == Order_Evaluate_None){
-        [rightBtn setTitle:@"评价" forState:UIControlStateNormal];
-        [rightBtn setHidden:NO];
-        return;
-    }
+//    AllOrderListEntity *entity = self.cellInfo;
+//    if(entity.orderState == Order_State_Complete && entity.evaluate == Order_Evaluate_None){
+//        [rightBtn setTitle:@"评价" forState:UIControlStateNormal];
+//        [rightBtn setHidden:NO];
+//        return;
+//    }
 }
 
 -(void)rightBtnClicked{

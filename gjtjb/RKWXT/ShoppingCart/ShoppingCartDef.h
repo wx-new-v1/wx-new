@@ -9,7 +9,7 @@
 #ifndef ShoppingCartDef_h
 #define ShoppingCartDef_h
 
-#define MenuCommonCellHeight (75)
+#define MenuCommonCellHeight (78)
 #define xGap (15)
 
 

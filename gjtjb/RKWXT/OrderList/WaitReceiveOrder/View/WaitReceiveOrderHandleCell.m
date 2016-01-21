@@ -51,8 +51,8 @@
 -(void)userHandleBtnState{
     AllOrderListEntity *entity = self.cellInfo;
     if(entity.payType == Order_PayType_HasPay && entity.sendType == Order_SendType_HasSend){
-        [leftBtn setTitle:@"申请退款" forState:UIControlStateNormal];
-        [leftBtn setHidden:NO];
+//        [leftBtn setTitle:@"申请退款" forState:UIControlStateNormal];
+//        [leftBtn setHidden:NO];
         [rightBtn setTitle:@"确认收货" forState:UIControlStateNormal];
         [rightBtn setHidden:NO];
     }

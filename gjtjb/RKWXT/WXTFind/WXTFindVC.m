@@ -12,6 +12,7 @@
 #import "WXTFindModel.h"
 #import "FindEntity.h"
 #import "HomePageTop.h"
+#import "MJRefresh.h"
 
 #define Size self.bounds.size
 
@@ -50,10 +51,22 @@
     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self addSubview:_tableView];
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    [self setupRefresh];
     
     [_comModel loadFindData:FindData_Type_Load];
     [_model loadDataFromWeb];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+}
+
+//集成刷新控件
+-(void)setupRefresh{
+    [_tableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    //    [_tableView addFooterWithTarget:self action:@selector(footerRefreshing)];
+    
+    //设置文字
+    _tableView.headerPullToRefreshText = @"下拉刷新";
+    _tableView.headerReleaseToRefreshText = @"松开刷新";
+    _tableView.headerRefreshingText = @"刷新中";
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -121,12 +134,14 @@
 #pragma mark findData
 -(void)initFinddataSucceed{
     [self unShowWaitView];
+    [_tableView headerEndRefreshing];
     commonImgArr = _comModel.findDataArr;
     [_tableView reloadData];
 }
 
 -(void)initFinddataFailed:(NSString *)errorMsg{
     [self unShowWaitView];
+    [_tableView headerEndRefreshing];
     if(!errorMsg){
         errorMsg = @"加载数据失败";
     }
@@ -148,11 +163,19 @@
 #pragma mark topImg
 -(void)homePageTopLoadedSucceed{
     [self unShowWaitView];
+    [_tableView headerEndRefreshing];
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 -(void)homePageTopLoadedFailed:(NSString *)error{
     [self unShowWaitView];
+    [_tableView headerEndRefreshing];
+}
+
+#pragma mark refresh
+-(void)headerRefreshing{
+    [_comModel loadFindData:FindData_Type_Load];
+    [_model loadDataFromWeb];
 }
 
 -(void)clickTopGoodAtIndex:(NSInteger)index{

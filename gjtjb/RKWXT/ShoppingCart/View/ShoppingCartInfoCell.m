@@ -106,13 +106,13 @@
         //        [_oldPrice addSubview:lineLabel];
         RELEASE_SAFELY(lineLabel);
         
-        yOffset += nameHeight+4;
+        yOffset += nameHeight+6;
         CGFloat markWidth = 19;
         CGFloat markHeight = 19;
         WXUIButton *plusBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         plusBtn.frame = CGRectMake(xOffset, yOffset, markWidth, markHeight);
         [plusBtn setBackgroundColor:WXColorWithInteger(MenuCommonCellColor)];
-        [plusBtn setBorderRadian:1.0 width:0.6 color:WXColorWithInteger(markColor)];
+        [plusBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(markColor)];
         [plusBtn setTitle:@"+" forState:UIControlStateNormal];
         [plusBtn setTitleColor:WXColorWithInteger(markColor) forState:UIControlStateNormal];
         [plusBtn addTarget:self action:@selector(plusBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -123,7 +123,7 @@
         _numberLabel = [[WXUILabel alloc] init];
         _numberLabel.frame = CGRectMake(xOffset, yOffset, numBtnWidth, markWidth);
         [_numberLabel setBackgroundColor:WXColorWithInteger(MenuCommonCellColor)];
-        [_numberLabel setBorderRadian:1.0 width:0.5 color:WXColorWithInteger(markColor)];
+        [_numberLabel setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(markColor)];
         [_numberLabel setTextColor:WXColorWithInteger(markColor)];
         [_numberLabel setText:@"1"];
         [_numberLabel setFont:WXFont(12.0)];
@@ -134,16 +134,18 @@
         WXUIButton *minusBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         minusBtn.frame = CGRectMake(xOffset, yOffset, markWidth, markHeight);
         [minusBtn setBackgroundColor:WXColorWithInteger(MenuCommonCellColor)];
-        [minusBtn setBorderRadian:1.0 width:0.5 color:WXColorWithInteger(markColor)];
+        [minusBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(markColor)];
         [minusBtn setTitle:@"-" forState:UIControlStateNormal];
         [minusBtn setTitleColor:WXColorWithInteger(markColor) forState:UIControlStateNormal];
         [minusBtn addTarget:self action:@selector(minusBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:minusBtn];
         
         xOffset = 18;
+        CGFloat delImgWidth = 25;
+        CGFloat delImgHeight = delImgWidth;
         UIImage *img = [UIImage imageNamed:@"AddressDel.png"];
         WXUIButton *deleteBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-        deleteBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-xOffset-img.size.width, yOffset, img.size.width, img.size.height);
+        deleteBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-delImgWidth-5, yOffset, delImgWidth, delImgHeight);
         [deleteBtn setBackgroundColor:[UIColor clearColor]];
         [deleteBtn setImage:img forState:UIControlStateNormal];
         [deleteBtn addTarget:self action:@selector(deleteBtnClicked) forControlEvents:UIControlEventTouchUpInside];

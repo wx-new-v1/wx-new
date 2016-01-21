@@ -201,7 +201,7 @@
             row = 1;
             break;
         case GoodsInfo_Section_GoodsInfo:
-//            row = [_model.attrArr count];
+            row = [_model.attrArr count];
             break;
 //        case GoodsInfo_Section_Evaluate:
 //            row = [_model.evaluteArr count];
