@@ -92,6 +92,9 @@
         case WXT_UrlFeed_Type_New_Recharge:
             url = @"/recharge.php";
             break;
+        case WXT_UrlFeed_Type_UserQuestion:
+            url = @"";
+            break;
         case WXT_UrlFeed_Type_New_Wechat:
             url = @"/get_prepay_id.php";
             break;

@@ -482,6 +482,9 @@
 		12C069191B7C743600C05D42 /* FindUnionImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C069171B7C743600C05D42 /* FindUnionImg@2x.png */; };
 		12C0691A1B7C743600C05D42 /* FindWeatherImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C069181B7C743600C05D42 /* FindWeatherImg@2x.png */; };
 		12CCD7ED1AC0184400A5BDF0 /* defaultContactIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CCD7EC1AC0184400A5BDF0 /* defaultContactIcon@2x.png */; };
+		12CE11D51C50694200FF85FA /* GoodsListDownImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE11D31C50694200FF85FA /* GoodsListDownImg@2x.png */; };
+		12CE11D61C50694200FF85FA /* GoodsListUpImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE11D41C50694200FF85FA /* GoodsListUpImg@2x.png */; };
+		12CE11D91C506E7500FF85FA /* UserQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE11D81C506E7500FF85FA /* UserQuestionModel.m */; };
 		12CFE64B1AC1A077009C710B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CFE64A1AC1A077009C710B /* libsqlite3.0.dylib */; };
 		12CFE6511AC1A210009C710B /* CallHistoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CFE6501AC1A210009C710B /* CallHistoryEntity.m */; };
 		12D0C8721AB685250039A197 /* AboutWxtInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D0C8711AB685250039A197 /* AboutWxtInfoVC.m */; };
@@ -1644,6 +1647,10 @@
 		12C069171B7C743600C05D42 /* FindUnionImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FindUnionImg@2x.png"; sourceTree = "<group>"; };
 		12C069181B7C743600C05D42 /* FindWeatherImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FindWeatherImg@2x.png"; sourceTree = "<group>"; };
 		12CCD7EC1AC0184400A5BDF0 /* defaultContactIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultContactIcon@2x.png"; sourceTree = "<group>"; };
+		12CE11D31C50694200FF85FA /* GoodsListDownImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsListDownImg@2x.png"; sourceTree = "<group>"; };
+		12CE11D41C50694200FF85FA /* GoodsListUpImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsListUpImg@2x.png"; sourceTree = "<group>"; };
+		12CE11D71C506E7500FF85FA /* UserQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserQuestionModel.h; sourceTree = "<group>"; };
+		12CE11D81C506E7500FF85FA /* UserQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserQuestionModel.m; sourceTree = "<group>"; };
 		12CFE64A1AC1A077009C710B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		12CFE64F1AC1A210009C710B /* CallHistoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallHistoryEntity.h; sourceTree = "<group>"; };
 		12CFE6501AC1A210009C710B /* CallHistoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallHistoryEntity.m; sourceTree = "<group>"; };
@@ -3150,6 +3157,8 @@
 		122EFB8A1C40A58600CE0EA0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				12CE11D71C506E7500FF85FA /* UserQuestionModel.h */,
+				12CE11D81C506E7500FF85FA /* UserQuestionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3733,6 +3742,8 @@
 		1241E5541AE9D91400811D3F /* CommonImg */ = {
 			isa = PBXGroup;
 			children = (
+				12CE11D31C50694200FF85FA /* GoodsListDownImg@2x.png */,
+				12CE11D41C50694200FF85FA /* GoodsListUpImg@2x.png */,
 				12C069171B7C743600C05D42 /* FindUnionImg@2x.png */,
 				12C069181B7C743600C05D42 /* FindWeatherImg@2x.png */,
 				12A66B271B74AE4800542112 /* NoWifi@2x.png */,
@@ -5906,6 +5917,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CE11D61C50694200FF85FA /* GoodsListUpImg@2x.png in Resources */,
 				122D63B41C3F49A30086AAB8 /* HomePageGame@2x.png in Resources */,
 				12A66B281B74AE4800542112 /* NoWifi@2x.png in Resources */,
 				128083D61B61D21D00260B9F /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -6028,6 +6040,7 @@
 				12F422801B1D5A2900643DD7 /* AddressEdit@2x.png in Resources */,
 				1245350F1AE9D0BC004198C9 /* FindSelected@2x.png in Resources */,
 				1285850E1B3AA7E5005E240E /* MakeOrderSmImg@2x.png in Resources */,
+				12CE11D51C50694200FF85FA /* GoodsListDownImg@2x.png in Resources */,
 				12D52BBA1AC2EF4400C5CE71 /* dtmf-4.aif in Resources */,
 				1245353B1AE9D146004198C9 /* signBg.jpg in Resources */,
 				120D00FB1BBB9182005CAA6C /* AlipaySDK.bundle in Resources */,
@@ -6535,6 +6548,7 @@
 				12BD30F51B3E78CA00170316 /* OrderWechatCell.m in Sources */,
 				12F571691B42253800128294 /* payRequsestHandler.mm in Sources */,
 				12F9162D1B19B0AA00C94717 /* BaseInfoVC.m in Sources */,
+				12CE11D91C506E7500FF85FA /* UserQuestionModel.m in Sources */,
 				12F380351B3BEF6F00E9690C /* UserAddressModel.m in Sources */,
 				120B754E1B1C19EA00B8746C /* PersonSexVC.m in Sources */,
 				122AB83A1C3E3E2C00AC9DF5 /* WXHomeTopGoodCell.m in Sources */,

@@ -42,6 +42,7 @@ typedef enum {
     WXT_UrlFeed_Type_New_LoadUserHeader,
     WXT_UrlFeed_Type_New_UpdapaOrderID,
     WXT_UrlFeed_Type_New_UserLoginShopInfo,
+    WXT_UrlFeed_Type_UserQuestion,
     
     //发现
     WXT_UrlFeed_Type_New_FindData,

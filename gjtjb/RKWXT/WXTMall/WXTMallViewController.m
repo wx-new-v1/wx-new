@@ -425,7 +425,8 @@
 }
 
 -(void)homeRecommendCellbtnClicked:(id)sender{
-    
+    HomePageRecEntity *entity = sender;
+    [[CoordinateController sharedCoordinateController] toGoodsInfoVC:self goodsID:entity.goods_id animated:YES];
 }
 
 #pragma mark surprice

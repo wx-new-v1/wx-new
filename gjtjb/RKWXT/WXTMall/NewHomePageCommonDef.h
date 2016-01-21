@@ -66,6 +66,7 @@ enum{
 
 #import "NewHomePageModel.h"
 #import "HomePageSurpEntity.h"
+#import "HomePageRecEntity.h"
 
 #pragma mark 导航跳转
 enum{

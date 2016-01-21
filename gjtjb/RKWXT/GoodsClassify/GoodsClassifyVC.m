@@ -51,6 +51,7 @@
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(loadClassifyDataSucceed) name:D_Notification_Name_LoadClassifyData_Succeed object:nil];
     [defaultCenter addObserver:self selector:@selector(loadClassifyDataFailed:) name:D_Notification_Name_LoadClassifyData_Failed object:nil];
+    [defaultCenter addObserver:self selector:@selector(gotoGoodsListVC:) name:D_Notification_Name_ClassifyGoodsClicked object:nil];
 }
 
 -(void)createSearchViewUI{

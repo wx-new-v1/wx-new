@@ -7,16 +7,32 @@
 //
 
 #import "WXUserQuestionVC.h"
+#import "CallBackVC.h"
+#import "UserQuestionModel.h"
 
 #define Size self.bounds.size
 
-@interface WXUserQuestionVC()<WXUITextViewDelegate>{
+@interface WXUserQuestionVC()<WXUITextViewDelegate,UIActionSheetDelegate,UserQuestionModelDelegate>{
     WXUIView *baseView;
     WXUITextField *userPhoneTextfield;
+    WXUITextView *_textView;
+    
+    NSString *shopPhone;
+    
+    UserQuestionModel *_model;
 }
 @end
 
 @implementation WXUserQuestionVC
+
+-(id)init{
+    self = [super init];
+    if(self){
+        _model = [[UserQuestionModel alloc] init];
+        [_model setDelegate:self];
+    }
+    return self;
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -103,7 +119,7 @@
     
     CGFloat xOffset = 17;
     CGFloat textViewHeight = 150;
-    WXUITextView *_textView = [[WXUITextView alloc] init];
+    _textView = [[WXUITextView alloc] init];
     _textView.frame = CGRectMake(xOffset, 0, Size.width-2*xOffset, textViewHeight);
     [_textView setBackgroundColor:WXColorWithInteger(0xffffff)];
     [_textView setPlaceholder:@"请输入您的问题和建议 (必填*)"];
@@ -176,21 +192,112 @@
 
 #pragma mark web
 -(void)webBtnClicked{
-    
+    NSString *wbUrl = @"www.67call.com";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",wbUrl]]];
 }
 
 #pragma mark phone
 -(void)phoneBtnClicked{
-    
+    NSString *phoneStr = [self phoneWithoutNumber:@"0755-61665888"];
+    shopPhone = phoneStr;
+    [self showAlertView:shopPhone];
 }
 
 -(void)lineBtnClicked{
-    
+    NSString *phoneStr = [self phoneWithoutNumber:@"0755-82599860"];
+    shopPhone = phoneStr;
+    [self showAlertView:shopPhone];
+}
+
+-(void)showAlertView:(NSString*)phone{
+    NSString *title = [NSString stringWithFormat:@"联系商家:%@",phone];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:title
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:[NSString stringWithFormat:@"使用%@",kMerchantName]
+                                  otherButtonTitles:@"系统", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex > 2){
+        return;
+    }
+    if(shopPhone.length == 0){
+        return;
+    }
+    if(buttonIndex == 1){
+        [UtilTool callBySystemAPI:shopPhone];
+        return;
+    }
+    if(buttonIndex == 0){
+        CallBackVC *backVC = [[CallBackVC alloc] init];
+        backVC.phoneName = kMerchantName;
+        if([backVC callPhone:shopPhone]){
+            [self presentViewController:backVC animated:YES completion:^{
+            }];
+        }
+    }
+}
+
+-(NSString*)phoneWithoutNumber:(NSString*)phone{
+    NSString *new = [[NSString alloc] init];
+    for(NSInteger i = 0; i < phone.length; i++){
+        char c = [phone characterAtIndex:i];
+        if(c >= '0' && c <= '9'){
+            new = [new stringByAppendingString:[NSString stringWithFormat:@"%c",c]];
+        }
+    }
+    return new;
 }
 
 #pragma mark submit
 -(void)submitUserQuestion{
-    
+    if(![self checkUserValide]){
+        return;
+    }
+    if(_textView.text.length == 0){
+        [UtilTool showAlertView:@"请输入您的问题或建议"];
+        return;
+    }
+    if(_textView.text.length > 300){
+        [UtilTool showAlertView:@"请控制在300字以内"];
+        return;
+    }
+    [_model submitUserQuestion:_textView.text phone:userPhoneTextfield.text];
+    [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+}
+
+-(void)submitUserQuestionSucceed{
+    [self unShowWaitView];
+    [self.wxNavigationController popViewControllerAnimated:YES completion:^{
+    }];
+}
+
+-(void)submitUserQuestionFailed:(NSString *)errorMsg{
+    [self unShowWaitView];
+    if(!errorMsg){
+        errorMsg = @"提交反馈信息失败";
+    }
+    [UtilTool showAlertView:errorMsg];
+}
+
+#pragma mark 数据是否有效~
+- (BOOL)checkUserValide{
+    NSString *user = userPhoneTextfield.text;
+    NSInteger len = user.length;
+    if(len == 0){
+        [UtilTool showAlertView:@"请输入手机号"];
+        return NO;
+    }
+    NSString *phoneStr = [UtilTool callPhoneNumberRemovePreWith:userPhoneTextfield.text];
+    if(![UtilTool determineNumberTrue:phoneStr]){
+        [UtilTool showAlertView:@"请输入正确的手机号码"];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark textField
