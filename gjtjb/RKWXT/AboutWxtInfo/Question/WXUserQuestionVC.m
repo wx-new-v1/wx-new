@@ -61,8 +61,8 @@
     CGFloat btnHeight = textLabelHeight;
     WXUIButton *webBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     webBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
+    webBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [webBtn setTitle:@"http://www.67call.com" forState:UIControlStateNormal];
-    [webBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
     [webBtn.titleLabel setFont:WXFont(12.0)];
     [webBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [webBtn addTarget:self action:@selector(webBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -81,7 +81,7 @@
     WXUIButton *phoneBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     phoneBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
     [phoneBtn setTitle:@"0755-61665888" forState:UIControlStateNormal];
-    [phoneBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    phoneBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [phoneBtn.titleLabel setFont:WXFont(12.0)];
     [phoneBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [phoneBtn addTarget:self action:@selector(phoneBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -101,6 +101,7 @@
     lineBtn.frame = CGRectMake(xOffset+textLabelWidth, yOffset, btnWidth, btnHeight);
     [lineBtn setTitle:@"0755-82599860" forState:UIControlStateNormal];
     [lineBtn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+    lineBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [lineBtn.titleLabel setFont:WXFont(12.0)];
     [lineBtn setTitleColor:WXColorWithInteger(0x000000) forState:UIControlStateNormal];
     [lineBtn addTarget:self action:@selector(lineBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -255,15 +256,15 @@
 
 #pragma mark submit
 -(void)submitUserQuestion{
-    if(![self checkUserValide]){
-        return;
-    }
     if(_textView.text.length == 0){
         [UtilTool showAlertView:@"请输入您的问题或建议"];
         return;
     }
-    if(_textView.text.length > 300){
-        [UtilTool showAlertView:@"请控制在300字以内"];
+    if(_textView.text.length > 255){
+        [UtilTool showAlertView:@"请控制在255字以内"];
+        return;
+    }
+    if(![self checkUserValide]){
         return;
     }
     [_model submitUserQuestion:_textView.text phone:userPhoneTextfield.text];
@@ -272,6 +273,7 @@
 
 -(void)submitUserQuestionSucceed{
     [self unShowWaitView];
+    [UtilTool showTipView:@"感谢您的反馈!"];
     [self.wxNavigationController popViewControllerAnimated:YES completion:^{
     }];
 }
