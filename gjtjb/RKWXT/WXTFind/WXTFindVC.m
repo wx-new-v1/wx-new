@@ -163,13 +163,11 @@
 #pragma mark topImg
 -(void)homePageTopLoadedSucceed{
     [self unShowWaitView];
-    [_tableView headerEndRefreshing];
     [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 -(void)homePageTopLoadedFailed:(NSString *)error{
     [self unShowWaitView];
-    [_tableView headerEndRefreshing];
 }
 
 #pragma mark refresh
