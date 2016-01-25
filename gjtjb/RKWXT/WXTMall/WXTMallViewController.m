@@ -341,26 +341,14 @@
             [pictureBrowse showShareThumbView:view toDestview:self.view withImage:[UIImage imageNamed:@"TwoDimension.png"]];
         }
             break;
-        case T_BaseFunction_Wallet:
-        {
-//            UserBonusVC *bonusVC = [[UserBonusVC alloc] init];
-//            bonusVC.selectedNum = 0;
-//            [self.wxNavigationController pushViewController:bonusVC];
-        }
-            break;
         case T_BaseFunction_Sign:
         {
             SignViewController *signVC = [[SignViewController alloc] init];
             [self.wxNavigationController pushViewController:signVC];
         }
             break;
-        case T_BaseFunction_Shark:
-        {
-//            LuckyShakeVC *sharkVC = [[LuckyShakeVC alloc] init];
-//            [self.wxNavigationController pushViewController:sharkVC];
-        }
-            break;
         default:
+//            [UtilTool showTipView:@"努力开发中..."];
             break;
     }
 }
@@ -396,7 +384,7 @@
 
 -(NSString*)userShareAppWIthString{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"http://121.201.18.130/wx_html/index.php/Public/app_download/sid/%ld/woxin_id/%@",(long)kMerchantID,userObj.wxtID];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&woxin_id=%@",WXTShareBaseUrl,userObj.sellerID,userObj.wxtID];
     return imgUrlStr;
 }
 
