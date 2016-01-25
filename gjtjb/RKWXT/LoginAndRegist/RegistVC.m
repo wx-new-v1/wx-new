@@ -64,7 +64,7 @@ enum{
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setCSTTitle:@"注册"];
-    [self setBackgroundColor:WXColorWithInteger(0xbababa)];
+    [self setBackgroundColor:WXColorWithInteger(0xf0f0f0)];
     
     [self createUI];
 }
@@ -109,6 +109,7 @@ enum{
     [_userTextField setTextColor:WXColorWithInteger(0xda7c7b)];
     [_userTextField setTintColor:WXColorWithInteger(AllBaseColor)];
     [_userTextField setPlaceHolder:@"请输入你的手机号" color:WXColorWithInteger(0xbababa)];
+    [_userTextField setFont:WXFont(16.0)];
     [_userTextField setFont:WXTFont(fontSize)];
     [self addSubview:_userTextField];
     
@@ -121,6 +122,7 @@ enum{
     [_fetchPwd setTextColor:WXColorWithInteger(0xda7c7b)];
     [_fetchPwd setTintColor:WXColorWithInteger(AllBaseColor)];
     [_fetchPwd setKeyboardType:UIKeyboardTypePhonePad];
+    [_fetchPwd setFont:WXFont(16.0)];
     [_fetchPwd setPlaceHolder:@"请输入验证码" color:WXColorWithInteger(0xbababa)];
     [_fetchPwd setFont:WXTFont(fontSize)];
     [self addSubview:_fetchPwd];
@@ -144,7 +146,8 @@ enum{
     [_pwdTextfield setTintColor:WXColorWithInteger(AllBaseColor)];
     [_pwdTextfield setKeyboardType:UIKeyboardTypeASCIICapable];
     [_pwdTextfield setSecureTextEntry:YES];
-    [_pwdTextfield setPlaceHolder:@" 请输入密码" color:WXColorWithInteger(0xbababa)];
+    [_pwdTextfield setFont:WXFont(16.0)];
+    [_pwdTextfield setPlaceHolder:@"请输入密码" color:WXColorWithInteger(0xbababa)];
     [self addSubview:_pwdTextfield];
     
     yOffset += height+10;
@@ -156,6 +159,7 @@ enum{
     [_otherPhone setTextColor:WXColorWithInteger(0xda7c7b)];
     [_otherPhone setTintColor:WXColorWithInteger(AllBaseColor)];
     [_otherPhone setKeyboardType:UIKeyboardTypePhonePad];
+    [_otherPhone setFont:WXFont(16.0)];
     [_otherPhone setPlaceHolder:@"输入推荐人手机号(选填)" color:WXColorWithInteger(0xbababa)];
     [self addSubview:_otherPhone];
 }
@@ -175,10 +179,6 @@ enum{
         [UtilTool showAlertView:@"请输入手机号"];
         return NO;
     }
-//    if(user.length != 11){
-//        [UtilTool showAlertView:@"请输入正确的手机号码"];
-//        return NO;
-//    }
     NSString *phoneStr = [UtilTool callPhoneNumberRemovePreWith:_userTextField.text];
     if(![UtilTool determineNumberTrue:phoneStr]){
         [UtilTool showAlertView:@"请输入正确的手机号码"];
@@ -290,10 +290,6 @@ enum{
             return NO;
         }
     }
-//    if(_otherPhone.text.length != 11){
-//        [UtilTool showAlertView:@"请输入正确的推荐人手机号码"];
-//        return NO;
-//    }
     return YES;
 }
 

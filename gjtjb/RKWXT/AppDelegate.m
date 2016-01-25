@@ -47,8 +47,8 @@
     //监听电话
     [self listenSystemCall];
     // 集成极光推送功能
-    [self initJPushApi];
-    [APService setupWithOption:launchOptions];
+//    [self initJPushApi];
+//    [APService setupWithOption:launchOptions];
     
     //向微信注册
     [[WXWeiXinOBJ sharedWeiXinOBJ] registerApp];

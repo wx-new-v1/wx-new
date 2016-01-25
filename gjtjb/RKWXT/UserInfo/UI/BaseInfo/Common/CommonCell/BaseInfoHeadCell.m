@@ -38,11 +38,15 @@
     if(_img){
         [headImg setImage:_img];
     }else{
-        if(iconName){
+        if(iconName.length > 5){
             [headImg setCpxViewInfo:iconName];
             [headImg load];
         }else{
-            [headImg setImage:[self userIconImage]];
+            if([self userIconImage]){
+                [headImg setImage:[self userIconImage]];
+            }else{
+                [headImg setImage:[UIImage imageNamed:@"PersonalInfo.png"]];
+            }
         }
     }
 }

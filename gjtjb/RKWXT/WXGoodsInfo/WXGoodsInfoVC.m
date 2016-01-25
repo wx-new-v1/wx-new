@@ -34,7 +34,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.bounds.size.width-35, TopNavigationViewHeight-35)];
+//    [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.bounds.size.width-35, TopNavigationViewHeight-35)];
     
     collectionBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     collectionBtn.frame = CGRectMake(self.bounds.size.width-35-45, TopNavigationViewHeight-35, 25, 25);
@@ -68,7 +68,7 @@
     [_tableView setBackgroundColor:WXColorWithInteger(0xffffff)];
     [self.scrollView addSubview:_tableView];
     [self addSubview:[self baseDownView]];
-    [self initDropList];
+//    [self initDropList];
     
     [_model loadGoodsInfoData:_goodsId];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];

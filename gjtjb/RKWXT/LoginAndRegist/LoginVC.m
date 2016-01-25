@@ -86,10 +86,6 @@
     [_iconShell addSubview:loginBigImgView];
     
     CGFloat yOffset = 36.0;
-    CGFloat xOffset = 12.0;
-    CGFloat btnWidth = 51;
-    CGFloat btnHeight = 23;
-    
     _optShell = [[UIView alloc] initWithFrame:CGRectMake(0, kLoginBigImgViewheight, Size.width, Size.height - kLoginBigImgViewheight-kLoginDownViewHeight+25)];
     [_optShell setBackgroundColor:WXColorWithInteger(0xf74f35)];
     [self addSubview:_optShell];

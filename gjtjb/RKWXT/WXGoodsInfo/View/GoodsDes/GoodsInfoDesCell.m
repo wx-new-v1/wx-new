@@ -75,7 +75,7 @@
         [usercutBtn addTarget:self action:@selector(userCutBtnClicked) forControlEvents:UIControlEventTouchUpInside];
 //        [self.contentView addSubview:usercutBtn];
         
-        xOffset += btnWidth+10;
+//        xOffset += btnWidth+10;
         carriageBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         carriageBtn.frame = CGRectMake(xOffset, yOffset, btnWidth, btnHieght);
         [carriageBtn setBackgroundColor:[UIColor whiteColor]];
@@ -103,22 +103,22 @@
     rect.size.width = [NSString widthForString:marketPriceString fontSize:14.0 andHeight:20];
     [lineLabel setFrame:rect];
     
-    if(_userCut){
-        [usercutBtn setHidden:NO];
-    }
-    if(entity.postage == Goods_Postage_None && _userCut){
+//    if(_userCut){
+//        [usercutBtn setHidden:NO];
+//    }
+    if(entity.postage == Goods_Postage_None){
         [carriageBtn setHidden:NO];
     }
-    if(entity.postage == Goods_Postage_None && !_userCut){
-        [carriageBtn setHidden:NO];
-        CGRect rect = carriageBtn.frame;
-        rect.origin.x = 12;
-        [carriageBtn setFrame:rect];
-    }
-    if(entity.postage == Goods_Postage_Have && !_userCut){
-        [carriageBtn setHidden:YES];
-        [usercutBtn setHidden:YES];
-    }
+//    if(entity.postage == Goods_Postage_None && !_userCut){
+//        [carriageBtn setHidden:NO];
+//        CGRect rect = carriageBtn.frame;
+//        rect.origin.x = 12;
+//        [carriageBtn setFrame:rect];
+//    }
+//    if(entity.postage == Goods_Postage_Have && !_userCut){
+//        [carriageBtn setHidden:YES];
+//        [usercutBtn setHidden:YES];
+//    }
 }
 
 -(void)userCutBtnClicked{
