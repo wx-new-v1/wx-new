@@ -364,8 +364,9 @@
             [self.wxNavigationController pushViewController:signVC];
         }
             break;
+            break;
         default:
-//            [UtilTool showTipView:@"努力开发中..."];
+            [UtilTool showTipView:@"努力开发中..."];
             break;
     }
 }
@@ -401,7 +402,7 @@
 
 -(NSString*)userShareAppWIthString{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&woxin_id=%@",WXTShareBaseUrl,userObj.sellerID,userObj.wxtID];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
     return imgUrlStr;
 }
 

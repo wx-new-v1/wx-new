@@ -517,10 +517,11 @@
 
 #pragma mark downView
 -(void)sellerBtnClick{
-    if([_model.goodsInfoArr count] > 0){
+//    if([_model.goodsInfoArr count] > 0){
 //        LMGoodsInfoEntity *entity = [_model.goodsInfoArr objectAtIndex:0];
 //        [[CoordinateController sharedCoordinateController] toLMShopInfoVC:self shopID:entity.goodshop_id animated:YES];
-    }
+//    }
+    [UtilTool showTipView:@"努力开发中..."];
 }
 
 -(void)cartBtnClick{

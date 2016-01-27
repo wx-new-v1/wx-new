@@ -443,10 +443,6 @@
             }
         }
             break;
-        case PersonalInfo_SharkOrder:
-        {
-        }
-            break;
         case PersonalInfo_Call:
         {
             if(row == Call_Recharge){
@@ -461,6 +457,7 @@
         case PersonalInfo_CutAndShare:
         {
             if(row == User_Cut){
+                [UtilTool showTipView:@"努力开发中..."];
             }
             if(row == User_Share){
                 WXUITableViewCell *cell = (WXUITableViewCell*)[_tableView cellForRowAtIndexPath:indexPath];
@@ -485,6 +482,7 @@
         }
             break;
         default:
+            [UtilTool showTipView:@"努力开发中..."];
             break;
     }
 }
@@ -527,7 +525,7 @@
 
 -(NSString*)userShareAppWIthString{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&woxin_id=%@",WXTShareBaseUrl,userObj.sellerID,userObj.wxtID];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
     return imgUrlStr;
 }
 

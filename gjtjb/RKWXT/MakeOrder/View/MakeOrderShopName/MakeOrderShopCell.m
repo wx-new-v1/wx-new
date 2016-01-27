@@ -18,13 +18,13 @@
         CGFloat imgWidth = 15;
         CGFloat imgHeight = 15;
         CGFloat xOffset = 12;
-        UIImage *img = [UIImage imageNamed:@"Icon-Small.png"];
+        UIImage *img = [UIImage imageNamed:@"Icon.png"];
         UIImageView *iconImgView = [[UIImageView alloc] init];
         iconImgView.frame = CGRectMake(xOffset, (Order_Section_Height_ShopName-imgHeight)/2, imgWidth, imgHeight);;
         [iconImgView setImage:img];
         [self.contentView addSubview:iconImgView];
         
-        xOffset += imgWidth+5;
+        xOffset += imgWidth;
         UIFont *font = WXFont(14.0);
         CGFloat nameHeight = 20;
         WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];

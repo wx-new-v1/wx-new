@@ -25,7 +25,7 @@
         CGFloat imgHeight = imgWidth;
         imgView = [[WXUIImageView alloc] init];
         imgView.frame = CGRectMake(xOffset, (OrderInfoShopCellHeight-imgHeight)/2, imgWidth, imgHeight);
-        [imgView setImage:[UIImage imageNamed:@"LMSellerIcon.png"]];
+        [imgView setImage:[UIImage imageNamed:@"Icon.png"]];
         [self.contentView addSubview:imgView];
         
         xOffset += imgWidth+5;

@@ -56,7 +56,7 @@
         [self.contentView addSubview:_stockName];
         
         
-        CGFloat priceWidth = 80;
+        CGFloat priceWidth = 90;
         CGFloat priceHeight = 17;
         _priceLabel = [[UILabel alloc] init];
         _priceLabel.frame = CGRectMake(IPHONE_SCREEN_WIDTH-priceWidth-10, yOffset, priceWidth, priceHeight);
@@ -81,7 +81,7 @@
 
 -(void)load{
     GoodsInfoEntity *entity = self.cellInfo;
-    [_imgView setCpxViewInfo:entity.goodsImg];
+    [_imgView setCpxViewInfo:entity.homeImg];
     [_imgView load];
     [_nameLabel setText:entity.goodsName];
     [_numLabel setText:[NSString stringWithFormat:@"X%ld",(long)entity.buyNumber]];

@@ -41,7 +41,7 @@
     [self setCSTTitle:@"分类"];
     [self setBackgroundColor:[UIColor whiteColor]];
     [self createListViewUI];
-    [self createSearchViewUI];
+//    [self createSearchViewUI];
     
     [[ClassifyModel shareClassifyNodel] loadAllClassifyData];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
@@ -82,7 +82,8 @@
 }
 
 -(void)createListViewUI{
-    CGFloat yOffset = yGap+TextFieldHeight+yGap;
+//    CGFloat yOffset = yGap+TextFieldHeight+yGap;
+    CGFloat yOffset = 0;
     CGFloat leftViewWidth = ClassifyLeftViewWidth;
     _rightView = [[ClassifyRightListView alloc] init];
     [_rightView.view setFrame:CGRectMake(leftViewWidth, yOffset, size.width-leftViewWidth, size.height-yOffset)];

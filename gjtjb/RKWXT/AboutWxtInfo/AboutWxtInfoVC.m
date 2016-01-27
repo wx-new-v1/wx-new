@@ -229,12 +229,13 @@ enum{
         case WXT_About_Phone:
         {
             NSString *phoneStr = [self phoneWithoutNumber:@"4007889388"];
-            CallBackVC *backVC = [[CallBackVC alloc] init];
-            backVC.phoneName = phoneStr;
-            if([backVC callPhone:phoneStr]){
-                [self presentViewController:backVC animated:YES completion:^{
-                }];
-            }
+            [UtilTool callBySystemAPI:phoneStr];
+//            CallBackVC *backVC = [[CallBackVC alloc] init];
+//            backVC.phoneName = phoneStr;
+//            if([backVC callPhone:phoneStr]){
+//                [self presentViewController:backVC animated:YES completion:^{
+//                }];
+//            }
         }
             break;
         case WXT_About_Web:
