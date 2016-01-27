@@ -19,12 +19,13 @@
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
-        CGFloat btnWidth = 200;
+        CGFloat btnWidth = 240;
         CGFloat btnHeight = 30;
         stockBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         stockBtn.frame = CGRectMake((IPHONE_SCREEN_WIDTH-btnWidth)/2, (GoodsStockNameCellHeight-btnHeight)/2, btnWidth, btnHeight);
-        [stockBtn setBorderRadian:7.0 width:1.0 color:[UIColor clearColor]];
+        [stockBtn setBorderRadian:16.0 width:1.0 color:[UIColor clearColor]];
         [stockBtn setBackgroundColor:[UIColor grayColor]];
+        [stockBtn.titleLabel setFont:WXFont(14.0)];
         [stockBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
         [stockBtn addTarget:self action:@selector(stockBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:stockBtn];

@@ -79,7 +79,7 @@
     [self addSubview:_iconShell];
     
     CGFloat bgImgWidth = 180;
-    CGFloat bgImgHeight = 140;
+    CGFloat bgImgHeight = 150;
     UIImage *bigImg = [UIImage imageNamed:@"LoginUpBgImg.png"];
     UIImageView *loginBigImgView = [[UIImageView alloc] initWithFrame:CGRectMake(IPHONE_SCREEN_WIDTH-210, 70, bgImgWidth, bgImgHeight)];
     [loginBigImgView setImage:bigImg];
@@ -101,11 +101,11 @@
     CGRect tableRect = CGRectMake(0, 0, Size.width, yGap);
     [self createUserAndPwdTable:tableRect];
 
-    yOffset = tableRect.size.height+22;
-    CGFloat btnHeight1 = 41.0;
+    yOffset = tableRect.size.height+14;
+    CGFloat btnHeight1 = 42.0;
     CGFloat xgap = 20;
     CGFloat btnWidth1 = Size.width-2*xgap;
-    CGFloat radian = 5.0;
+//    CGFloat radian = 5.0;
     CGFloat titleSize = 18.0;
     _submitBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     [_submitBtn setFrame:CGRectMake(xgap, yOffset, btnWidth1, btnHeight1)];
@@ -113,7 +113,7 @@
     [_submitBtn.titleLabel setFont:WXTFont(titleSize)];
     [_submitBtn setBackgroundImageOfColor:[UIColor whiteColor] controlState:UIControlStateNormal];
     [_submitBtn setTitleColor:WXColorWithInteger(0xf74f35) forState:UIControlStateNormal];
-    [_submitBtn setBorderRadian:radian width:0.5 color:WXColorWithInteger(0xf74f35)];
+//    [_submitBtn setBorderRadian:radian width:0.5 color:WXColorWithInteger(0xf74f35)];
     [_submitBtn addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     [_optShell addSubview:_submitBtn];
     
@@ -122,8 +122,9 @@
     CGFloat xGap1 = Size.width - fetchPwdBtnWidth - xgap;
     _fetchPwdBtn = [WXTUIButton buttonWithType:UIButtonTypeCustom];
     _fetchPwdBtn.frame = CGRectMake(xGap1, yOffset, fetchPwdBtnWidth, 30);
-    [_fetchPwdBtn.titleLabel setFont:WXTFont(15.0)];
+    [_fetchPwdBtn.titleLabel setFont:WXTFont(14.0)];
     [_fetchPwdBtn setTitle:@"找回密码" forState:UIControlStateNormal];
+    _fetchPwdBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [_fetchPwdBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [_fetchPwdBtn setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
     [_fetchPwdBtn addTarget:self action:@selector(fetchPassWord) forControlEvents:UIControlEventTouchUpInside];
@@ -152,7 +153,7 @@
     [upImgView setBackgroundColor:WXColorWithInteger(0xf9725d)];
     [_optShell addSubview:upImgView];
     
-    CGFloat fontSize = 15.0;
+    CGFloat fontSize = 14.0;
     CGFloat leftViewGap = 13.0;
     CGFloat textGap = 10.0;
     _userTextField = [[WXTUITextField alloc] initWithFrame:CGRectMake(xGap, yOffset+(smImgHeight-height)/2, width, height)];

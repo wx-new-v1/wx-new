@@ -47,8 +47,10 @@
     userPhoneTextfield.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, height);
     [userPhoneTextfield setBackgroundColor:WXColorWithInteger(0xffffff)];
     [userPhoneTextfield setPlaceHolder:@" 请输入新密码" color:WXColorWithInteger(0xbababa)];
-    [userPhoneTextfield setTextColor:WXColorWithInteger(0xbababa)];
+    [userPhoneTextfield setTextColor:WXColorWithInteger(0x000000)];
     [userPhoneTextfield setReturnKeyType:UIReturnKeyDone];
+    [userPhoneTextfield setFont:WXFont(14.0)];
+    [userPhoneTextfield setTextColor:WXColorWithInteger(0x000000)];
     [userPhoneTextfield setKeyboardType:UIKeyboardTypeASCIICapable];
     [userPhoneTextfield addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self addSubview:userPhoneTextfield];
@@ -58,8 +60,10 @@
     pwdTextField.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, height);
     [pwdTextField setBackgroundColor:WXColorWithInteger(0xffffff)];
     [pwdTextField setPlaceHolder:@" 请再次输入新密码" color:WXColorWithInteger(0xbababa)];
-    [pwdTextField setTextColor:WXColorWithInteger(0xbababa)];
+    [pwdTextField setTextColor:WXColorWithInteger(0x000000)];
     [pwdTextField setReturnKeyType:UIReturnKeyDone];
+    [pwdTextField setFont:WXFont(14.0)];
+    [pwdTextField setTextColor:WXColorWithInteger(0x000000)];
     [pwdTextField setKeyboardType:UIKeyboardTypeASCIICapable];
     [pwdTextField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self addSubview:pwdTextField];

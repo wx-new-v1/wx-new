@@ -117,6 +117,7 @@
     buyBtn.frame = CGRectMake(xOffset, (DownViewHeight-btnHeight)/2, (IPHONE_SCREEN_WIDTH-xOffset)/2, btnHeight);
     [buyBtn setBackgroundColor:[UIColor clearColor]];
     [buyBtn setTag:1];
+    [buyBtn.titleLabel setFont:WXFont(14.0)];
     [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
     [buyBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
     [buyBtn addTarget:self action:@selector(buyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -125,6 +126,7 @@
     WXUIButton *addBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     addBtn.frame = CGRectMake(xOffset+(IPHONE_SCREEN_WIDTH-xOffset)/2, (DownViewHeight-btnHeight)/2, (IPHONE_SCREEN_WIDTH-xOffset)/2, btnHeight);
     [addBtn setTag:2];
+    [addBtn.titleLabel setFont:WXFont(14.0)];
     [addBtn setBackgroundColor:[UIColor clearColor]];
     [addBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
     [addBtn setTitleColor:WXColorWithInteger(AllBaseColor) forState:UIControlStateNormal];
@@ -141,8 +143,8 @@
     [topView setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [self.view addSubview:topView];
     
-    CGFloat xGap = 10;
-    CGFloat yGap = 10;
+    CGFloat xGap = 5;
+    CGFloat yGap = 4;
     
     CGFloat btnWidth = 25;
     CGFloat btnHeight = 25;
@@ -159,9 +161,9 @@
     titleLabel.frame = CGRectMake((self.bounds.size.width-labelWidth)/2, TopNavigationViewHeight-yGap-labelHeight, labelWidth, labelHeight);
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:WXFont(15.0)];
+    [titleLabel setFont:WXFont(16.0)];
     [titleLabel setText:@"商品详情"];
-    [titleLabel setTextColor:WXColorWithInteger(0x000000)];
+    [titleLabel setTextColor:WXColorWithInteger(0xffffff)];
     [topView addSubview:titleLabel];
 }
 
@@ -297,9 +299,9 @@
     UIView *titleView = [[UIView alloc] init];
     [titleView setBackgroundColor:[UIColor whiteColor]];
     CGFloat labelHeight = 18;
-    CGFloat labelWidth = [NSString widthForString:title fontSize:11.0 andHeight:labelHeight];
+    CGFloat labelWidth = [NSString widthForString:title fontSize:11.0 andHeight:labelHeight]+4;
     
-    CGFloat lineWidth = IPHONE_SCREEN_WIDTH/2;
+    CGFloat lineWidth = IPHONE_SCREEN_WIDTH/3;
     WXUILabel *lineLabel = [[WXUILabel alloc] init];
     lineLabel.frame = CGRectMake((IPHONE_SCREEN_WIDTH-lineWidth)/2, height/2, lineWidth, 0.5);
     [lineLabel setBackgroundColor:WXColorWithInteger(0xdbdbdb)];

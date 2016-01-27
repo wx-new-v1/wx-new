@@ -100,8 +100,8 @@
     CGFloat footHeight = FootViewheight;
     UIImage *circleImg = [UIImage imageNamed:@"ShoppingCartCircle.png"];
     CGSize imgSize = circleImg.size;
-    imgSize.width += 3.0;
-    imgSize.height += 3.0;
+    imgSize.width += 6.0;
+    imgSize.height += 6.0;
     _circleBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     _circleBtn.frame = CGRectMake(xOffset, (footHeight-imgSize.height)/2, imgSize.width, imgSize.height);
     [_circleBtn setBackgroundColor:[UIColor clearColor]];
@@ -123,12 +123,12 @@
     
     CGFloat yOffset = 6;
     xOffset = 130;
-    CGFloat sumWidth = 40;
+    CGFloat sumWidth = 25;
     CGFloat sumHeight = 16;
     WXUILabel *sumLabel = [[WXUILabel alloc] init];
     sumLabel.frame = CGRectMake(xOffset, yOffset, sumWidth, sumHeight);
     [sumLabel setBackgroundColor:[UIColor clearColor]];
-    [sumLabel setTextAlignment:NSTextAlignmentRight];
+    [sumLabel setTextAlignment:NSTextAlignmentCenter];
     [sumLabel setText:@"合计:"];
     [sumLabel setFont:[UIFont systemFontOfSize:10.0]];
     [sumLabel setTextColor:WXColorWithInteger(0xdd2726)];
@@ -138,7 +138,7 @@
     
     xOffset += sumWidth;
     _sumPrice = [[WXUILabel alloc] init];
-    _sumPrice.frame = CGRectMake(xOffset, yOffset-1, 70, sumHeight);
+    _sumPrice.frame = CGRectMake(xOffset, yOffset-1, 85, sumHeight);
     [_sumPrice setBackgroundColor:[UIColor clearColor]];
     [_sumPrice setTextAlignment:NSTextAlignmentLeft];
     [_sumPrice setText:@"￥0.00"];
@@ -157,14 +157,13 @@
     [footView addSubview:textLabel];
     RELEASE_SAFELY(textLabel);
     
-    xOffset += 66;
+    xOffset += 80;
     CGFloat btnWidth = 73;
     CGFloat btnHeight = 35;
     _sumBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     _sumBtn.frame = CGRectMake(xOffset, (footHeight-btnHeight)/2, btnWidth, btnHeight);
-    [_sumBtn setBorderRadian:3.0 width:0.5 color:WXColorWithInteger(0xff9c00)];
-    [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(0xdd2726) controlState:UIControlStateNormal];;
-    [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(0xdd2726) controlState:UIControlStateSelected];
+    [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(AllBaseColor) controlState:UIControlStateNormal];
+    [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(AllBaseColor) controlState:UIControlStateSelected];
     [_sumBtn setTitleColor:WXColorWithInteger(0xFFFFFF) forState:UIControlStateNormal];
     [_sumBtn.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
     [_sumBtn setTitle:@"结算(0)" forState:UIControlStateNormal];
@@ -304,7 +303,9 @@
             _allNumber += entity.goods_Number;
         }
     }
-    [_sumPrice setText:[NSString stringWithFormat:@"￥%.2f",_allPrice]];
+    
+    NSString *price = [[NSString alloc] initWithFormat:@"￥%.2f",_allPrice];
+    [_sumPrice setText:price];
     NSString *number = [NSString stringWithFormat:@"结算(%ld)",(long)_allNumber];
     [_sumBtn setTitle:number forState:UIControlStateNormal];
 }

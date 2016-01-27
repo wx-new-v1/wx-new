@@ -21,7 +21,7 @@
         [cartBtn setImage:[UIImage imageNamed:@"ShoppingCartImg.png"] forState:UIControlStateNormal];
         [cartBtn setImageEdgeInsets:(UIEdgeInsetsMake(0, 35, btnHeight/2, 0))];
         [cartBtn setTitle:@"购物车" forState:UIControlStateNormal];
-        [cartBtn setTitleEdgeInsets:(UIEdgeInsetsMake(20, 0, 0, 0))];
+        [cartBtn setTitleEdgeInsets:(UIEdgeInsetsMake(20, 7, 0, 0))];
         [cartBtn setTitleColor:WXColorWithInteger(0x707070) forState:UIControlStateNormal];
         [cartBtn.titleLabel setFont:WXFont(13.0)];
         [cartBtn addTarget:self action:@selector(toMyShoppingCart) forControlEvents:UIControlEventTouchUpInside];

@@ -47,8 +47,8 @@
         _newPriceLabel.frame = CGRectMake(xOffset, yOffset, imgWidth, nameLabelHeight);
         [_newPriceLabel setBackgroundColor:[UIColor clearColor]];
         [_newPriceLabel setTextAlignment:NSTextAlignmentCenter];
-        [_newPriceLabel setTextColor:WXColorWithInteger(AllBaseColor)];
-        [_newPriceLabel setFont:[UIFont systemFontOfSize:10.0]];
+        [_newPriceLabel setTextColor:WXColorWithInteger(0x000000)];
+        [_newPriceLabel setFont:[UIFont systemFontOfSize:12.0]];
         [bgBtn addSubview:_newPriceLabel];
         
         yOffset += nameLabelHeight+5;
@@ -61,7 +61,7 @@
         [bgBtn addSubview:_oldPriceLabel];
         
         WXUILabel *lineLabel = [[WXUILabel alloc] init];
-        lineLabel.frame = CGRectMake(xOffset+5, yOffset+nameLabelHeight/2, imgWidth-2*10, 0.5);
+        lineLabel.frame = CGRectMake(xOffset, yOffset+nameLabelHeight/2, imgWidth-2*10+8, 0.5);
         [lineLabel setBackgroundColor:[UIColor grayColor]];
         [bgBtn addSubview:lineLabel];
         
@@ -71,7 +71,7 @@
         [_nameLabel setBackgroundColor:[UIColor clearColor]];
         [_nameLabel setTextAlignment:NSTextAlignmentCenter];
         [_nameLabel setTextColor:WXColorWithInteger(0x000000)];
-        [_nameLabel setFont:[UIFont systemFontOfSize:10.0]];
+        [_nameLabel setFont:[UIFont systemFontOfSize:12.0]];
         [bgBtn addSubview:_nameLabel];
     }
     return self;

@@ -30,7 +30,7 @@
         [imgView setUserInteractionEnabled:NO];
         [self.contentView addSubview:imgView];
         
-        xOffset += imgWidth+5;
+        xOffset += imgWidth+8;
         CGFloat yOffset = 10;
         CGFloat nameLabelWidth = 150;
         CGFloat nameLabelHeight = 35;

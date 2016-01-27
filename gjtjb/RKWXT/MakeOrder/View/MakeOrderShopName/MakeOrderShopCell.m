@@ -15,8 +15,8 @@
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
-        CGFloat imgWidth = 15;
-        CGFloat imgHeight = 15;
+        CGFloat imgWidth = 18;
+        CGFloat imgHeight = imgWidth;
         CGFloat xOffset = 12;
         UIImage *img = [UIImage imageNamed:@"Icon.png"];
         UIImageView *iconImgView = [[UIImageView alloc] init];

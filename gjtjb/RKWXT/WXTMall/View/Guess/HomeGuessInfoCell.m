@@ -38,7 +38,7 @@
         [nameLabel setBackgroundColor:[UIColor clearColor]];
         [nameLabel setTextAlignment:NSTextAlignmentLeft];
         [nameLabel setTextColor:WXColorWithInteger(0x000000)];
-        [nameLabel setFont:WXFont(12.0)];
+        [nameLabel setFont:WXFont(14.0)];
         [nameLabel setNumberOfLines:2];
         [self.contentView addSubview:nameLabel];
         
@@ -48,7 +48,7 @@
         [priceLabel setBackgroundColor:[UIColor clearColor]];
         [priceLabel setTextAlignment:NSTextAlignmentLeft];
         [priceLabel setTextColor:WXColorWithInteger(0x000000)];
-        [priceLabel setFont:WXFont(12.0)];
+        [priceLabel setFont:WXFont(14.0)];
         [self.contentView addSubview:priceLabel];
     }
     return self;
@@ -59,7 +59,7 @@
     [imgView setCpxViewInfo:entity.home_img];
     [imgView load];
     [nameLabel setText:entity.goods_name];
-    [priceLabel setText:[NSString stringWithFormat:@"%.2f",entity.shop_price]];
+    [priceLabel setText:[NSString stringWithFormat:@"￥%.2f",entity.shop_price]];
 }
 
 @end

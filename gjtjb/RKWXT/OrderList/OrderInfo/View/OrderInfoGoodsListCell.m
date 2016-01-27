@@ -32,7 +32,7 @@
         [self.contentView addSubview:imgView];
         
         CGFloat yOffset = 20;
-        xOffset += imgWidth+5;
+        xOffset += imgWidth+8;
         CGFloat nameLabelWidth = 200;
         CGFloat namelabelHieght = 38;
         nameLabel = [[WXUILabel alloc] init];

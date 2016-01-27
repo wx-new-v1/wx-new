@@ -55,7 +55,7 @@
             [self.contentView addSubview:commonBtn];
             [listArr addObject:entity];
             
-            CGFloat imgWidth = 45;
+            CGFloat imgWidth = 30;
             CGFloat imgHeight = imgWidth;
             WXRemotionImgBtn *imgView = [[WXRemotionImgBtn alloc] initWithFrame:CGRectMake((btnWidth-imgWidth)/2, 10+(btnHeight/2-imgHeight)/2, imgWidth, imgHeight)];
             [imgView setUserInteractionEnabled:NO];

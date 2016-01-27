@@ -25,6 +25,7 @@
         [_textField setTextAlignment:NSTextAlignmentLeft];
         [_textField setReturnKeyType:UIReturnKeyDone];
         [_textField setPlaceholder:@"请输入备注信息"];
+        [_textField setFont:WXFont(13.0)];
         [_textField setTextColor:WXColorWithInteger(0x646464)];
         [_textField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [_textField addTarget:self action:@selector(textfieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];

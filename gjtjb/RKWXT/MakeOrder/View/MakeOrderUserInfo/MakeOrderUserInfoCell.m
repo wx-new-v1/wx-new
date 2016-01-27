@@ -39,15 +39,15 @@
         CGFloat yGap = 21;
         CGFloat xGap = 12;
         CGFloat xOffset = xGap;
-        CGFloat imgWidth = 14;
-        CGFloat imgHeight = 20;
+        CGFloat imgWidth = 12;
+        CGFloat imgHeight = 15;
         UIImage *userImg = [UIImage imageNamed:@"MakeOrderUserNameImg.png"];
         UIImageView *userImgView = [[UIImageView alloc] init];
         userImgView.frame = CGRectMake(xGap, yGap, imgWidth, imgHeight);
         [userImgView setImage:userImg];
         [bgView addSubview:userImgView];
         
-        xGap += imgWidth+2;
+        xGap += imgWidth+5;
         CGFloat nameWidth = 80;
         CGFloat nameHeight = imgHeight;
         _nameLabel = [[UILabel alloc] init];
@@ -61,7 +61,7 @@
         xGap += nameWidth+10;
         UIImage *phoneImg = [UIImage imageNamed:@"MakeOrderUserPhoneImg.png"];
         UIImageView *phoneImgView = [[UIImageView alloc] init];
-        phoneImgView.frame = CGRectMake(xGap, yGap, imgWidth, imgHeight);
+        phoneImgView.frame = CGRectMake(xGap, yGap, imgWidth-3, imgHeight);
         [phoneImgView setImage:phoneImg];
         [bgView addSubview:phoneImgView];
         

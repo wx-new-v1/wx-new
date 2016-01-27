@@ -15,7 +15,7 @@
 
 #define xSide (12)
 #define ViewWidth IPHONE_SCREEN_WIDTH-2*xSide
-#define ViewHeight IPHONE_SCREEN_WIDTH+50
+#define ViewHeight IPHONE_SCREEN_WIDTH
 #define DownViewHeight (70)
 
 @interface GoodsStockView()<UITableViewDataSource,UITableViewDelegate,GoodsStockNameCellDelegate>{
@@ -76,7 +76,7 @@
 
 -(void)downViewBtn{
     WXUIView *downView = [[WXUIView alloc] init];
-    downView.frame = CGRectMake(xSide, ViewHeight-DownViewHeight+90, ViewWidth, DownViewHeight);
+    downView.frame = CGRectMake(xSide, ViewHeight-DownViewHeight+80, ViewWidth, DownViewHeight);
     [downView setBackgroundColor:[UIColor clearColor]];
     [_baseView addSubview:downView];
     
@@ -84,9 +84,10 @@
     CGFloat btnHeight = 40;
     buyBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     buyBtn.frame = CGRectMake(xOffset, (DownViewHeight-btnHeight)/2, ViewWidth-2*xOffset, btnHeight);
-    [buyBtn setBorderRadian:4.0 width:1.0 color:[UIColor clearColor]];
+//    [buyBtn setBorderRadian:4.0 width:1.0 color:[UIColor clearColor]];
     [buyBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+    [buyBtn.titleLabel setFont:WXFont(14.0)];
     [buyBtn setTitleColor:WXColorWithInteger(0xffffff) forState:UIControlStateNormal];
     [buyBtn addTarget:self action:@selector(buyBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:buyBtn];
@@ -106,7 +107,7 @@
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setText:@"选择属性"];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:WXFont(10.0)];
+    [titleLabel setFont:WXFont(14.0)];
     [titleLabel setTextColor:WXColorWithInteger(0x9b9b9b)];
     [headerView addSubview:titleLabel];
     return headerView;
@@ -192,7 +193,7 @@
     [buyNumLabel setTextAlignment:NSTextAlignmentCenter];
     [buyNumLabel setText:@"1"];
     [buyNumLabel setFont:WXFont(14.0)];
-    [buyNumLabel setTextColor:WXColorWithInteger(0x9b9b9b)];
+    [buyNumLabel setTextColor:WXColorWithInteger(0x000000)];
     [footView addSubview:buyNumLabel];
     
     WXUIButton *plusBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];

@@ -52,8 +52,10 @@
     userPhoneTextfield.frame = CGRectMake(xOffset, yOffset, Size.width-2*xOffset, height);
     [userPhoneTextfield setBackgroundColor:WXColorWithInteger(0xffffff)];
     [userPhoneTextfield setPlaceHolder:@" 请输入注册的手机号码" color:WXColorWithInteger(0xbababa)];
-    [userPhoneTextfield setTextColor:WXColorWithInteger(0xbababa)];
+    [userPhoneTextfield setTextColor:WXColorWithInteger(0x000000)];
     [userPhoneTextfield setReturnKeyType:UIReturnKeyDone];
+    [userPhoneTextfield setFont:WXFont(14.0)];
+    [userPhoneTextfield setTintColor:[UIColor blackColor]];
     [userPhoneTextfield setKeyboardType:UIKeyboardTypeASCIICapable];
     [userPhoneTextfield addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self addSubview:userPhoneTextfield];
@@ -67,8 +69,10 @@
     pwdTextField.frame = CGRectMake(xOffset, yOffset, pwdWidth, height);
     [pwdTextField setBackgroundColor:WXColorWithInteger(0xffffff)];
     [pwdTextField setPlaceHolder:@" 请输入验证码" color:WXColorWithInteger(0xbababa)];
-    [pwdTextField setTextColor:WXColorWithInteger(0xbababa)];
+    [pwdTextField setTextColor:WXColorWithInteger(0x000000)];
     [pwdTextField setReturnKeyType:UIReturnKeyDone];
+    [pwdTextField setTintColor:[UIColor blackColor]];
+    [pwdTextField setFont:WXFont(14.0)];
     [pwdTextField setKeyboardType:UIKeyboardTypeASCIICapable];
     [pwdTextField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self addSubview:pwdTextField];
@@ -163,7 +167,7 @@
     [_gainBtn setEnabled:_fetchPasswordTime == 0];
     NSString *title = @"获取验证码";
     if(_fetchPasswordTime > 0){
-        title = [NSString stringWithFormat:@"(%d)",kFetchPasswordDur - (int)_fetchPasswordTime];
+        title = [NSString stringWithFormat:@"(%d秒)",kFetchPasswordDur - (int)_fetchPasswordTime];
     }
     [_gainBtn setTitle:title forState:UIControlStateNormal];
     [_gainBtn setTitle:title forState:UIControlStateHighlighted];

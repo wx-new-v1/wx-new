@@ -64,7 +64,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     userBonus = NO;
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Size.width, Size.height-DownViewHeight) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Size.width, Size.height-DownViewHeight)];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [self addSubview:_tableView];
@@ -104,6 +104,27 @@
 //    }
 }
 
+//改变cell分割线置顶
+-(void)viewDidLayoutSubviews{
+    if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [_tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+    }
+    
+    if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [_tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
 -(void)addNotification{
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
     [notification addObserver:self selector:@selector(InfokeyboardWillShown:)
@@ -125,8 +146,9 @@
     CGFloat btnHeight = 40;
     WXUIButton *okBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
     okBtn.frame = CGRectMake(Size.width-xGap-btnWidth, (DownViewHeight-btnHeight)/2, btnWidth, btnHeight);
-    [okBtn setBackgroundImage:[UIImage imageNamed:@"MakeOrderBtnImg.png"] forState:UIControlStateNormal];
+    [okBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [okBtn setTitle:@"提交订单" forState:UIControlStateNormal];
+    [okBtn.titleLabel setFont:WXFont(14.0)];
     [okBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [okBtn addTarget:self action:@selector(submitOrder) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:okBtn];
@@ -140,17 +162,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    CGFloat height = 0.0;
-    if(section > Order_Section_PayStatus){
-        height = 0.5;
-    }else{
-        height = 0.1;
-    }
-    return height;
+    return 0;
 }
-
+//
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.1;
+    return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

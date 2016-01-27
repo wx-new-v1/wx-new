@@ -44,8 +44,8 @@
         UIImage *circleImg = [UIImage imageNamed:@"ShoppingCartCircle.png"];
         _circleBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         CGSize rect = circleImg.size;
-        rect.width += 8.0;
-        rect.height += 8.0;
+        rect.width += 10.0;
+        rect.height += 10.0;
         
         _circleBtn.frame = CGRectMake(xGap, (MenuCommonCellHeight-rect.width)/2, rect.width, rect.height);
         [_circleBtn setBackgroundColor:[UIColor clearColor]];
@@ -79,7 +79,7 @@
         [_newPrice setBackgroundColor:[UIColor clearColor]];
         [_newPrice setTextAlignment:NSTextAlignmentRight];
         [_newPrice setTextColor:WXColorWithInteger(newPriceColor)];
-        [_newPrice setFont:[UIFont systemFontOfSize:newPriceFont]];
+        [_newPrice setFont:[UIFont systemFontOfSize:11]];
         [self.contentView addSubview:_newPrice];
         
         yOffset += nameHeight+2;
@@ -112,7 +112,7 @@
         WXUIButton *plusBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         plusBtn.frame = CGRectMake(xOffset, yOffset, markWidth, markHeight);
         [plusBtn setBackgroundColor:WXColorWithInteger(MenuCommonCellColor)];
-        [plusBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(markColor)];
+        [plusBtn setBorderRadian:0.5 width:0.5 color:WXColorWithInteger(markColor)];
         [plusBtn setTitle:@"+" forState:UIControlStateNormal];
         [plusBtn setTitleColor:WXColorWithInteger(markColor) forState:UIControlStateNormal];
         [plusBtn addTarget:self action:@selector(plusBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -130,11 +130,11 @@
         [_numberLabel setTextAlignment:NSTextAlignmentCenter];
         [self.contentView addSubview:_numberLabel];
         
-        xOffset += numBtnWidth+5;
+        xOffset += numBtnWidth+8;
         WXUIButton *minusBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         minusBtn.frame = CGRectMake(xOffset, yOffset, markWidth, markHeight);
         [minusBtn setBackgroundColor:WXColorWithInteger(MenuCommonCellColor)];
-        [minusBtn setBorderRadian:1.0 width:0.4 color:WXColorWithInteger(markColor)];
+        [minusBtn setBorderRadian:0.5 width:0.5 color:WXColorWithInteger(markColor)];
         [minusBtn setTitle:@"-" forState:UIControlStateNormal];
         [minusBtn setTitleColor:WXColorWithInteger(markColor) forState:UIControlStateNormal];
         [minusBtn addTarget:self action:@selector(minusBtnClick) forControlEvents:UIControlEventTouchUpInside];

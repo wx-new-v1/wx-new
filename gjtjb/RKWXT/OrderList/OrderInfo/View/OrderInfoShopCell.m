@@ -21,7 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         CGFloat xOffset = 10;
-        CGFloat imgWidth = 15;
+        CGFloat imgWidth = 18;
         CGFloat imgHeight = imgWidth;
         imgView = [[WXUIImageView alloc] init];
         imgView.frame = CGRectMake(xOffset, (OrderInfoShopCellHeight-imgHeight)/2, imgWidth, imgHeight);
