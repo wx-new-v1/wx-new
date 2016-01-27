@@ -39,8 +39,7 @@
     NSArray *datalist = [jsonDicData objectForKey:@"data"];
     for(NSDictionary *dic in datalist){
         HomePageTopEntity *entity = [HomePageTopEntity homePageTopEntityWithDictionary:dic];
-//        entity.topImg = [NSString stringWithFormat:@"%@%@",AllImgPrefixUrlString,entity.topImg];
-        entity.topImg = @"http://wx3.67call.com/wx3/Public/Uploads/20150914/20150914163325_648149.png";
+        entity.topImg = [NSString stringWithFormat:@"%@%@",AllImgPrefixUrlString,entity.topImg];
         [_dataList addObject:entity];
     }
     _dataList = [NSMutableArray arrayWithArray:[self recordDataClassifyTypeUpSort]];

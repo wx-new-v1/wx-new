@@ -13,6 +13,8 @@
 #import "FindEntity.h"
 #import "HomePageTop.h"
 #import "MJRefresh.h"
+#import "HomePageTopEntity.h"
+#import "NewHomePageCommonDef.h"
 
 #define Size self.bounds.size
 
@@ -177,7 +179,24 @@
 }
 
 -(void)clickTopGoodAtIndex:(NSInteger)index{
-    
+    HomePageTopEntity *entity = nil;
+    if([_model.data count] > 0){
+        entity = [_model.data objectAtIndex:index];
+    }
+    switch (entity.topAddID) {
+        case HomePageJump_Type_Catagary:
+        {
+            [[CoordinateController sharedCoordinateController] toGoodsClassifyVC:self catID:entity.linkID animated:YES];
+        }
+            break;
+        case HomePageJump_Type_GoodsInfo:
+        {
+            [[CoordinateController sharedCoordinateController] toGoodsInfoVC:self goodsID:entity.linkID animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 @end

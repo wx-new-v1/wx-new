@@ -65,7 +65,7 @@
     _unreadView = [[WXSysMsgUnreadV alloc] initWithFrame:CGRectMake(0, 0, kDefaultNavigationBarButtonSize.width, kDefaultNavigationBarButtonSize.height)];
     [_unreadView setDelegate:self];
     [_unreadView showSysPushMsgUnread];
-    [self setRightNavigationItem:_unreadView];
+//    [self setRightNavigationItem:_unreadView];
 }
 
 //集成刷新控件
@@ -325,7 +325,24 @@
 
 #pragma mark topimg
 -(void)clickTopGoodAtIndex:(NSInteger)index{
-    
+    HomePageTopEntity *entity = nil;
+    if([_model.top.data count] > 0){
+        entity = [_model.top.data objectAtIndex:index];
+    }
+    switch (entity.topAddID) {
+        case HomePageJump_Type_Catagary:
+        {
+            [[CoordinateController sharedCoordinateController] toGoodsClassifyVC:self catID:entity.linkID animated:YES];
+        }
+            break;
+        case HomePageJump_Type_GoodsInfo:
+        {
+            [[CoordinateController sharedCoordinateController] toGoodsInfoVC:self goodsID:entity.linkID animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark baseFunction
@@ -396,6 +413,10 @@
 
 -(void)homePageTopLoadedFailed:(NSString *)error{
     [_tableView headerEndRefreshing];
+    if(!error){
+        error = @"获取置顶图片失败";
+    }
+    [UtilTool showAlertView:error];
 }
 
 #pragma mark limitbuy
