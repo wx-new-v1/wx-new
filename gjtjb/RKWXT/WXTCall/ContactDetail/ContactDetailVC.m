@@ -205,7 +205,7 @@
     picker.messageComposeDelegate = self;
     
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&woxin_id=%@",WXTShareBaseUrl,userObj.sellerID,userObj.wxtID];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
     
     NSString *msg = [NSString stringWithFormat:@"这年头没好事哪敢骚扰你，用我信打国内电话低至3分。下载地址:%@",imgUrlStr];
     picker.body = [[NSString alloc] initWithString:msg];
