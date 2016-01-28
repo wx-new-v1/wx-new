@@ -421,7 +421,7 @@
 
 -(NSString*)userShareAppWIthString{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
     return imgUrlStr;
 }
 

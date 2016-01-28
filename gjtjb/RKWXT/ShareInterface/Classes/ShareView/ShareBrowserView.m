@@ -133,7 +133,7 @@ static NSString *shareNameArr[]={
 //    NSAssert(superView, @"thumb view has not add to super view");
     
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
-    NSString *imgUrlStr = [NSString stringWithFormat:@"%@/wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
     _imageViewSourceRect = [destView convertRect:CGRectMake(_shareView.frame.size.width/2, _shareView.frame.size.height/2, 0, 0) fromView:thumbView.superview];
     [_imageView setImage:[QRCodeGenerator qrImageForString:imgUrlStr imageSize:shareViewWidth/2]];
     [_imageView setFrame:_imageViewSourceRect];

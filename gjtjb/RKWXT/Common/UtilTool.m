@@ -271,9 +271,9 @@
 }
 
 + (NSString *)sharedURL{
-    NSString *urlString = @"http://121.201.18.130/wx_html/index.php/Public/app_download/sid/";
-    NSString *str = [NSString stringWithFormat:@"%@%d",urlString,kMerchantID];
-    return str;
+    WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
+    NSString *imgUrlStr = [NSString stringWithFormat:@"%@wx_union/index.php/Register/index?sid=%@&phone=%@",WXTShareBaseUrl,userObj.sellerID,userObj.user];
+    return imgUrlStr;
 }
 
 - (void)openURL:(NSString*)newVersionURL{
