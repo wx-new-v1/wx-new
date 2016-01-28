@@ -79,7 +79,7 @@
         carriageBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
         carriageBtn.frame = CGRectMake(xOffset, yOffset, btnWidth, btnHieght);
         [carriageBtn setBackgroundColor:[UIColor whiteColor]];
-        [carriageBtn setBorderRadian:2.0 width:0.5 color:WXColorWithInteger(0xdbdbdb)];
+        [carriageBtn setBorderRadian:0.5 width:0.5 color:WXColorWithInteger(0xdbdbdb)];
         [carriageBtn setImage:[UIImage imageNamed:@"LMCarriageImg.png"] forState:UIControlStateNormal];
         [carriageBtn setTitle:@" 包邮" forState:UIControlStateNormal];
         [carriageBtn.titleLabel setFont:WXFont(9.0)];

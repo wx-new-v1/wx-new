@@ -77,7 +77,7 @@ enum{
     [createBtn setBorderRadian:6.0 width:0.1 color:WXColorWithInteger(AllBaseColor)];
     [createBtn setBackgroundColor:WXColorWithInteger(AllBaseColor)];
     [createBtn setTitle:@"+" forState:UIControlStateNormal];
-    [createBtn.titleLabel setFont:WXFont(18.0)];
+    [createBtn.titleLabel setFont:WXFont(25.0)];
     [createBtn addTarget:self action:@selector(createNewAddress) forControlEvents:UIControlEventTouchUpInside];
     [self setRightNavigationItem:createBtn];
 }

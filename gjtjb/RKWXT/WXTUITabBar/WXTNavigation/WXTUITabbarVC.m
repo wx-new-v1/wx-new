@@ -79,16 +79,6 @@ typedef enum{
     }else{}
     [tabBar setBackgroundColor:[UIColor whiteColor]];
     
-#ifdef ShowAppHome
-    CGFloat xOffset = 2*[self tabBarItemSize].width;
-    WXUIButton *appHomeBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-    appHomeBtn.frame = CGRectMake(xOffset, Size.height, [self tabBarItemSize].width, kTabBarHeight);
-    [appHomeBtn setBackgroundColor:[UIColor clearColor]];
-    [appHomeBtn setImage:[UIImage imageNamed:@"ContactInfoHeadImg.png"] forState:UIControlStateNormal];
-    [appHomeBtn addTarget:self action:@selector(clickedAppHomeBtn) forControlEvents:UIControlEventTouchUpInside];
-    [tabBar addSubview:appHomeBtn];
-#endif
-    
     return self;
 }
 
@@ -139,10 +129,6 @@ typedef enum{
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:ShowKeyBoard object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:ClickedKeyboardBtn object:nil];
-}
-
--(void)clickedAppHomeBtn{
-    [self showMenu];
 }
 
 - (void)viewDidLoad{

@@ -144,7 +144,7 @@
     [self.view addSubview:topView];
     
     CGFloat xGap = 5;
-    CGFloat yGap = 4;
+    CGFloat yGap = 6;
     
     CGFloat btnWidth = 25;
     CGFloat btnHeight = 25;
@@ -161,7 +161,7 @@
     titleLabel.frame = CGRectMake((self.bounds.size.width-labelWidth)/2, TopNavigationViewHeight-yGap-labelHeight, labelWidth, labelHeight);
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:WXFont(16.0)];
+    [titleLabel setFont:WXFont(15.0)];
     [titleLabel setText:@"商品详情"];
     [titleLabel setTextColor:WXColorWithInteger(0xffffff)];
     [topView addSubview:titleLabel];

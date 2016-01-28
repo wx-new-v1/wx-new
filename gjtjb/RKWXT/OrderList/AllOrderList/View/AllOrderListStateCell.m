@@ -48,7 +48,7 @@
         [orderStateLabel setBackgroundColor:[UIColor clearColor]];
         [orderStateLabel setTextAlignment:NSTextAlignmentRight];
         [orderStateLabel setTextColor:WXColorWithInteger(0xf74f35)];
-        [orderStateLabel setFont:WXFont(10.0)];
+        [orderStateLabel setFont:WXFont(12.0)];
         [self.contentView addSubview:orderStateLabel];
     }
     return self;

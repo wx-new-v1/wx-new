@@ -95,7 +95,7 @@
     _tableView.frame = CGRectMake(0, 0, size.width, size.height-FootViewheight);
     
     WXUIView *footView = [[[WXUIView alloc] init] autorelease];
-    [footView setBackgroundColor:WXColorWithInteger(0xEEEEEE)];
+    [footView setBackgroundColor:WXColorWithInteger(0xffffff)];
     CGFloat xOffset = 15;
     CGFloat footHeight = FootViewheight;
     UIImage *circleImg = [UIImage imageNamed:@"ShoppingCartCircle.png"];
@@ -158,10 +158,9 @@
     RELEASE_SAFELY(textLabel);
     
     xOffset += 80;
-    CGFloat btnWidth = 73;
-    CGFloat btnHeight = 35;
+    CGFloat btnWidth = 85;
     _sumBtn = [WXUIButton buttonWithType:UIButtonTypeCustom];
-    _sumBtn.frame = CGRectMake(xOffset, (footHeight-btnHeight)/2, btnWidth, btnHeight);
+    _sumBtn.frame = CGRectMake(IPHONE_SCREEN_WIDTH-btnWidth, 0, btnWidth, footHeight);
     [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(AllBaseColor) controlState:UIControlStateNormal];
     [_sumBtn setBackgroundImageOfColor:WXColorWithInteger(AllBaseColor) controlState:UIControlStateSelected];
     [_sumBtn setTitleColor:WXColorWithInteger(0xFFFFFF) forState:UIControlStateNormal];
