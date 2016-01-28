@@ -360,7 +360,7 @@
     entity.stockID = ent.stockID;
     entity.stockName = ent.stockName;
     entity.redPacket = ent.bonusValue;
-    entity.goodsImg = ent.smallImg;
+    entity.homeImg = ent.smallImg;
     entity.stockNum = ent.stock_number;
     if(entity.stockNum < ent.goods_Number){
         [UtilTool showAlertView:[NSString stringWithFormat:@"%@(%@)库存已不足",entity.goodsName,entity.stockName]];

@@ -284,9 +284,6 @@ static NSString *_nameListArray[BaseInfo_Invalid]={
 -(void)updataPersonalInfoSucceed{
     [self unShowWaitView];
     [UtilTool showAlertView:@"上传成功"];
-    
-    WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
-    [userDefault setNickname:self.nickNameStr];
 }
 
 -(void)updataPersonalInfoFailed:(NSString *)errorMsg{

@@ -36,6 +36,8 @@
                 [_delegate updataPersonalInfoFailed:retData.errorDesc];
             }
         }else{
+            WXTUserOBJ *userDefault = [WXTUserOBJ sharedUserOBJ];
+            [userDefault setNickname:nickName];
             [[NSNotificationCenter defaultCenter] postNotificationName:D_Notification_Name_UploadUserInfo object:nil];
             if(_delegate && [_delegate respondsToSelector:@selector(updataPersonalInfoSucceed)]){
                 [_delegate updataPersonalInfoSucceed];

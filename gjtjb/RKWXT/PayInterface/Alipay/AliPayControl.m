@@ -13,7 +13,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "DataSigner.h"
 
-#define kAliPayScheme @"AliMobilePay"
+//#define kAliPayScheme @"AliMobilePay"
 @implementation AliPayControl
 
 +(AliPayControl*)sharedAliPayOBJ{
@@ -26,7 +26,7 @@
 }
 
 + (NSString*)aliURLSchemes{
-	return [NSString stringWithFormat:@"%@%d",kAliPayScheme,kMerchantID];
+	return @"AliMobilePayWx10";
 }
 
 //-(void)handleAliPayResult:(AlixPayResult*)result{
@@ -68,7 +68,7 @@
     order.inputCharset = @"utf-8";
     order.itBPay = @"30m";
     
-    NSString *appScheme = [NSString stringWithFormat:@"%@%d",kAliPayScheme,kMerchantID];
+    NSString *appScheme = [[self class] aliURLSchemes];
     
     NSString *orderSpec = [order description];
     

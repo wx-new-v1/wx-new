@@ -317,12 +317,13 @@ enum{
 -(void)completeOrderListSucceed:(NSNotification*)notification{
     [self unShowWaitView];
     NSString *orderID = notification.object;
-    for(AllOrderListEntity *entity in orderListArr){
+    NSArray *listA = [NSArray arrayWithArray:orderListArr];
+    for(AllOrderListEntity *entity in listA){
         if(entity.orderId == [orderID integerValue]){
             entity.orderState = Order_State_None;  //确认收货完成为处理中
             NSInteger index = [self indexPathOfOptCellWithOrder:entity];
-            if (index>=0){
-                [_tableView reloadSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
+            if (index<10000){
+                [_tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
             }else{
                 [_tableView reloadData];
             }
@@ -334,7 +335,7 @@ enum{
     [self unShowWaitView];
     NSString *message = notification.object;
     if(!message){
-        message = @"取消订单失败";
+        message = @"确认收货失败";
     }
     [UtilTool showAlertView:message];
 }
