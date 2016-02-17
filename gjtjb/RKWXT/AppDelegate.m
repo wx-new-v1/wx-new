@@ -28,6 +28,7 @@
 #import "UserInfoVC.h"
 #import "ShareSucceedModel.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "MobClick.h"
 
 #import "AllAreaDataModel.h"
 
@@ -55,6 +56,9 @@
     //向qq注册
     id result = [[TencentOAuth alloc] initWithAppId:@"1104707907" andDelegate:nil];
     if(result){}
+    //集成友盟
+    [MobClick startWithAppkey:@"56c171cf67e58ef17d001152" reportPolicy:REALTIME   channelId:@"ios"];
+    [MobClick setAppVersion:[UtilTool currentVersion]];
     
 	return YES;
 }
@@ -293,7 +297,7 @@ forRemoteNotification:(NSDictionary *)userInfo
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     if(!hasDeal){
-        [[JPushMessageModel shareJPushModel] loadJPushMessageFromService];
+//        [[JPushMessageModel shareJPushModel] loadJPushMessageFromService];
     }
 }
 
