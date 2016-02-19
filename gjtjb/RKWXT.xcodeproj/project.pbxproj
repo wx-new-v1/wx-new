@@ -251,6 +251,8 @@
 		1236675F1C44AA04000FAF70 /* SharkShellImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123667351C44AA04000FAF70 /* SharkShellImg@2x.png */; };
 		123667621C44AAAD000FAF70 /* NewGoodsInfoBDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123667611C44AAAD000FAF70 /* NewGoodsInfoBDCell.m */; };
 		123667651C44AACF000FAF70 /* NewGoodsInfoDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 123667641C44AACF000FAF70 /* NewGoodsInfoDownCell.m */; };
+		123DDCA81C74516B00725A40 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DDCA71C74516B00725A40 /* JavaScriptCore.framework */; };
+		123DDCAC1C7452B400725A40 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 123DDCAB1C7452B400725A40 /* libBaiduMobStat.a */; };
 		1241E5301AE9D89B00811D3F /* CallBackBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */; };
 		1241E5311AE9D89B00811D3F /* CallBtnImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */; };
 		1241E5321AE9D89B00811D3F /* CallBackBgImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */; };
@@ -478,7 +480,6 @@
 		12C069191B7C743600C05D42 /* FindUnionImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C069171B7C743600C05D42 /* FindUnionImg@2x.png */; };
 		12C0691A1B7C743600C05D42 /* FindWeatherImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12C069181B7C743600C05D42 /* FindWeatherImg@2x.png */; };
 		12C46EBC1C71B02500745787 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C46EBB1C71B02500745787 /* libz.tbd */; };
-		12C46EBF1C71B1E900745787 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C46EBD1C71B1E900745787 /* libMobClickLibrary.a */; };
 		12CCD7ED1AC0184400A5BDF0 /* defaultContactIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CCD7EC1AC0184400A5BDF0 /* defaultContactIcon@2x.png */; };
 		12CE11D51C50694200FF85FA /* GoodsListDownImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE11D31C50694200FF85FA /* GoodsListDownImg@2x.png */; };
 		12CE11D61C50694200FF85FA /* GoodsListUpImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12CE11D41C50694200FF85FA /* GoodsListUpImg@2x.png */; };
@@ -1344,6 +1345,9 @@
 		123667611C44AAAD000FAF70 /* NewGoodsInfoBDCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoodsInfoBDCell.m; sourceTree = "<group>"; };
 		123667631C44AACF000FAF70 /* NewGoodsInfoDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoodsInfoDownCell.h; sourceTree = "<group>"; };
 		123667641C44AACF000FAF70 /* NewGoodsInfoDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoodsInfoDownCell.m; sourceTree = "<group>"; };
+		123DDCA71C74516B00725A40 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		123DDCAA1C7452B400725A40 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		123DDCAB1C7452B400725A40 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		1241E50B1AE9D89B00811D3F /* CallBackBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBackBtn@2x.png"; sourceTree = "<group>"; };
 		1241E50C1AE9D89B00811D3F /* CallBtnImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CallBtnImg@2x.png"; sourceTree = "<group>"; };
 		1241E50D1AE9D89B00811D3F /* CallBackBgImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CallBackBgImg.jpg; sourceTree = "<group>"; };
@@ -1659,8 +1663,6 @@
 		12C069171B7C743600C05D42 /* FindUnionImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FindUnionImg@2x.png"; sourceTree = "<group>"; };
 		12C069181B7C743600C05D42 /* FindWeatherImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FindWeatherImg@2x.png"; sourceTree = "<group>"; };
 		12C46EBB1C71B02500745787 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		12C46EBD1C71B1E900745787 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		12C46EBE1C71B1E900745787 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		12CCD7EC1AC0184400A5BDF0 /* defaultContactIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultContactIcon@2x.png"; sourceTree = "<group>"; };
 		12CE11D31C50694200FF85FA /* GoodsListDownImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsListDownImg@2x.png"; sourceTree = "<group>"; };
 		12CE11D41C50694200FF85FA /* GoodsListUpImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoodsListUpImg@2x.png"; sourceTree = "<group>"; };
@@ -2262,7 +2264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12C46EBF1C71B1E900745787 /* libMobClickLibrary.a in Frameworks */,
+				123DDCA81C74516B00725A40 /* JavaScriptCore.framework in Frameworks */,
 				12C46EBC1C71B02500745787 /* libz.tbd in Frameworks */,
 				120D01671BBB91CC005CAA6C /* AlipaySDK.framework in Frameworks */,
 				128083D41B61D1BA00260B9F /* libstdc++.dylib in Frameworks */,
@@ -2278,6 +2280,7 @@
 				DDDAE98B1ACAA8D400CC3FE9 /* UIKit.framework in Frameworks */,
 				120D00FE1BBB919A005CAA6C /* libcrypto.a in Frameworks */,
 				DDDAE9921ACAAA2100CC3FE9 /* libPushSDK-1.8.3.a in Frameworks */,
+				123DDCAC1C7452B400725A40 /* libBaiduMobStat.a in Frameworks */,
 				DDDAE9851ACAA8B200CC3FE9 /* CoreGraphics.framework in Frameworks */,
 				DDDAE9831ACAA8A800CC3FE9 /* SystemConfiguration.framework in Frameworks */,
 				12D55A451AC2BD8800F51F97 /* CoreTelephony.framework in Frameworks */,
@@ -3749,6 +3752,15 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
+		123DDCA91C7452B400725A40 /* baiduCount */ = {
+			isa = PBXGroup;
+			children = (
+				123DDCAA1C7452B400725A40 /* BaiduMobStat.h */,
+				123DDCAB1C7452B400725A40 /* libBaiduMobStat.a */,
+			);
+			path = baiduCount;
+			sourceTree = "<group>";
+		};
 		1241E50A1AE9D89B00811D3F /* CallBack */ = {
 			isa = PBXGroup;
 			children = (
@@ -4431,15 +4443,6 @@
 			path = OrderPayType;
 			sourceTree = "<group>";
 		};
-		12C46EB71C71AF0C00745787 /* umeng */ = {
-			isa = PBXGroup;
-			children = (
-				12C46EBD1C71B1E900745787 /* libMobClickLibrary.a */,
-				12C46EBE1C71B1E900745787 /* MobClick.h */,
-			);
-			path = umeng;
-			sourceTree = "<group>";
-		};
 		12CE11DA1C507B6000FF85FA /* OrderInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -4958,7 +4961,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
-				12C46EB71C71AF0C00745787 /* umeng */,
+				123DDCA91C7452B400725A40 /* baiduCount */,
 				124607B31C4E2BA7001C703D /* GoodsClassify */,
 				124607851C4DD5A9001C703D /* ShoppingCart */,
 				123666D51C44AA04000FAF70 /* LuckyDraw */,
@@ -5821,6 +5824,7 @@
 		AD94EECE23B2F2543B7D284C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				123DDCA71C74516B00725A40 /* JavaScriptCore.framework */,
 				12C46EBB1C71B02500745787 /* libz.tbd */,
 				120D01661BBB91CC005CAA6C /* AlipaySDK.framework */,
 				128083D31B61D1BA00260B9F /* libstdc++.dylib */,
@@ -7009,6 +7013,7 @@
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay",
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay/openssl/lib",
 					"$(PROJECT_DIR)/RKWXT/umeng",
+					"$(PROJECT_DIR)/RKWXT/baiduCount",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wx.companyExplicit.wxmall;
@@ -7070,6 +7075,7 @@
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay",
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay/openssl/lib",
 					"$(PROJECT_DIR)/RKWXT/umeng",
+					"$(PROJECT_DIR)/RKWXT/baiduCount",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wx.companyExplicit.wxmall;

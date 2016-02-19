@@ -28,9 +28,9 @@
 #import "UserInfoVC.h"
 #import "ShareSucceedModel.h"
 #import <AlipaySDK/AlipaySDK.h>
-#import "MobClick.h"
 
 #import "AllAreaDataModel.h"
+#import "BaiduMobStat.h"
 
 @interface AppDelegate (){
     CTCallCenter *_callCenter;
@@ -44,6 +44,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[AddressBook sharedAddressBook] loadContact];
     [ContactUitl shareInstance];
+    [self startBaiduMobStat];
 	[self initUI];
     //监听电话
     [self listenSystemCall];
@@ -56,9 +57,6 @@
     //向qq注册
     id result = [[TencentOAuth alloc] initWithAppId:@"1104707907" andDelegate:nil];
     if(result){}
-    //集成友盟
-    [MobClick startWithAppkey:@"56c171cf67e58ef17d001152" reportPolicy:REALTIME   channelId:@"ios"];
-    [MobClick setAppVersion:[UtilTool currentVersion]];
     
 	return YES;
 }
@@ -90,6 +88,12 @@
         [self.window setRootViewController:self.navigationController];
         [self.window makeKeyAndVisible];
     }
+}
+
+- (void)startBaiduMobStat {
+    BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
+    statTracker.shortAppVersion  = [UtilTool currentVersion];
+    [statTracker startWithAppId:@"931d157a8a"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
 }
 
 -(BOOL)checkUserInfo{
