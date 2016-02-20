@@ -176,6 +176,33 @@
         case WXT_UrlFeed_Type_New_CompleteOrder:
             url = @"/ack_receiving.php";
             break;
+        case WXT_UrlFeed_Type_New_LoadMyClientInfo:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_LoadUserAliAccount:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_LoadMyClientPerson:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_LoadMyCutInfo:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_JuniorList:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_UserCutSource:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_ApplyAliMoney:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_SubmitUserAliAcount:
+            url = @"";
+            break;
+        case WXT_UrlFeed_Type_New_LoadAliRecordList:
+            url = @"";
+            break;
         default:
             break;
     }

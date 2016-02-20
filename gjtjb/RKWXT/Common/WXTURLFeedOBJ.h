@@ -69,6 +69,16 @@ typedef enum {
     WXT_UrlFeed_Type_New_LoadAreaData,
     WXT_UrlFeed_Type_NewMall_NewUserAddress,
     WXT_UrlFeed_Type_NewMall_ShoppingCart,
+    //提成
+    WXT_UrlFeed_Type_New_LoadMyClientInfo,
+    WXT_UrlFeed_Type_New_LoadUserAliAccount,
+    WXT_UrlFeed_Type_New_LoadMyClientPerson,
+    WXT_UrlFeed_Type_New_LoadMyCutInfo,
+    WXT_UrlFeed_Type_New_JuniorList,
+    WXT_UrlFeed_Type_New_UserCutSource,
+    WXT_UrlFeed_Type_New_ApplyAliMoney,
+    WXT_UrlFeed_Type_New_SubmitUserAliAcount,
+    WXT_UrlFeed_Type_New_LoadAliRecordList,
     
     WXT_UrlFeed_Type_Invalid,
 }WXT_UrlFeed_Type;

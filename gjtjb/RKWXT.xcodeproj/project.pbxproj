@@ -472,6 +472,39 @@
 		12B1F6961B789138009FBA6D /* RechargeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1F6951B789138009FBA6D /* RechargeListVC.m */; };
 		12B1F6991B789372009FBA6D /* RechargeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1F6981B789372009FBA6D /* RechargeListCell.m */; };
 		12B3FE311BB10807001A45E6 /* PersonalInfoBgViewImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12B3FE301BB10807001A45E6 /* PersonalInfoBgViewImg@2x.png */; };
+		12BC72571C78531700FC6A1C /* MyClientEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC720B1C78531700FC6A1C /* MyClientEntity.m */; };
+		12BC72581C78531700FC6A1C /* MyClientInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC720D1C78531700FC6A1C /* MyClientInfoModel.m */; };
+		12BC72591C78531700FC6A1C /* MyClientPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC720F1C78531700FC6A1C /* MyClientPersonModel.m */; };
+		12BC725A1C78531700FC6A1C /* MyCutRefereeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72111C78531700FC6A1C /* MyCutRefereeModel.m */; };
+		12BC725B1C78531700FC6A1C /* MyRefereeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72131C78531700FC6A1C /* MyRefereeEntity.m */; };
+		12BC725C1C78531700FC6A1C /* MyClientInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72151C78531700FC6A1C /* MyClientInfoVC.m */; };
+		12BC725D1C78531700FC6A1C /* MyClientMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72171C78531700FC6A1C /* MyClientMoneyCell.m */; };
+		12BC725E1C78531700FC6A1C /* MyClientMoneyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72191C78531700FC6A1C /* MyClientMoneyVC.m */; };
+		12BC725F1C78531700FC6A1C /* NewMyClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC721B1C78531700FC6A1C /* NewMyClientVC.m */; };
+		12BC72601C78531700FC6A1C /* NewUserCutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC721D1C78531700FC6A1C /* NewUserCutVC.m */; };
+		12BC72611C78531700FC6A1C /* JuniorListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72221C78531700FC6A1C /* JuniorListEntity.m */; };
+		12BC72621C78531700FC6A1C /* WXJuniorListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72241C78531700FC6A1C /* WXJuniorListModel.m */; };
+		12BC72631C78531700FC6A1C /* WXJuniorListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72271C78531700FC6A1C /* WXJuniorListCell.m */; };
+		12BC72641C78531700FC6A1C /* WXJuniorListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72291C78531700FC6A1C /* WXJuniorListVC.m */; };
+		12BC72651C78531700FC6A1C /* UserCutMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC722D1C78531700FC6A1C /* UserCutMoneyCell.m */; };
+		12BC72661C78531700FC6A1C /* UserCutSourceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC722F1C78531700FC6A1C /* UserCutSourceEntity.m */; };
+		12BC72671C78531700FC6A1C /* UserCutSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72311C78531700FC6A1C /* UserCutSourceModel.m */; };
+		12BC72681C78531700FC6A1C /* UserCutSourceListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72331C78531700FC6A1C /* UserCutSourceListVC.m */; };
+		12BC72691C78531700FC6A1C /* UserCutSourceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72361C78531700FC6A1C /* UserCutSourceListCell.m */; };
+		12BC726A1C78531700FC6A1C /* MyClientInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72391C78531700FC6A1C /* MyClientInfoCell.m */; };
+		12BC726B1C78531700FC6A1C /* UserRefereeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC723B1C78531700FC6A1C /* UserRefereeCell.m */; };
+		12BC726C1C78531700FC6A1C /* ApplyAliWithdrawalsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC723E1C78531700FC6A1C /* ApplyAliWithdrawalsVC.m */; };
+		12BC726D1C78531700FC6A1C /* ConfirmUserAliPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72401C78531700FC6A1C /* ConfirmUserAliPayVC.m */; };
+		12BC726E1C78531700FC6A1C /* AliSendMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72431C78531700FC6A1C /* AliSendMsgModel.m */; };
+		12BC726F1C78531700FC6A1C /* ApplyAliModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72451C78531700FC6A1C /* ApplyAliModel.m */; };
+		12BC72701C78531700FC6A1C /* ConfirmUserAliModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72471C78531700FC6A1C /* ConfirmUserAliModel.m */; };
+		12BC72711C78531700FC6A1C /* SearchUserAliAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72491C78531700FC6A1C /* SearchUserAliAccountModel.m */; };
+		12BC72721C78531700FC6A1C /* UserAliEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC724B1C78531700FC6A1C /* UserAliEntity.m */; };
+		12BC72731C78531700FC6A1C /* WithdrawadsRecordListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC724D1C78531700FC6A1C /* WithdrawadsRecordListModel.m */; };
+		12BC72741C78531700FC6A1C /* WithdrawalsRecordEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC724F1C78531700FC6A1C /* WithdrawalsRecordEntity.m */; };
+		12BC72751C78531700FC6A1C /* UserWithdrawalsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72511C78531700FC6A1C /* UserWithdrawalsVC.m */; };
+		12BC72761C78531700FC6A1C /* AliRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72541C78531700FC6A1C /* AliRecordListCell.m */; };
+		12BC72771C78531700FC6A1C /* WithdrawalsRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BC72561C78531700FC6A1C /* WithdrawalsRecordListVC.m */; };
 		12BD30F21B3E78B400170316 /* OrderAlipayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD30F11B3E78B400170316 /* OrderAlipayCell.m */; };
 		12BD30F51B3E78CA00170316 /* OrderWechatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD30F41B3E78CA00170316 /* OrderWechatCell.m */; };
 		12BD30F81B3E79D700170316 /* OrderAlipayImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD30F61B3E79D700170316 /* OrderAlipayImg@2x.png */; };
@@ -1652,6 +1685,72 @@
 		12B1F6971B789372009FBA6D /* RechargeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeListCell.h; sourceTree = "<group>"; };
 		12B1F6981B789372009FBA6D /* RechargeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeListCell.m; sourceTree = "<group>"; };
 		12B3FE301BB10807001A45E6 /* PersonalInfoBgViewImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PersonalInfoBgViewImg@2x.png"; sourceTree = "<group>"; };
+		12BC720A1C78531700FC6A1C /* MyClientEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientEntity.h; sourceTree = "<group>"; };
+		12BC720B1C78531700FC6A1C /* MyClientEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientEntity.m; sourceTree = "<group>"; };
+		12BC720C1C78531700FC6A1C /* MyClientInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientInfoModel.h; sourceTree = "<group>"; };
+		12BC720D1C78531700FC6A1C /* MyClientInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientInfoModel.m; sourceTree = "<group>"; };
+		12BC720E1C78531700FC6A1C /* MyClientPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientPersonModel.h; sourceTree = "<group>"; };
+		12BC720F1C78531700FC6A1C /* MyClientPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientPersonModel.m; sourceTree = "<group>"; };
+		12BC72101C78531700FC6A1C /* MyCutRefereeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCutRefereeModel.h; sourceTree = "<group>"; };
+		12BC72111C78531700FC6A1C /* MyCutRefereeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCutRefereeModel.m; sourceTree = "<group>"; };
+		12BC72121C78531700FC6A1C /* MyRefereeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRefereeEntity.h; sourceTree = "<group>"; };
+		12BC72131C78531700FC6A1C /* MyRefereeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRefereeEntity.m; sourceTree = "<group>"; };
+		12BC72141C78531700FC6A1C /* MyClientInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientInfoVC.h; sourceTree = "<group>"; };
+		12BC72151C78531700FC6A1C /* MyClientInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientInfoVC.m; sourceTree = "<group>"; };
+		12BC72161C78531700FC6A1C /* MyClientMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientMoneyCell.h; sourceTree = "<group>"; };
+		12BC72171C78531700FC6A1C /* MyClientMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientMoneyCell.m; sourceTree = "<group>"; };
+		12BC72181C78531700FC6A1C /* MyClientMoneyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientMoneyVC.h; sourceTree = "<group>"; };
+		12BC72191C78531700FC6A1C /* MyClientMoneyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientMoneyVC.m; sourceTree = "<group>"; };
+		12BC721A1C78531700FC6A1C /* NewMyClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMyClientVC.h; sourceTree = "<group>"; };
+		12BC721B1C78531700FC6A1C /* NewMyClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMyClientVC.m; sourceTree = "<group>"; };
+		12BC721C1C78531700FC6A1C /* NewUserCutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserCutVC.h; sourceTree = "<group>"; };
+		12BC721D1C78531700FC6A1C /* NewUserCutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserCutVC.m; sourceTree = "<group>"; };
+		12BC72211C78531700FC6A1C /* JuniorListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuniorListEntity.h; sourceTree = "<group>"; };
+		12BC72221C78531700FC6A1C /* JuniorListEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuniorListEntity.m; sourceTree = "<group>"; };
+		12BC72231C78531700FC6A1C /* WXJuniorListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXJuniorListModel.h; sourceTree = "<group>"; };
+		12BC72241C78531700FC6A1C /* WXJuniorListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXJuniorListModel.m; sourceTree = "<group>"; };
+		12BC72261C78531700FC6A1C /* WXJuniorListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXJuniorListCell.h; sourceTree = "<group>"; };
+		12BC72271C78531700FC6A1C /* WXJuniorListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXJuniorListCell.m; sourceTree = "<group>"; };
+		12BC72281C78531700FC6A1C /* WXJuniorListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXJuniorListVC.h; sourceTree = "<group>"; };
+		12BC72291C78531700FC6A1C /* WXJuniorListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXJuniorListVC.m; sourceTree = "<group>"; };
+		12BC722C1C78531700FC6A1C /* UserCutMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCutMoneyCell.h; sourceTree = "<group>"; };
+		12BC722D1C78531700FC6A1C /* UserCutMoneyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCutMoneyCell.m; sourceTree = "<group>"; };
+		12BC722E1C78531700FC6A1C /* UserCutSourceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCutSourceEntity.h; sourceTree = "<group>"; };
+		12BC722F1C78531700FC6A1C /* UserCutSourceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCutSourceEntity.m; sourceTree = "<group>"; };
+		12BC72301C78531700FC6A1C /* UserCutSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCutSourceModel.h; sourceTree = "<group>"; };
+		12BC72311C78531700FC6A1C /* UserCutSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCutSourceModel.m; sourceTree = "<group>"; };
+		12BC72321C78531700FC6A1C /* UserCutSourceListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCutSourceListVC.h; sourceTree = "<group>"; };
+		12BC72331C78531700FC6A1C /* UserCutSourceListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCutSourceListVC.m; sourceTree = "<group>"; };
+		12BC72351C78531700FC6A1C /* UserCutSourceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCutSourceListCell.h; sourceTree = "<group>"; };
+		12BC72361C78531700FC6A1C /* UserCutSourceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCutSourceListCell.m; sourceTree = "<group>"; };
+		12BC72381C78531700FC6A1C /* MyClientInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClientInfoCell.h; sourceTree = "<group>"; };
+		12BC72391C78531700FC6A1C /* MyClientInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClientInfoCell.m; sourceTree = "<group>"; };
+		12BC723A1C78531700FC6A1C /* UserRefereeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRefereeCell.h; sourceTree = "<group>"; };
+		12BC723B1C78531700FC6A1C /* UserRefereeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRefereeCell.m; sourceTree = "<group>"; };
+		12BC723D1C78531700FC6A1C /* ApplyAliWithdrawalsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyAliWithdrawalsVC.h; sourceTree = "<group>"; };
+		12BC723E1C78531700FC6A1C /* ApplyAliWithdrawalsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyAliWithdrawalsVC.m; sourceTree = "<group>"; };
+		12BC723F1C78531700FC6A1C /* ConfirmUserAliPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmUserAliPayVC.h; sourceTree = "<group>"; };
+		12BC72401C78531700FC6A1C /* ConfirmUserAliPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmUserAliPayVC.m; sourceTree = "<group>"; };
+		12BC72421C78531700FC6A1C /* AliSendMsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliSendMsgModel.h; sourceTree = "<group>"; };
+		12BC72431C78531700FC6A1C /* AliSendMsgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliSendMsgModel.m; sourceTree = "<group>"; };
+		12BC72441C78531700FC6A1C /* ApplyAliModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyAliModel.h; sourceTree = "<group>"; };
+		12BC72451C78531700FC6A1C /* ApplyAliModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyAliModel.m; sourceTree = "<group>"; };
+		12BC72461C78531700FC6A1C /* ConfirmUserAliModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmUserAliModel.h; sourceTree = "<group>"; };
+		12BC72471C78531700FC6A1C /* ConfirmUserAliModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmUserAliModel.m; sourceTree = "<group>"; };
+		12BC72481C78531700FC6A1C /* SearchUserAliAccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUserAliAccountModel.h; sourceTree = "<group>"; };
+		12BC72491C78531700FC6A1C /* SearchUserAliAccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUserAliAccountModel.m; sourceTree = "<group>"; };
+		12BC724A1C78531700FC6A1C /* UserAliEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAliEntity.h; sourceTree = "<group>"; };
+		12BC724B1C78531700FC6A1C /* UserAliEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAliEntity.m; sourceTree = "<group>"; };
+		12BC724C1C78531700FC6A1C /* WithdrawadsRecordListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawadsRecordListModel.h; sourceTree = "<group>"; };
+		12BC724D1C78531700FC6A1C /* WithdrawadsRecordListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawadsRecordListModel.m; sourceTree = "<group>"; };
+		12BC724E1C78531700FC6A1C /* WithdrawalsRecordEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawalsRecordEntity.h; sourceTree = "<group>"; };
+		12BC724F1C78531700FC6A1C /* WithdrawalsRecordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawalsRecordEntity.m; sourceTree = "<group>"; };
+		12BC72501C78531700FC6A1C /* UserWithdrawalsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserWithdrawalsVC.h; sourceTree = "<group>"; };
+		12BC72511C78531700FC6A1C /* UserWithdrawalsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWithdrawalsVC.m; sourceTree = "<group>"; };
+		12BC72531C78531700FC6A1C /* AliRecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliRecordListCell.h; sourceTree = "<group>"; };
+		12BC72541C78531700FC6A1C /* AliRecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliRecordListCell.m; sourceTree = "<group>"; };
+		12BC72551C78531700FC6A1C /* WithdrawalsRecordListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawalsRecordListVC.h; sourceTree = "<group>"; };
+		12BC72561C78531700FC6A1C /* WithdrawalsRecordListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawalsRecordListVC.m; sourceTree = "<group>"; };
 		12BD30F01B3E78B400170316 /* OrderAlipayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderAlipayCell.h; sourceTree = "<group>"; };
 		12BD30F11B3E78B400170316 /* OrderAlipayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderAlipayCell.m; sourceTree = "<group>"; };
 		12BD30F31B3E78CA00170316 /* OrderWechatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderWechatCell.h; sourceTree = "<group>"; };
@@ -4432,6 +4531,183 @@
 			path = Ftp;
 			sourceTree = "<group>";
 		};
+		12BC72071C78531700FC6A1C /* NewUserCut */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72081C78531700FC6A1C /* Model */,
+				12BC72141C78531700FC6A1C /* MyClientInfoVC.h */,
+				12BC72151C78531700FC6A1C /* MyClientInfoVC.m */,
+				12BC72161C78531700FC6A1C /* MyClientMoneyCell.h */,
+				12BC72171C78531700FC6A1C /* MyClientMoneyCell.m */,
+				12BC72181C78531700FC6A1C /* MyClientMoneyVC.h */,
+				12BC72191C78531700FC6A1C /* MyClientMoneyVC.m */,
+				12BC721A1C78531700FC6A1C /* NewMyClientVC.h */,
+				12BC721B1C78531700FC6A1C /* NewMyClientVC.m */,
+				12BC721C1C78531700FC6A1C /* NewUserCutVC.h */,
+				12BC721D1C78531700FC6A1C /* NewUserCutVC.m */,
+				12BC721E1C78531700FC6A1C /* RankingList */,
+				12BC72371C78531700FC6A1C /* View */,
+				12BC723C1C78531700FC6A1C /* withdrawals */,
+			);
+			path = NewUserCut;
+			sourceTree = "<group>";
+		};
+		12BC72081C78531700FC6A1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72091C78531700FC6A1C /* Referee */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12BC72091C78531700FC6A1C /* Referee */ = {
+			isa = PBXGroup;
+			children = (
+				12BC720A1C78531700FC6A1C /* MyClientEntity.h */,
+				12BC720B1C78531700FC6A1C /* MyClientEntity.m */,
+				12BC720C1C78531700FC6A1C /* MyClientInfoModel.h */,
+				12BC720D1C78531700FC6A1C /* MyClientInfoModel.m */,
+				12BC720E1C78531700FC6A1C /* MyClientPersonModel.h */,
+				12BC720F1C78531700FC6A1C /* MyClientPersonModel.m */,
+				12BC72101C78531700FC6A1C /* MyCutRefereeModel.h */,
+				12BC72111C78531700FC6A1C /* MyCutRefereeModel.m */,
+				12BC72121C78531700FC6A1C /* MyRefereeEntity.h */,
+				12BC72131C78531700FC6A1C /* MyRefereeEntity.m */,
+			);
+			path = Referee;
+			sourceTree = "<group>";
+		};
+		12BC721E1C78531700FC6A1C /* RankingList */ = {
+			isa = PBXGroup;
+			children = (
+				12BC721F1C78531700FC6A1C /* JuniorList */,
+				12BC722A1C78531700FC6A1C /* UserCutSource */,
+			);
+			path = RankingList;
+			sourceTree = "<group>";
+		};
+		12BC721F1C78531700FC6A1C /* JuniorList */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72201C78531700FC6A1C /* Model */,
+				12BC72251C78531700FC6A1C /* View */,
+				12BC72281C78531700FC6A1C /* WXJuniorListVC.h */,
+				12BC72291C78531700FC6A1C /* WXJuniorListVC.m */,
+			);
+			path = JuniorList;
+			sourceTree = "<group>";
+		};
+		12BC72201C78531700FC6A1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72211C78531700FC6A1C /* JuniorListEntity.h */,
+				12BC72221C78531700FC6A1C /* JuniorListEntity.m */,
+				12BC72231C78531700FC6A1C /* WXJuniorListModel.h */,
+				12BC72241C78531700FC6A1C /* WXJuniorListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12BC72251C78531700FC6A1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72261C78531700FC6A1C /* WXJuniorListCell.h */,
+				12BC72271C78531700FC6A1C /* WXJuniorListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12BC722A1C78531700FC6A1C /* UserCutSource */ = {
+			isa = PBXGroup;
+			children = (
+				12BC722B1C78531700FC6A1C /* Model */,
+				12BC72321C78531700FC6A1C /* UserCutSourceListVC.h */,
+				12BC72331C78531700FC6A1C /* UserCutSourceListVC.m */,
+				12BC72341C78531700FC6A1C /* View */,
+			);
+			path = UserCutSource;
+			sourceTree = "<group>";
+		};
+		12BC722B1C78531700FC6A1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12BC722C1C78531700FC6A1C /* UserCutMoneyCell.h */,
+				12BC722D1C78531700FC6A1C /* UserCutMoneyCell.m */,
+				12BC722E1C78531700FC6A1C /* UserCutSourceEntity.h */,
+				12BC722F1C78531700FC6A1C /* UserCutSourceEntity.m */,
+				12BC72301C78531700FC6A1C /* UserCutSourceModel.h */,
+				12BC72311C78531700FC6A1C /* UserCutSourceModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12BC72341C78531700FC6A1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72351C78531700FC6A1C /* UserCutSourceListCell.h */,
+				12BC72361C78531700FC6A1C /* UserCutSourceListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12BC72371C78531700FC6A1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72381C78531700FC6A1C /* MyClientInfoCell.h */,
+				12BC72391C78531700FC6A1C /* MyClientInfoCell.m */,
+				12BC723A1C78531700FC6A1C /* UserRefereeCell.h */,
+				12BC723B1C78531700FC6A1C /* UserRefereeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12BC723C1C78531700FC6A1C /* withdrawals */ = {
+			isa = PBXGroup;
+			children = (
+				12BC723D1C78531700FC6A1C /* ApplyAliWithdrawalsVC.h */,
+				12BC723E1C78531700FC6A1C /* ApplyAliWithdrawalsVC.m */,
+				12BC723F1C78531700FC6A1C /* ConfirmUserAliPayVC.h */,
+				12BC72401C78531700FC6A1C /* ConfirmUserAliPayVC.m */,
+				12BC72411C78531700FC6A1C /* Model */,
+				12BC72501C78531700FC6A1C /* UserWithdrawalsVC.h */,
+				12BC72511C78531700FC6A1C /* UserWithdrawalsVC.m */,
+				12BC72521C78531700FC6A1C /* View */,
+				12BC72551C78531700FC6A1C /* WithdrawalsRecordListVC.h */,
+				12BC72561C78531700FC6A1C /* WithdrawalsRecordListVC.m */,
+			);
+			path = withdrawals;
+			sourceTree = "<group>";
+		};
+		12BC72411C78531700FC6A1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72421C78531700FC6A1C /* AliSendMsgModel.h */,
+				12BC72431C78531700FC6A1C /* AliSendMsgModel.m */,
+				12BC72441C78531700FC6A1C /* ApplyAliModel.h */,
+				12BC72451C78531700FC6A1C /* ApplyAliModel.m */,
+				12BC72461C78531700FC6A1C /* ConfirmUserAliModel.h */,
+				12BC72471C78531700FC6A1C /* ConfirmUserAliModel.m */,
+				12BC72481C78531700FC6A1C /* SearchUserAliAccountModel.h */,
+				12BC72491C78531700FC6A1C /* SearchUserAliAccountModel.m */,
+				12BC724A1C78531700FC6A1C /* UserAliEntity.h */,
+				12BC724B1C78531700FC6A1C /* UserAliEntity.m */,
+				12BC724C1C78531700FC6A1C /* WithdrawadsRecordListModel.h */,
+				12BC724D1C78531700FC6A1C /* WithdrawadsRecordListModel.m */,
+				12BC724E1C78531700FC6A1C /* WithdrawalsRecordEntity.h */,
+				12BC724F1C78531700FC6A1C /* WithdrawalsRecordEntity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12BC72521C78531700FC6A1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12BC72531C78531700FC6A1C /* AliRecordListCell.h */,
+				12BC72541C78531700FC6A1C /* AliRecordListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		12BD30EF1B3E789F00170316 /* OrderPayType */ = {
 			isa = PBXGroup;
 			children = (
@@ -4961,6 +5237,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
+				12BC72071C78531700FC6A1C /* NewUserCut */,
 				123DDCA91C7452B400725A40 /* baiduCount */,
 				124607B31C4E2BA7001C703D /* GoodsClassify */,
 				124607851C4DD5A9001C703D /* ShoppingCart */,
@@ -6303,6 +6580,7 @@
 				DD4723DD1ADE128800278A5C /* KeychainItemWrapper.m in Sources */,
 				775C583C1ABA5F31005B6B40 /* pinyin.c in Sources */,
 				7758430C1AB95A300039B129 /* WXActivityButton.m in Sources */,
+				12BC72761C78531700FC6A1C /* AliRecordListCell.m in Sources */,
 				775843011AB95A300039B129 /* PingponeButton.m in Sources */,
 				775C58391ABA5F31005B6B40 /* ChineseToPinyinResource.m in Sources */,
 				775842B81AB95A300039B129 /* WXUnreadSysMsgOBJ.m in Sources */,
@@ -6311,6 +6589,7 @@
 				775843271AB95A300039B129 /* WXUINavigationController+SubVCPosition.m in Sources */,
 				775842ED1AB95A300039B129 /* CSTWXNavigationView.m in Sources */,
 				122AB8C11C3E6D5500AC9DF5 /* SDWebImageDownloader.m in Sources */,
+				12BC726F1C78531700FC6A1C /* ApplyAliModel.m in Sources */,
 				122AB83E1C3E48C200AC9DF5 /* WXHomeBaseFunctionCell.m in Sources */,
 				1277D0131AC5327A0008D9B6 /* ResetPwdModel.m in Sources */,
 				DD988A5D1B1D408500B3790B /* EScrollerView.m in Sources */,
@@ -6330,6 +6609,7 @@
 				1282EF831B5E33B5004D2019 /* UserHeaderImgModel.m in Sources */,
 				128767011B51012700A79320 /* ShopTwoDimensionCell.m in Sources */,
 				122EFBC41C40FD8400CE0EA0 /* OrderHasDoneVC.m in Sources */,
+				12BC726B1C78531700FC6A1C /* UserRefereeCell.m in Sources */,
 				12963B3A1B663DBB007418DE /* WXTGuideVC.m in Sources */,
 				122858631C4F9BB70089A369 /* ClassifyGoodsListVC.m in Sources */,
 				12F180B91B45190800B9A80D /* Sql_JpushData.m in Sources */,
@@ -6343,6 +6623,7 @@
 				775842D71AB95A300039B129 /* NSString+RC4.m in Sources */,
 				2563B3ED1AAAD74000C04227 /* AppDelegate.m in Sources */,
 				122AB8BC1C3E6D5500AC9DF5 /* SDImageCache.m in Sources */,
+				12BC72711C78531700FC6A1C /* SearchUserAliAccountModel.m in Sources */,
 				775843121AB95A300039B129 /* WXPopAlertView.m in Sources */,
 				128221C81B184C3B004613BB /* ASIInputStream.m in Sources */,
 				123666D21C449760000FAF70 /* UserBonusVC.m in Sources */,
@@ -6355,6 +6636,7 @@
 				77D197621ABC246000FAA4CE /* RootViewController.m in Sources */,
 				775842B71AB95A300039B129 /* WXTipMaskOBJ.m in Sources */,
 				775842B31AB95A300039B129 /* UtilTool.m in Sources */,
+				12BC725C1C78531700FC6A1C /* MyClientInfoVC.m in Sources */,
 				125A76AD1B5673E100959AD8 /* JPushMessageInfoVC.m in Sources */,
 				775843301AB95A300039B129 /* WXUITabBarItem.m in Sources */,
 				12228A731AB1BABA00CF0800 /* RegistVC.m in Sources */,
@@ -6382,6 +6664,7 @@
 				122EFBC91C40FDAC00CE0EA0 /* WaitPayOrderVC.m in Sources */,
 				123667381C44AA04000FAF70 /* LuckyGoodsDesCell.m in Sources */,
 				12F9632F1B3D4BDF00FF6A3E /* NSObject+SBJson.m in Sources */,
+				12BC72731C78531700FC6A1C /* WithdrawadsRecordListModel.m in Sources */,
 				123666D11C449760000FAF70 /* OverdueCell.m in Sources */,
 				12CE12021C50AF2600FF85FA /* WaitSendOrderMoneyCell.m in Sources */,
 				128766EE1B50BD4D00A79320 /* AboutShopEntity.m in Sources */,
@@ -6395,6 +6678,7 @@
 				775842BD1AB95A300039B129 /* WXGuidMaskView.m in Sources */,
 				7758432B1AB95A300039B129 /* WXUIScrollView.m in Sources */,
 				12F4228C1B1D61E100643DD7 /* AddressBaseInfoCell.m in Sources */,
+				12BC725D1C78531700FC6A1C /* MyClientMoneyCell.m in Sources */,
 				122842091C490F6300D76A6B /* GoodsOtherSellerCell.m in Sources */,
 				123666CE1C449760000FAF70 /* UserBonusEntity.m in Sources */,
 				1236673C1C44AA04000FAF70 /* LuckyGoodsMakeOrderCell.m in Sources */,
@@ -6402,6 +6686,7 @@
 				775842B91AB95A300039B129 /* WXUserOBJ.m in Sources */,
 				775843231AB95A300039B129 /* WXUIButton.m in Sources */,
 				122EFBAF1C40F34400CE0EA0 /* DLScrollTabbarView.m in Sources */,
+				12BC72691C78531700FC6A1C /* UserCutSourceListCell.m in Sources */,
 				123667371C44AA04000FAF70 /* LuckyGoodsInfoVC.m in Sources */,
 				122AB89C1C3E6D0D00AC9DF5 /* NewGoodsInfoZoomImgItem.m in Sources */,
 				775842B41AB95A300039B129 /* WXFileManager.m in Sources */,
@@ -6413,11 +6698,13 @@
 				7758433A1AB95A300039B129 /* WXUIWindow.m in Sources */,
 				122D641C1C3F99C80086AAB8 /* MakeOrderGoodsListCell.m in Sources */,
 				124607C51C4E2CB8001C703D /* ClassifyModel.m in Sources */,
+				12BC725F1C78531700FC6A1C /* NewMyClientVC.m in Sources */,
 				120D01651BBB91B5005CAA6C /* RSADataVerifier.m in Sources */,
 				7758435B1AB95FAC0039B129 /* WXService+UserInfo.m in Sources */,
 				775C58CE1ABA7B75005B6B40 /* ContacterEntity+Detail.m in Sources */,
 				775C58D21ABA7B75005B6B40 /* WXContactMonitor.m in Sources */,
 				12228A6C1AB1B1D000CF0800 /* LoginModel.m in Sources */,
+				12BC72661C78531700FC6A1C /* UserCutSourceEntity.m in Sources */,
 				120A2C161AB17A92006A28B1 /* SignModel.m in Sources */,
 				128B59911B53D6C5006D790B /* WXTMallViewController.m in Sources */,
 				77DB942E1AAFF0BE0021A816 /* NSDictionary+Plist.m in Sources */,
@@ -6428,6 +6715,7 @@
 				12B05DF21B8C3CC80083D648 /* ShareSucceedModel.m in Sources */,
 				12F963341B3D4BDF00FF6A3E /* SBJsonStreamParserState.m in Sources */,
 				DDB58F461AD3C6A2006248E9 /* ContactDetailCell.m in Sources */,
+				12BC725E1C78531700FC6A1C /* MyClientMoneyVC.m in Sources */,
 				128672161B6A1857006391B2 /* WechatPayModel.m in Sources */,
 				775C58381ABA5F31005B6B40 /* KFLoger.m in Sources */,
 				122AB8341C3E384C00AC9DF5 /* UIScrollView+MJRefresh.m in Sources */,
@@ -6450,26 +6738,31 @@
 				775842D21AB95A300039B129 /* GTMNSString+HTML.m in Sources */,
 				120A56CA1B2EE8730048A1CA /* WXTURLFeedOBJ+NewData.m in Sources */,
 				128241471B60D062001EE0BD /* DownSheetCell.m in Sources */,
+				12BC72581C78531700FC6A1C /* MyClientInfoModel.m in Sources */,
 				123667521C44AA04000FAF70 /* LuckySharkEntity.m in Sources */,
 				128221C61B184C3B004613BB /* ASIDownloadCache.m in Sources */,
 				12048C731B799D35000DF7F5 /* RechargeListModel.m in Sources */,
 				122D63F01C3F99250086AAB8 /* MakeOrderVC.m in Sources */,
 				DDEA9F111B1C3A1800530C1C /* StrechyParallaxScrollView.m in Sources */,
+				12BC72751C78531700FC6A1C /* UserWithdrawalsVC.m in Sources */,
 				775842F41AB95A300039B129 /* LoadMoreTableFooterView.m in Sources */,
 				7758432D1AB95A300039B129 /* WXUISearchDisplayController.m in Sources */,
 				DDB58F491AD3C6A2006248E9 /* ContactBaseEntity.m in Sources */,
 				122AB8881C3E6CA600AC9DF5 /* NLSubTableViewController.m in Sources */,
 				126CA40F1AB2DB1200E08A0B /* FetchPwdModel.m in Sources */,
 				12CE120F1C50B0A400FF85FA /* WaitReceiveOrderHandleCell.m in Sources */,
+				12BC72571C78531700FC6A1C /* MyClientEntity.m in Sources */,
 				120A2BEE1AB135DD006A28B1 /* T_SignGifView.m in Sources */,
 				1282218E1B1847E7004613BB /* RemotionFileEntity.m in Sources */,
 				122EFBD61C41010E00CE0EA0 /* AllOrderListStateCell.m in Sources */,
+				12BC72681C78531700FC6A1C /* UserCutSourceListVC.m in Sources */,
 				775843151AB95A300039B129 /* WXTouchEventView.m in Sources */,
 				7758431C1AB95A300039B129 /* WXMFMessageComposeVC.m in Sources */,
 				DDB58F431AD3C6A2006248E9 /* CallBackVC.m in Sources */,
 				DDB58F451AD3C6A2006248E9 /* ContactDetailVC.m in Sources */,
 				12F963301B3D4BDF00FF6A3E /* SBJsonParser.m in Sources */,
 				123667391C44AA04000FAF70 /* LuckyGoodsInfoTopImgCell.m in Sources */,
+				12BC72641C78531700FC6A1C /* WXJuniorListVC.m in Sources */,
 				7758431F1AB95A300039B129 /* WXUIAlertView.m in Sources */,
 				775C58D11ABA7B75005B6B40 /* WXContacterEntity.m in Sources */,
 				123667551C44AA04000FAF70 /* WinningBackgroundView.m in Sources */,
@@ -6479,6 +6772,8 @@
 				122D63E41C3F95A30086AAB8 /* AreaEntity.m in Sources */,
 				DDB58F561AD3C6A2006248E9 /* WXContacterVC.m in Sources */,
 				122AB8841C3E6CA600AC9DF5 /* NLMainTableViewController.m in Sources */,
+				12BC72651C78531700FC6A1C /* UserCutMoneyCell.m in Sources */,
+				12BC726A1C78531700FC6A1C /* MyClientInfoCell.m in Sources */,
 				120A2BF21AB135DE006A28B1 /* UserInfoCommonCell.m in Sources */,
 				12CE12031C50AF2600FF85FA /* WaitSendOrderStateCell.m in Sources */,
 				775843C11AB971CF0039B129 /* UIImage+Render.m in Sources */,
@@ -6498,12 +6793,14 @@
 				122D63D21C3F92980086AAB8 /* NewUserAddressModel.m in Sources */,
 				DDB58F551AD3C6A2006248E9 /* WXContacterCell.m in Sources */,
 				12F963381B3D4BDF00FF6A3E /* SBJsonTokeniser.m in Sources */,
+				12BC72701C78531700FC6A1C /* ConfirmUserAliModel.m in Sources */,
 				122D64201C3F99C80086AAB8 /* MakeOrderUseBonusCell.m in Sources */,
 				122EFBAC1C40F34400CE0EA0 /* DLCustomSlideView.m in Sources */,
 				775C58421ABA5F31005B6B40 /* Tools.m in Sources */,
 				123667401C44AA04000FAF70 /* LuckyGoodsOrderInfoVC.m in Sources */,
 				122AB89D1C3E6D0D00AC9DF5 /* NewImageZoomView.m in Sources */,
 				775842B51AB95A300039B129 /* WXTURLFeedOBJ+Data.m in Sources */,
+				12BC72721C78531700FC6A1C /* UserAliEntity.m in Sources */,
 				1218042E1ACB899B009DB7E7 /* DBImageView.m in Sources */,
 				122EFBD31C40FE0300CE0EA0 /* WaitSendOrderVC.m in Sources */,
 				DDB58F4F1AD3C6A2006248E9 /* SimpleContacterCell.m in Sources */,
@@ -6543,6 +6840,7 @@
 				7758432C1AB95A300039B129 /* WXUISearchBar.m in Sources */,
 				126CA3DB1AB278FC00E08A0B /* WXTFindVC.m in Sources */,
 				12CE11E41C507D0600FF85FA /* OrderInfoUserAddressCell.m in Sources */,
+				12BC72621C78531700FC6A1C /* WXJuniorListModel.m in Sources */,
 				122AB8601C3E67EC00AC9DF5 /* GoodsStockView.m in Sources */,
 				123667431C44AA04000FAF70 /* LuckyOrderContactSellerCell.m in Sources */,
 				12F963351B3D4BDF00FF6A3E /* SBJsonStreamWriter.m in Sources */,
@@ -6582,6 +6880,7 @@
 				120EC7801BB8F31800538637 /* qrencode.c in Sources */,
 				12F963361B3D4BDF00FF6A3E /* SBJsonStreamWriterAccumulator.m in Sources */,
 				127329131B5CDDF4002AD4AE /* AboutVC.m in Sources */,
+				12BC72631C78531700FC6A1C /* WXJuniorListCell.m in Sources */,
 				77DB93F01AAFE70D0021A816 /* RecentData.m in Sources */,
 				126CA3D21AB2744600E08A0B /* WXTUserDefault.m in Sources */,
 				120D01741BBB9465005CAA6C /* APAuthV2Info.m in Sources */,
@@ -6593,6 +6892,7 @@
 				122858511C4F83D60089A369 /* WaitPayOrderHandleCell.m in Sources */,
 				1236673D1C44AA04000FAF70 /* LuckyGoodsMakeOrderDateCell.m in Sources */,
 				775843241AB95A300039B129 /* WXUIImagePickerController.m in Sources */,
+				12BC72601C78531700FC6A1C /* NewUserCutVC.m in Sources */,
 				775842D31AB95A300039B129 /* NSDate+Compare.m in Sources */,
 				DDB58F471AD3C6A2006248E9 /* ContactsCallViewController.m in Sources */,
 				122D64251C3F99C80086AAB8 /* MakeOrderGoodsMoneyCell.m in Sources */,
@@ -6627,12 +6927,14 @@
 				12F572321B42766D00128294 /* T_SettingSwitchCell.m in Sources */,
 				DDB58F501AD3C6A2006248E9 /* WXTCallHistoryCell.m in Sources */,
 				7758435C1AB95FAC0039B129 /* WXService.m in Sources */,
+				12BC72771C78531700FC6A1C /* WithdrawalsRecordListVC.m in Sources */,
 				122AB8D01C3E6F2C00AC9DF5 /* NewGoodsInfoWebViewViewController.m in Sources */,
 				122D63DB1C3F93760086AAB8 /* NewAddressTextfieldCell.m in Sources */,
 				122AB8BF1C3E6D5500AC9DF5 /* UIButton+WebCache.m in Sources */,
 				122841FE1C48E05C00D76A6B /* HomePageRecEntity.m in Sources */,
 				123667561C44AA04000FAF70 /* WinningView.m in Sources */,
 				122AB8631C3E684400AC9DF5 /* GoodsStockNameCell.m in Sources */,
+				12BC725A1C78531700FC6A1C /* MyCutRefereeModel.m in Sources */,
 				DDB58F4E1AD3C6A2006248E9 /* CallHistoryCell.m in Sources */,
 				1284CC851B54ADB900D98F79 /* PaySucceedModel.m in Sources */,
 				122AB8301C3E384C00AC9DF5 /* MJRefreshConst.m in Sources */,
@@ -6647,6 +6949,7 @@
 				1236674F1C44AA04000FAF70 /* LuckyGoodsModel.m in Sources */,
 				12F5722F1B4274DB00128294 /* NewSystemSettingVC.m in Sources */,
 				775843111AB95A300039B129 /* WXMutiScanViewCell.m in Sources */,
+				12BC726E1C78531700FC6A1C /* AliSendMsgModel.m in Sources */,
 				122AB8C01C3E6D5500AC9DF5 /* UIImageView+WebCache.m in Sources */,
 				122D64211C3F99C80086AAB8 /* MakeOrderBananceSwitchCell.m in Sources */,
 				12B1F6901B788961009FBA6D /* RechargeTypeVC.m in Sources */,
@@ -6674,11 +6977,13 @@
 				775842F61AB95A300039B129 /* PullPsCollectionView.m in Sources */,
 				77DB93F91AAFE79D0021A816 /* NSString+Helper.m in Sources */,
 				775C583F1ABA5F31005B6B40 /* PinyinHelper.m in Sources */,
+				12BC72671C78531700FC6A1C /* UserCutSourceModel.m in Sources */,
 				120D01751BBB9465005CAA6C /* Order.m in Sources */,
 				7758431A1AB95A300039B129 /* WXWaitingHud.m in Sources */,
 				12BD30F51B3E78CA00170316 /* OrderWechatCell.m in Sources */,
 				12F571691B42253800128294 /* payRequsestHandler.mm in Sources */,
 				12F9162D1B19B0AA00C94717 /* BaseInfoVC.m in Sources */,
+				12BC72591C78531700FC6A1C /* MyClientPersonModel.m in Sources */,
 				12CE11D91C506E7500FF85FA /* UserQuestionModel.m in Sources */,
 				12F380351B3BEF6F00E9690C /* UserAddressModel.m in Sources */,
 				120B754E1B1C19EA00B8746C /* PersonSexVC.m in Sources */,
@@ -6717,6 +7022,7 @@
 				12D0C8721AB685250039A197 /* AboutWxtInfoVC.m in Sources */,
 				128083DA1B62147E00260B9F /* ShareBrowserView.m in Sources */,
 				775C58D01ABA7B75005B6B40 /* WXContacterEntity+Detail.m in Sources */,
+				12BC72741C78531700FC6A1C /* WithdrawalsRecordEntity.m in Sources */,
 				123667411C44AA04000FAF70 /* LuckyGoodsInfoModel.m in Sources */,
 				12CE12011C50AF2600FF85FA /* WaitSendOrderHandleCell.m in Sources */,
 				122841F41C48D37200D76A6B /* HomePageTopEntity.m in Sources */,
@@ -6793,6 +7099,7 @@
 				1243CCB91AE7C31B003E0943 /* WXTUITabbarVC.m in Sources */,
 				12D0C8761AB6AA8C0039A197 /* WXTVersion.m in Sources */,
 				775842D11AB95A300039B129 /* GTMBase64.m in Sources */,
+				12BC726D1C78531700FC6A1C /* ConfirmUserAliPayVC.m in Sources */,
 				122EFBB01C40F34400CE0EA0 /* DLTabedSlideView.m in Sources */,
 				122C1E0B1C4750BD009B2AE3 /* UpdataPicture.m in Sources */,
 				122AB8731C3E6B9E00AC9DF5 /* GoodsEvaluateCell.m in Sources */,
@@ -6826,8 +7133,11 @@
 				125A76B01B56747F00959AD8 /* JPushInfoModel.m in Sources */,
 				DDB58F4C1AD3C6A2006248E9 /* CallViewController.m in Sources */,
 				123667361C44AA04000FAF70 /* WXCommonWebView.m in Sources */,
+				12BC726C1C78531700FC6A1C /* ApplyAliWithdrawalsVC.m in Sources */,
+				12BC725B1C78531700FC6A1C /* MyRefereeEntity.m in Sources */,
 				122D63EA1C3F963A0086AAB8 /* LocalAreaModel.m in Sources */,
 				122AB8D31C3E6F8C00AC9DF5 /* GoodsInfoModel.m in Sources */,
+				12BC72611C78531700FC6A1C /* JuniorListEntity.m in Sources */,
 				777A38561AC3933D001CF5FF /* WXTDatabase.m in Sources */,
 				120EC7841BB8F31800538637 /* split.c in Sources */,
 				128221B21B184ABB004613BB /* ASIHTTPRequest.m in Sources */,
@@ -7016,7 +7326,7 @@
 					"$(PROJECT_DIR)/RKWXT/baiduCount",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wx.companyExplicit.wxmall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wx.company.pushdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "eda59b2e-976d-40d1-80d3-f16406e0dd71";
 				VALID_ARCHS = "armv7 armv7s";
@@ -7078,9 +7388,9 @@
 					"$(PROJECT_DIR)/RKWXT/baiduCount",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wx.companyExplicit.wxmall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wx.company.pushdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7fb88bea-7d4e-4ec3-aaef-f52ee2e932d9";
+				PROVISIONING_PROFILE = "8be15fb9-1d9d-4490-a726-aec6ddb9c2c8";
 				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
