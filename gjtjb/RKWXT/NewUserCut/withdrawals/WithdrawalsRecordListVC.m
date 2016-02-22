@@ -9,27 +9,19 @@
 #import "WithdrawalsRecordListVC.h"
 #import "WithdrawadsRecordListModel.h"
 #import "AliRecordListCell.h"
-//#import "OrderListTableView.h"
-
-typedef enum{
-    E_CellRefreshing_Nothing = 0,
-    E_CellRefreshing_UnderWay,
-    E_CellRefreshing_Finish,
-    
-    E_CellRefreshing_Invalid,
-}E_CellRefreshing;
+#import "MJRefresh.h"
 
 #define size self.bounds.size
 #define EveryTimeLoadDataNumber 10
 
-@interface WithdrawalsRecordListVC()<UITableViewDataSource,UITableViewDelegate,WithdrawadsRecordListModelDelegate/*,PullingRefreshTableViewDelegate*/>{
+@interface WithdrawalsRecordListVC()<UITableViewDataSource,UITableViewDelegate,WithdrawadsRecordListModelDelegate>{
     UITableView *_tableView;
     
     WithdrawadsRecordListModel *_model;
-    NSInteger listCount;
     NSArray *listArr;
+    
+    BOOL isRefresh;
 }
-@property (nonatomic,assign) E_CellRefreshing e_cellRefreshing;
 @end
 
 @implementation WithdrawalsRecordListVC
@@ -53,13 +45,30 @@ typedef enum{
     [_tableView setBackgroundColor:[UIColor whiteColor]];
     [_tableView setDataSource:self];
     [_tableView setDelegate:self];
-//    [_tableView setPullingDelegate:self];
     [self addSubview:_tableView];
     [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    [self setupRefresh];
     
-    self.e_cellRefreshing = E_CellRefreshing_Nothing;
     [_model loadUserWithdrawadlsRecordList:0 With:EveryTimeLoadDataNumber];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
+}
+
+//集成刷新控件
+-(void)setupRefresh{
+    //1.下拉刷新(进入刷新状态会调用self的headerRefreshing)
+    [_tableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [_tableView addFooterWithTarget:self action:@selector(footerRefreshing)];
+    
+    //设置文字
+    _tableView.headerPullToRefreshText = @"下拉刷新";
+    _tableView.headerReleaseToRefreshText = @"松开刷新";
+    _tableView.headerRefreshingText = @"刷新中";
+    
+    _tableView.footerPullToRefreshText = @"上拉加载";
+    _tableView.footerReleaseToRefreshText = @"松开加载";
+    _tableView.footerRefreshingText = @"加载中";
 }
 
 //改变cell分割线置顶
@@ -116,15 +125,31 @@ typedef enum{
     return cell;
 }
 
+#pragma mark mjRefresh
+-(void)headerRefreshing{
+    isRefresh = YES;
+    if([listArr count] == 0){
+        [_model loadUserWithdrawadlsRecordList:0 With:EveryTimeLoadDataNumber];
+    }else{
+        [_model loadUserWithdrawadlsRecordList:0 With:[listArr count]];
+    }
+}
+
+-(void)footerRefreshing{
+    isRefresh = NO;
+    [_model loadUserWithdrawadlsRecordList:[listArr count] With:EveryTimeLoadDataNumber];
+}
+
 -(void)loadUserWithdrawadlsRecordListSucceed{
     [self unShowWaitView];
-    if(listCount == [_model.recordListArr count] && self.e_cellRefreshing != E_CellRefreshing_Finish){
-//        _tableView.reachedTheEnd = YES;
-    }
-    self.e_cellRefreshing = E_CellRefreshing_Nothing;
     listArr = _model.recordListArr;
-    listCount = [listArr count];
-    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    
+    if(isRefresh){
+        [_tableView headerEndRefreshing];
+    }else{
+        [_tableView footerEndRefreshing];
+    }
+    [_tableView reloadData];
 }
 
 -(void)loadUserWithdrawadlsRecordListFailed:(NSString *)errorMsg{
@@ -133,55 +158,13 @@ typedef enum{
         errorMsg = @"获取数据失败";
     }
     [UtilTool showAlertView:errorMsg];
-//    _tableView.reachedTheEnd = YES;
+    
+    if(isRefresh){
+        [_tableView headerEndRefreshing];
+    }
+    if(!isRefresh){
+        [_tableView footerEndRefreshing];
+    }
 }
-
-#pragma mark pullingDelegate
-//-(void)pullingTableViewDidStartRefreshing:(OrderListTableView *)tableView{
-//    self.e_cellRefreshing = E_CellRefreshing_UnderWay;
-//    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
-//}
-//
-//-(NSDate*)pullingTableViewRefreshingFinishedDate{
-//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//    df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-//    NSString *dateStr = [UtilTool getCurDateTime:1];
-//    NSDate *date = [df dateFromString:dateStr];
-//    return date;
-//}
-//
-//-(void)pullingTableViewDidStartLoading:(OrderListTableView *)tableView{
-//    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
-//}
-//
-//-(void)loadData{
-//    if(self.e_cellRefreshing == E_CellRefreshing_UnderWay){
-//        self.e_cellRefreshing = E_CellRefreshing_Finish;
-//        [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
-//        [_tableView tableViewDidFinishedLoadingWithMessage:@"刷新完成"];
-//        [_model setType:AliMoney_RecordList_Refresh];
-//        [_model loadUserWithdrawadlsRecordList:0 With:[listArr count]];
-//    }else{
-//        if(_tableView.reachedTheEnd){
-//            return;
-//        }
-//        [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
-//        [_model setType:AliMoney_RecordList_Loading];
-//        [_model loadUserWithdrawadlsRecordList:[listArr count] With:EveryTimeLoadDataNumber];
-//    }
-//    if(!_tableView.reachedTheEnd){
-//        [_tableView tableViewDidFinishedLoading];
-//        _tableView.reachedTheEnd = NO;
-//    }
-//}
-//
-//#pragma mark - Scroll
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    [_tableView tableViewDidScroll:scrollView];
-//}
-//
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    [_tableView tableViewDidEndDragging:scrollView];
-//}
 
 @end
