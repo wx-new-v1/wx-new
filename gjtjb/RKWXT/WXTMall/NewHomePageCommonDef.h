@@ -63,6 +63,7 @@ enum{
 #import "SignViewController.h"
 #import "LuckyShakeVC.h"
 #import "GoodsClassifyVC.h"
+#import "NewUserCutVC.h"
 
 #import "NewHomePageModel.h"
 #import "HomePageSurpEntity.h"

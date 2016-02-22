@@ -383,6 +383,11 @@
             [self.wxNavigationController pushViewController:signVC];
         }
             break;
+        case T_BaseFunction_Cut:
+        {
+            NewUserCutVC *userCutVC = [[NewUserCutVC alloc] init];
+            [self.wxNavigationController pushViewController:userCutVC];
+        }
             break;
         default:
             [UtilTool showTipView:@"努力开发中..."];

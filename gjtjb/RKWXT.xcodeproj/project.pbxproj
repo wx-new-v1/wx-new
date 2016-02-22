@@ -384,6 +384,16 @@
 		1272490E1B2574C9001BDC15 /* RegistUserImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1272490B1B2574C9001BDC15 /* RegistUserImg@2x.png */; };
 		1272490F1B2574C9001BDC15 /* RegistUserPwdImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1272490C1B2574C9001BDC15 /* RegistUserPwdImg@2x.png */; };
 		127321121C7AB81000C8D1D7 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 127321101C7AB81000C8D1D7 /* libMobClickLibrary.a */; };
+		1273211E1C7ABDE100C8D1D7 /* JuniorListUserHeadImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321141C7ABDE100C8D1D7 /* JuniorListUserHeadImg@2x.png */; };
+		1273211F1C7ABDE100C8D1D7 /* JuniorNumChampion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321151C7ABDE100C8D1D7 /* JuniorNumChampion@2x.png */; };
+		127321201C7ABDE100C8D1D7 /* JuniorNumSecond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321161C7ABDE100C8D1D7 /* JuniorNumSecond@2x.png */; };
+		127321211C7ABDE100C8D1D7 /* JuniorNumThird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321171C7ABDE100C8D1D7 /* JuniorNumThird@2x.png */; };
+		127321221C7ABDE100C8D1D7 /* UserCutRankingList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321181C7ABDE100C8D1D7 /* UserCutRankingList@2x.png */; };
+		127321231C7ABDE100C8D1D7 /* UserCutSourceArrowImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127321191C7ABDE100C8D1D7 /* UserCutSourceArrowImg@2x.png */; };
+		127321241C7ABDE100C8D1D7 /* UserOnceClientImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1273211A1C7ABDE100C8D1D7 /* UserOnceClientImg@2x.png */; };
+		127321251C7ABDE100C8D1D7 /* UserSecondClientImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1273211B1C7ABDE100C8D1D7 /* UserSecondClientImg@2x.png */; };
+		127321261C7ABDE100C8D1D7 /* UserThirdClientImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1273211C1C7ABDE100C8D1D7 /* UserThirdClientImg@2x.png */; };
+		127321271C7ABDE100C8D1D7 /* UserWithdrawals@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1273211D1C7ABDE100C8D1D7 /* UserWithdrawals@2x.png */; };
 		127329131B5CDDF4002AD4AE /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 127329121B5CDDF4002AD4AE /* AboutVC.m */; };
 		1273291B1B5CF73C002AD4AE /* PersonalInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1273291A1B5CF73C002AD4AE /* PersonalInfoModel.m */; };
 		1273291E1B5CFFEE002AD4AE /* PersonalInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1273291D1B5CFFEE002AD4AE /* PersonalInfoEntity.m */; };
@@ -1545,6 +1555,16 @@
 		1272490C1B2574C9001BDC15 /* RegistUserPwdImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegistUserPwdImg@2x.png"; sourceTree = "<group>"; };
 		127321101C7AB81000C8D1D7 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		127321111C7AB81000C8D1D7 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		127321141C7ABDE100C8D1D7 /* JuniorListUserHeadImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JuniorListUserHeadImg@2x.png"; sourceTree = "<group>"; };
+		127321151C7ABDE100C8D1D7 /* JuniorNumChampion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JuniorNumChampion@2x.png"; sourceTree = "<group>"; };
+		127321161C7ABDE100C8D1D7 /* JuniorNumSecond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JuniorNumSecond@2x.png"; sourceTree = "<group>"; };
+		127321171C7ABDE100C8D1D7 /* JuniorNumThird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JuniorNumThird@2x.png"; sourceTree = "<group>"; };
+		127321181C7ABDE100C8D1D7 /* UserCutRankingList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserCutRankingList@2x.png"; sourceTree = "<group>"; };
+		127321191C7ABDE100C8D1D7 /* UserCutSourceArrowImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserCutSourceArrowImg@2x.png"; sourceTree = "<group>"; };
+		1273211A1C7ABDE100C8D1D7 /* UserOnceClientImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserOnceClientImg@2x.png"; sourceTree = "<group>"; };
+		1273211B1C7ABDE100C8D1D7 /* UserSecondClientImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserSecondClientImg@2x.png"; sourceTree = "<group>"; };
+		1273211C1C7ABDE100C8D1D7 /* UserThirdClientImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserThirdClientImg@2x.png"; sourceTree = "<group>"; };
+		1273211D1C7ABDE100C8D1D7 /* UserWithdrawals@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UserWithdrawals@2x.png"; sourceTree = "<group>"; };
 		127329111B5CDDF4002AD4AE /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		127329121B5CDDF4002AD4AE /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		127329191B5CF73C002AD4AE /* PersonalInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoModel.h; sourceTree = "<group>"; };
@@ -4255,6 +4275,23 @@
 			path = UMeng;
 			sourceTree = "<group>";
 		};
+		127321131C7ABDE100C8D1D7 /* withdrawals */ = {
+			isa = PBXGroup;
+			children = (
+				127321141C7ABDE100C8D1D7 /* JuniorListUserHeadImg@2x.png */,
+				127321151C7ABDE100C8D1D7 /* JuniorNumChampion@2x.png */,
+				127321161C7ABDE100C8D1D7 /* JuniorNumSecond@2x.png */,
+				127321171C7ABDE100C8D1D7 /* JuniorNumThird@2x.png */,
+				127321181C7ABDE100C8D1D7 /* UserCutRankingList@2x.png */,
+				127321191C7ABDE100C8D1D7 /* UserCutSourceArrowImg@2x.png */,
+				1273211A1C7ABDE100C8D1D7 /* UserOnceClientImg@2x.png */,
+				1273211B1C7ABDE100C8D1D7 /* UserSecondClientImg@2x.png */,
+				1273211C1C7ABDE100C8D1D7 /* UserThirdClientImg@2x.png */,
+				1273211D1C7ABDE100C8D1D7 /* UserWithdrawals@2x.png */,
+			);
+			path = withdrawals;
+			sourceTree = "<group>";
+		};
 		127329181B5CF72F002AD4AE /* CommonModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -5323,6 +5360,7 @@
 		2563B4861AAAFA7500C04227 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				127321131C7ABDE100C8D1D7 /* withdrawals */,
 				128083DB1B622A6100260B9F /* ShareImg */,
 				128585041B3AA7E5005E240E /* MakeOrderImg */,
 				1295C5E21B293B24004C861D /* OrderImg */,
@@ -6359,9 +6397,12 @@
 				12F422811B1D5A2900643DD7 /* AddressSelNormal@2x.png in Resources */,
 				12F2D8071B1F01E900C8017F /* initImage@2x.png in Resources */,
 				12F3CC801B1DE82C00E64DE4 /* WaitGainGoods@2x.png in Resources */,
+				127321201C7ABDE100C8D1D7 /* JuniorNumSecond@2x.png in Resources */,
 				124535581AE9D146004198C9 /* sign3@2x.png in Resources */,
 				124535131AE9D0BC004198C9 /* UserSelected@2x.png in Resources */,
+				127321271C7ABDE100C8D1D7 /* UserWithdrawals@2x.png in Resources */,
 				1241E5521AE9D89B00811D3F /* delSel@2x.png in Resources */,
+				127321241C7ABDE100C8D1D7 /* UserOnceClientImg@2x.png in Resources */,
 				1241E5471AE9D89B00811D3F /* 5N@2x.png in Resources */,
 				128083E11B622A6D00260B9F /* ShareQzoneImg@2x.png in Resources */,
 				12F46A3E1B20012000B8EC98 /* T_GoodsInfo@2x.png in Resources */,
@@ -6375,6 +6416,7 @@
 				12D52BBF1AC2EF4400C5CE71 /* dtmf-9.aif in Resources */,
 				124535591AE9D146004198C9 /* sign4@2x.png in Resources */,
 				124535531AE9D146004198C9 /* sign30@2x.png in Resources */,
+				127321211C7ABDE100C8D1D7 /* JuniorNumThird@2x.png in Resources */,
 				12CCD7ED1AC0184400A5BDF0 /* defaultContactIcon@2x.png in Resources */,
 				1284CC821B54943C00D98F79 /* ContactInfoBgImg@2x.png in Resources */,
 				124535111AE9D0BC004198C9 /* MallSelected@2x.png in Resources */,
@@ -6386,6 +6428,7 @@
 				12D52BB71AC2EF4400C5CE71 /* dtmf-1.aif in Resources */,
 				12846A8A1B252D720021F9FE /* LoginUpBgImg@2x.png in Resources */,
 				775842AF1AB95A300039B129 /* CustomMade.plist in Resources */,
+				1273211E1C7ABDE100C8D1D7 /* JuniorListUserHeadImg@2x.png in Resources */,
 				124535421AE9D146004198C9 /* sign14@2x.png in Resources */,
 				122D63AE1C3F465A0086AAB8 /* MyCutImg@2x.png in Resources */,
 				127FDD781B57A76E0059BDB6 /* CallBtnUpImg@2x.png in Resources */,
@@ -6483,6 +6526,7 @@
 				12F46A391B20012000B8EC98 /* T_Attention@2x.png in Resources */,
 				12F3CC811B1DE82C00E64DE4 /* WaitingPayImg@2x.png in Resources */,
 				1236675B1C44AA04000FAF70 /* SharkCenterImg@2x.png in Resources */,
+				127321221C7ABDE100C8D1D7 /* UserCutRankingList@2x.png in Resources */,
 				128221D71B184E84004613BB /* HomePageLeftBtn@2x.png in Resources */,
 				1236675C1C44AA04000FAF70 /* SharkCloseBtnImg@2x.png in Resources */,
 				1241E5511AE9D89B00811D3F /* delNumber@2x.png in Resources */,
@@ -6499,6 +6543,7 @@
 				128766F71B50F1D200A79320 /* TwoDimension@2x.png in Resources */,
 				1285850C1B3AA7E5005E240E /* MakeOrderLinImg@2x.png in Resources */,
 				12D52BBC1AC2EF4400C5CE71 /* dtmf-6.aif in Resources */,
+				127321261C7ABDE100C8D1D7 /* UserThirdClientImg@2x.png in Resources */,
 				12BD30F81B3E79D700170316 /* OrderAlipayImg@2x.png in Resources */,
 				12F3CC751B1DE82C00E64DE4 /* AboutWxImg@2x.png in Resources */,
 				1236675D1C44AA04000FAF70 /* SharkGoodsBtnImg@2x.png in Resources */,
@@ -6519,6 +6564,7 @@
 				124535401AE9D146004198C9 /* sign12@2x.png in Resources */,
 				1236675E1C44AA04000FAF70 /* SharkRuleImg@2x.png in Resources */,
 				1245353E1AE9D146004198C9 /* sign10@2x.png in Resources */,
+				127321231C7ABDE100C8D1D7 /* UserCutSourceArrowImg@2x.png in Resources */,
 				12F2CCE81B4CF4D30085F78F /* RegistUserCodeImg@2x.png in Resources */,
 				12F3CC7E1B1DE82C00E64DE4 /* SignGainCallMoney@2x.png in Resources */,
 				1245355E1AE9D146004198C9 /* sign9@2x.png in Resources */,
@@ -6540,6 +6586,7 @@
 				1241E55F1AE9D91400811D3F /* AboutUsLogo@2x.png in Resources */,
 				1241E5331AE9D89B00811D3F /* CallBackBgImg@2x.jpg in Resources */,
 				1241E53E1AE9D89B00811D3F /* 0S@2x.png in Resources */,
+				1273211F1C7ABDE100C8D1D7 /* JuniorNumChampion@2x.png in Resources */,
 				1245354D1AE9D146004198C9 /* sign25@2x.png in Resources */,
 				1245353D1AE9D146004198C9 /* signEveryDay@2x.png in Resources */,
 				128083E51B6232EA00260B9F /* PersonalShareImg@2x.png in Resources */,
@@ -6547,6 +6594,7 @@
 				128083E31B622A6D00260B9F /* ShareWxFriendImg@2x.png in Resources */,
 				1263EFE91ACD35820014C347 /* iTunesArtWork.png in Resources */,
 				1241E54D1AE9D89B00811D3F /* 8N@2x.png in Resources */,
+				127321251C7ABDE100C8D1D7 /* UserSecondClientImg@2x.png in Resources */,
 				1272490D1B2574C9001BDC15 /* RegistOtherUser@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
