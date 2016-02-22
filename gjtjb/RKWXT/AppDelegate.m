@@ -31,6 +31,7 @@
 
 #import "AllAreaDataModel.h"
 #import "BaiduMobStat.h"
+#import "MobClick.h"
 
 @interface AppDelegate (){
     CTCallCenter *_callCenter;
@@ -57,6 +58,9 @@
     //向qq注册
     id result = [[TencentOAuth alloc] initWithAppId:@"1104707907" andDelegate:nil];
     if(result){}
+    
+    //友盟
+    [MobClick startWithAppkey:@"56c171cf67e58ef17d001152" reportPolicy:BATCH   channelId:@"IOS"];
     
 	return YES;
 }

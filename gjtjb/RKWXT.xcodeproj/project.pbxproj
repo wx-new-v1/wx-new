@@ -383,6 +383,7 @@
 		1272490D1B2574C9001BDC15 /* RegistOtherUser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1272490A1B2574C9001BDC15 /* RegistOtherUser@2x.png */; };
 		1272490E1B2574C9001BDC15 /* RegistUserImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1272490B1B2574C9001BDC15 /* RegistUserImg@2x.png */; };
 		1272490F1B2574C9001BDC15 /* RegistUserPwdImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1272490C1B2574C9001BDC15 /* RegistUserPwdImg@2x.png */; };
+		127321121C7AB81000C8D1D7 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 127321101C7AB81000C8D1D7 /* libMobClickLibrary.a */; };
 		127329131B5CDDF4002AD4AE /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 127329121B5CDDF4002AD4AE /* AboutVC.m */; };
 		1273291B1B5CF73C002AD4AE /* PersonalInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1273291A1B5CF73C002AD4AE /* PersonalInfoModel.m */; };
 		1273291E1B5CFFEE002AD4AE /* PersonalInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1273291D1B5CFFEE002AD4AE /* PersonalInfoEntity.m */; };
@@ -1542,6 +1543,8 @@
 		1272490A1B2574C9001BDC15 /* RegistOtherUser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegistOtherUser@2x.png"; sourceTree = "<group>"; };
 		1272490B1B2574C9001BDC15 /* RegistUserImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegistUserImg@2x.png"; sourceTree = "<group>"; };
 		1272490C1B2574C9001BDC15 /* RegistUserPwdImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegistUserPwdImg@2x.png"; sourceTree = "<group>"; };
+		127321101C7AB81000C8D1D7 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		127321111C7AB81000C8D1D7 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		127329111B5CDDF4002AD4AE /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		127329121B5CDDF4002AD4AE /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		127329191B5CF73C002AD4AE /* PersonalInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoModel.h; sourceTree = "<group>"; };
@@ -2393,6 +2396,7 @@
 				777059B61AAFE48C0097526C /* AddressBookUI.framework in Frameworks */,
 				120D00FF1BBB919A005CAA6C /* libssl.a in Frameworks */,
 				1F036786D135E645F286F56B /* libPods.a in Frameworks */,
+				127321121C7AB81000C8D1D7 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4242,6 +4246,15 @@
 			path = Regist;
 			sourceTree = "<group>";
 		};
+		1273210F1C7AB7F300C8D1D7 /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				127321101C7AB81000C8D1D7 /* libMobClickLibrary.a */,
+				127321111C7AB81000C8D1D7 /* MobClick.h */,
+			);
+			path = UMeng;
+			sourceTree = "<group>";
+		};
 		127329181B5CF72F002AD4AE /* CommonModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -5237,6 +5250,7 @@
 		2563B3E61AAAD74000C04227 /* RKWXT */ = {
 			isa = PBXGroup;
 			children = (
+				1273210F1C7AB7F300C8D1D7 /* UMeng */,
 				12BC72071C78531700FC6A1C /* NewUserCut */,
 				123DDCA91C7452B400725A40 /* baiduCount */,
 				124607B31C4E2BA7001C703D /* GoodsClassify */,
@@ -7324,6 +7338,7 @@
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay/openssl/lib",
 					"$(PROJECT_DIR)/RKWXT/umeng",
 					"$(PROJECT_DIR)/RKWXT/baiduCount",
+					"$(PROJECT_DIR)/RKWXT/UMeng",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wx.company.pushdemo;
@@ -7386,6 +7401,7 @@
 					"$(PROJECT_DIR)/RKWXT/PayInterface/Alipay/openssl/lib",
 					"$(PROJECT_DIR)/RKWXT/umeng",
 					"$(PROJECT_DIR)/RKWXT/baiduCount",
+					"$(PROJECT_DIR)/RKWXT/UMeng",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wx.company.pushdemo;
