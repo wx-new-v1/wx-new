@@ -23,6 +23,12 @@
         NSString *nonceStr = [dic objectForKey:@"noncestr"];
         [self setNoncestr:nonceStr];
         
+        NSString *partnerid = [dic objectForKey:@"partnerid"];
+        [self setPartnerid:partnerid];
+        
+        NSString *package = [dic objectForKey:@"package"];
+        [self setPackage:package];
+        
         NSString *prepayid = [dic objectForKey:@"prepayid"];
         [self setPrepayid:prepayid];
         

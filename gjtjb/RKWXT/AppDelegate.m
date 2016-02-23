@@ -32,6 +32,7 @@
 #import "AllAreaDataModel.h"
 #import "BaiduMobStat.h"
 #import "MobClick.h"
+#import "WechatPayObj.h"
 
 @interface AppDelegate (){
     CTCallCenter *_callCenter;
@@ -55,6 +56,7 @@
     
     //向微信注册
     [[WXWeiXinOBJ sharedWeiXinOBJ] registerApp];
+    [[WechatPayObj sharedWxPayOBJ] registerApp];
     //向qq注册
     id result = [[TencentOAuth alloc] initWithAppId:@"1104707907" andDelegate:nil];
     if(result){}
@@ -351,6 +353,7 @@ forRemoteNotification:(NSDictionary *)userInfo
     //跳转支付宝钱包进行支付，处理支付结果
     [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
     }];
+    [[WechatPayObj sharedWxPayOBJ] handleOpenURL:url];
     return YES;
 }
 

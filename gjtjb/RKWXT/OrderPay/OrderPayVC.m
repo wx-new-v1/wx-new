@@ -21,7 +21,7 @@
 enum{
     OrderPay_Section_Money = 0,
     OrderPay_Section_Alipay,
-//    OrderPay_Section_Wechat,
+    OrderPay_Section_Wechat,
     
     OrderPay_Section_Invalid
 };
@@ -61,6 +61,9 @@ enum{
 -(void)addOBS{
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(alipaySucceed) name:D_Notification_Name_AliPaySucceed object:nil];
+    [notificationCenter addObserver:self selector:@selector(wechatPaySucceed) name:D_Notification_Name_WechatPaySucceed object:nil];
+    [notificationCenter addObserver:self selector:@selector(wechatPayCancel) name:D_Notification_Name_WechatPayCancel object:nil];
+    [notificationCenter addObserver:self selector:@selector(wechatPayFailed) name:D_Notification_Name_WechatPayFailed object:nil];
 }
 
 -(void)removeOBS{
@@ -89,9 +92,9 @@ enum{
         case OrderPay_Section_Alipay:
             height = OrderAlipayCellHeight;
             break;
-//        case OrderPay_Section_Wechat:
-//            height = OrderWechatCellHeight;
-//            break;
+        case OrderPay_Section_Wechat:
+            height = OrderWechatCellHeight;
+            break;
         default:
             break;
     }
@@ -141,9 +144,9 @@ enum{
         case OrderPay_Section_Alipay:
             cell = [self tableViewForAlipayCell];
             break;
-//        case OrderPay_Section_Wechat:
-//            cell = [self tableViewForWechatCell];
-//            break;
+        case OrderPay_Section_Wechat:
+            cell = [self tableViewForWechatCell];
+            break;
         default:
             break;
     }
@@ -156,9 +159,9 @@ enum{
         case OrderPay_Section_Alipay:
             [self alipay];
             break;
-//        case OrderPay_Section_Wechat:
-//            [self wechatPay];
-//            break;
+        case OrderPay_Section_Wechat:
+            [self wechatPay];
+            break;
         default:
             break;
     }
@@ -176,16 +179,28 @@ enum{
         return;
     }
     WechatEntity *entity = [_model.wechatArr objectAtIndex:0];
-    WechatPayObj *wechatObj = [[WechatPayObj alloc] init];
-    [wechatObj wechatPayWith:entity];
+    [[WechatPayObj sharedWxPayOBJ] wechatPayWith:entity];
 }
 
 -(void)wechatPayLoadFailed:(NSString *)errorMsg{
     [self unShowWaitView];
     if(!errorMsg){
-        errorMsg = @"调用微支付失败";
+        errorMsg = @"调用微信支付失败";
     }
     [UtilTool showAlertView:errorMsg];
+}
+
+//微信支付状态
+-(void)wechatPaySucceed{
+    [self paySucceedWith:Pay_Type_Weixin];
+}
+
+-(void)wechatPayCancel{
+    [UtilTool showAlertView:@"支付失败:中途取消"];
+}
+
+-(void)wechatPayFailed{
+    [UtilTool showAlertView:@"支付失败"];
 }
 
 #pragma mark alipay
@@ -198,7 +213,11 @@ enum{
 }
 
 -(void)alipaySucceed{
-    [[PaySucceedModel sharePaySucceed] updataPayOrder:Pay_Type_AliPay withOrderID:[self newChangeOrderID]];
+    [self paySucceedWith:Pay_Type_AliPay];
+}
+
+-(void)paySucceedWith:(Pay_Type)type{
+    [[PaySucceedModel sharePaySucceed] updataPayOrder:type withOrderID:[self newChangeOrderID]];
     if(_orderpay_type == OrderPay_Type_Recharge){
         [self.wxNavigationController popViewControllerAnimated:YES completion:^{
         }];

@@ -22,6 +22,7 @@
 - (NSString*)rootURL:(WXT_UrlFeed_Type)type{
     NSString *url = nil;
     NSString *newRootUrl = [NSString stringWithFormat:@"%@wx10api",WXTBaseUrl];   //商城模块
+    NSString *allUrl = nil;
     switch (type) {
         case WXT_UrlFeed_Type_LoadBalance:
             url = @"";
@@ -96,7 +97,8 @@
             url = @"/question.php";
             break;
         case WXT_UrlFeed_Type_New_Wechat:
-            url = @"/get_prepay_id.php";
+//            url = @"/get_prepay_id.php";
+            allUrl = @"wx10order/wx10WeixinPay/app_prepay_id.php";
             break;
         case WXT_UrlFeed_Type_New_RechargeList:
             url = @"/insert_recharge_order.php";
@@ -205,6 +207,9 @@
             break;
         default:
             break;
+    }
+    if(allUrl){
+        return [NSString stringWithFormat:@"%@%@",WXTBaseUrl,allUrl];
     }
     NSString *compURL = nil;
     if(![url isEqualToString:@""]){

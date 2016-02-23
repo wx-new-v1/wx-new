@@ -34,7 +34,6 @@
     NSArray *arr = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleURLTypes"];
     NSDictionary *dic = [arr objectAtIndex:1];
     NSString *appId = [[dic objectForKey:@"CFBundleURLSchemes"] objectAtIndex:0];
-    
     if([WXApi registerApp:appId withDescription:@"woxin"]){
         KFLog_Normal(YES, @"微信注册成功");
     }else{
