@@ -64,6 +64,7 @@ enum{
 #import "LuckyShakeVC.h"
 #import "GoodsClassifyVC.h"
 #import "NewUserCutVC.h"
+#import "FindCommonVC.h"
 
 #import "NewHomePageModel.h"
 #import "HomePageSurpEntity.h"

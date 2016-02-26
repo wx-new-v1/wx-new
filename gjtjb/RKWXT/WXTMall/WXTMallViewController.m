@@ -389,6 +389,14 @@
             [self.wxNavigationController pushViewController:userCutVC];
         }
             break;
+        case T_BaseFunction_Union:
+        {
+            FindCommonVC *vc = [[FindCommonVC alloc] init];
+            vc.webURl = @"http://oldyun.67call.com/wx_union/index.php/Public/alliance_merchant";
+            vc.name = @"商家联盟";
+            [self.wxNavigationController pushViewController:vc];
+        }
+            break;
         default:
             [UtilTool showTipView:@"努力开发中..."];
             break;
