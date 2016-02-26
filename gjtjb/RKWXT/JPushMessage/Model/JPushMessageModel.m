@@ -48,7 +48,16 @@
     if([userObj.sellerID integerValue] <= 1){
         return;
     }
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.sellerID, @"seller_user_id", @"iOS", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", [UtilTool currentVersion], @"ver", [NSNumber numberWithInteger:kMerchantID], @"sid", nil];
+    
+    NSDictionary *baseDic = [NSDictionary dictionaryWithObjectsAndKeys:userObj.user, @"phone", @"ios", @"pid", [NSNumber numberWithInt:(int)[UtilTool timeChange]], @"ts", userObj.wxtID, @"woxin_id", nil];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[@"phone"] = userObj.user;
+    dic[@"pid"] = @"ios";
+    dic[@"ts"] = [NSNumber numberWithInt:(int)[UtilTool timeChange]];
+    dic[@"woxin_id"] = userObj.wxtID;
+    dic[@"sign"] = [UtilTool md5:[UtilTool allPostStringMd5:baseDic]];
+    
+    
     __block JPushMessageModel *blockSelf = self;
     [[WXTURLFeedOBJ sharedURLFeedOBJ] fetchNewDataFromFeedType:WXT_UrlFeed_Type_New_LoadJPushMessage httpMethod:WXT_HttpMethod_Post timeoutIntervcal:-1 feed:dic completion:^(URLFeedData *retData) {
         if(retData.code != 0){
