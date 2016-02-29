@@ -79,6 +79,8 @@ typedef enum {
     WXT_UrlFeed_Type_New_ApplyAliMoney,
     WXT_UrlFeed_Type_New_SubmitUserAliAcount,
     WXT_UrlFeed_Type_New_LoadAliRecordList,
+    // 搜索商品或者商店
+   WXT_UrlFeed_Type_New_SearchGoodsOrShop,
     
     WXT_UrlFeed_Type_Invalid,
 }WXT_UrlFeed_Type;

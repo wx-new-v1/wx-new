@@ -205,6 +205,9 @@
         case WXT_UrlFeed_Type_New_LoadAliRecordList:
             url = @"";
             break;
+        case WXT_UrlFeed_Type_New_SearchGoodsOrShop:
+            url = @"/search.php";
+            break;
         default:
             break;
     }
