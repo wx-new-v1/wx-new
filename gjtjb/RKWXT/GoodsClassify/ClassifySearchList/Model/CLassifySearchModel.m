@@ -25,8 +25,7 @@
     if (!_historyArr) {
         NSArray *oldArr = [ClassIfyHistoryModel classifyHistoryModelWithReadEntityArray];
         NSMutableArray *arr = [NSMutableArray array];
-        for (NSDictionary *dict in oldArr) {
-            SearchResultEntity *entity = [SearchResultEntity initSearchResultEntityWith:dict];
+        for (SearchResultEntity *entity in oldArr) {
             [arr addObject:entity];
         }
         _historyArr = arr;
@@ -34,17 +33,6 @@
     return _historyArr;
 }
 
-/*
- pid:平台类型(android,ios,web),
- ver:版本号,
- ts:时间戳,
- woxin_id : 我信ID
- type: 1.商品，2.店铺
- sid:商家ID
- shop_id:店铺ID
- keyword:关键字
- 
- */
 -(void)classifySearchWith:(NSString*)searchStr{
     WXTUserOBJ *userObj = [WXTUserOBJ sharedUserOBJ];
     NSMutableDictionary *baseDic = [NSMutableDictionary dictionary];

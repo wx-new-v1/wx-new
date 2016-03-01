@@ -45,4 +45,15 @@
     [aCoder encodeFloat:_shop_price forKey:@"_shop_price"];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super init]) {
+        _goodsName = [aDecoder decodeObjectForKey:@"_goodsName"];
+        _img = [aDecoder decodeObjectForKey:@"_img"];
+        _goodsID = [aDecoder decodeIntegerForKey:@"_goodsID"];
+        _market_price = [aDecoder decodeFloatForKey:@"_market_price"];
+        _shop_price = [aDecoder decodeFloatForKey:@"_shop_price"];
+    }
+    return self;
+}
+
 @end
