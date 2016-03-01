@@ -13,6 +13,7 @@
 #import "ClassifyModel.h"
 #import "WXGoodsInfoVC.h"
 #import "ClassifyGoodsListVC.h"
+#import "ClassifySearchVC.h"
 
 #define size self.bounds.size
 #define yGap (10)
@@ -41,7 +42,7 @@
     [self setCSTTitle:@"分类"];
     [self setBackgroundColor:[UIColor whiteColor]];
     [self createListViewUI];
-//    [self createSearchViewUI];
+    [self createSearchViewUI];
     
     [[ClassifyModel shareClassifyNodel] loadAllClassifyData];
     [self showWaitViewMode:E_WaiteView_Mode_BaseViewBlock title:@""];
@@ -54,6 +55,7 @@
     [defaultCenter addObserver:self selector:@selector(gotoGoodsListVC:) name:D_Notification_Name_ClassifyGoodsClicked object:nil];
 }
 
+// 设置textField
 -(void)createSearchViewUI{
     CGFloat xOffset = 17;
     _textField = [[WXTUITextField alloc] initWithFrame:CGRectMake(xOffset, yGap, size.width-2*xOffset, TextFieldHeight)];
@@ -82,8 +84,8 @@
 }
 
 -(void)createListViewUI{
-//    CGFloat yOffset = yGap+TextFieldHeight+yGap;
-    CGFloat yOffset = 0;
+    CGFloat yOffset = yGap+TextFieldHeight+yGap;
+//    CGFloat yOffset = 0;
     CGFloat leftViewWidth = ClassifyLeftViewWidth;
     _rightView = [[ClassifyRightListView alloc] init];
     [_rightView.view setFrame:CGRectMake(leftViewWidth, yOffset, size.width-leftViewWidth, size.height-yOffset)];
@@ -114,8 +116,8 @@
 }
 
 -(void)startInput{
-//    ClassifySearchVC *searchVC = [[ClassifySearchVC alloc] init];
-//    [self.wxNavigationController pushViewController:searchVC];
+    ClassifySearchVC *searchVC = [[ClassifySearchVC alloc] init];
+    [self.wxNavigationController pushViewController:searchVC];
 }
 
 -(void)gotoGoodsListVC:(NSNotification*)notification{

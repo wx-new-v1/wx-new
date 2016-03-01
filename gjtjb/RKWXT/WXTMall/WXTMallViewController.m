@@ -81,7 +81,7 @@
     _unreadView = [[WXSysMsgUnreadV alloc] initWithFrame:CGRectMake(0, 0, kDefaultNavigationBarButtonSize.width, kDefaultNavigationBarButtonSize.height)];
     [_unreadView setDelegate:self];
     [_unreadView showSysPushMsgUnread];
-//    [self setRightNavigationItem:_unreadView];
+    [self setRightNavigationItem:_unreadView];
 }
 
 //集成刷新控件
@@ -335,7 +335,7 @@
 
 #pragma mark 导航
 - (void)toSysPushMsgView{
-//    [[CoordinateController sharedCoordinateController] toJPushCenterVC:self animated:YES];
+    [[CoordinateController sharedCoordinateController] toJPushCenterVC:self animated:YES];
 }
 
 -(void)homePageToCategaryView{

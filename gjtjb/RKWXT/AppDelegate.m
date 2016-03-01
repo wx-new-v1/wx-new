@@ -51,8 +51,8 @@
     //监听电话
     [self listenSystemCall];
     // 集成极光推送功能
-//    [self initJPushApi];
-//    [APService setupWithOption:launchOptions];
+    [self initJPushApi];
+    [APService setupWithOption:launchOptions];
     
     //向微信注册
     [[WXWeiXinOBJ sharedWeiXinOBJ] registerApp];
@@ -86,7 +86,8 @@
 //        LoginModel *_loginModel = [[LoginModel alloc] init];
 //        [_loginModel loginWithUser:userDefault.user andPwd:userDefault.pwd];
         
-        [APService setTags:[NSSet setWithObject:[NSString stringWithFormat:@"%@",userDefault.user]] alias:nil callbackSelector:nil object:nil];
+        NSSet *set1 = [NSSet setWithObjects:[NSString stringWithFormat:@"%@",userDefault.user], [NSString stringWithFormat:@"seller_%@",userDefault.sellerID], nil];
+        [APService setTags:set1 alias:nil callbackSelector:nil object:nil];
     }else{
         WXUIViewController *vc = [[LoginVC alloc] init];
         self.navigationController = [[WXUINavigationController alloc] initWithRootViewController:vc];
@@ -307,7 +308,7 @@ forRemoteNotification:(NSDictionary *)userInfo
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     if(!hasDeal){
-//        [[JPushMessageModel shareJPushModel] loadJPushMessageFromService];
+        [[JPushMessageModel shareJPushModel] loadJPushMessageFromService];
     }
 }
 
